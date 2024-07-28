@@ -5,21 +5,21 @@
 @layer base {
   :root {
     /* Colors */
-    --color-dark-dark-100: 31 30 30;
-    --color-dark-dark-300: 17 17 17;
-    --color-dark-dark-400: 0 0 0;
-    --color-dark-dark-200: 26 26 26;
+    --color-dark-100: 31 30 30;
+    --color-dark-200: 26 26 26;
+    --color-dark-300: 17 17 17;
+    --color-dark-400: 0 0 0;
 
-    --color-light-light-100: 255 255 255;
-    --color-light-light-200: 251 251 251;
-    --color-light-light-300: 240 240 240;
-    --color-light-light-400: 198 198 198;
-    --color-light-light-500: 196 196 196;
+    --color-light-100: 255 255 255;
+    --color-light-200: 251 251 251;
+    --color-light-300: 240 240 240;
+    --color-light-400: 198 198 198;
+    --color-light-500: 196 196 196;
 
-    --color-primary-primary-100: 108 172 228;
-    --color-primary-primary-400: 31 38 183;
-    --color-primary-primary-200: 21 94 239;
-    --color-primary-primary-300: 0 64 193;
+    --color-primary-100: 108 172 228;
+    --color-primary-200: 21 94 239;
+    --color-primary-300: 0 64 193;
+    --color-primary-400: 31 38 183;
 
     /* Gradients */
 
@@ -53,7 +53,7 @@
       rgba(210, 64, 116, 1) 0%,
       rgba(101, 24, 180, 1) 100%
     );
-    --gradient-5s: linear-gradient(
+    --gradient-5: linear-gradient(
       rgba(152, 69, 232, 1) 0%,
       rgba(51, 210, 255, 1) 55.000001192092896%,
       rgba(221, 87, 137, 1) 100%
