@@ -113,5 +113,25 @@
     --border-5: 0.3125rem;
     --border-6: 0.375rem;
     --border-0-5: 0rem;
+
+    /* Font Size */
+    --font-3xs: 0.45rem;
+    --font-2xs: 0.625rem;
+    --font-xs-2: 0.725rem;
+    --font-xs: 0.8125rem;
+    --font-sm-2: 0.8435rem;
+    --font-sm: 0.875rem;
+    --font-base: 0.938rem;
+    --font-md: 1.0625rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.875rem;
+    --font-4xl: 2rem;
+    --font-5xl: 3rem;
+    --font-6xl: 3.75rem;
+    --font-7xl: 4.5rem;
+    --font-8xl: 6rem;
+    --font-9xl: 8rem;
   }
 }

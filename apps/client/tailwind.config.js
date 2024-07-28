@@ -44,7 +44,7 @@ module.exports = {
         5: 'var(--gradient-5)',
       },
 
-      spacing: {
+      space: {
         0.5: 'var(--spacing-0-5)',
         1: 'var(--spacing-1)',
         1.5: 'var(--spacing-1-5)',
@@ -100,6 +100,27 @@ module.exports = {
         4: 'var(--border-4)',
         5: 'var(--border-5)',
         6: 'var(--border-6)',
+      },
+
+      fontSize: {
+        '3xs': 'var(--font-3xs)',
+        '2xs': 'var(--font-2xs)',
+        xs: 'var(--font-xs)',
+        'xs/2': 'var(--font-xs-2)',
+        sm: 'var(--font-sm)',
+        'sm/2': 'var(--font-sm-2)',
+        base: 'var(--font-base)',
+        md: 'var(--font-md)',
+        lg: 'var(--font-lg)',
+        xl: 'var(--font-xl)',
+        '2xl': 'var(--font-2xl)',
+        '3xl': 'var(--font-3xl)',
+        '4xl': 'var(--font-4xl)',
+        '5xl': 'var(--font-5xl)',
+        '6xl': 'var(--font-6xl)',
+        '7xl': 'var(--font-7xl)',
+        '8xl': 'var(--font-8xl)',
+        '9xl': 'var(--font-9xl)',
       },
     },
   },
