@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@client/lib/cn';
 import { createContext, useContext, useState } from 'react';
 
