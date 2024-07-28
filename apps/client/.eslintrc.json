@@ -2,30 +2,28 @@
   "extends": [
     "plugin:@nx/react-typescript",
     "next",
+    "prettier",
     "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
     "../../.eslintrc.json"
   ],
+  "settings": {
+    "tailwindcss": {
+      "callees": ["classnames", "clsx", "cva", "cn", "className"],
+      "config": "./tailwind.config.js"
+    }
+  },
   "ignorePatterns": ["!**/*", ".next/**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "tailwindcss/no-custom-classname": "off",
         "@next/next/no-html-link-for-pages": ["error", "apps/client/pages"]
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "jest": true
-      }
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"]
     }
   ]
 }
