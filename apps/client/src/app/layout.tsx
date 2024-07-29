@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
    return (
       <html lang="en">
-         <body className={cn('relative h-screen w-full overflow-auto overflow-x-hidden scroll-smooth')}>
+         <body className={cn('relative size-full overflow-auto overflow-x-hidden scroll-smooth')}>
             <DarkModeProvider>
                <Header />
                {children}
