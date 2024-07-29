@@ -1,6 +1,7 @@
 import { PageHero } from './components/Hero';
-import { LinkButtons } from './components/Buttons/Buttons';
+import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
+import { LinkButtons } from './components/Buttons/Buttons';
 
 export default function Index() {
    return (
@@ -8,6 +9,7 @@ export default function Index() {
          <PageHero />
          <LinkButtons />
          <Experience />
+         <Projects />
       </div>
    );
 }
