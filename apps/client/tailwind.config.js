@@ -36,22 +36,34 @@ module.exports = {
           300: 'rgb(var(--color-dark-300) / <alpha-value>)',
           400: 'rgb(var(--color-dark-400) / <alpha-value>)',
         },
+        gradient: {
+          1: 'var(--color-gradient-1)',
+          2: 'var(--color-gradient-2)',
+          3: 'var(--color-gradient-3)',
+          4: 'var(--color-gradient-4)',
+          5: 'var(--color-gradient-5)',
+          6: 'var(--color-gradient-6)',
+          7: 'var(--color-gradient-7)',
+          8: 'var(--color-gradient-8)',
+          9: 'var(--color-gradient-9)',
+          10: 'var(--color-gradient-10)',
+          11: 'var(--color-gradient-11)',
+          12: 'var(--color-gradient-12)',
+          13: 'var(--color-gradient-13)',
+          14: 'var(--color-gradient-14)',
+          15: 'var(--color-gradient-15)',
+          16: 'var(--color-gradient-16)',
+          17: 'var(--color-gradient-17)',
+          18: 'var(--color-gradient-18)',
+          19: 'var(--color-gradient-19)',
+          20: 'var(--color-gradient-20)',
+          21: 'var(--color-gradient-21)',
+          22: 'var(--color-gradient-22)',
+          23: 'var(--color-gradient-23)',
+          24: 'var(--color-gradient-24)',
+          25: 'var(--color-gradient-25)',
+        },
       },
-
-      backgroundImage: {
-        'gradient-100':
-          'linear-gradient(var(--color-gradient-1) 0%, var(--color-gradient-2) 6.666667014360428%, var(--color-gradient-3) 13.333334028720856%, var(--color-gradient-4) 20.000000298023224%, var(--color-gradient-5) 26.66666805744171%, var(--color-gradient-6) 33.33333432674408%, var(--color-gradient-7) 40.00000059604645%, var(--color-gradient-8) 46.666666865348816%, var(--color-gradient-9) 53.33333611488342%, var(--color-gradient-10) 60.00000238418579%, var(--color-gradient-11) 66.66666865348816%, var(--color-gradient-12) 73.33333492279053%, var(--color-gradient-13) 80.0000011920929%, var(--color-gradient-14) 86.66666746139526%, var(--color-gradient-15) 93.33333373069763%, var(--color-gradient-16) 100%)',
-      },
-
-      // backgroundImage: {
-      //   gradiant: {
-      //     1: "linear-gradient(to right bottom, rgba(43, 108, 176, 0.9), rgba(43, 108, 176, 0.9)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.eAFxNBriFW8k0jCNOTCe6gHaHs%26pid%3DApi&f=1')",
-      //     2: 'var(--gradient-2)',
-      //     3: 'var(--gradient-3)',
-      //     4: 'var(--gradient-4)',
-      //     5: 'var(--gradient-5)',
-      //   },
-      // },
 
       space: {
         0.5: 'var(--spacing-0-5)',
@@ -134,17 +146,21 @@ module.exports = {
     },
   },
   plugins: [
-    function ({ addUtilities }) {
-      const newUtilities = {
-        '.text-gradient-100': {
-          background:
-            'linear-gradient(90deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-4), var(--color-gradient-5), var(--color-gradient-6), var(--color-gradient-7), var(--color-gradient-8), var(--color-gradient-9), var(--color-gradient-10), var(--color-gradient-11), var(--color-gradient-12), var(--color-gradient-13), var(--color-gradient-14), var(--color-gradient-15), var(--color-gradient-16))',
-          '-webkit-background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
-        },
-      };
-
-      addUtilities(newUtilities, ['responsive', 'hover']);
-    },
+    textGradiant('gradient-100', 'var(--gradient-1)'),
+    textGradiant('gradient-200', 'var(--gradient-2)'),
+    textGradiant('gradient-300', 'var(--gradient-3)'),
   ],
 };
+
+function textGradiant(name, gradient) {
+  return ({ addUtilities }) => {
+    const newUtilities = {
+      [`.text-${name}`]: {
+        background: gradient,
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
+      },
+    };
+    addUtilities(newUtilities, ['responsive', 'hover']);
+  };
+}

@@ -37,43 +37,53 @@
     --color-gradient-14: rgba(21, 210, 227, 1);
     --color-gradient-15: rgba(17, 214, 226, 1);
     --color-gradient-16: rgba(16, 215, 226, 1);
+    --color-gradient-17: rgba(105, 100, 222, 1);
+    --color-gradient-18: rgba(252, 166, 233, 1);
+    --color-gradient-19: rgba(244, 66, 108, 1);
+    --color-gradient-20: rgba(251, 242, 177, 1);
+    --color-gradient-21: rgba(210, 64, 116, 1);
+    --color-gradient-22: rgba(101, 24, 180, 1);
+    --color-gradient-23: rgba(152, 69, 232, 1);
+    --color-gradient-24: rgba(51, 210, 255, 1);
+    --color-gradient-25: rgba(221, 87, 137, 1);
 
     /* Gradients */
     --gradient-1: linear-gradient(
-      rgba(147, 88, 247, 1) 0%,
-      rgba(146, 89, 247, 1) 6.666667014360428%,
-      rgba(142, 93, 246, 1) 13.333334028720856%,
-      rgba(136, 98, 245, 1) 20.000000298023224%,
-      rgba(128, 107, 244, 1) 26.66666805744171%,
-      rgba(117, 117, 242, 1) 33.33333432674408%,
-      rgba(104, 130, 240, 1) 40.00000059604645%,
-      rgba(89, 144, 238, 1) 46.666666865348816%,
-      rgba(74, 159, 235, 1) 53.33333611488342%,
-      rgba(59, 173, 233, 1) 60.00000238418579%,
-      rgba(46, 186, 231, 1) 66.66666865348816%,
-      rgba(35, 196, 229, 1) 73.33333492279053%,
-      rgba(27, 205, 228, 1) 80.0000011920929%,
-      rgba(21, 210, 227, 1) 86.66666746139526%,
-      rgba(17, 214, 226, 1) 93.33333373069763%,
-      rgba(16, 215, 226, 1) 100%
+      var(--color-gradient-1) 0%,
+      var(--color-gradient-2) 6.666667014360428%,
+      var(--color-gradient-3) 13.333334028720856%,
+      var(--color-gradient-4) 20.000000298023224%,
+      var(--color-gradient-5) 26.66666805744171%,
+      var(--color-gradient-6) 33.33333432674408%,
+      var(--color-gradient-7) 40.00000059604645%,
+      var(--color-gradient-8) 46.666666865348816%,
+      var(--color-gradient-9) 53.33333611488342%,
+      var(--color-gradient-10) 60.00000238418579%,
+      var(--color-gradient-11) 66.66666865348816%,
+      var(--color-gradient-12) 73.33333492279053%,
+      var(--color-gradient-13) 80.0000011920929%,
+      var(--color-gradient-14) 86.66666746139526%,
+      var(--color-gradient-15) 93.33333373069763%,
+      var(--color-gradient-16) 100%
     );
 
     --gradient-2: linear-gradient(
-      rgba(105, 100, 222, 1) 0%,
-      rgba(252, 166, 233, 1) 100%
+      var(--color-gradient-17) 0%,
+      var(--color-gradient-18) 100%
     );
+
     --gradient-3: linear-gradient(
-      rgba(244, 66, 108, 1) 0%,
-      rgba(251, 242, 177, 1) 100%
+      var(--color-gradient-19) 0%,
+      var(--color-gradient-20) 100%
     );
     --gradient-4: linear-gradient(
-      rgba(210, 64, 116, 1) 0%,
-      rgba(101, 24, 180, 1) 100%
+      var(--color-gradient-21) 0%,
+      var(--color-gradient-22) 100%
     );
     --gradient-5: linear-gradient(
-      rgba(152, 69, 232, 1) 0%,
-      rgba(51, 210, 255, 1) 55.000001192092896%,
-      rgba(221, 87, 137, 1) 100%
+      var(--color-gradient-23) 0%,
+      var(--color-gradient-24) 55.000001192092896%,
+      var(--color-gradient-25) 100%
     );
 
     /* Spacing */
