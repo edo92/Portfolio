@@ -1,8 +1,13 @@
 import { Divider } from '@client/components/Divider';
 import { Typography } from '@client/components/Typography';
+import { divideIntoChunks } from '@client/util/divideChunks';
+
+import { projects } from './data';
 import { Project } from './Project';
 
 export const Projects = () => {
+   const projectList = divideIntoChunks(projects, 3);
+
    return (
       <div className="flex w-full flex-col justify-center gap-3">
          <Divider />
@@ -18,17 +23,13 @@ export const Projects = () => {
          </div>
 
          <div className="flex flex-col items-center justify-center gap-9 px-20 max-md:max-w-full max-md:px-5">
-            <div className="flex gap-5 max-md:flex-col">
-               <Project />
-               <Project />
-               <Project />
-            </div>
-
-            <div className="flex gap-5 max-md:flex-col">
-               <Project />
-               <Project />
-               <Project />
-            </div>
+            {projectList.map((projects, index) => (
+               <div key={index} className="flex gap-5 max-md:flex-col">
+                  {projects.map((project) => (
+                     <Project key={project.name} {...project} />
+                  ))}
+               </div>
+            ))}
          </div>
 
          <Divider className="my-10" />
