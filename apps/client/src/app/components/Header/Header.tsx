@@ -5,7 +5,9 @@ import { Typography } from '@client/components/Typography';
 export const Header: React.FC = () => (
    <div className="dark:bg-dark-300 bg-light-100 border-b-0.5 border-dark-100/10 flex w-full items-center justify-center whitespace-nowrap px-16 py-7 max-md:max-w-full max-md:px-5">
       <div className="flex w-full justify-between gap-2.5 max-md:max-w-full max-md:flex-wrap">
-         <div className="text-lg">DR</div>
+         <Typography variant="span" className="text-lg">
+            EJ
+         </Typography>
 
          <div className="flex items-center justify-center gap-5 self-start px-1">
             <Link href="/projects">
