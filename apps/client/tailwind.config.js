@@ -133,5 +133,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-gradient-100': {
+          background:
+            'linear-gradient(90deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-4), var(--color-gradient-5), var(--color-gradient-6), var(--color-gradient-7), var(--color-gradient-8), var(--color-gradient-9), var(--color-gradient-10), var(--color-gradient-11), var(--color-gradient-12), var(--color-gradient-13), var(--color-gradient-14), var(--color-gradient-15), var(--color-gradient-16))',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };
