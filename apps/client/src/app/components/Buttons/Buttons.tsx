@@ -38,7 +38,7 @@ export const LinkButtons: React.FC = () => (
             >
                <div className="bg-light-100 dark:bg-dark-300 dark:text-light-400 text-dark-300 flex items-center justify-center gap-2.5 px-3 py-2">
                   <div>{item.name}</div>
-                  <item.Icon className="aspect-square w-5 shrink-0" />
+                  <item.Icon className="dark:text-light-400 text-dark-100/85 aspect-square w-5 shrink-0" />
                </div>
             </div>
          ))}
