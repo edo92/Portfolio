@@ -12,12 +12,8 @@ export const Projects = () => {
       <div className="flex w-full flex-col justify-center gap-3">
          <Divider />
 
-         <div className="mt-10 flex flex-col justify-center px-16 max-md:mt-10 max-md:max-w-full max-md:px-5">
-            <div className="mx-9 h-px w-full max-w-full shrink-0 bg-white max-md:mr-2.5" />
-         </div>
-
          <div className="mt-10 px-24 max-md:mt-10 max-md:max-w-full">
-            <Typography variant="h1" className="font-bold">
+            <Typography variant="h1" className="text-dark-100/80 text-2xl font-bold">
                Latest Projects
             </Typography>
          </div>
