@@ -16,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn('relative h-screen w-full')}>
+      <body
+        className={cn(
+          'relative h-screen w-full overflow-auto overflow-x-hidden scroll-smooth'
+        )}
+      >
         <DarkModeProvider>
           <Header />
           {children}
