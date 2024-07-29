@@ -2,6 +2,7 @@ import './styles/global.css';
 
 import { cn } from '@client/lib/cn';
 import { DarkModeProvider } from './providers/darkmode';
+import { Header } from './components/Header';
 
 export const metadata = {
   title: 'Welcome to client',
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn('relative h-screen w-full')}>
-        <DarkModeProvider>{children}</DarkModeProvider>
+        <DarkModeProvider>
+          <Header />
+          {children}
+        </DarkModeProvider>
       </body>
     </html>
   );

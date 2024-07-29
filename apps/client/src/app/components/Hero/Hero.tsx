@@ -1,6 +1,6 @@
 import { ABOUT_TEXT, NAME, HERO_TITLE } from './constants';
 
-export const Hero: React.FC = () => {
+export const PageHero: React.FC = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center p-9">
       <div className="mt-5 w-5/6 px-3 py-px">
