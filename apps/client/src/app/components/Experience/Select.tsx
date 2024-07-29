@@ -15,7 +15,7 @@ export const ExperianceTimeline: React.FC = () => {
                className={cn(
                   'w-full cursor-pointer items-start rounded p-1 text-base font-light',
                   selected === index.toString()
-                     ? 'bg-dark-100 text-light-400 dark:text-light-300'
+                     ? 'bg-dark-100/80 text-light-100 dark:bg-dark-100 dark:text-light-300'
                      : 'text-dark-300 dark:text-light-400 bg-transparent'
                )}
             >
