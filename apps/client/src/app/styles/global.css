@@ -3,162 +3,153 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Colors */
-    --color-dark-100: 31 30 30;
-    --color-dark-200: 26 26 26;
-    --color-dark-300: 17 17 17;
-    --color-dark-400: 0 0 0;
+   :root {
+      /* Colors */
+      --color-dark-100: 31 30 30;
+      --color-dark-200: 26 26 26;
+      --color-dark-300: 17 17 17;
+      --color-dark-400: 0 0 0;
 
-    --color-light-100: 255 255 255;
-    --color-light-200: 251 251 251;
-    --color-light-300: 240 240 240;
-    --color-light-400: 198 198 198;
-    --color-light-500: 196 196 196;
+      --color-light-100: 255 255 255;
+      --color-light-200: 251 251 251;
+      --color-light-300: 240 240 240;
+      --color-light-400: 198 198 198;
+      --color-light-500: 196 196 196;
 
-    --color-primary-100: 108 172 228;
-    --color-primary-200: 21 94 239;
-    --color-primary-300: 0 64 193;
-    --color-primary-400: 31 38 183;
+      --color-primary-100: 108 172 228;
+      --color-primary-200: 21 94 239;
+      --color-primary-300: 0 64 193;
+      --color-primary-400: 31 38 183;
 
-    --color-gradient-1: rgba(147, 88, 247, 1);
-    --color-gradient-2: rgba(146, 89, 247, 1);
-    --color-gradient-3: rgba(142, 93, 246, 1);
-    --color-gradient-4: rgba(136, 98, 245, 1);
-    --color-gradient-5: rgba(128, 107, 244, 1);
-    --color-gradient-6: rgba(117, 117, 242, 1);
-    --color-gradient-7: rgba(104, 130, 240, 1);
-    --color-gradient-8: rgba(89, 144, 238, 1);
-    --color-gradient-9: rgba(74, 159, 235, 1);
-    --color-gradient-10: rgba(59, 173, 233, 1);
-    --color-gradient-11: rgba(46, 186, 231, 1);
-    --color-gradient-12: rgba(35, 196, 229, 1);
-    --color-gradient-13: rgba(27, 205, 228, 1);
-    --color-gradient-14: rgba(21, 210, 227, 1);
-    --color-gradient-15: rgba(17, 214, 226, 1);
-    --color-gradient-16: rgba(16, 215, 226, 1);
-    --color-gradient-17: rgba(105, 100, 222, 1);
-    --color-gradient-18: rgba(252, 166, 233, 1);
-    --color-gradient-19: rgba(244, 66, 108, 1);
-    --color-gradient-20: rgba(251, 242, 177, 1);
-    --color-gradient-21: rgba(210, 64, 116, 1);
-    --color-gradient-22: rgba(101, 24, 180, 1);
-    --color-gradient-23: rgba(152, 69, 232, 1);
-    --color-gradient-24: rgba(51, 210, 255, 1);
-    --color-gradient-25: rgba(221, 87, 137, 1);
+      --color-gradient-1: rgba(147, 88, 247, 1);
+      --color-gradient-2: rgba(146, 89, 247, 1);
+      --color-gradient-3: rgba(142, 93, 246, 1);
+      --color-gradient-4: rgba(136, 98, 245, 1);
+      --color-gradient-5: rgba(128, 107, 244, 1);
+      --color-gradient-6: rgba(117, 117, 242, 1);
+      --color-gradient-7: rgba(104, 130, 240, 1);
+      --color-gradient-8: rgba(89, 144, 238, 1);
+      --color-gradient-9: rgba(74, 159, 235, 1);
+      --color-gradient-10: rgba(59, 173, 233, 1);
+      --color-gradient-11: rgba(46, 186, 231, 1);
+      --color-gradient-12: rgba(35, 196, 229, 1);
+      --color-gradient-13: rgba(27, 205, 228, 1);
+      --color-gradient-14: rgba(21, 210, 227, 1);
+      --color-gradient-15: rgba(17, 214, 226, 1);
+      --color-gradient-16: rgba(16, 215, 226, 1);
+      --color-gradient-17: rgba(105, 100, 222, 1);
+      --color-gradient-18: rgba(252, 166, 233, 1);
+      --color-gradient-19: rgba(244, 66, 108, 1);
+      --color-gradient-20: rgba(251, 242, 177, 1);
+      --color-gradient-21: rgba(210, 64, 116, 1);
+      --color-gradient-22: rgba(101, 24, 180, 1);
+      --color-gradient-23: rgba(152, 69, 232, 1);
+      --color-gradient-24: rgba(51, 210, 255, 1);
+      --color-gradient-25: rgba(221, 87, 137, 1);
 
-    /* Gradients */
-    --gradient-1: linear-gradient(
-      var(--color-gradient-1) 0%,
-      var(--color-gradient-2) 6.666667014360428%,
-      var(--color-gradient-3) 13.333334028720856%,
-      var(--color-gradient-4) 20.000000298023224%,
-      var(--color-gradient-5) 26.66666805744171%,
-      var(--color-gradient-6) 33.33333432674408%,
-      var(--color-gradient-7) 40.00000059604645%,
-      var(--color-gradient-8) 46.666666865348816%,
-      var(--color-gradient-9) 53.33333611488342%,
-      var(--color-gradient-10) 60.00000238418579%,
-      var(--color-gradient-11) 66.66666865348816%,
-      var(--color-gradient-12) 73.33333492279053%,
-      var(--color-gradient-13) 80.0000011920929%,
-      var(--color-gradient-14) 86.66666746139526%,
-      var(--color-gradient-15) 93.33333373069763%,
-      var(--color-gradient-16) 100%
-    );
+      /* Gradients */
+      --gradient-1: linear-gradient(
+         var(--color-gradient-1) 0%,
+         var(--color-gradient-2) 6.666667014360428%,
+         var(--color-gradient-3) 13.333334028720856%,
+         var(--color-gradient-4) 20.000000298023224%,
+         var(--color-gradient-5) 26.66666805744171%,
+         var(--color-gradient-6) 33.33333432674408%,
+         var(--color-gradient-7) 40.00000059604645%,
+         var(--color-gradient-8) 46.666666865348816%,
+         var(--color-gradient-9) 53.33333611488342%,
+         var(--color-gradient-10) 60.00000238418579%,
+         var(--color-gradient-11) 66.66666865348816%,
+         var(--color-gradient-12) 73.33333492279053%,
+         var(--color-gradient-13) 80.0000011920929%,
+         var(--color-gradient-14) 86.66666746139526%,
+         var(--color-gradient-15) 93.33333373069763%,
+         var(--color-gradient-16) 100%
+      );
 
-    --gradient-2: linear-gradient(
-      var(--color-gradient-17) 0%,
-      var(--color-gradient-18) 100%
-    );
+      --gradient-2: linear-gradient(var(--color-gradient-17) 0%, var(--color-gradient-18) 100%);
 
-    --gradient-3: linear-gradient(
-      var(--color-gradient-19) 0%,
-      var(--color-gradient-20) 100%
-    );
-    --gradient-4: linear-gradient(
-      var(--color-gradient-21) 0%,
-      var(--color-gradient-22) 100%
-    );
-    --gradient-5: linear-gradient(
-      var(--color-gradient-23) 0%,
-      var(--color-gradient-24) 55.000001192092896%,
-      var(--color-gradient-25) 100%
-    );
+      --gradient-3: linear-gradient(var(--color-gradient-19) 0%, var(--color-gradient-20) 100%);
+      --gradient-4: linear-gradient(var(--color-gradient-21) 0%, var(--color-gradient-22) 100%);
+      --gradient-5: linear-gradient(
+         var(--color-gradient-23) 0%,
+         var(--color-gradient-24) 55.000001192092896%,
+         var(--color-gradient-25) 100%
+      );
 
-    /* Spacing */
-    --spacing-0-5: 0.125rem;
-    --spacing-1: 0.25rem;
-    --spacing-1-5: 0.375rem;
-    --spacing-2: 0.5rem;
-    --spacing-2-5: 0.625rem;
-    --spacing-3: 0.75rem;
-    --spacing-4: 1rem;
-    --spacing-5: 1.25rem;
-    --spacing-6: 1.5rem;
-    --spacing-7: 1.75rem;
-    --spacing-8: 2rem;
-    --spacing-9: 2.25rem;
-    --spacing-10: 2.5rem;
-    --spacing-12: 3rem;
-    --spacing-14: 3.5rem;
-    --spacing-16: 4rem;
-    --spacing-20: 5rem;
-    --spacing-24: 6rem;
-    --spacing-28: 7rem;
-    --spacing-32: 8rem;
-    --spacing-36: 9rem;
-    --spacing-40: 10rem;
-    --spacing-44: 11rem;
-    --spacing-48: 12rem;
-    --spacing-52: 13rem;
-    --spacing-56: 14rem;
-    --spacing-60: 15rem;
-    --spacing-3-5: 0.875rem;
-    --spacing-64: 16rem;
-    --spacing-72: 18rem;
-    --spacing-80: 20rem;
-    --spacing-96: 24rem;
+      /* Spacing */
+      --spacing-0-5: 0.125rem;
+      --spacing-1: 0.25rem;
+      --spacing-1-5: 0.375rem;
+      --spacing-2: 0.5rem;
+      --spacing-2-5: 0.625rem;
+      --spacing-3: 0.75rem;
+      --spacing-4: 1rem;
+      --spacing-5: 1.25rem;
+      --spacing-6: 1.5rem;
+      --spacing-7: 1.75rem;
+      --spacing-8: 2rem;
+      --spacing-9: 2.25rem;
+      --spacing-10: 2.5rem;
+      --spacing-12: 3rem;
+      --spacing-14: 3.5rem;
+      --spacing-16: 4rem;
+      --spacing-20: 5rem;
+      --spacing-24: 6rem;
+      --spacing-28: 7rem;
+      --spacing-32: 8rem;
+      --spacing-36: 9rem;
+      --spacing-40: 10rem;
+      --spacing-44: 11rem;
+      --spacing-48: 12rem;
+      --spacing-52: 13rem;
+      --spacing-56: 14rem;
+      --spacing-60: 15rem;
+      --spacing-3-5: 0.875rem;
+      --spacing-64: 16rem;
+      --spacing-72: 18rem;
+      --spacing-80: 20rem;
+      --spacing-96: 24rem;
 
-    /* Border Radius */
-    --rounded-none: 0rem;
-    --rounded-xss: 0.125rem;
-    --rounded-xs: 0.25rem;
-    --rounded-sm: 0.375rem;
-    --rounded-md: 0.5rem;
-    --rounded-lg: 0.625rem;
-    --rounded-xl: 0.75rem;
-    --rounded-2xl: 1rem;
-    --rounded-full: 6.1875rem;
+      /* Border Radius */
+      --rounded-none: 0rem;
+      --rounded-xss: 0.125rem;
+      --rounded-xs: 0.25rem;
+      --rounded-sm: 0.375rem;
+      --rounded-md: 0.5rem;
+      --rounded-lg: 0.625rem;
+      --rounded-xl: 0.75rem;
+      --rounded-2xl: 1rem;
+      --rounded-full: 6.1875rem;
 
-    /* Border Width */
-    --border-0: 0rem;
-    --border-0-5: 0.5px;
-    --border: 0.0625rem;
-    --border-2: 0.125rem;
-    --border-3: 0.1875rem;
-    --border-4: 0.25rem;
-    --border-5: 0.3125rem;
-    --border-6: 0.375rem;
+      /* Border Width */
+      --border-0: 0rem;
+      --border-0-5: 0.5px;
+      --border: 0.0625rem;
+      --border-2: 0.125rem;
+      --border-3: 0.1875rem;
+      --border-4: 0.25rem;
+      --border-5: 0.3125rem;
+      --border-6: 0.375rem;
 
-    /* Font Size */
-    --font-3xs: 0.45rem;
-    --font-2xs: 0.625rem;
-    --font-xs-2: 0.725rem;
-    --font-xs: 0.8125rem;
-    --font-sm-2: 0.8435rem;
-    --font-sm: 0.875rem;
-    --font-base: 0.938rem;
-    --font-md: 1.0625rem;
-    --font-lg: 1.125rem;
-    --font-xl: 1.25rem;
-    --font-2xl: 1.5rem;
-    --font-3xl: 1.875rem;
-    --font-4xl: 2rem;
-    --font-5xl: 3rem;
-    --font-6xl: 3.75rem;
-    --font-7xl: 4.5rem;
-    --font-8xl: 6rem;
-    --font-9xl: 8rem;
-  }
+      /* Font Size */
+      --font-3xs: 0.45rem;
+      --font-2xs: 0.625rem;
+      --font-xs-2: 0.725rem;
+      --font-xs: 0.8125rem;
+      --font-sm-2: 0.8435rem;
+      --font-sm: 0.875rem;
+      --font-base: 0.938rem;
+      --font-md: 1.0625rem;
+      --font-lg: 1.125rem;
+      --font-xl: 1.25rem;
+      --font-2xl: 1.5rem;
+      --font-3xl: 1.875rem;
+      --font-4xl: 2rem;
+      --font-5xl: 3rem;
+      --font-6xl: 3.75rem;
+      --font-7xl: 4.5rem;
+      --font-8xl: 6rem;
+      --font-9xl: 8rem;
+   }
 }
