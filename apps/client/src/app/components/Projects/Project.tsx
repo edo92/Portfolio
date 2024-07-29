@@ -35,7 +35,7 @@ export const Project: React.FC<ProjectProps> = ({ name, description, stack, imag
                <div className="from-gradient-20 to-gradient-21 hover:from-gradient-19 hover:to-gradient-20 cursor-pointer rounded bg-gradient-to-tr p-0.5 transition-all duration-300 ease-in-out">
                   <Link
                      href={link}
-                     className="bg-light-100 flex flex-row items-center justify-center gap-3 py-3"
+                     className="bg-light-100 dark:bg-dark-300 flex flex-row items-center justify-center gap-3 py-3"
                   >
                      <Icons.Link className="text-dark-300/85 dark:text-light-400 size-[16px]" />
                      <Typography variant="p">Live demo</Typography>
