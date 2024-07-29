@@ -1,6 +1,5 @@
 'use client';
 
-import { cn } from '@client/lib/cn';
 import { createContext, useContext, useState } from 'react';
 
 const Context = createContext<{
@@ -18,13 +17,13 @@ export const DarkModeProvider: React.FC<React.PropsWithChildren> = ({
 
   const toggleMode = () => {
     setMode(!darkMode);
+    if (darkMode) document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
   };
 
   return (
     <Context.Provider value={{ darkMode, toggleMode }}>
-      <div className={cn('relative size-full', darkMode && 'dark')}>
-        <>{children}</>
-      </div>
+      <>{children}</>
     </Context.Provider>
   );
 };
