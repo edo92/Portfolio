@@ -11,6 +11,7 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   darkMode: 'class',
+
   theme: {
     extend: {
       colors: {
@@ -38,12 +39,19 @@ module.exports = {
       },
 
       backgroundImage: {
-        1: 'var(--gradient-1)',
-        2: 'var(--gradient-2)',
-        3: 'var(--gradient-3)',
-        4: 'var(--gradient-4)',
-        5: 'var(--gradient-5)',
+        'gradient-100':
+          'linear-gradient(var(--color-gradient-1) 0%, var(--color-gradient-2) 6.666667014360428%, var(--color-gradient-3) 13.333334028720856%, var(--color-gradient-4) 20.000000298023224%, var(--color-gradient-5) 26.66666805744171%, var(--color-gradient-6) 33.33333432674408%, var(--color-gradient-7) 40.00000059604645%, var(--color-gradient-8) 46.666666865348816%, var(--color-gradient-9) 53.33333611488342%, var(--color-gradient-10) 60.00000238418579%, var(--color-gradient-11) 66.66666865348816%, var(--color-gradient-12) 73.33333492279053%, var(--color-gradient-13) 80.0000011920929%, var(--color-gradient-14) 86.66666746139526%, var(--color-gradient-15) 93.33333373069763%, var(--color-gradient-16) 100%)',
       },
+
+      // backgroundImage: {
+      //   gradiant: {
+      //     1: "linear-gradient(to right bottom, rgba(43, 108, 176, 0.9), rgba(43, 108, 176, 0.9)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.eAFxNBriFW8k0jCNOTCe6gHaHs%26pid%3DApi&f=1')",
+      //     2: 'var(--gradient-2)',
+      //     3: 'var(--gradient-3)',
+      //     4: 'var(--gradient-4)',
+      //     5: 'var(--gradient-5)',
+      //   },
+      // },
 
       space: {
         0.5: 'var(--spacing-0-5)',
