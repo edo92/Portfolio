@@ -162,7 +162,18 @@ module.exports = {
    },
 
    daisyui: {
-      themes: ['light', 'dark'],
+      themes: [
+         {
+            dark: {
+               background: 'var(--color-dark-100)',
+            },
+         },
+         {
+            light: {
+               background: 'var(--color-light-100)',
+            },
+         },
+      ],
    },
 
    plugins: [

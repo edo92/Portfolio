@@ -152,11 +152,3 @@
       --font-9xl: 8rem;
    }
 }
-
-[data-theme='dark'] {
-   background: var(--color-dark-300);
-}
-
-[data-theme='light'] {
-   background: var(--color-light-100);
-}
