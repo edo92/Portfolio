@@ -9,7 +9,7 @@ export const ThemeSwitch: React.FC = () => {
    return (
       <button className="btn btn-ghost flex flex-col items-center">
          <Icons.LightBulb
-            className="dark:text-dark-300/85 text-light-400 mt-px aspect-square size-6 shrink-0 self-start"
+            className="text-dark-300/85 dark:text-light-400 mt-0.5 aspect-square size-6 shrink-0 self-start"
             onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
          />
       </button>
