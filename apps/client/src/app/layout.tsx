@@ -6,7 +6,10 @@ import { cn } from '@client/lib/cn';
 import { Header } from './components/Header';
 
 export const metadata = {
-   title: 'Eduard Jacobs | %s',
+   title: {
+      default: 'Portfolio',
+      template: '%s | Eduard Jacobs',
+   },
    description: "Eduard Jacobs' personal portfolio",
 };
 

@@ -1,5 +1,5 @@
 export const metadata = {
-   title: 'Eduard Jacobs',
+   title: 'Projects',
    description: 'personal portfolio',
 };
 
