@@ -6,20 +6,6 @@ $base-hue: 5; // change for different colors (180 is nice)
 $dark-hue: 300; // hue for dark mode
 $max-translate-z: 170px; // Maximum translation on Z-axis, reduced to bring closer to user
 
-html,
-body {
-   height: 100%;
-   margin: 0; // Ensure there is no default margin
-   display: flex;
-   justify-content: center;
-   align-items: center; // Center content vertically and horizontally
-}
-
-body {
-   background: transparent;
-   overflow: hidden; // no scrollbars
-}
-
 .orbit-wrap {
    position: relative;
    width: $orb-size; // Width of the orb
