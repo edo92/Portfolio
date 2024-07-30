@@ -3,7 +3,7 @@ import { cn } from '@client/lib/cn';
 import * as fonts from '@client/app/fonts';
 
 export const metadata = {
-   title: 'Eduard Jacobs | Portfolio',
+   title: 'Eduard Jacobs | %s',
    description: "Eduard Jacobs' personal portfolio",
 };
 
