@@ -3,8 +3,7 @@ import dynamic from 'next/dynamic';
 import { Paragraph } from '@client/components/Typography';
 
 const ThemeSwitch = dynamic(() => import('./ThemeSwitch').then((c) => c.ThemeSwitch), {
-   ssr: false,
-   loading: () => <div>Loading...</div>,
+   ssr: true,
 });
 
 export const Header: React.FC = () => {
