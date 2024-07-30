@@ -6,7 +6,7 @@ import { OrbitParticals } from '@client/app/components/OrbitParticals';
 export default function ProjectsPage() {
    return (
       <Container>
-         <div className="flex size-full flex-col items-center justify-center">
+         <div className="flex size-full flex-col items-center justify-center overflow-hidden max-w-full">
             <div className="absolute flex size-full justify-center overflow-hidden">
                <OrbitParticals className="w-full" />
             </div>
