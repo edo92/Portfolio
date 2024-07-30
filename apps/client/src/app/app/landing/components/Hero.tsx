@@ -5,7 +5,7 @@ export const Hero: React.FC = () => {
    return (
       <div className="flex w-full flex-col items-center justify-center p-0 xl:pl-12">
          <div className="flex w-full flex-col items-center justify-center p-0 md:pl-7 lg:pl-9">
-            <div className="flex w-7/12 flex-col items-start p-0 md:p-3">
+            <div className="flex w-7/12 flex-col items-start gap-3 p-0 leading-tight md:gap-0 md:p-3 md:leading-normal">
                <Paragraph variant="p" size="base" className="text-center">
                   {HERO_TITLE}
                </Paragraph>
