@@ -16,6 +16,15 @@ const ParagraphVariants = cva('dark:text-light-400 text-dark-300 truncate', {
          xs: 'text-xs',
       },
 
+      font: {
+         black: 'font-black',
+         bold: 'font-bold',
+         medium: 'font-medium',
+         regular: 'font-regular',
+         light: 'font-light',
+         ultraLight: 'font-ultra-light',
+      },
+
       defaultVariants: {
          variant: 'p',
          size: 'text-sm',
@@ -27,18 +36,20 @@ interface ParagraphProps extends React.PropsWithChildren, VariantProps<typeof Pa
    className?: string;
 }
 
-export const Paragraph: React.FC<ParagraphProps> = ({ className, variant, children }) => {
+export const Paragraph: React.FC<ParagraphProps> = ({ className, variant, size, font, children }) => {
    switch (variant) {
       case 'p':
-         return <p className={cn(ParagraphVariants({ variant }), className)}>{children}</p>;
+         return <p className={cn(ParagraphVariants({ variant, size, font }), className)}>{children}</p>;
 
       case 'span':
-         return <span className={cn(ParagraphVariants({ variant }), className)}>{children}</span>;
+         return <span className={cn(ParagraphVariants({ variant, size, font }), className)}>{children}</span>;
 
       case 'small':
-         return <small className={cn(ParagraphVariants({ variant }), className)}>{children}</small>;
+         return (
+            <small className={cn(ParagraphVariants({ variant, size, font }), className)}>{children}</small>
+         );
 
       default:
-         return <p className={cn(ParagraphVariants({ variant }), className)}>{children}</p>;
+         return <p className={cn(ParagraphVariants({ variant, size, font }), className)}>{children}</p>;
    }
 };
