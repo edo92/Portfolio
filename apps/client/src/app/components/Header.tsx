@@ -8,7 +8,7 @@ const ThemeSwitch = dynamic(() => import('./ThemeSwitch').then((c) => c.ThemeSwi
 
 export const Header: React.FC = () => {
    return (
-      <header className="border-b-0.5 border-dark-100/10 flex w-full items-center justify-center whitespace-nowrap px-16 py-7 max-md:max-w-full max-md:px-5">
+      <header className="border-b-0.5 border-dark-100/10 flex w-full items-center justify-center whitespace-nowrap px-16 py-7 shadow-sm max-md:max-w-full max-md:px-5">
          <div className="flex w-full items-center justify-between gap-2.5 max-md:max-w-full max-md:flex-wrap">
             <Link href="/">
                <Paragraph
