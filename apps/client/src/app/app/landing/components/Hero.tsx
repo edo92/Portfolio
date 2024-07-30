@@ -1,8 +1,8 @@
+import { cn } from '@client/lib/cn';
+import { Icons } from '@client/components/Icons';
+import { ButtonGradiant } from '@client/app/components/Button';
 import { Heading, Paragraph } from '@client/components/Typography';
 import { ABOUT_TEXT, HERO_TITLE, NAME } from './constants';
-import { Icons } from '@client/components/Icons';
-import { cn } from '@client/lib/cn';
-import Link from 'next/link';
 
 export const links = [
    {
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
             </div>
          </div>
 
-         <div className="mt-2 flex w-full self-stretch px-12 pt-9 md:px-0 md:pt-28">
+         <div className="mt-2 flex w-full scale-75 self-stretch pt-12 md:scale-100 md:px-0 md:pt-28">
             <div className="flex w-full flex-wrap items-center justify-center gap-4 px-3">
                {links.map((item, index) => (
                   <div
@@ -65,17 +65,11 @@ export const Hero: React.FC = () => {
                         'flex cursor-pointer flex-col justify-center whitespace-nowrap rounded p-0.5 text-center text-lg font-light'
                      )}
                   >
-                     <Link
-                        target="_blank"
-                        href={item.link}
-                        className="bg-light-100 dark:bg-dark-300 flex flex-row items-center justify-center gap-2.5 rounded px-3 py-2"
-                     >
+                     <ButtonGradiant>
                         <Paragraph variant="p" className="flex items-center justify-center">
                            {item.name}
                         </Paragraph>
-
-                        <item.Icon className="dark:text-light-400 text-dark-100/85 aspect-square w-5 shrink-0" />
-                     </Link>
+                     </ButtonGradiant>
                   </div>
                ))}
             </div>
