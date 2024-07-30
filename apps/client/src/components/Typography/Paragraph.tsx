@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@client/lib/cn';
 
-const ParagraphVariants = cva('text-light-400 dark:text-dark-100', {
+const ParagraphVariants = cva('dark:text-light-400 text-dark-100', {
    variants: {
       variant: {
          p: '',
