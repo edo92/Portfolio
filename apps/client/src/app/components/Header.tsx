@@ -23,8 +23,9 @@ export const Header: React.FC = () => {
             <div className="flex items-center justify-center gap-5 self-start px-1">
                <Link href="/projects">
                   <Paragraph
+                     size="sm"
                      variant="span"
-                     className="dark:hover:text-primary-100 hover:text-primary-200 text-sm"
+                     className="dark:hover:text-primary-100 hover:text-primary-200"
                   >
                      Projects
                   </Paragraph>
@@ -32,8 +33,9 @@ export const Header: React.FC = () => {
 
                <Link href="/resume">
                   <Paragraph
+                     size="sm"
                      variant="span"
-                     className="dark:hover:text-primary-100 hover:text-primary-200 text-sm"
+                     className="dark:hover:text-primary-100 hover:text-primary-200"
                   >
                      Resume
                   </Paragraph>
@@ -41,8 +43,9 @@ export const Header: React.FC = () => {
 
                <Link href="/contact">
                   <Paragraph
+                     size="sm"
                      variant="span"
-                     className="dark:hover:text-primary-100 hover:text-primary-200 text-sm"
+                     className="dark:hover:text-primary-100 hover:text-primary-200"
                   >
                      Contact
                   </Paragraph>
