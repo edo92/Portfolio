@@ -13,7 +13,8 @@ export const Header: React.FC = () => {
             <Link href="/">
                <Paragraph
                   variant="span"
-                  className="dark:hover:text-light-100 hover:text-dark-200/70 transition-100 text-lg transition-colors"
+                  size="xl"
+                  className="dark:hover:text-light-100 hover:text-dark-200/70 transition-100 transition-colors"
                >
                   EJ
                </Paragraph>
