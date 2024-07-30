@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="en" suppressHydrationWarning>
          <body
             className={cn(
-               'relative h-screen w-full overflow-hidden',
+               'relative h-screen w-full',
                fonts.walsheimBlack.variable,
                fonts.walsheimBold.variable,
                fonts.walsheimMedium.variable,
