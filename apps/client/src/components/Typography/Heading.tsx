@@ -19,6 +19,7 @@ const HeadingVariants = cva('text-light-400 dark:text-dark-300', {
          '2xl': 'text-2xl',
          lg: 'text-lg',
          md: 'text-md',
+         sm: 'text-sm',
       },
 
       font: {
