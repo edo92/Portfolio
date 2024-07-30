@@ -1,18 +1,17 @@
 'use client';
 
 import { useTheme } from 'next-themes';
+import { Icons } from '@client/components/Icons';
 
 export const ThemeSwitch: React.FC = () => {
    const { resolvedTheme, setTheme } = useTheme();
 
    return (
-      <button
-         className="rounded-md bg-black px-4 py-2 font-semibold text-white dark:bg-white dark:text-black"
-         onClick={() => {
-            setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
-         }}
-      >
-         Change Theme {resolvedTheme}
+      <button className="btn btn-ghost flex flex-col items-center">
+         <Icons.LightBulb
+            className="dark:text-dark-300/85 text-light-400 mt-0.5 aspect-square size-6 shrink-0 self-start"
+            onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+         />
       </button>
    );
 };
