@@ -1,8 +1,8 @@
 import './styles/global.css';
 
-import { ThemeProvider } from 'next-themes';
-import * as fonts from '@client/app/fonts';
 import { cn } from '@client/lib/cn';
+import * as fonts from '@client/app/fonts';
+import { Providers } from './providers';
 import { Header } from './components/Header';
 
 export const metadata = {
@@ -27,10 +27,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                fonts.walsheimUltraLight.variable
             )}
          >
-            <ThemeProvider attribute="class">
+            <Providers>
                <Header />
                <main className="flex min-h-screen">{children}</main>
-            </ThemeProvider>
+            </Providers>
          </body>
       </html>
    );
