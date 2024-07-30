@@ -1,6 +1,16 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 
+const baseFonts = [
+   'ui-sans-serif',
+   'system-ui',
+   'sans-serif',
+   'Apple Color Emoji',
+   '"Segoe UI Emoji"',
+   '"Segoe UI Symbol"',
+   '"Noto Color Emoji"',
+];
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
    content: [
@@ -139,6 +149,15 @@ module.exports = {
             '7xl': 'var(--font-7xl)',
             '8xl': 'var(--font-8xl)',
             '9xl': 'var(--font-9xl)',
+         },
+
+         fontFamily: {
+            black: ['var(--font-walsheim-black)', ...baseFonts],
+            bold: ['var(--font-walsheim-bold)', ...baseFonts],
+            medium: ['var(--font-walsheim-medium)', ...baseFonts],
+            regular: ['var(--font-walsheim-regular)', ...baseFonts],
+            light: ['var(--font-walsheim-light)', ...baseFonts],
+            'ultra-light': ['var(--font-walsheim-ultraLight)', ...baseFonts],
          },
       },
    },
