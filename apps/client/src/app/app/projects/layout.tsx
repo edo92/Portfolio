@@ -4,9 +4,5 @@ export const metadata = {
 };
 
 export default function Layout({ children }: React.PropsWithChildren) {
-   return (
-      <main className="flex min-h-screen">
-         <>{children}</>
-      </main>
-   );
+   return <>{children}</>;
 }
