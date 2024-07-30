@@ -1,6 +1,9 @@
 import './styles/global.css';
-import { cn } from '@client/lib/cn';
+
+import { ThemeProvider } from 'next-themes';
 import * as fonts from '@client/app/fonts';
+import { cn } from '@client/lib/cn';
+import { Header } from './components/Header';
 
 export const metadata = {
    title: 'Eduard Jacobs | %s',
@@ -9,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
    return (
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
          <body
             className={cn(
                'relative h-screen w-full overflow-hidden',
@@ -21,7 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                fonts.walsheimUltraLight.variable
             )}
          >
-            {children}
+            <ThemeProvider attribute="class">
+               <Header />
+               <main className="flex min-h-screen">{children}</main>
+            </ThemeProvider>
          </body>
       </html>
    );
