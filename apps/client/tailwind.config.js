@@ -17,7 +17,6 @@ module.exports = {
       join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
       ...createGlobPatternsForDependencies(__dirname),
    ],
-   darkMode: 'class',
 
    theme: {
       extend: {
@@ -161,7 +160,13 @@ module.exports = {
          },
       },
    },
+
+   daisyui: {
+      themes: ['light', 'dark'],
+   },
+
    plugins: [
+      require('daisyui'),
       textGradiant('gradient-100', 'var(--gradient-1)'),
       textGradiant('gradient-200', 'var(--gradient-2)'),
       textGradiant('gradient-300', 'var(--gradient-3)'),
