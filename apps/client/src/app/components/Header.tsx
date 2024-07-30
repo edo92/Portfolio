@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
             <Link href="/">
                <Paragraph
                   variant="span"
-                  className="hover:text-light-100 dark:hover:text-dark-100 transition-100 text-lg transition-colors"
+                  className="dark:hover:text-light-100 hover:text-dark-200/70 transition-100 text-lg transition-colors"
                >
                   EJ
                </Paragraph>
@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
                <Link href="/projects">
                   <Paragraph
                      variant="span"
-                     className="dark:hover:text-primary-300 hover:text-primary-100 text-sm"
+                     className="dark:hover:text-primary-100 hover:text-primary-200 text-sm"
                   >
                      Projects
                   </Paragraph>
@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
                <Link href="/resume">
                   <Paragraph
                      variant="span"
-                     className="dark:hover:text-primary-300 hover:text-primary-100 text-sm"
+                     className="dark:hover:text-primary-100 hover:text-primary-200 text-sm"
                   >
                      Resume
                   </Paragraph>
@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
                <Link href="/contact">
                   <Paragraph
                      variant="span"
-                     className="dark:hover:text-primary-300 hover:text-primary-100 text-sm"
+                     className="dark:hover:text-primary-100 hover:text-primary-200 text-sm"
                   >
                      Contact
                   </Paragraph>
