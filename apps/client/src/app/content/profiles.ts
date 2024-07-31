@@ -4,25 +4,25 @@ export const links = [
    {
       name: 'GitHub',
       Icon: Icons.GitHub,
-      style: 'from-gradient-17 to-gradient-18',
+      style: 'bg-gradient-100',
       link: 'https://github.com',
    },
    {
       name: 'LinkedIn',
       Icon: Icons.LinkedIn,
-      style: 'from-gradient-18 to-gradient-19',
+      style: 'bg-gradient-200',
       link: 'https://linkedin.com',
    },
    {
       name: 'GitHub',
       Icon: Icons.GitHub,
-      style: 'from-gradient-20 to-gradient-21',
+      style: 'bg-gradient-300',
       link: 'https://github.com',
    },
    {
       name: 'LinkedIn',
       Icon: Icons.LinkedIn,
-      style: 'from-gradient-22 to-gradient-23',
+      style: 'bg-gradient-400',
       link: 'https://linkedin.com',
    },
 ];
