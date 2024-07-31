@@ -15,7 +15,7 @@ export const Projects: React.FC = () => {
                </Heading>
             </div>
 
-            <div className="flex w-full flex-col items-center justify-center gap-9 ">
+            <div className="flex w-full flex-col items-center justify-center gap-20">
                {projectList.map((chunk, index) => (
                   <div key={index} className="flex flex-row gap-9 max-md:flex-col">
                      {chunk.map((project) => (
