@@ -4,7 +4,7 @@ import * as intro from '@client/app/content/intro';
 
 export const Hero: React.FC = () => {
    return (
-      <div className="flex w-full flex-col items-center justify-center p-0 pt-9 md:pt-20 xl:pl-12">
+      <section className="flex w-full flex-col items-center justify-center p-0 pt-9 md:pt-20 xl:pl-12">
          <div className="flex w-full flex-col items-center justify-center p-0 xl:pl-9">
             <HeroContainer className="flex flex-col items-start gap-3 p-0 leading-tight md:gap-0 md:p-3 md:leading-normal">
                <Paragraph variant="p" size="base" font="light" className="pl-8 md:pl-0">
@@ -29,6 +29,6 @@ export const Hero: React.FC = () => {
                </Paragraph>
             </HeroContainer>
          </div>
-      </div>
+      </section>
    );
 };
