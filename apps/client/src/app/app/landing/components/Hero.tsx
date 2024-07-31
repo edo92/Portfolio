@@ -7,14 +7,14 @@ export const Hero: React.FC = () => {
       <div className="flex w-full flex-col items-center justify-center p-0 pt-9 md:pt-12 xl:pl-12">
          <div className="flex w-full flex-col items-center justify-center p-0 lg:pl-9">
             <HeroContainer className="flex flex-col items-start gap-3 p-0 leading-tight md:gap-0 md:p-3 md:leading-normal">
-               <Paragraph variant="p" size="base" className="text-center">
+               <Paragraph variant="p" size="base" className="pl-8 md:pl-0">
                   {intro.HERO_TITLE}
                </Paragraph>
 
                <Heading
                   variant="h1"
                   font="bold"
-                  className="text-gradient-100 text-7xl md:truncate lg:text-8xl"
+                  className="text-gradient-100 pl-8 text-7xl md:truncate md:pl-0 lg:text-8xl"
                >
                   {intro.NAME}
                </Heading>
