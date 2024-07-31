@@ -6,7 +6,7 @@ interface ContainerProps extends React.PropsWithChildren {
 
 export const Container: React.FC<ContainerProps> = ({ children, className }) => (
    <div className={cn('relative flex h-screen w-screen', className)}>
-      <div className="flex w-full flex-col items-center p-3">
+      <div className="flex w-full flex-col items-center">
          <>{children}</>
       </div>
    </div>
