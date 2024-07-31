@@ -10,6 +10,7 @@ const ParagraphVariants = cva('dark:text-light-400 text-dark-100', {
       },
 
       size: {
+         '2xl': 'text-2xl',
          xl: 'text-xl',
          lg: 'text-lg',
          md: 'text-md',
