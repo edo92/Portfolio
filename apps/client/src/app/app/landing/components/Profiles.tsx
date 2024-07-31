@@ -4,8 +4,8 @@ import { Paragraph } from '@client/components/Typography';
 import { links } from '@client/app/content/profiles';
 
 export const Profiles: React.FC = () => (
-   <div className="mt-7 flex w-full justify-center self-stretch pt-12 md:px-0 md:pt-28">
-      <div className="w-full px-3 lg:max-w-[45rem]">
+   <div className="mt-10 flex w-full justify-center self-stretch pt-12 md:px-0 md:pt-28">
+      <div className="w-full p-3 lg:max-w-[45rem]">
          <div className="flex w-full flex-wrap items-center justify-center gap-4 lg:justify-start">
             {links.map((item, index) => (
                <div
