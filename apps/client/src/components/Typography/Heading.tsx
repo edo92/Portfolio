@@ -35,6 +35,7 @@ const HeadingVariants = cva('dark:text-light-400 text-dark-300', {
       defaultVariants: {
          variant: 'h1',
          size: 'text-2xl',
+         font: 'medium',
       },
    },
 });

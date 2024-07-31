@@ -30,6 +30,7 @@ const ParagraphVariants = cva('dark:text-light-400 text-dark-100', {
       defaultVariants: {
          variant: 'p',
          size: 'text-sm',
+         font: 'regular',
       },
    },
 });
