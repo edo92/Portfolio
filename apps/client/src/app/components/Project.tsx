@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Icons } from '@client/components/Icons';
 import { Paragraph, Heading } from '@client/components/Typography';
+import { Button } from '@client/components/Button';
 
 interface ProjectProps {
    name: string;
@@ -41,14 +42,16 @@ export const Project: React.FC<ProjectProps> = ({ name, description, stack, imag
                </Paragraph>
             </div>
 
-            <div className="from-gradient-20 to-gradient-21 hover:from-gradient-19 hover:to-gradient-20 cursor-pointer rounded bg-gradient-to-tr p-0.5 transition-all duration-300 ease-in-out">
-               <Link
-                  href={link}
-                  className="bg-light-100 dark:bg-dark-300 flex flex-row items-center justify-center gap-3 py-3"
-               >
-                  <Icons.Link className="text-dark-300/85 dark:text-light-400 size-[16px]" />
-                  <Paragraph variant="p">Live demo</Paragraph>
-               </Link>
+            <div className="dark:bg-gradient-400 bg-gradient-100 flex cursor-pointer flex-col justify-center whitespace-nowrap rounded-md p-0.5 text-center text-lg font-light">
+               <Button variant="ghost">
+                  <Link
+                     href={link}
+                     className="bg-light-100 dark:bg-dark-300 flex w-36 flex-row items-center justify-center gap-3 rounded py-3"
+                  >
+                     <Icons.Link className="dark:text-light-400 text-dark-100/85 aspect-square w-[16px] shrink-0" />
+                     <Paragraph variant="p">Live demo</Paragraph>
+                  </Link>
+               </Button>
             </div>
          </div>
       </div>
