@@ -180,19 +180,24 @@ module.exports = {
 
    plugins: [
       require('daisyui'),
-      textGradiant('gradient-100', 'var(--gradient-1)'),
-      textGradiant('gradient-200', 'var(--gradient-2)'),
-      textGradiant('gradient-300', 'var(--gradient-3)'),
+      gradiantColorClass('gradient-100', 'var(--gradient-1)'),
+      gradiantColorClass('gradient-200', 'var(--gradient-2)'),
+      gradiantColorClass('gradient-300', 'var(--gradient-3)'),
+      gradiantColorClass('gradient-400', 'var(--gradient-4)'),
+      gradiantColorClass('gradient-500', 'var(--gradient-5)'),
    ],
 };
 
-function textGradiant(name, gradient) {
+function gradiantColorClass(name, gradient) {
    return ({ addUtilities }) => {
       const newUtilities = {
          [`.text-${name}`]: {
             background: gradient,
             '-webkit-background-clip': 'text',
             '-webkit-text-fill-color': 'transparent',
+         },
+         [`.bg-${name}`]: {
+            background: gradient,
          },
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
