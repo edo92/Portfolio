@@ -16,7 +16,7 @@ export const Profiles: React.FC = () => (
             >
                <Button variant="ghost">
                   <div className="bg-light-100 dark:bg-dark-300 flex w-36 flex-row items-center justify-center gap-3 rounded py-3">
-                     <Paragraph variant="p" size="base" className="flex items-center justify-center">
+                     <Paragraph variant="p" className="flex items-center justify-center text-[1rem]">
                         {item.name}
                      </Paragraph>
                      <item.Icon className="dark:text-light-400 text-dark-100/85 aspect-square w-[18px] shrink-0" />
