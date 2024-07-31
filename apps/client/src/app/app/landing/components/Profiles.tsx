@@ -14,7 +14,7 @@ export const Profiles = () => (
                )}
             >
                <Button variant="ghost" className="from-gradient-17 to-gradient-18 bg-gradient-to-tr p-0.5">
-                  <div className="bg-light-100 dark:bg-dark-300 flex w-48 flex-row items-center justify-center gap-3 rounded py-3">
+                  <div className="bg-light-100 dark:bg-dark-300 flex w-36 flex-row items-center justify-center gap-3 rounded py-3">
                      <Paragraph variant="p" size="base" className="flex items-center justify-center">
                         {item.name}
                      </Paragraph>
