@@ -12,7 +12,7 @@ interface ProjectProps {
 }
 
 export const Project: React.FC<ProjectProps> = ({ name, description, stack, imageUrl, link }) => (
-   <div className="ml-5 flex w-2/6 flex-col max-md:ml-0 max-md:w-full">
+   <div className="flex w-2/6 flex-col max-md:w-full">
       <div className="flex grow flex-col gap-3 text-sm font-light">
          <div className="border-light-400 rounded border p-1 shadow-sm">
             <Image
