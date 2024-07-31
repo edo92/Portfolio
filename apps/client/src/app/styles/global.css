@@ -49,6 +49,7 @@
 
       /* Gradients */
       --gradient-1: linear-gradient(
+         90deg,
          var(--color-gradient-1) 0%,
          var(--color-gradient-2) 6.666667014360428%,
          var(--color-gradient-3) 13.333334028720856%,
@@ -67,10 +68,11 @@
          var(--color-gradient-16) 100%
       );
 
-      --gradient-2: linear-gradient(var(--color-gradient-17) 0%, var(--color-gradient-18) 100%);
-      --gradient-3: linear-gradient(var(--color-gradient-19) 0%, var(--color-gradient-20) 100%);
-      --gradient-4: linear-gradient(var(--color-gradient-21) 0%, var(--color-gradient-22) 100%);
+      --gradient-2: linear-gradient(90deg, var(--color-gradient-17) 0%, var(--color-gradient-18) 100%);
+      --gradient-3: linear-gradient(90deg, var(--color-gradient-19) 0%, var(--color-gradient-20) 100%);
+      --gradient-4: linear-gradient(90deg, var(--color-gradient-21) 0%, var(--color-gradient-22) 100%);
       --gradient-5: linear-gradient(
+         90deg,
          var(--color-gradient-23) 0%,
          var(--color-gradient-24) 55.000001192092896%,
          var(--color-gradient-25) 100%
