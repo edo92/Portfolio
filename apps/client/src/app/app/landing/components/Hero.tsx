@@ -1,36 +1,10 @@
 import { cn } from '@client/lib/cn';
-import { Icons } from '@client/components/Icons';
 import { Button } from '@client/components/Button';
 import { Heading, Paragraph } from '@client/components/Typography';
 import { HeroContainer } from '@client/app/app/landing/components/HeroContainer';
-import { ABOUT_TEXT, HERO_TITLE, NAME } from './constants';
 
-export const links = [
-   {
-      name: 'GitHub',
-      Icon: Icons.GitHub,
-      style: 'from-gradient-17 to-gradient-18',
-      link: 'https://github.com',
-   },
-   {
-      name: 'LinkedIn',
-      Icon: Icons.LinkedIn,
-      style: 'from-gradient-18 to-gradient-19',
-      link: 'https://linkedin.com',
-   },
-   {
-      name: 'GitHub',
-      Icon: Icons.GitHub,
-      style: 'from-gradient-20 to-gradient-21',
-      link: 'https://github.com',
-   },
-   {
-      name: 'LinkedIn',
-      Icon: Icons.LinkedIn,
-      style: 'from-gradient-22 to-gradient-23',
-      link: 'https://linkedin.com',
-   },
-];
+import * as intro from '@client/app/content/intro';
+import { links } from '@client/app/content/profiles';
 
 export const Hero: React.FC = () => {
    return (
@@ -38,7 +12,7 @@ export const Hero: React.FC = () => {
          <div className="flex w-full flex-col items-center justify-center p-0 lg:pl-9">
             <HeroContainer className="flex flex-col items-start gap-3 p-0 leading-tight md:gap-0 md:p-3 md:leading-normal">
                <Paragraph variant="p" size="base" className="text-center">
-                  {HERO_TITLE}
+                  {intro.HERO_TITLE}
                </Paragraph>
 
                <Heading
@@ -46,11 +20,11 @@ export const Hero: React.FC = () => {
                   font="bold"
                   className="text-gradient-100 text-7xl md:truncate lg:text-8xl"
                >
-                  {NAME}
+                  {intro.NAME}
                </Heading>
 
                <Paragraph variant="p" size="sm" className="relative inline-block pt-3 leading-[1.7]">
-                  {ABOUT_TEXT}
+                  {intro.ABOUT_TEXT}
                </Paragraph>
             </HeroContainer>
          </div>
