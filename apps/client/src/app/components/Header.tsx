@@ -51,9 +51,7 @@ export const Header: React.FC = () => {
                   </Paragraph>
                </Link>
 
-               <div className="cursor-pointer">
-                  <ThemeSwitch />
-               </div>
+               <ThemeSwitch />
             </div>
          </div>
       </header>
