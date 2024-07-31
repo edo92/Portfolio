@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@client/lib/cn';
 
-const HeadingVariants = cva('text-light-400 dark:text-dark-300', {
+const HeadingVariants = cva('dark:text-light-400 text-dark-300', {
    variants: {
       variant: {
          h1: '',
@@ -17,6 +17,7 @@ const HeadingVariants = cva('text-light-400 dark:text-dark-300', {
          '4xl': 'text-4xl',
          '3xl': 'text-3xl',
          '2xl': 'text-2xl',
+         xl: 'text-xl',
          lg: 'text-lg',
          md: 'text-md',
          sm: 'text-sm',
@@ -33,7 +34,7 @@ const HeadingVariants = cva('text-light-400 dark:text-dark-300', {
 
       defaultVariants: {
          variant: 'h1',
-         size: 'text-lg',
+         size: 'text-2xl',
       },
    },
 });
@@ -45,24 +46,38 @@ interface HeadingProps extends React.PropsWithChildren, VariantProps<typeof Head
 export const Heading: React.FC<HeadingProps> = ({ className, variant, size, font, children }) => {
    switch (variant) {
       case 'h1':
-         return <h1 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h1>;
+         return (
+            <h1 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h1>
+         );
 
       case 'h2':
-         return <h2 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h2>;
+         return (
+            <h2 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h2>
+         );
 
       case 'h3':
-         return <h3 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h3>;
+         return (
+            <h3 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h3>
+         );
 
       case 'h4':
-         return <h4 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h4>;
+         return (
+            <h4 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h4>
+         );
 
       case 'h5':
-         return <h5 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h5>;
+         return (
+            <h5 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h5>
+         );
 
       case 'h6':
-         return <h6 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h6>;
+         return (
+            <h6 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h6>
+         );
 
       default:
-         return <h1 className={cn(HeadingVariants({ variant, size, font }), className)}>{children}</h1>;
+         return (
+            <h1 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h1>
+         );
    }
 };

@@ -38,23 +38,23 @@ interface ParagraphProps extends React.PropsWithChildren, VariantProps<typeof Pa
    className?: string;
 }
 
-export const Paragraph: React.FC<ParagraphProps> = ({ className, variant, size, font, children }) => {
+export const Paragraph: React.FC<ParagraphProps> = ({ variant, size, font, children, className }) => {
    switch (variant) {
       case 'p':
          return (
-            <p className={cn(ParagraphVariants({ className, variant, size, font }), className)}>{children}</p>
+            <p className={cn(ParagraphVariants({ variant, size, font, className }), className)}>{children}</p>
          );
 
       case 'span':
          return (
-            <span className={cn(ParagraphVariants({ className, variant, size, font }), className)}>
+            <span className={cn(ParagraphVariants({ variant, size, font, className }), className)}>
                {children}
             </span>
          );
 
       case 'small':
          return (
-            <small className={cn(ParagraphVariants({ className, variant, size, font }), className)}>
+            <small className={cn(ParagraphVariants({ variant, size, font, className }), className)}>
                {children}
             </small>
          );
