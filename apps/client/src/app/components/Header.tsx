@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
             </Link>
 
             <div className="flex items-center justify-center gap-5 self-start px-1">
-               <Link href="/projects">
+               <Link href="/app/projects">
                   <Paragraph
                      size="sm"
                      variant="span"
@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
                   </Paragraph>
                </Link>
 
-               <Link href="/resume">
+               <Link href="/app/resume">
                   <Paragraph
                      size="sm"
                      variant="span"
@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
                   </Paragraph>
                </Link>
 
-               <Link href="/contact">
+               <Link href="/app/contact">
                   <Paragraph
                      size="sm"
                      variant="span"
