@@ -2,7 +2,10 @@ import { cn } from '@client/lib/cn';
 
 export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({ className, ...props }) => (
    <input
-      className={cn('input input-bordered dark:bg-dark-300/80 bg-light-300/80 w-full', className)}
+      className={cn(
+         'input input-bordered dark:bg-dark-300/80 bg-light-300/80 text-dark-400 dark:text-light-100 w-full',
+         className
+      )}
       {...props}
    />
 );
@@ -12,7 +15,10 @@ export const TextArea: React.FC<React.TextareaHTMLAttributes<HTMLTextAreaElement
    ...props
 }) => (
    <textarea
-      className={cn('textarea textarea-bordered dark:bg-dark-300/80 bg-light-300/80 w-full', className)}
+      className={cn(
+         'textarea textarea-bordered dark:bg-dark-300/80 bg-light-300/80 text-dark-400 dark:text-light-100 w-full',
+         className
+      )}
       {...props}
    />
 );

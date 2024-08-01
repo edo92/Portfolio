@@ -5,8 +5,8 @@ import { SubmitContactFormAction } from '../actions';
 
 export const Contact: React.FC = () => (
    <section className="flex w-full flex-col items-center justify-center gap-9">
-      <div className="mt-5 max-md:max-w-full">
-         <Heading variant="h2" font="medium" size="4xl" className="tracking-tighter">
+      <div className="mt-3 max-md:max-w-full">
+         <Heading variant="h2" font="medium" size="3xl" className="tracking-tighter">
             Get in Touch
          </Heading>
       </div>
@@ -25,7 +25,7 @@ export const Contact: React.FC = () => (
                id="fullName"
                name="fullName"
                placeholder="Full name"
-               className="border-dark-300 dark:border-light-100 border transition-all"
+               className="border-light-400/80 focus:border-primary-200 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
             />
          </div>
 
@@ -39,7 +39,7 @@ export const Contact: React.FC = () => (
                id="email"
                name="email"
                placeholder="Email address"
-               className="border-dark-300 dark:border-light-100 border transition-all"
+               className="border-light-400/80 focus:border-primary-200 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
             />
          </div>
 
@@ -53,7 +53,7 @@ export const Contact: React.FC = () => (
                id="message"
                name="message"
                placeholder="Leave me a message"
-               className="border-dark-300 dark:border-light-100 border transition-all"
+               className="border-light-400/80 focus:border-primary-200 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
             />
          </div>
 
