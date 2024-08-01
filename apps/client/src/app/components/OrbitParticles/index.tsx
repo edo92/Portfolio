@@ -1,13 +1,13 @@
 'use client';
 
-import './orbit-particals.scss';
+import './orbit-particles.scss';
 import { cn } from '@client/lib/cn';
 
-interface OrbitParticalsProps {
+interface OrbitParticlesProps {
    className?: string;
 }
 
-export const OrbitParticals: React.FC<OrbitParticalsProps> = ({ className }) => {
+export const OrbitParticles: React.FC<OrbitParticlesProps> = ({ className }) => {
    const totalParticles = Array.from({ length: 500 }, (_, i) => i + 1);
    return (
       <div className={cn('orbit-wrap', className)}>

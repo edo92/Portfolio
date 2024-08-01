@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import { Button } from '@client/components/Button';
 import { Paragraph, Heading } from '@client/components/Typography';
-import { OrbitParticals } from '@client/app/components/OrbitParticals';
+import { OrbitParticles } from '@client/app/components/OrbitParticles';
 
 export const Hero: React.FC = () => (
-   <div className="flex size-full min-h-full flex-col items-center justify-center">
-      <div className="absolute flex size-full justify-center overflow-hidden">
-         <OrbitParticals className="w-full" />
+   <div className="flex size-full flex-col items-center justify-center">
+      <div className="absolute flex w-full justify-center overflow-hidden">
+         <OrbitParticles className="w-full" />
       </div>
 
-      <div className="relative flex size-full flex-col items-center justify-center">
-         <div className="relative flex size-full flex-col items-center justify-center gap-2">
+      <div className="relative bottom-20 flex h-[65vh] w-full flex-col items-center justify-center">
+         <div className="relative flex w-full flex-col items-center justify-center gap-2">
             <div className="flex flex-col gap-2 text-center">
                <Heading variant="h1" size="4xl" font="black" className="text-gradient-200 leading-tight">
                   Projects Showcase
