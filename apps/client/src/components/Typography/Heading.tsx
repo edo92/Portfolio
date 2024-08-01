@@ -40,45 +40,61 @@ const HeadingVariants = cva('dark:text-light-400 text-dark-300', {
    },
 });
 
-interface HeadingProps extends React.PropsWithChildren, VariantProps<typeof HeadingVariants> {
+interface HeadingProps
+   extends React.PropsWithChildren<React.HTMLAttributes<HTMLHeadingElement>>,
+      VariantProps<typeof HeadingVariants> {
    className?: string;
 }
 
-export const Heading: React.FC<HeadingProps> = ({ className, variant, size, font, children }) => {
+export const Heading: React.FC<HeadingProps> = ({ className, variant, size, font, children, ...props }) => {
    switch (variant) {
       case 'h1':
          return (
-            <h1 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h1>
+            <h1 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h1>
          );
 
       case 'h2':
          return (
-            <h2 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h2>
+            <h2 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h2>
          );
 
       case 'h3':
          return (
-            <h3 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h3>
+            <h3 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h3>
          );
 
       case 'h4':
          return (
-            <h4 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h4>
+            <h4 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h4>
          );
 
       case 'h5':
          return (
-            <h5 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h5>
+            <h5 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h5>
          );
 
       case 'h6':
          return (
-            <h6 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h6>
+            <h6 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h6>
          );
 
       default:
          return (
-            <h1 className={cn(HeadingVariants({ variant, size, font, className }), className)}>{children}</h1>
+            <h1 className={cn(HeadingVariants({ variant, size, font, className }), className)} {...props}>
+               {children}
+            </h1>
          );
    }
 };
