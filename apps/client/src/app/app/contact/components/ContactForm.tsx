@@ -25,7 +25,7 @@ export const Contact: React.FC = () => (
                id="fullName"
                name="fullName"
                placeholder="Full name"
-               className="border-light-400/80 focus:border-primary-200 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
+               className="border-light-400/80 focus:border-primary-100 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
             />
          </div>
 
@@ -39,7 +39,7 @@ export const Contact: React.FC = () => (
                id="email"
                name="email"
                placeholder="Email address"
-               className="border-light-400/80 focus:border-primary-200 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
+               className="border-light-400/80 focus:border-primary-100 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
             />
          </div>
 
@@ -53,7 +53,7 @@ export const Contact: React.FC = () => (
                id="message"
                name="message"
                placeholder="Leave me a message"
-               className="border-light-400/80 focus:border-primary-200 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
+               className="border-light-400/80 focus:border-primary-100 border shadow-md outline-none ring-0 transition-all focus:outline-none focus:ring-0"
             />
          </div>
 
