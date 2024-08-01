@@ -11,7 +11,7 @@ export const Projects = () => {
    return (
       <section className="px-26 my-9 flex w-full grow items-center justify-center px-20 md:px-0">
          <div className="flex w-full flex-col items-start justify-center gap-9 sm:w-3/4 md:w-11/12 lg:w-3/4 xl:w-4/6">
-            <Heading variant="h3" size="2xl">
+            <Heading id="projects" variant="h3" size="2xl">
                Projects
             </Heading>
 

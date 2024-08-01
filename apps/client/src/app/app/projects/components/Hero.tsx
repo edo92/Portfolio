@@ -26,7 +26,7 @@ export const Hero: React.FC = () => (
                   variant="ghost"
                   className="bg-gradient-600 flex items-center justify-center rounded-full px-2"
                >
-                  <Link href="/app/3d" className="px-4 py-2">
+                  <Link href="#projects" className="px-4 py-2">
                      <Paragraph
                         variant="span"
                         font="bold"
