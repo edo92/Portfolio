@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
                <Heading
                   variant="h1"
                   font="bold"
-                  className="text-gradient-500 text-7xl md:truncate lg:text-8xl"
+                  className="text-gradient-500 text-7xl sm:whitespace-nowrap md:truncate md:text-8xl"
                >
                   {intro.NAME}
                </Heading>
