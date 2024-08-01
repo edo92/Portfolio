@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@client/lib/cn';
 
-const dividerVariant = cva('my-1 w-full', {
+const dividerVariant = cva('bg-dark-300 dark:bg-light-100 my-1 h-px w-full', {
    variants: {
       variant: {
          horizontal: 'divider-horizontal',
