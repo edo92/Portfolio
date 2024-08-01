@@ -73,7 +73,7 @@ module.exports = {
             },
          },
 
-         space: {
+         spacing: {
             0.5: 'var(--spacing-0-5)',
             1: 'var(--spacing-1)',
             1.5: 'var(--spacing-1-5)',
@@ -91,6 +91,8 @@ module.exports = {
             12: 'var(--spacing-12)',
             14: 'var(--spacing-14)',
             16: 'var(--spacing-16)',
+            17: 'var(--spacing-17)',
+            18: 'var(--spacing-18)',
             20: 'var(--spacing-20)',
             24: 'var(--spacing-24)',
             28: 'var(--spacing-28)',
