@@ -187,6 +187,7 @@ module.exports = {
       gradiantColorClass('gradient-300', 'var(--gradient-3)'),
       gradiantColorClass('gradient-400', 'var(--gradient-4)'),
       gradiantColorClass('gradient-500', 'var(--gradient-5)'),
+      gradiantColorClass('gradient-600', 'var(--gradient-6)'),
    ],
 };
 
