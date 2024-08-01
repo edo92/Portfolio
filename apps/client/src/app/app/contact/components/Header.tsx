@@ -7,7 +7,7 @@ import { links } from '@client/app/content/profiles';
 
 const colors = ['bg-gradient-100', 'bg-gradient-200', 'bg-gradient-300', 'bg-gradient-400'];
 
-export const Header = () => {
+export const Header: React.FC = () => {
    const memoizedColors = useMemo(() => colors, []);
 
    return (
@@ -24,16 +24,13 @@ export const Header = () => {
             <div className="flex items-center justify-center gap-4 max-md:flex-wrap">
                {links.map(({ name }, index) => (
                   <div
+                     key={`${name}-${index}`}
                      className={cn(
-                        'flex flex-col justify-center whitespace-nowrap rounded-sm p-0.5 text-center text-lg font-light text-stone-300',
+                        'transition-100 flex flex-col justify-center whitespace-nowrap rounded-sm p-0.5 text-center text-lg font-light text-stone-300 transition-all hover:scale-[95%]',
                         memoizedColors[index]
                      )}
-                     key={`${name}-${index}`}
                   >
-                     <Button
-                        variant="ghost"
-                        className="flex h-9 flex-row items-center gap-2.5 px-7"
-                     >
+                     <Button variant="ghost" className="flex h-9 flex-row items-center gap-2.5 px-7">
                         <Paragraph variant="span" size="base" font="light">
                            {name}
                         </Paragraph>
