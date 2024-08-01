@@ -7,7 +7,7 @@ export const Projects: React.FC = () => {
    const projectList = divideIntoChunks(projects, 3);
 
    return (
-      <section className="flex w-full grow items-center justify-center p-16 pt-36">
+      <section className="flex w-full grow items-center justify-center">
          <div className="flex w-full flex-col items-start justify-center gap-9 sm:w-3/4 md:w-11/12 lg:w-3/4 xl:w-4/6">
             <div className="flex w-full flex-col items-start">
                <Heading variant="h3" size="2xl">

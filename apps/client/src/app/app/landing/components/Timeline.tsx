@@ -10,7 +10,7 @@ export const Timeline = () => {
    const { role, location, timeline, bulletPoints } = experience[parseInt(selected)];
 
    return (
-      <section className="flex w-full flex-col items-center justify-center p-5 pt-24">
+      <section className="flex w-full flex-col items-center justify-center">
          <div className="flex w-10/12 flex-col items-center justify-center gap-7 md:w-11/12 md:flex-row md:gap-12 lg:w-9/12 xl:w-2/3">
             <div className="flex w-11/12 flex-col md:w-3/12">
                <div className="flex w-full flex-col items-start gap-y-5 border-l-2 border-zinc-100 p-4 md:items-center">

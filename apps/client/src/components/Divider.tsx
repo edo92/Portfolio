@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@client/lib/cn';
 
-const dividerVariant = cva('bg-dark-300 dark:bg-light-100 my-1 h-px w-full', {
+const dividerVariant = cva('bg-dark-300 dark:bg-light-100 w-full', {
    variants: {
       variant: {
          horizontal: 'divider-horizontal',
@@ -18,5 +18,5 @@ interface DividerProps extends VariantProps<typeof dividerVariant> {
 }
 
 export const Divider: React.FC<DividerProps> = ({ className, variant }) => {
-   return <div className={cn(dividerVariant({ variant, className }), className)} />;
+   return <hr className={cn(dividerVariant({ variant, className }), className)} />;
 };
