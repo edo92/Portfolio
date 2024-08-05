@@ -15,6 +15,7 @@ const nextConfig = {
    images: {
       remotePatterns: [{ hostname: 'cdn.builder.io' }],
    },
+   reactStrictMode: false,
 };
 
 const plugins = [

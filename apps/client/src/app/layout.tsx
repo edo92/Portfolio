@@ -1,22 +1,36 @@
 import './styles/global.css';
 
 import { cn } from '@client/lib/cn';
-import { DarkModeProvider } from './providers/darkmode';
+import * as fonts from '@client/app/fonts';
+import { Providers } from './providers';
 import { Header } from './components/Header';
 
 export const metadata = {
-   title: 'Eduard Jacobs | Portfolio',
+   title: {
+      default: 'Portfolio',
+      template: '%s | Eduard Jacobs',
+   },
    description: "Eduard Jacobs' personal portfolio",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
    return (
-      <html lang="en">
-         <body className={cn('relative size-full overflow-auto overflow-x-hidden scroll-smooth')}>
-            <DarkModeProvider>
+      <html lang="en" suppressHydrationWarning>
+         <body
+            className={cn(
+               'relative block h-screen w-full',
+               fonts.walsheimBlack.variable,
+               fonts.walsheimBold.variable,
+               fonts.walsheimMedium.variable,
+               fonts.walsheimRegular.variable,
+               fonts.walsheimLight.variable,
+               fonts.walsheimUltraLight.variable
+            )}
+         >
+            <Providers>
                <Header />
-               {children}
-            </DarkModeProvider>
+               <main className="flex min-h-screen">{children}</main>
+            </Providers>
          </body>
       </html>
    );

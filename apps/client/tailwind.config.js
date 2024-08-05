@@ -1,12 +1,23 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 
+const baseFonts = [
+   'ui-sans-serif',
+   'system-ui',
+   'sans-serif',
+   'Apple Color Emoji',
+   '"Segoe UI Emoji"',
+   '"Segoe UI Symbol"',
+   '"Noto Color Emoji"',
+];
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
    content: [
       join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
       ...createGlobPatternsForDependencies(__dirname),
    ],
+
    darkMode: 'class',
 
    theme: {
@@ -62,7 +73,7 @@ module.exports = {
             },
          },
 
-         space: {
+         spacing: {
             0.5: 'var(--spacing-0-5)',
             1: 'var(--spacing-1)',
             1.5: 'var(--spacing-1-5)',
@@ -80,6 +91,8 @@ module.exports = {
             12: 'var(--spacing-12)',
             14: 'var(--spacing-14)',
             16: 'var(--spacing-16)',
+            17: 'var(--spacing-17)',
+            18: 'var(--spacing-18)',
             20: 'var(--spacing-20)',
             24: 'var(--spacing-24)',
             28: 'var(--spacing-28)',
@@ -140,22 +153,54 @@ module.exports = {
             '8xl': 'var(--font-8xl)',
             '9xl': 'var(--font-9xl)',
          },
+
+         fontFamily: {
+            black: ['var(--font-walsheim-black)', ...baseFonts],
+            bold: ['var(--font-walsheim-bold)', ...baseFonts],
+            medium: ['var(--font-walsheim-medium)', ...baseFonts],
+            regular: ['var(--font-walsheim-regular)', ...baseFonts],
+            light: ['var(--font-walsheim-light)', ...baseFonts],
+            'ultra-light': ['var(--font-walsheim-ultraLight)', ...baseFonts],
+         },
       },
    },
+
+   daisyui: {
+      themes: [
+         {
+            dark: {
+               background: 'var(--color-dark-100)',
+            },
+         },
+         {
+            light: {
+               background: 'var(--color-light-100)',
+            },
+         },
+      ],
+   },
+
    plugins: [
-      textGradiant('gradient-100', 'var(--gradient-1)'),
-      textGradiant('gradient-200', 'var(--gradient-2)'),
-      textGradiant('gradient-300', 'var(--gradient-3)'),
+      require('daisyui'),
+      gradiantColorClass('gradient-100', 'var(--gradient-1)'),
+      gradiantColorClass('gradient-200', 'var(--gradient-2)'),
+      gradiantColorClass('gradient-300', 'var(--gradient-3)'),
+      gradiantColorClass('gradient-400', 'var(--gradient-4)'),
+      gradiantColorClass('gradient-500', 'var(--gradient-5)'),
+      gradiantColorClass('gradient-600', 'var(--gradient-6)'),
    ],
 };
 
-function textGradiant(name, gradient) {
+function gradiantColorClass(name, gradient) {
    return ({ addUtilities }) => {
       const newUtilities = {
          [`.text-${name}`]: {
             background: gradient,
             '-webkit-background-clip': 'text',
             '-webkit-text-fill-color': 'transparent',
+         },
+         [`.bg-${name}`]: {
+            background: gradient,
          },
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
