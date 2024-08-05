@@ -1,7 +1,6 @@
 # example netlify.toml
 [build]
 command = "nx run client:build"
-functions = "netlify/functions"
 publish = "dist/apps/client"
 
 ## Uncomment to use this redirect for Single Page Applications like create-react-app.
