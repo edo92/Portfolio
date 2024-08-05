@@ -44,5 +44,10 @@
             "linter": "eslint"
          }
       }
+   },
+   "tasksRunnerOptions": {
+      "default": {
+         "runner": "@vercel/remote-nx"
+      }
    }
 }
