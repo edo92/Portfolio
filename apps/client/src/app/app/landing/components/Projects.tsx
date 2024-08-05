@@ -29,7 +29,7 @@ export const Projects: React.FC = () => {
                                  {name}
                               </Heading>
 
-                              <div className="h-20 w-full">
+                              <div className="h-36 w-full">
                                  <Paragraph variant="p" size="base" font="light">
                                     {description}
                                  </Paragraph>
@@ -48,6 +48,7 @@ export const Projects: React.FC = () => {
                                  <Button variant="ghost">
                                     <Link
                                        href={link}
+                                       target="_blank"
                                        className="bg-light-100 dark:bg-dark-300 flex w-full flex-row items-center justify-center gap-3 rounded py-3"
                                     >
                                        <Icons.Link className="dark:text-light-400 text-dark-100/85 aspect-square w-[16px] shrink-0" />
