@@ -7,7 +7,7 @@ import { Heading, Paragraph } from '@client/components/Typography';
 
 export const Timeline = () => {
    const [selected, setSelected] = useState('0');
-   const { role, location, timeline, bulletPoints } = experience[parseInt(selected)];
+   const { role, location, timeline, bulletPoints, company } = experience[parseInt(selected)];
 
    return (
       <section className="flex w-full scale-90 flex-col items-center justify-center md:scale-100">
@@ -35,22 +35,32 @@ export const Timeline = () => {
             <div className="flex w-11/12 flex-col gap-2 md:w-8/12">
                <div className="flex grow flex-col p-2.5 max-md:mt-3 max-md:max-w-full">
                   <div className="flex justify-between gap-5 p-2 max-md:max-w-full max-md:flex-wrap">
-                     <Heading variant="h4" size="2xl" font="light">
-                        {role}
-                     </Heading>
+                     <div className="flex flex-col">
+                        <Heading variant="h4" size="2xl" font="light">
+                           {role}
+                        </Heading>
+                     </div>
                      <Paragraph variant="span" size="base" font="light" className="my-auto">
                         {timeline.start} - {timeline.end}
                      </Paragraph>
                   </div>
 
-                  <Paragraph
-                     variant="span"
-                     size="base"
-                     className="text-primary-400 dark:text-primary-200 p-2 max-md:max-w-full"
-                  >
-                     {location}
-                  </Paragraph>
-
+                  <div className="flex flex-col gap-2">
+                     <Paragraph
+                        variant="span"
+                        size="base"
+                        className="text-primary-400 dark:text-primary-200 p-2 pb-0 max-md:max-w-full"
+                     >
+                        {company}
+                     </Paragraph>
+                     <Paragraph
+                        variant="span"
+                        size="base"
+                        className="text-primary-400 dark:text-primary-200 p-2 pt-0 max-md:max-w-full"
+                     >
+                        {location}
+                     </Paragraph>
+                  </div>
                   <div className="flex flex-col py-3 pl-3 text-base font-light max-md:max-w-full">
                      {bulletPoints.map((bullet, index) => (
                         <Paragraph

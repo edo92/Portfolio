@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
                   </Paragraph>
                </Link>
 
-               <Link href="/app/resume">
+               <Link href="/static/resume.pdf" target="_blank">
                   <Paragraph
                      size="sm"
                      variant="span"

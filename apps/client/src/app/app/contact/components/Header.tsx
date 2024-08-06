@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { useMemo } from 'react';
 import { cn } from '@client/lib/cn';
-import { Icons } from '@client/components/Icons';
 import { Button } from '@client/components/Button';
 import { Heading, Paragraph } from '@client/components/Typography';
 import { links } from '@client/app/content/profiles';
@@ -22,20 +22,27 @@ export const Header: React.FC = () => {
 
          <div className="flex items-center justify-center px-12 py-5 max-md:max-w-full md:px-9">
             <div className="flex items-center justify-center gap-4 max-md:flex-wrap">
-               {links.map(({ name }, index) => (
+               {links.map(({ Icon, name, link }, index) => (
                   <div
                      key={`${name}-${index}`}
                      className={cn(
-                        'transition-100 flex flex-col justify-center whitespace-nowrap rounded-sm p-0.5 text-center text-lg font-light text-stone-300 transition-all hover:scale-[95%]',
+                        'transition-100 flex flex-col justify-center whitespace-nowrap rounded-sm p-0.5 text-center text-lg font-light transition-all hover:scale-[95%]',
                         memoizedColors[index]
                      )}
                   >
-                     <Button variant="ghost" className="flex h-9 flex-row items-center gap-2.5 px-7">
-                        <Paragraph variant="span" size="base" font="light">
-                           {name}
-                        </Paragraph>
-                        <Icons.GitHub className="size-5" />
-                     </Button>
+                     <Link href={link} target="_blank">
+                        <Button variant="ghost" className="flex h-9 flex-row items-center gap-2.5 px-7">
+                           <Paragraph
+                              variant="span"
+                              size="base"
+                              font="light"
+                              className="dark:text-light-100 text-dark-300"
+                           >
+                              {name}
+                           </Paragraph>
+                           <Icon className="dark:text-light-100 text-dark-300 size-5" />
+                        </Button>
+                     </Link>
                   </div>
                ))}
             </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Icons } from '@client/components/Icons';
 import { Button } from '@client/components/Button';
 import { Project } from '@client/app/components/Project';
@@ -11,7 +12,9 @@ const ProjectComponent: React.FC<{
    description: string;
    stack: string[];
    imageUrl: string;
-}> = ({ imageUrl, name, description, stack }) => (
+   gitRepo: string;
+   type: string;
+}> = ({ imageUrl, name, description, stack, gitRepo, type }) => (
    <Project imageUrl={imageUrl}>
       <div className="ml-1 flex w-full flex-col gap-3">
          <div className="flex w-full flex-row justify-between gap-3">
@@ -20,13 +23,21 @@ const ProjectComponent: React.FC<{
             </Heading>
 
             <div className="flex flex-row gap-3 px-3">
-               <Button variant="ghost" className="group h-6 shadow-none">
-                  <Icons.GitHub className="dark:text-light-400 text-dark-300 transition-100 m-0 aspect-[1.05] size-[1.1rem] shrink-0 transition-all group-hover:scale-[110%]" />
-               </Button>
+               <Link href={gitRepo}>
+                  <Button variant="ghost" className="group h-6 !bg-transparent shadow-none">
+                     <Icons.GitHub className="dark:text-light-400 text-dark-300 transition-100 m-0 aspect-[1.05] size-[1.1rem] shrink-0 transition-all group-hover:scale-[110%]" />
+                  </Button>
+               </Link>
 
-               <Button variant="ghost" className="group h-6 shadow-none">
-                  <Icons.Link className="dark:text-light-400 text-dark-300 transition-100 m-0 aspect-[1.05] size-[1.1rem] shrink-0 transition-all group-hover:scale-[110%]" />
-               </Button>
+               {type === 'Demo' ? (
+                  <Link href={gitRepo}>
+                     <Button variant="ghost" className="group h-6 !bg-transparent shadow-none">
+                        <Icons.Link className="dark:text-light-400 text-dark-300 transition-100 m-0 aspect-[1.05] size-[1.1rem] shrink-0 transition-all group-hover:scale-[110%]" />
+                     </Button>
+                  </Link>
+               ) : (
+                  <span className="h-6 bg-transparent"></span>
+               )}
             </div>
          </div>
 
@@ -36,7 +47,7 @@ const ProjectComponent: React.FC<{
 
          <Paragraph
             font="light"
-            variant="small"
+            variant="p"
             className="text-primary-200 dark:text-primary-100 py-2 max-md:max-w-full"
          >
             {stack.join(' - ')}
@@ -49,7 +60,7 @@ export const Projects: React.FC = () => {
    const projectList = divideIntoChunks(projects, 3);
 
    return (
-      <section className="px-26 my-9 flex w-full grow items-center justify-center px-20 md:px-0">
+      <section className="px-26 my-9 mb-36 flex w-full grow items-center justify-center px-20 md:px-0">
          <div className="flex w-full flex-col items-start justify-center gap-9 sm:w-3/4 md:w-11/12 lg:w-3/4 xl:w-4/6">
             <Heading id="projects" variant="h3" size="2xl">
                Projects

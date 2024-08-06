@@ -2,7 +2,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@client/lib/cn';
 
 const buttonVariants = cva(
-   'btn transition-100 rounded px-7 min-h-auto h-auto shadow-sm ring-0 transition-all',
+   'btn transition-100 min-h-auto h-auto rounded px-7 shadow-sm ring-0 transition-all',
    {
       variants: {
          variant: {
