@@ -1,3 +1,4 @@
 export * from './lib/Icons';
 export * from './lib/cn';
-export * from './lib/button';
+export * from './lib/Button';
+export * from './lib/Input';
