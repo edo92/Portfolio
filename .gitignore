@@ -3,7 +3,7 @@
 # compiled output
 dist
 tmp
-/out-tsc
+out-tsc
 
 # dependencies
 node_modules
@@ -44,6 +44,3 @@ Thumbs.db
 # Next.js
 .next
 out
-
-# Local Netlify folder
-.netlify
