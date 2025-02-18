@@ -26,8 +26,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "foreground-dark": 'hsl(0deg 3.23% 6.08%)',
-        "foreground-light":'hsl(0deg 7.69% 97.45% / 90%)',
+        foreground:{
+          dark:'rgb(var(--color-foreground-dark))',
+          light:'rgb(var(--color-foreground-light))',
+        },
         primary: {
           100: 'rgb(var(--color-primary-100) / <alpha-value>)',
           200: 'rgb(var(--color-primary-200) / <alpha-value>)',
