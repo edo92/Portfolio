@@ -1,69 +1,112 @@
+'use client';
+
 import * as React from 'react';
+import {
+  FormProvider,
+  UseFormReturn,
+  Controller,
+  ControllerRenderProps,
+  FieldValues,
+  Path,
+} from 'react-hook-form';
 
-const Form = React.forwardRef<
-  HTMLFormElement,
-  React.HTMLAttributes<HTMLFormElement>
->(({ className, ...props }, ref) => (
-  <form ref={ref} className={`space-y-8 ${className}`} {...props} />
-));
-Form.displayName = 'Form';
-
-const FormField = ({
-  name,
-  children,
-}: {
-  name: string;
+interface FormProps<T extends FieldValues> extends UseFormReturn<T> {
   children: React.ReactNode;
-}) => {
-  return <div className="space-y-2">{children}</div>;
-};
+}
 
-const FormItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={`space-y-2 ${className}`} {...props} />
-));
-FormItem.displayName = 'FormItem';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyValue = any;
 
-const FormLabel = React.forwardRef<
-  HTMLLabelElement,
-  React.LabelHTMLAttributes<HTMLLabelElement>
->(({ className, ...props }, ref) => (
-  <label
-    ref={ref}
-    className={`text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ${className}`}
-    {...props}
-  />
-));
-FormLabel.displayName = 'FormLabel';
-
-const FormControl = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={className} {...props} />
-));
-FormControl.displayName = 'FormControl';
-
-const FormMessage = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
-  if (!children) {
-    return null;
-  }
-
+export function Form<T extends FieldValues>({
+  children,
+  ...form
+}: FormProps<T>) {
   return (
-    <p
-      ref={ref}
-      className={`text-sm font-medium text-red-500 ${className}`}
-      {...props}
-    >
+    <FormProvider {...(form as UseFormReturn<T>)}>{children}</FormProvider>
+  );
+}
+
+export function FormControl({
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className="mt-1" {...props}>
       {children}
+    </div>
+  );
+}
+
+export function FormItem({
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className="space-y-1" {...props}>
+      {children}
+    </div>
+  );
+}
+
+export function FormLabel({
+  children,
+  ...props
+}: React.LabelHTMLAttributes<HTMLLabelElement>) {
+  return (
+    <label className="block text-sm font-medium text-gray-700" {...props}>
+      {children}
+    </label>
+  );
+}
+
+interface FormFieldProps<T extends FieldValues> {
+  control: UseFormReturn<T>['control'];
+  name: string;
+  render: (args: {
+    field: ControllerRenderProps<T, AnyValue>;
+  }) => React.ReactNode;
+}
+
+interface FieldContextValue {
+  error?: { message?: string };
+}
+
+const FormFieldContext = React.createContext<FieldContextValue | null>(null);
+
+export function FormField<T extends FieldValues>({
+  control,
+  name,
+  render,
+}: FormFieldProps<T>) {
+  return (
+    <Controller
+      control={control}
+      name={name as Path<T>}
+      render={({ field, fieldState }) => (
+        <FormFieldContext.Provider value={{ error: fieldState.error }}>
+          {render({ field: field as ControllerRenderProps<T> })}
+        </FormFieldContext.Provider>
+      )}
+    />
+  );
+}
+
+export function useFormFieldContext() {
+  const context = React.useContext(FormFieldContext);
+  if (!context) {
+    throw new Error('useFormFieldContext must be used within a FormField');
+  }
+  return context;
+}
+
+export function FormMessage({
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  const { error } = useFormFieldContext();
+  if (!error) return null;
+  return (
+    <p className="text-sm text-red-600" {...props}>
+      {error.message}
     </p>
   );
-});
-FormMessage.displayName = 'FormMessage';
-
-export { Form, FormItem, FormLabel, FormControl, FormMessage, FormField };
+}
