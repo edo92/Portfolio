@@ -13,12 +13,12 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ className }) => {
   return (
     <button
       className={cn(
-        'flex h-auto min-h-0 flex-col items-center p-0 ring-0 group',
-        className
+        'group flex h-auto min-h-0 flex-col items-center p-0 ring-0',
+        className,
       )}
     >
       <Icons.LightBulb
-        className="text-dark-300/85 dark:text-light-400 dark:group-hover:text-light-500/90 transition-colors duration-200 mt-0.5 aspect-square size-6 shrink-0 self-start"
+        className="mt-0.5 aspect-square size-6 shrink-0 self-start text-dark-300/85 transition-colors duration-200 dark:text-light-400 dark:group-hover:text-light-500/90"
         onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
       />
     </button>
