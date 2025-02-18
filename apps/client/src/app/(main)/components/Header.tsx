@@ -16,7 +16,7 @@ export const Header = () => (
       <Link href="/contact" className="hover:text-gray-300 transition-colors">
         Contact
       </Link>
-      <div className="p-1 hover:bg-gray-800 rounded-full transition-colors">
+      <div className="p-1">
         <ThemeSwitch />
       </div>
     </div>
