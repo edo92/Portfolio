@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { cn } from '@libs/ui';
 
 const projects = [
   {
@@ -65,32 +66,33 @@ export default function PortfolioGrid() {
       : projects.filter((project) => project.category === filter);
 
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="text-foreground font-bold text-3xl sm:text-4xl">
             Our Work
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="text-muted-foreground mt-4 text-lg">
             A showcase of our minimalist designs and creative solutions.
           </p>
         </motion.div>
 
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="mb-8 flex justify-center space-x-4">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={cn(
+                'rounded-full px-4 py-2 font-medium text-sm transition-colors',
                 filter === category
                   ? 'bg-primary text-primary-foreground'
-                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-              }`}
+                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+              )}
             >
               {category}
             </button>
@@ -99,7 +101,7 @@ export default function PortfolioGrid() {
 
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence>
             {filteredProjects.map((project) => (
@@ -110,7 +112,7 @@ export default function PortfolioGrid() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+                className="bg-background hover-lift hover:border-primary/10 overflow-hidden rounded-3xl border-2 border-transparent shadow-lg transition-all duration-300 ease-in-out"
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -121,30 +123,30 @@ export default function PortfolioGrid() {
                     className="transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
                   <motion.div
-                    className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
+                    className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300"
                     whileHover={{ opacity: 1 }}
                   >
-                    <p className="text-white text-center px-4">
+                    <p className="px-4 text-center text-white">
                       {project.description}
                     </p>
                   </motion.div>
                 </div>
                 <div className="p-6">
-                  <div className="text-sm font-medium text-primary mb-1">
+                  <div className="text-primary mb-1 font-medium text-sm">
                     {project.category}
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                  <h3 className="text-foreground mb-2 text-xl font-semibold">
                     {project.title}
                   </h3>
                   <a
                     href="https://www.flowersandsaints.com.au"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline inline-flex items-center"
+                    className="text-primary inline-flex items-center hover:underline"
                   >
                     View Project
                     <svg
-                      className="w-4 h-4 ml-2"
+                      className="ml-2 size-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
