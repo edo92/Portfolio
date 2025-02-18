@@ -69,7 +69,7 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Component = as || variant || 'p';
 
@@ -85,14 +85,14 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
             uppercase,
             capitalize,
             className,
-          })
+          }),
         )}
         {...props}
       >
         {children}
       </Component>
     );
-  }
+  },
 );
 Paragraph.displayName = 'Paragraph';
 

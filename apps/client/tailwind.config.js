@@ -16,7 +16,7 @@ module.exports = {
   content: [
     join(
       __dirname,
-      '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+      '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}',
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
@@ -26,9 +26,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        foreground:{
-          dark:'rgb(var(--color-foreground-dark))',
-          light:'rgb(var(--color-foreground-light))',
+        foreground: {
+          dark: 'rgb(var(--color-foreground-dark))',
+          light: 'rgb(var(--color-foreground-light))',
         },
         primary: {
           100: 'rgb(var(--color-primary-100) / <alpha-value>)',

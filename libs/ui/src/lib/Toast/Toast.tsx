@@ -74,7 +74,7 @@ export const Toast: React.FC<ToastProps> = memo(
         ))}
       </div>
     </div>
-  )
+  ),
 );
 
 Toast.displayName = 'Toast';

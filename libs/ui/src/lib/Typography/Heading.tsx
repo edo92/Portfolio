@@ -82,7 +82,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Component = as || variant || 'h2';
 
@@ -98,14 +98,14 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
             uppercase,
             capitalize,
             className,
-          })
+          }),
         )}
         {...props}
       >
         {children}
       </Component>
     );
-  }
+  },
 );
 Heading.displayName = 'Heading';
 
