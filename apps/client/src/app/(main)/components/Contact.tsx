@@ -6,17 +6,17 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Textarea, useToast } from '@libs/ui';
 import { Button } from '@libs/ui';
+import { Input } from '@libs/ui';
+import { Textarea, useToast } from '@libs/ui';
 import {
   Form,
-  FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
+  FormControl,
 } from '@libs/ui';
-import { Input } from '@libs/ui';
 
 const formSchema = z.object({
   name: z.string().min(2, {
