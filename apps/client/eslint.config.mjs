@@ -27,7 +27,6 @@ const config = [
       },
     },
     rules: {
-      'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'off',
     },
   },
