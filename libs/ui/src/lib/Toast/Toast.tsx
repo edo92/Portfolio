@@ -1,3 +1,4 @@
+import type React from 'react';
 import { memo } from 'react';
 import { cn } from '../cn';
 import { Icons } from '../Icons';
@@ -9,6 +10,7 @@ export type ToastType = 'success' | 'error' | 'warning' | 'info';
 
 export type ToastInternal = {
   id: string;
+  title: string;
   message: string;
   type: ToastType;
 };
@@ -29,7 +31,7 @@ export const Toast: React.FC<ToastProps> = memo(
           <div
             key={toast.id}
             role="alert"
-            aria-labelledby="toast"
+            aria-labelledby={`toast-title-${toast.id}`}
             className="max-w-xs rounded-xl border border-dark-100 bg-dark-300 shadow-lg"
           >
             <div className="flex gap-4 p-4">
@@ -41,9 +43,18 @@ export const Toast: React.FC<ToastProps> = memo(
                 <Paragraph
                   variant="p"
                   size="sm"
-                  weight="body"
+                  weight="semibold"
+                  id={`toast-title-${toast.id}`}
+                  className="text-neutral-100"
+                >
+                  {toast.title}
+                </Paragraph>
+                <Paragraph
+                  variant="p"
+                  size="sm"
+                  weight="normal"
                   aria-label="toast-message"
-                  className="text-neutral-100/90"
+                  className="mt-1 text-neutral-100/90"
                 >
                   {toast.message}
                 </Paragraph>

@@ -5,3 +5,4 @@ export * from './lib/Input';
 export * from './lib/Textarea';
 export * from './lib/Form';
 export * from './lib/Toast';
+export * from './lib/Typography';

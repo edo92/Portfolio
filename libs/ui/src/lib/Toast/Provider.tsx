@@ -1,5 +1,7 @@
 'use client';
 
+import type React from 'react';
+
 import crypto from 'crypto';
 import { createContext, useContext, useState } from 'react';
 import { Toast as ToastComponent, type ToastInternal } from './Toast';
@@ -7,13 +9,13 @@ import { Toast as ToastComponent, type ToastInternal } from './Toast';
 type Toast = Omit<ToastInternal, 'id'>;
 
 interface ToastContext {
-  add: (toast: Toast) => void;
+  toast: (toast: Toast) => void;
   clear: (id: string) => void;
   clearAll: () => void;
 }
 
 const Context = createContext<ToastContext>({
-  add: () => void 0,
+  toast: () => void 0,
   clear: () => void 0,
   clearAll: () => void 0,
 });
@@ -41,7 +43,7 @@ export const ToastProvider: React.FC<React.PropsWithChildren> = ({
   return (
     <Context.Provider
       value={{
-        add: addToast,
+        toast: addToast,
         clear: closeToast,
         clearAll: closeAllToasts,
       }}
