@@ -14,6 +14,9 @@ const compat = new FlatCompat({
 const config = [
   ...fixupConfigRules(compat.extends('next')),
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
+  ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
+  ...fixupConfigRules(compat.extends('prettier')),
+
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],
   {
@@ -27,6 +30,7 @@ const config = [
       },
     },
     rules: {
+      'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'off',
     },
   },
