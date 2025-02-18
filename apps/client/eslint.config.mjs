@@ -19,6 +19,18 @@ const config = [
   {
     ignores: ['.next/**/*'],
   },
+  {
+    settings: {
+      tailwindcss: {
+        callees: ['classnames', 'clsx', 'cva', 'cn', 'className'],
+        config: './tailwind.config.js',
+      },
+    },
+    rules: {
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
+    },
+  },
 ];
 
 export default config;
