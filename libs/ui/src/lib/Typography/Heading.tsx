@@ -17,7 +17,7 @@ export type HeadingSize =
   | 'xs';
 
 const headingVariants = tv({
-  base: 'text-foreground transition-colors duration-200 ease-in-out',
+  base: 'dark:text-light-400 text-dark-100 transition-colors duration-200 ease-in-out',
   variants: {
     weight: {
       normal: 'font-normal',
