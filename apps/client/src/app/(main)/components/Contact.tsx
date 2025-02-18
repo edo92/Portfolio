@@ -59,10 +59,10 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-md">
         <motion.h2
-          className="text-4xl font-bold mb-8 text-center text-gray-900"
+          className="mb-8 text-center font-bold text-4xl text-gray-900"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -70,7 +70,7 @@ export default function Contact() {
           Get in Touch
         </motion.h2>
         <motion.div
-          className="bg-white p-8 rounded-2xl shadow-lg"
+          className="rounded-2xl bg-white p-8 shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

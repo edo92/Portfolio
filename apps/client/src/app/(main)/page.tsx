@@ -7,7 +7,7 @@ import ProjectsShowcase from './components/Projects';
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-[#121212] text-white overflow-hidden w-full">
+    <div className="relative min-h-screen w-full overflow-hidden">
       <Header />
       <Hero />
       <Timeline />

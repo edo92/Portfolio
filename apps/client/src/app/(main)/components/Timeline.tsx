@@ -71,26 +71,26 @@ export default function Timeline() {
   return (
     <div
       ref={containerRef}
-      className="relative py-20 bg-background overflow-hidden"
+      className="bg-background relative overflow-hidden py-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="text-foreground font-bold text-3xl sm:text-4xl">
             Our Journey
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="text-muted-foreground mt-4 text-lg">
             The evolution of Flowers & Saints through the years
           </p>
         </motion.div>
 
         <div className="relative">
           <motion.div
-            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20"
+            className="bg-primary/20 absolute inset-y-0 left-1/2 w-0.5"
             style={{ scaleY, originY: 0 }}
           />
 
@@ -128,7 +128,7 @@ function TimelineEvent({
   return (
     <motion.div
       ref={ref}
-      className={`mb-12 flex justify-between items-center w-full ${
+      className={`mb-12 flex w-full items-center justify-between ${
         index % 2 === 0 ? 'flex-row-reverse' : ''
       }`}
       initial={{ opacity: 0, y: 50 }}
@@ -137,14 +137,14 @@ function TimelineEvent({
     >
       <div className={`w-5/12 ${index % 2 === 0 ? 'text-right' : ''}`}>
         <motion.div
-          className="p-6 bg-card rounded-lg shadow-lg border border-primary/10 transition-all duration-300 ease-in-out"
+          className="bg-card border-primary/10 rounded-lg border p-6 shadow-lg transition-all duration-300 ease-in-out"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <span className="inline-block px-3 py-1 mb-2 text-sm font-semibold text-primary bg-primary/10 rounded-full">
+          <span className="text-primary bg-primary/10 mb-2 inline-block rounded-full px-3 py-1 text-sm font-semibold">
             {event.year}
           </span>
-          <h3 className="text-xl font-semibold mb-2 text-foreground">
+          <h3 className="text-foreground mb-2 text-xl font-semibold">
             {event.title}
           </h3>
           <p className="text-muted-foreground mb-4">{event.description}</p>
@@ -157,18 +157,18 @@ function TimelineEvent({
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="text-muted-foreground mt-2 text-sm">
               {event.details}
             </p>
           </motion.div>
           <Button variant="ghost" size="sm" className="mt-4" onClick={onToggle}>
             {isExpanded ? (
               <>
-                Read Less <ChevronUp className="ml-2 h-4 w-4" />
+                Read Less <ChevronUp className="ml-2 size-4" />
               </>
             ) : (
               <>
-                Read More <ChevronDown className="ml-2 h-4 w-4" />
+                Read More <ChevronDown className="ml-2 size-4" />
               </>
             )}
           </Button>
@@ -176,12 +176,12 @@ function TimelineEvent({
       </div>
       <div className="z-10">
         <motion.div
-          className="flex items-center justify-center w-4 h-4 bg-primary rounded-full"
+          className="bg-primary flex size-4 items-center justify-center rounded-full"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <div className="w-2 h-2 bg-background rounded-full" />
+          <div className="bg-background size-2 rounded-full" />
         </motion.div>
       </div>
       <div className="w-5/12" />

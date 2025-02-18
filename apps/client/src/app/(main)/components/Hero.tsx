@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Icons } from '@libs/ui';
 
 export const Hero = () => (
-  <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8 min-h-screen">
-    <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0 mt-16">
+  <div className="mx-auto min-h-screen max-w-7xl px-6 pb-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+    <div className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-lg lg:shrink-0">
       <motion.span
         className="text-sm text-gray-400"
         initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export const Hero = () => (
         Hey I&apos;m
       </motion.span>
       <motion.h1
-        className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 text-transparent bg-clip-text"
+        className="mt-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text font-bold text-4xl tracking-tight text-transparent sm:text-6xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -43,23 +43,23 @@ export const Hero = () => (
       >
         <Link
           href="https://github.com"
-          className="p-2 rounded-md bg-[#121212] border border-transparent hover:border-purple-500/30 transition-colors flex items-center gap-2 hover:bg-gray-900"
+          className="flex items-center gap-2 rounded-md border border-transparent bg-[#121212] p-2 transition-colors hover:border-purple-500/30 hover:bg-gray-900"
         >
-          <Icons.GitHub className="w-5 h-5" />
+          <Icons.GitHub className="size-5" />
           <span>GitHub</span>
         </Link>
         <Link
           href="https://linkedin.com"
-          className="p-2 rounded-md bg-[#121212] border border-transparent hover:border-blue-500/30 transition-colors flex items-center gap-2 hover:bg-gray-900"
+          className="flex items-center gap-2 rounded-md border border-transparent bg-[#121212] p-2 transition-colors hover:border-blue-500/30 hover:bg-gray-900"
         >
-          <Icons.LinkedIn className="w-5 h-5" />
+          <Icons.LinkedIn className="size-5" />
           <span>LinkedIn</span>
         </Link>
         <Link
           href="https://medium.com"
-          className="p-2 rounded-md bg-[#121212] border border-transparent hover:border-purple-500/30 transition-colors flex items-center gap-2 hover:bg-gray-900"
+          className="flex items-center gap-2 rounded-md border border-transparent bg-[#121212] p-2 transition-colors hover:border-purple-500/30 hover:bg-gray-900"
         >
-          <Icons.Medium className="w-5 h-5" />
+          <Icons.Medium className="size-5" />
           <span>Medium</span>
         </Link>
       </motion.div>
@@ -67,13 +67,13 @@ export const Hero = () => (
 
     {/* Image Section */}
     <motion.div
-      className="mx-auto mt-16 lg:mt-0 relative"
+      className="relative mx-auto mt-16 lg:mt-0"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.8 }}
     >
       <div className="relative">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 rounded-2xl blur opacity-30" />
+        <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 opacity-30 blur" />
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png"
           alt="Portfolio Preview"
