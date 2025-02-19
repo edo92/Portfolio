@@ -2,8 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { Button } from '@libs/ui';
+import { cn, Heading, Paragraph } from '@libs/ui';
 
 const timelineEvents = [
   {
@@ -71,7 +70,7 @@ export default function Timeline() {
   return (
     <div
       ref={containerRef}
-      className="bg-background relative overflow-hidden py-10"
+      className="relative overflow-hidden bg-foreground-light py-20 dark:bg-foreground-dark"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -80,17 +79,21 @@ export default function Timeline() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-foreground font-bold text-3xl sm:text-4xl">
+          <Heading
+            as="h2"
+            weight="bold"
+            className="text-3xl dark:text-light-300 sm:text-4xl"
+          >
             Our Journey
-          </h2>
-          <p className="text-muted-foreground mt-4 text-lg">
+          </Heading>
+          <Paragraph variant="p" weight="normal" size="md" className="mt-4">
             The evolution of Flowers & Saints through the years
-          </p>
+          </Paragraph>
         </motion.div>
 
         <div className="relative">
           <motion.div
-            className="bg-primary/20 absolute inset-y-0 left-1/2 w-0.5"
+            className={cn('absolute inset-y-0 left-1/2 w-0.5 bg-dark-200 dark:bg-light-300')}
             style={{ scaleY, originY: 0 }}
           />
 
@@ -135,19 +138,39 @@ function TimelineEvent({
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
     >
-      <div className={`w-5/12 ${index % 2 === 0 ? 'text-right' : ''}`}>
+      <div className="w-5/12 cursor-pointer" onClick={onToggle}>
         <motion.div
-          className="bg-card border-primary/10 rounded-lg border p-6 shadow-lg transition-all duration-300 ease-in-out"
+          className="rounded-lg border p-6 shadow-lg transition-all duration-300 ease-in-out dark:border-light-400/10"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <span className="text-primary bg-primary/10 mb-2 inline-block rounded-full px-3 py-1 text-sm font-semibold">
+          <Paragraph
+            variant="span"
+            size="xs"
+            weight="semibold"
+            className="dark:text-light-200"
+          >
             {event.year}
-          </span>
-          <h3 className="text-foreground mb-2 text-xl font-semibold">
+          </Paragraph>
+
+          <Heading
+            variant="h3"
+            weight="semibold"
+            size="xl"
+            className="mb-2 dark:text-light-200"
+          >
             {event.title}
-          </h3>
-          <p className="text-muted-foreground mb-4">{event.description}</p>
+          </Heading>
+
+          <Paragraph
+            variant="p"
+            weight="medium"
+            size="base"
+            className="dark:text-light-500"
+          >
+            {event.description}
+          </Paragraph>
+
           <motion.div
             initial={false}
             animate={{
@@ -161,17 +184,6 @@ function TimelineEvent({
               {event.details}
             </p>
           </motion.div>
-          <Button variant="ghost" size="sm" className="mt-4" onClick={onToggle}>
-            {isExpanded ? (
-              <>
-                Read Less <ChevronUp className="ml-2 size-4" />
-              </>
-            ) : (
-              <>
-                Read More <ChevronDown className="ml-2 size-4" />
-              </>
-            )}
-          </Button>
         </motion.div>
       </div>
       <div className="z-10">

@@ -2,13 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import {
-  cn,
-  headingVariants,
-  Icons,
-  Paragraph,
-  paragraphVariants,
-} from '@libs/ui';
+import { cn, Icons, Paragraph, paragraphVariants } from '@libs/ui';
 
 export const Hero = () => (
   <div className="mx-auto min-h-screen max-w-7xl px-6 pb-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
