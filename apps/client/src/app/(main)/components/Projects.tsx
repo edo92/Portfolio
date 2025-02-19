@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { cn } from '@libs/ui';
+import { cn, Heading, Icons, Paragraph } from '@libs/ui';
 
 const projects = [
   {
@@ -74,12 +74,16 @@ export default function PortfolioGrid() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-foreground font-bold text-3xl sm:text-4xl">
-            Our Work
-          </h2>
-          <p className="text-muted-foreground mt-4 text-lg">
+          <Heading
+            as="h2"
+            weight="bold"
+            className="text-3xl dark:text-light-300 sm:text-4xl"
+          >
+            Projects
+          </Heading>
+          <Paragraph variant="p" weight="normal" size="md" className="mt-4">
             A showcase of our minimalist designs and creative solutions.
-          </p>
+          </Paragraph>
         </motion.div>
 
         <div className="mb-8 flex justify-center space-x-4">
@@ -145,20 +149,7 @@ export default function PortfolioGrid() {
                     className="text-primary inline-flex items-center hover:underline"
                   >
                     View Project
-                    <svg
-                      className="ml-2 size-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
+                    <Icons.ArrowRight className="ml-2 size-4" />
                   </a>
                 </div>
               </motion.div>

@@ -59,7 +59,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
+    <section className="bg-foreground-light px-4 py-20 dark:bg-foreground-dark sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-md">
         <motion.h2
           className="mb-8 text-center font-bold text-4xl text-gray-900"
