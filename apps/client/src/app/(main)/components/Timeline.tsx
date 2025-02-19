@@ -93,7 +93,9 @@ export default function Timeline() {
 
         <div className="relative">
           <motion.div
-            className={cn('absolute inset-y-0 left-1/2 w-0.5 bg-dark-200 dark:bg-light-300')}
+            className={cn(
+              'absolute inset-y-0 left-[49.94%] w-0.5 bg-dark-200/60 dark:bg-light-300/10',
+            )}
             style={{ scaleY, originY: 0 }}
           />
 
@@ -186,14 +188,14 @@ function TimelineEvent({
           </motion.div>
         </motion.div>
       </div>
-      <div className="z-10">
+      <div className="z-10 rounded-full bg-dark-200 p-2 dark:bg-light-200">
         <motion.div
-          className="bg-primary flex size-4 items-center justify-center rounded-full"
+          className="flex size-2 items-center justify-center rounded-full bg-dark-200/80 dark:bg-light-100"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <div className="bg-background size-2 rounded-full" />
+          <div className="size-2 rounded-full bg-light-200 dark:bg-dark-200" />
         </motion.div>
       </div>
       <div className="w-5/12" />
