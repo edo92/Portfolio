@@ -2,13 +2,21 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Icons } from '@libs/ui';
+import {
+  cn,
+  headingVariants,
+  Icons,
+  Paragraph,
+  paragraphVariants,
+} from '@libs/ui';
 
 export const Hero = () => (
   <div className="mx-auto min-h-screen max-w-7xl px-6 pb-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
     <div className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-lg lg:shrink-0">
       <motion.span
-        className="text-sm text-gray-400"
+        className={cn(
+          paragraphVariants({ variant: 'span', size: 'sm', weight: 'normal' }),
+        )}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -24,7 +32,10 @@ export const Hero = () => (
         Eduard Jacobs
       </motion.h1>
       <motion.p
-        className="mt-6 text-lg leading-8 text-gray-300"
+        className={cn(
+          paragraphVariants({ variant: 'p', weight: 'normal' }),
+          'mt-6 text-lg leading-8',
+        )}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -43,24 +54,30 @@ export const Hero = () => (
       >
         <Link
           href="https://github.com"
-          className="flex items-center gap-2 rounded-md border border-transparent bg-[#121212] p-2 transition-colors hover:border-purple-500/30 hover:bg-gray-900"
+          className="flex items-center gap-2 rounded-md p-2"
         >
-          <Icons.GitHub className="size-5" />
-          <span>GitHub</span>
+          <Icons.GitHub className="size-5 text-dark-100 dark:text-light-400" />
+          <Paragraph variant="span" size="base" weight="medium">
+            GitHub
+          </Paragraph>
         </Link>
         <Link
           href="https://linkedin.com"
-          className="flex items-center gap-2 rounded-md border border-transparent bg-[#121212] p-2 transition-colors hover:border-blue-500/30 hover:bg-gray-900"
+          className="flex items-center gap-2 rounded-md p-2"
         >
-          <Icons.LinkedIn className="size-5" />
-          <span>LinkedIn</span>
+          <Icons.LinkedIn className="size-4 text-dark-100 dark:text-light-400" />
+          <Paragraph variant="span" size="base" weight="medium">
+            LinkedIn
+          </Paragraph>
         </Link>
         <Link
           href="https://medium.com"
-          className="flex items-center gap-2 rounded-md border border-transparent bg-[#121212] p-2 transition-colors hover:border-purple-500/30 hover:bg-gray-900"
+          className="flex items-center gap-2 rounded-md p-2"
         >
-          <Icons.Medium className="size-5" />
-          <span>Medium</span>
+          <Icons.Medium className="size-5 text-dark-100 dark:text-light-400" />
+          <Paragraph variant="span" size="base" weight="medium">
+            Medium
+          </Paragraph>
         </Link>
       </motion.div>
     </div>
