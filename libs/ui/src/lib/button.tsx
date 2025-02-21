@@ -12,7 +12,7 @@ const button = tv({
       outline:
         'border border-input hover:bg-accent hover:text-accent-foreground',
       secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-      ghost: 'hover:bg-accent hover:text-accent-foreground',
+      ghost: 'bg-transparent ring-0 hover:ring-0 ring-offset-0',
       link: 'underline-offset-4 hover:underline text-primary',
     },
     size: {

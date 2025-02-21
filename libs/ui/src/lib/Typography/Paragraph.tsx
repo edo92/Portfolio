@@ -19,7 +19,7 @@ const paragraphVariants = tv({
       'xs-2': 'text-[0.725rem] leading-[1.125rem]',
       xs: 'text-[0.8125rem] leading-[1.25rem]',
       'sm-2': 'text-[0.8435rem] leading-[1.35rem]',
-      sm: 'text-[0.875rem] leading-[1.375rem]',
+      sm: 'text-[0.875rem]',
       base: 'text-[0.938rem] leading-[1.5rem]',
       md: 'text-[1.0625rem] leading-[1.675rem]',
       lg: 'text-[1.125rem] leading-[1.75rem]',

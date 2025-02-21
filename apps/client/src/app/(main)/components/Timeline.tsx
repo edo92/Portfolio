@@ -68,7 +68,7 @@ export default function Timeline() {
   });
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden py-10">
+    <div ref={containerRef} className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mb-12 flex flex-col items-center justify-center text-center"

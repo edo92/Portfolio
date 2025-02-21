@@ -3,28 +3,31 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { cn, Heading, Icons, Paragraph } from '@libs/ui';
+import { Button, cn, Heading, Icons, Paragraph } from '@libs/ui';
 
 const projects = [
   {
     id: 1,
     title: 'Minimalist Brand Identity',
     description: 'Clean and modern visual communication for a tech startup',
-    imageUrl: '/placeholder.svg?height=600&width=800',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
     category: 'Branding',
   },
   {
     id: 2,
     title: 'Sleek Web Experience',
     description: 'Elegant online presence for a luxury fashion brand',
-    imageUrl: '/placeholder.svg?height=800&width=600',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
     category: 'Web Design',
   },
   {
     id: 3,
     title: 'Intuitive Mobile App',
     description: 'User-friendly app design for a health and wellness company',
-    imageUrl: '/placeholder.svg?height=600&width=800',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
     category: 'Mobile App',
   },
   {
@@ -32,7 +35,8 @@ const projects = [
     title: 'Elegant Digital Campaign',
     description:
       'Sophisticated marketing strategy for a luxury automotive brand',
-    imageUrl: '/placeholder.svg?height=800&width=600',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
     category: 'Digital Marketing',
   },
   {
@@ -40,14 +44,16 @@ const projects = [
     title: 'Refined UI/UX Design',
     description:
       'Streamlined user interfaces for a financial services platform',
-    imageUrl: '/placeholder.svg?height=600&width=800',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
     category: 'UI/UX',
   },
   {
     id: 6,
     title: 'Minimalist Product Design',
     description: 'Sleek and functional design for a smart home device',
-    imageUrl: '/placeholder.svg?height=800&width=600',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
     category: 'Product Design',
   },
 ];
@@ -66,22 +72,18 @@ export default function PortfolioGrid() {
       : projects.filter((project) => project.category === filter);
 
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mb-12 text-center"
+          className="mb-12 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading
-            as="h2"
-            weight="bold"
-            className="text-3xl dark:text-light-300 sm:text-4xl"
-          >
+          <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
             Projects
           </Heading>
-          <Paragraph variant="p" weight="normal" size="md" className="mt-4">
+          <Paragraph variant="p" weight="regular" size="md" className="mt-4">
             A showcase of our minimalist designs and creative solutions.
           </Paragraph>
         </motion.div>
@@ -116,7 +118,7 @@ export default function PortfolioGrid() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-background hover-lift hover:border-primary/10 overflow-hidden rounded-3xl border-2 border-transparent shadow-lg transition-all duration-300 ease-in-out"
+                className="hover-lift overflow-hidden rounded-3xl border-2 border-transparent bg-background shadow-lg transition-all duration-300 ease-in-out hover:border-primary/10"
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -136,21 +138,34 @@ export default function PortfolioGrid() {
                   </motion.div>
                 </div>
                 <div className="p-6">
-                  <div className="text-primary mb-1 font-medium text-sm">
-                    {project.category}
-                  </div>
-                  <h3 className="text-foreground mb-2 text-xl font-semibold">
-                    {project.title}
-                  </h3>
-                  <a
-                    href="https://www.flowersandsaints.com.au"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary inline-flex items-center hover:underline"
+                  <Paragraph
+                    variant="p"
+                    weight="medium"
+                    size="sm"
+                    className="mb-1"
                   >
-                    View Project
+                    {project.category}
+                  </Paragraph>
+
+                  <Heading
+                    variant="h3"
+                    weight="semibold"
+                    size="xl"
+                    className="mb-1"
+                  >
+                    {project.title}
+                  </Heading>
+                  <Button variant="ghost" className="group px-0">
+                    <Paragraph
+                      variant="span"
+                      weight="medium"
+                      size="sm"
+                      className="group-hover:text-accent-foreground/80"
+                    >
+                      View Project
+                    </Paragraph>
                     <Icons.ArrowRight className="ml-2 size-4" />
-                  </a>
+                  </Button>
                 </div>
               </motion.div>
             ))}
