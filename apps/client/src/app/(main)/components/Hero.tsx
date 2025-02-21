@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { cn, Icons, Paragraph, paragraphVariants } from '@libs/ui';
 
 export const Hero = () => (
-  <div className="mx-auto min-h-screen max-w-7xl px-6 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+  <div className="mx-auto max-w-7xl px-6 py-52 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
     <div className="flex w-full">
       <div className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-lg lg:shrink-0">
         <motion.span

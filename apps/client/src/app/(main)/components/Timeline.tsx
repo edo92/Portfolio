@@ -68,7 +68,10 @@ export default function Timeline() {
   });
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden">
+    <div
+      ref={containerRef}
+      className="relative overflow-hidden bg-background-secondary py-20"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mb-12 flex flex-col items-center justify-center text-center"
@@ -92,7 +95,7 @@ export default function Timeline() {
             style={{
               scaleY,
               originY: 0,
-              height: '105%', // Extend the line by 20%
+              height: '105%',
               top: '0%',
             }}
           />
@@ -176,7 +179,7 @@ function TimelineEvent({
       </div>
       <div className="z-10 rounded-full p-2 ">
         <motion.div
-          className="flex size-2 items-center justify-center rounded-full bg-background-secondary/80 p-3"
+          className="flex size-2 items-center justify-center rounded-full bg-card-foreground/80 p-3"
           initial={{ scale: 0 }}
           animate={{ scale: 0.8 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
