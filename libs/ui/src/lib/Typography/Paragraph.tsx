@@ -9,6 +9,7 @@ const paragraphVariants = tv({
       light: 'font-light',
       regular: 'font-regular',
       medium: 'font-medium',
+      semibold: 'font-semibold',
       bold: 'font-bold',
       black: 'font-black',
     },
