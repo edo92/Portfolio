@@ -9,7 +9,7 @@ export const Hero = () => (
     <div className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-lg lg:shrink-0">
       <motion.span
         className={cn(
-          paragraphVariants({ variant: 'span', size: 'sm', weight: 'normal' }),
+          paragraphVariants({ variant: 'span', size: 'sm', weight: 'regular' }),
         )}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export const Hero = () => (
       </motion.h1>
       <motion.p
         className={cn(
-          paragraphVariants({ variant: 'p', weight: 'normal' }),
+          paragraphVariants({ variant: 'p', weight: 'regular' }),
           'mt-6 text-lg leading-8',
         )}
         initial={{ opacity: 0, y: 20 }}
@@ -50,8 +50,8 @@ export const Hero = () => (
           href="https://github.com"
           className="flex items-center gap-2 rounded-md p-2"
         >
-          <Icons.GitHub className="size-5 text-dark-100 dark:text-light-400" />
-          <Paragraph variant="span" size="base" weight="medium">
+          <Icons.GitHub className="size-5" />
+          <Paragraph variant="span" size="sm" weight="medium">
             GitHub
           </Paragraph>
         </Link>
@@ -59,8 +59,8 @@ export const Hero = () => (
           href="https://linkedin.com"
           className="flex items-center gap-2 rounded-md p-2"
         >
-          <Icons.LinkedIn className="size-4 text-dark-100 dark:text-light-400" />
-          <Paragraph variant="span" size="base" weight="medium">
+          <Icons.LinkedIn className="size-4" />
+          <Paragraph variant="span" size="sm" weight="medium">
             LinkedIn
           </Paragraph>
         </Link>
@@ -68,8 +68,8 @@ export const Hero = () => (
           href="https://medium.com"
           className="flex items-center gap-2 rounded-md p-2"
         >
-          <Icons.Medium className="size-5 text-dark-100 dark:text-light-400" />
-          <Paragraph variant="span" size="base" weight="medium">
+          <Icons.Medium className="size-5" />
+          <Paragraph variant="span" size="sm" weight="medium">
             Medium
           </Paragraph>
         </Link>

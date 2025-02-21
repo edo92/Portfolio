@@ -14,7 +14,7 @@ export const Header = () => (
         <Paragraph
           variant="span"
           weight="medium"
-          size="sm"
+          size="base"
           className="hover:text-accent-foreground/80"
         >
           Projects
@@ -24,7 +24,7 @@ export const Header = () => (
         <Paragraph
           variant="span"
           weight="medium"
-          size="sm"
+          size="base"
           className="hover:text-accent-foreground/80"
         >
           Resume
@@ -34,7 +34,7 @@ export const Header = () => (
         <Paragraph
           variant="span"
           weight="medium"
-          size="sm"
+          size="base"
           className="hover:text-accent-foreground/80"
         >
           Contact

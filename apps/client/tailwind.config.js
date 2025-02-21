@@ -14,7 +14,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: 'hsl(var(--background) / <alpha-value>)',
+        background: {
+          DEFAULT: 'hsl(var(--background) / <alpha-value>)',
+          secondary: 'hsl(var(--secondary-background) / <alpha-value>)',
+        },
         foreground: 'hsl(var(--foreground) / <alpha-value>)',
         body: 'hsl(var(--body) / <alpha-value>)',
         primary: {
