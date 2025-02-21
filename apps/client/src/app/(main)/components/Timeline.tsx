@@ -68,35 +68,33 @@ export default function Timeline() {
   });
 
   return (
-    <div
-      ref={containerRef}
-      className="relative overflow-hidden bg-foreground-light py-20 dark:bg-foreground-dark"
-    >
+    <div ref={containerRef} className="relative overflow-hidden py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mb-12 text-center"
+          className="mb-12 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading
-            as="h2"
-            weight="bold"
-            className="text-3xl dark:text-light-300 sm:text-4xl"
-          >
+          <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
             Our Journey
           </Heading>
-          <Paragraph variant="p" weight="normal" size="md" className="mt-4">
+          <Paragraph variant="p" weight="regular" size="md" className="mt-4">
             The evolution of Flowers & Saints through the years
           </Paragraph>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <motion.div
             className={cn(
-              'absolute inset-y-0 left-[49.94%] w-0.5 bg-dark-200/60 dark:bg-light-300/10',
+              'absolute inset-y-0 left-[49.94%] w-0.5 bg-secondary-foreground/40 dark:bg-secondary/80',
             )}
-            style={{ scaleY, originY: 0 }}
+            style={{
+              scaleY,
+              originY: 0,
+              height: '105%', // Extend the line by 20%
+              top: '0%',
+            }}
           />
 
           {timelineEvents.map((event, index) => (
@@ -133,43 +131,26 @@ function TimelineEvent({
   return (
     <motion.div
       ref={ref}
-      className={`mb-12 flex w-full items-center justify-between ${
-        index % 2 === 0 ? 'flex-row-reverse' : ''
-      }`}
+      className={`mb-12 flex w-full items-center justify-between ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
     >
       <div className="w-5/12 cursor-pointer" onClick={onToggle}>
         <motion.div
-          className="rounded-lg border p-6 shadow-lg transition-all duration-300 ease-in-out dark:border-light-400/10"
+          className="rounded-lg border p-6 shadow-lg transition-all duration-300 ease-in-out"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Paragraph
-            variant="span"
-            size="xs"
-            weight="semibold"
-            className="dark:text-light-200"
-          >
+          <Paragraph variant="span" size="xs" weight="medium">
             {event.year}
           </Paragraph>
 
-          <Heading
-            variant="h3"
-            weight="semibold"
-            size="xl"
-            className="mb-2 dark:text-light-200"
-          >
+          <Heading variant="h3" weight="semibold" size="xl" className="mb-2">
             {event.title}
           </Heading>
 
-          <Paragraph
-            variant="p"
-            weight="medium"
-            size="base"
-            className="dark:text-light-500"
-          >
+          <Paragraph variant="p" weight="medium" size="base">
             {event.description}
           </Paragraph>
 
@@ -182,20 +163,25 @@ function TimelineEvent({
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="text-muted-foreground mt-2 text-sm">
+            <Paragraph
+              variant="p"
+              weight="medium"
+              size="sm"
+              className="mt-2 text-body/80"
+            >
               {event.details}
-            </p>
+            </Paragraph>
           </motion.div>
         </motion.div>
       </div>
-      <div className="z-10 rounded-full bg-dark-200 p-2 dark:bg-light-200">
+      <div className="z-10 rounded-full p-2 ">
         <motion.div
-          className="flex size-2 items-center justify-center rounded-full bg-dark-200/80 dark:bg-light-100"
+          className="flex size-2 items-center justify-center rounded-full bg-background-secondary/80 p-3"
           initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          animate={{ scale: 0.8 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <div className="size-2 rounded-full bg-light-200 dark:bg-dark-200" />
+          <div className="size-2 rounded-full bg-background p-[5px]" />
         </motion.div>
       </div>
       <div className="w-5/12" />
