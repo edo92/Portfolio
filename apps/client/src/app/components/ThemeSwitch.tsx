@@ -18,7 +18,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ className }) => {
       )}
     >
       <Icons.LightBulb
-        className="text-foreground mt-0.5 aspect-square size-6 shrink-0 self-start hover:text-muted-foreground transition-colors duration-200"
+        className="mt-0.5 aspect-square size-6 shrink-0 self-start transition-colors duration-200 hover:text-accent-foreground/80"
         onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
       />
     </button>

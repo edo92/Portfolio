@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '../cn';
 
 const paragraphVariants = tv({
-  base: 'transition-colors duration-200 ease-in-out',
+  base: 'text-body transition-colors duration-200 ease-in-out',
   variants: {
     weight: {
       light: 'font-light',
