@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ThemeSwitch } from '../../components/ThemeSwitch';
 import { Paragraph } from '@libs/ui';
+import { ThemeSwitch } from '../../components/ThemeSwitch';
 
 export const Header = () => (
   <nav className="z-10 flex w-full items-center justify-between px-8 py-5">
@@ -10,16 +10,33 @@ export const Header = () => (
       </Paragraph>
     </Link>
     <div className="flex items-center gap-6">
-      <Link href="/projects" className="hover:text-muted-foreground">
+      <Link href="/projects">
+        <Paragraph
+          variant="span"
+          weight="medium"
+          size="sm"
+          className="hover:text-muted-foreground"
+        >
           Projects
+        </Paragraph>
       </Link>
-      <Link href="/resume" className="hover:text-muted-foreground">
-        <Paragraph variant="span" weight="medium" size="sm">
+      <Link href="/resume">
+        <Paragraph
+          variant="span"
+          weight="medium"
+          size="sm"
+          className="hover:text-muted-foreground"
+        >
           Resume
         </Paragraph>
       </Link>
-      <Link href="/contact" className="hover:text-muted-foreground">
-        <Paragraph variant="span" weight="medium" size="sm">
+      <Link href="/contact">
+        <Paragraph
+          variant="span"
+          weight="medium"
+          size="sm"
+          className="hover:text-muted-foreground"
+        >
           Contact
         </Paragraph>
       </Link>
