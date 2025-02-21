@@ -1,8 +1,41 @@
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
-export const inter = Inter({
-  subsets: ['latin'],
+export const interBlack = localFont({
+  weight: '900',
+  style: 'normal',
   display: 'swap',
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '700', '900'],
+  src: '/fonts/Inter-Black.ttf',
+  variable: '--font-inter-black',
+});
+
+export const interBold = localFont({
+  weight: '700',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Bold.ttf',
+  variable: '--font-inter-bold',
+});
+
+export const interMedium = localFont({
+  weight: '500',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Medium.ttf',
+  variable: '--font-inter-medium',
+});
+
+export const interRegular = localFont({
+  weight: '400',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Regular.ttf',
+  variable: '--font-inter-regular',
+});
+
+export const interLight = localFont({
+  weight: '300',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Light.ttf',
+  variable: '--font-inter-light',
 });

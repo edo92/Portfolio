@@ -10,18 +10,16 @@ export const Header = () => (
       </Paragraph>
     </Link>
     <div className="flex items-center gap-6">
-      <Link href="/projects">
-        <Paragraph variant="span" size="sm">
+      <Link href="/projects" className="hover:text-muted-foreground">
           Projects
-        </Paragraph>
       </Link>
-      <Link href="/resume">
-        <Paragraph variant="span" size="sm">
+      <Link href="/resume" className="hover:text-muted-foreground">
+        <Paragraph variant="span" weight="medium" size="sm">
           Resume
         </Paragraph>
       </Link>
-      <Link href="/contact">
-        <Paragraph variant="span" size="sm">
+      <Link href="/contact" className="hover:text-muted-foreground">
+        <Paragraph variant="span" weight="medium" size="sm">
           Contact
         </Paragraph>
       </Link>

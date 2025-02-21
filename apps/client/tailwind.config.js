@@ -53,7 +53,12 @@ module.exports = {
         border: 'hsl(var(--border))',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', ...baseFonts],
+        black: ['var(--font-inter-black)'],
+        bold: ['var(--font-inter-bold)'],
+        medium: ['var(--font-inter-medium)'],
+        regular: ['var(--font-inter-regular)'],
+        light: ['var(--font-inter-light)'],
+        sans: ['var(--font-inter)'],
       },
       borderRadius: {
         lg: 'var(--radius)',
