@@ -16,6 +16,14 @@ export const interBold = localFont({
   variable: '--font-inter-bold',
 });
 
+export const interSemibold = localFont({
+  weight: '600',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-SemiBold.ttf',
+  variable: '--font-inter-semibold',
+});
+
 export const interMedium = localFont({
   weight: '500',
   style: 'normal',

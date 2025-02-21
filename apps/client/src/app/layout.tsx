@@ -24,6 +24,7 @@ export default function RootLayout({
           'relative h-screen w-full',
           fonts.interBlack.variable,
           fonts.interBold.variable,
+          fonts.interSemibold.variable,
           fonts.interMedium.variable,
           fonts.interRegular.variable,
           fonts.interLight.variable,

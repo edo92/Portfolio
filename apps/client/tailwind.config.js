@@ -49,6 +49,7 @@ module.exports = {
       fontFamily: {
         black: ['var(--font-inter-black)'],
         bold: ['var(--font-inter-bold)'],
+        semibold: ['var(--font-inter-semibold)'],
         medium: ['var(--font-inter-medium)'],
         regular: ['var(--font-inter-regular)'],
         light: ['var(--font-inter-light)'],
