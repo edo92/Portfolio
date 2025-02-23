@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@portfolio/ui": ["libs/ui/src/index.ts"],
-      "@portfolio/ui/server": ["libs/ui/src/server.ts"]
+      "@portfolio/ui/server": ["libs/ui/src/server.ts"],
+      "@portfolio/util": ["libs/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
