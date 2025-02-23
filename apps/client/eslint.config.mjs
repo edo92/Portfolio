@@ -15,8 +15,8 @@ const compat = new FlatCompat({
 
 const config = [
   ...fixupConfigRules(compat.extends('next')),
-  ...fixupConfigRules(compat.extends('next/core-web-vitals')),
   ...fixupConfigRules(compat.extends('prettier')),
+  ...fixupConfigRules(compat.extends('next/core-web-vitals')),
 
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],
