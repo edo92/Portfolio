@@ -23,13 +23,15 @@
     "types": ["jest", "node"]
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
     "../../apps/client/.next/types/**/*.ts",
     "../../dist/apps/client/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "postcss.config.mjs"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
