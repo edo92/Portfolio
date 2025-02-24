@@ -20,16 +20,6 @@ export const Header = () => (
           Projects
         </Paragraph>
       </Link>
-      <Link href="/resume">
-        <Paragraph
-          variant="span"
-          weight="medium"
-          size="sm"
-          className="hover:text-accent-foreground/80"
-        >
-          Resume
-        </Paragraph>
-      </Link>
       <Link href="/contact">
         <Paragraph
           variant="span"
