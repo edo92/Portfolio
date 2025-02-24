@@ -1,7 +1,8 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { cn, Icons } from '@libs/ui';
+import { Icons } from '@libs/ui';
+import { cn } from '@libs/util';
 
 interface ThemeSwitchProps {
   className?: string;
@@ -14,7 +15,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ className }) => {
     <button
       className={cn(
         'group flex h-auto min-h-0 flex-col items-center p-0 ring-0',
-        className,
+        className
       )}
     >
       <Icons.LightBulb
