@@ -28,7 +28,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background Earth Component */}
-      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block">
+      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <EarthComponent />
       </div>
 
