@@ -26,7 +26,7 @@ export const StatusIcon: React.FC<StatusIconProps> = ({ className, type }) => {
     case 'success':
       return (
         <svg
-          className={cn('mt-0.5 size-4 shrink-0 text-success-450', className)}
+          className={cn('mt-0.5 size-4 shrink-0 text-success', className)}
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -40,7 +40,7 @@ export const StatusIcon: React.FC<StatusIconProps> = ({ className, type }) => {
     case 'error':
       return (
         <svg
-          className={cn('mt-0.5 size-4 shrink-0 text-danger-300', className)}
+          className={cn('mt-0.5 size-4 shrink-0 text-destructive', className)}
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"

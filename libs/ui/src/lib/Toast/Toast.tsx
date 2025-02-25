@@ -25,7 +25,10 @@ export interface ToastProps {
 export const Toast: React.FC<ToastProps> = memo(
   ({ className, handleClose, toasts }) => (
     <div
-      className={cn('fixed right-0 top-0 z-50 w-full max-w-sm p-4', className)}
+      className={cn(
+        'fixed right-0 top-0 w-full max-w-sm p-4 z-[9999]',
+        className
+      )}
     >
       <div className="space-y-3">
         {toasts.map((toast) => (
@@ -33,7 +36,7 @@ export const Toast: React.FC<ToastProps> = memo(
             key={toast.id}
             role="alert"
             aria-labelledby={`toast-title-${toast.id}`}
-            className="max-w-xs rounded-xl border border-dark-100 bg-dark-300 shadow-lg"
+            className="max-w-xs rounded-xl border bg-background-secondary shadow-lg"
           >
             <div className="flex gap-4 p-4">
               <div className="shrink-0">
@@ -46,7 +49,6 @@ export const Toast: React.FC<ToastProps> = memo(
                   size="sm"
                   weight="semibold"
                   id={`toast-title-${toast.id}`}
-                  className="text-neutral-100"
                 >
                   {toast.title}
                 </Paragraph>
@@ -55,7 +57,7 @@ export const Toast: React.FC<ToastProps> = memo(
                   size="sm"
                   weight="regular"
                   aria-label="toast-message"
-                  className="mt-1 text-neutral-100/90"
+                  className="mt-1"
                 >
                   {toast.message}
                 </Paragraph>
@@ -68,7 +70,7 @@ export const Toast: React.FC<ToastProps> = memo(
                 onClick={() => handleClose(toast.id)}
                 className="group inline-flex h-fit items-start p-0 py-1"
               >
-                <Icons.CloseX className="size-3 stroke-1.5 text-neutral-200 transition duration-200 group-hover:text-neutral-400" />
+                <Icons.CloseX className="size-3.5 stroke-1.5 text-body transition duration-200 group-hover:text-body/85" />
               </Button>
             </div>
           </div>
