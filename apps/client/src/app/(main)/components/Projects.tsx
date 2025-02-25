@@ -64,7 +64,7 @@ const categories = [
   ...new Set(projects.map((project) => project.category)),
 ];
 
-export default function PortfolioGrid() {
+export const Projects = () => {
   const [filter, setFilter] = useState('All');
 
   const filteredProjects =
@@ -181,4 +181,4 @@ export default function PortfolioGrid() {
       </div>
     </section>
   );
-}
+};

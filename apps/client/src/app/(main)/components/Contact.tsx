@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Textarea, useToast } from '@libs/ui';
+import { Textarea, ToastProvider, useToast } from '@libs/ui';
 import { Input, Button, Heading, Paragraph } from '@libs/ui';
 import {
   Form,
@@ -30,7 +30,7 @@ const formSchema = z.object({
   }),
 });
 
-export default function Contact() {
+const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -184,4 +184,10 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};
+
+export const Contact = () => (
+  <ToastProvider>
+    <ContactForm />
+  </ToastProvider>
+);
