@@ -1,11 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { useRef, useEffect, useState } from 'react';
+import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-function Earth3d() {
+function Earth3d({ scale = 1 }) {
   const earthRef = useRef<THREE.Mesh>(null);
   const cloudsRef = useRef<THREE.Mesh>(null);
 
@@ -28,13 +28,13 @@ function Earth3d() {
   return (
     <>
       {/* Earth */}
-      <mesh ref={earthRef}>
+      <mesh ref={earthRef} scale={scale}>
         <sphereGeometry args={[1, 64, 64]} />
         <meshPhongMaterial map={earthTexture} />
       </mesh>
 
       {/* Clouds */}
-      <mesh ref={cloudsRef}>
+      <mesh ref={cloudsRef} scale={scale}>
         <sphereGeometry args={[1.01, 64, 64]} />
         <meshPhongMaterial
           map={cloudTexture}
@@ -45,7 +45,7 @@ function Earth3d() {
       </mesh>
 
       {/* Atmosphere */}
-      <mesh scale={1.05}>
+      <mesh scale={scale * 1.05}>
         <sphereGeometry args={[1, 64, 64]} />
         <shaderMaterial
           vertexShader={`
@@ -75,10 +75,62 @@ function Earth3d() {
   );
 }
 
+// Camera adjustment based on window size
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+
+  useEffect(() => {
+    // Adjust camera position based on window width
+    const updateCamera = () => {
+      if (size.width < 768) {
+        // Mobile view - move camera closer
+        camera.position.z = 4.5;
+      } else if (size.width < 1024) {
+        // Tablet view
+        camera.position.z = 3.5;
+      } else {
+        // Desktop view
+        camera.position.z = 3;
+      }
+      camera.updateProjectionMatrix();
+    };
+
+    updateCamera();
+  }, [camera, size]);
+
+  return null;
+}
+
 export default function EarthScene() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    // Function to update scale based on window size
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setScale(0.8); // Smaller scale for mobile
+      } else if (width < 1024) {
+        setScale(0.9); // Medium scale for tablets
+      } else {
+        setScale(1); // Full scale for desktop
+      }
+    };
+
+    // Set initial scale
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Canvas camera={{ position: [0, 0, 3], fov: 45 }}>
-      <Earth3d />
+      <ResponsiveCamera />
+      <Earth3d scale={scale} />
       <OrbitControls enableDamping dampingFactor={0.05} enableZoom={false} />
     </Canvas>
   );
