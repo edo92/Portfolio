@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { cn } from '@libs/util';
 import { Icons, Paragraph, paragraphVariants } from '@libs/ui';
+import EarthComponent from './3dPlanet';
 
 export const Hero = () => {
   const socialLinks = [
@@ -26,6 +27,11 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
+      {/* Background Earth Component */}
+      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block">
+        <EarthComponent />
+      </div>
+
       {/* Content Container */}
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 py-24 md:py-32 lg:py-40">
         <div className="flex flex-col items-center md:items-center lg:flex-row lg:items-start gap-12 lg:gap-16">
