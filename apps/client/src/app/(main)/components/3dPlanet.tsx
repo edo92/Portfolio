@@ -11,8 +11,8 @@ function Earth3d() {
 
   // Load textures
   const [earthTexture, cloudTexture] = useLoader(THREE.TextureLoader, [
-    '/8k_earth_daymap-1.jpg',
-    '/8081_earthhiresclouds4K-_2_.png',
+    '/static/earth_daymap.jpg',
+    '/static/earth_clouds.png',
   ]);
 
   // Rotation animation
