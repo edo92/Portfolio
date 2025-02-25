@@ -11,7 +11,7 @@ function Earth3d() {
 
   // Load textures
   const [earthTexture, cloudTexture] = useLoader(THREE.TextureLoader, [
-    '/static/earth_daymap.jpg',
+    '/static/earth_daymap.png',
     '/static/earth_clouds.png',
   ]);
 
