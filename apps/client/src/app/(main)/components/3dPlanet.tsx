@@ -82,15 +82,16 @@ function ResponsiveCamera() {
   useEffect(() => {
     // Adjust camera position based on window width
     const updateCamera = () => {
-      if (size.width < 768) {
-        // Mobile view - move camera closer
-        camera.position.z = 4.5;
-      } else if (size.width < 1024) {
-        // Tablet view
-        camera.position.z = 3.5;
-      } else {
-        // Desktop view
-        camera.position.z = 3;
+      if (size.width < 570) {
+        camera.position.z = 4.4;
+      } else if (size.width < 650) {
+        camera.position.z = 4;
+      } else if (size.width < 700) {
+        camera.position.z = 3.6;
+      } else if (size.width < 800) {
+        camera.position.z = 3.4;
+      } else if (size.width < 900) {
+        camera.position.z = 3.2;
       }
       camera.updateProjectionMatrix();
     };
