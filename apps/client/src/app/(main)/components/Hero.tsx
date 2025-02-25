@@ -36,7 +36,7 @@ export const Hero = () => {
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 py-24 md:py-32 lg:py-40">
         <div className="flex flex-col items-center md:items-center lg:flex-row lg:items-start gap-12 lg:gap-16">
           {/* Text Content */}
-          <div className="lg:w-1/2 max-w-2xl text-center md:text-left">
+          <div className="lg:w-1/2 max-w-2xl text-start md:text-left">
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export const Hero = () => {
               </motion.span>
 
               <motion.h1
-                className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+                className="mt-4 text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
