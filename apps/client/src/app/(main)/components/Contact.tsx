@@ -2,13 +2,12 @@
 
 import * as z from 'zod';
 import { useState } from 'react';
-import { Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Textarea, ToastProvider, useToast } from '@libs/ui';
 import { Input, Button, Heading, Paragraph } from '@libs/ui';
+import { Icons, Textarea, ToastProvider, useToast } from '@libs/ui';
 import {
   Form,
   FormField,
@@ -175,7 +174,7 @@ const ContactForm = () => {
                   >
                     Send
                   </Paragraph>
-                  <Send className="ml-2 size-4" />
+                  <Icons.Send className="ml-2 size-4" />
                 </Button>
               </form>
             </Form>
