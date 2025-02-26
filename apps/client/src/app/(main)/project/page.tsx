@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProjectsHero } from './components/Hero';
-
+import { ProjectsLayout } from './components/ProjectsLayout';
 export const metadata: Metadata = {
   title: {
     absolute: 'Portfolio | Projects',
@@ -33,6 +33,7 @@ export default function ProjectPage() {
   return (
     <main className="min-h-screen size-full">
       <ProjectsHero />
+      <ProjectsLayout />
     </main>
   );
 }
