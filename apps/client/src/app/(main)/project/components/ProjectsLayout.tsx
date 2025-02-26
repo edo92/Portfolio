@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heading, Paragraph } from '@libs/ui';
-import { ProjectsGrid } from './Projects';
 import { FeaturedProject } from './Featured';
 import { featuredProject, projects } from '../contents';
+import { ProjectsGrid } from '../../components/Projects';
 
 export const ProjectsLayout = () => {
   const [isLoaded, setIsLoaded] = useState(false);
