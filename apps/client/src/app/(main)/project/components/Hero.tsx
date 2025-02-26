@@ -18,11 +18,11 @@ export const ProjectsHero = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background-secondary px-12 py-24 sm:px-12 lg:py-32 w-full">
+    <section className="relative overflow-hidden px-12 py-24 sm:px-12 lg:py-32 w-full">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
-        <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-secondary/30 blur-3xl" />
+        <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/25 blur-3xl" />
+        <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
       </div>
 
       {/* Content Container */}
@@ -48,7 +48,7 @@ export const ProjectsHero = () => {
             <Heading
               as="h2"
               weight="bold"
-              className="mb-6 text-3xl sm:text-4xl lg:text-5xl"
+              className="mb-6 text-3xl sm:text-4xl lg:text-[2.7rem]"
             >
               Projects
             </Heading>
@@ -153,7 +153,7 @@ export const ProjectsHero = () => {
                   delay: 0.5,
                 }}
               >
-                <div className="h-5 w-5 rounded-full bg-success/30"></div>
+                <div className="size-5 rounded-full bg-success/30" />
               </motion.div>
             </div>
           </motion.div>

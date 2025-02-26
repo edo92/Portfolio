@@ -16,7 +16,7 @@ export const ProjectsLayout = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <section className="relative overflow-hidden bg-background px-4 py-24 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-background-secondary px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             className="mb-12 flex flex-col items-center justify-center text-center"
@@ -24,12 +24,8 @@ export const ProjectsLayout = () => {
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8 }}
           >
-            <Heading
-              as="h1"
-              weight="bold"
-              className="text-4xl sm:text-5xl lg:text-6xl"
-            >
-              My Projects
+            <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
+              Projects showcase
             </Heading>
             <Paragraph
               variant="p"
@@ -46,7 +42,7 @@ export const ProjectsLayout = () => {
       </section>
 
       {/* Featured Project */}
-      <section className="bg-background-secondary px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-background-secondary px-4 py-6 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0 }}
@@ -66,7 +62,7 @@ export const ProjectsLayout = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="bg-background px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-background px-4 py-32 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0 }}
