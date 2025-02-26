@@ -1,15 +1,16 @@
 import './styles/global.css';
 
+import type { Metadata } from 'next';
 import { cn } from '@libs/util';
 import * as fonts from './fonts';
 import { Providers } from './providers';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: 'Portfolio',
-    template: '%s | Eduard Jacobs',
+    template: '%s Portfolio',
   },
-  description: "Eduard Jacobs' personal portfolio",
+  description: "Eduard Jacobs' portfolio",
 };
 
 export default function RootLayout({
