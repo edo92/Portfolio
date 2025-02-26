@@ -1,4 +1,4 @@
-import { ProjectsHero } from './components/ProjectHero';
+import { ProjectsHero } from './components/Hero';
 
 export default function ProjectPage() {
   return (
