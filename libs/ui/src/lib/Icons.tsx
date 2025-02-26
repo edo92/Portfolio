@@ -71,7 +71,7 @@ export const Icons = {
     </svg>
   ),
 
-  Link: (props?: IconProps) => (
+  ExternalLink: (props?: IconProps) => (
     <svg
       viewBox="0 0 19 18"
       fill="none"
