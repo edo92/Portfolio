@@ -38,10 +38,10 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
-          <div className="absolute bottom-0 left-0 p-8 text-white lg:hidden">
+          <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white lg:hidden">
             <Badge
               variant="outline"
-              className="mb-3 border-white/20 bg-black/40 text-white"
+              className="mb-4 border-white/20 bg-black/40 text-white"
             >
               {project.category}
             </Badge>
@@ -49,14 +49,14 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
               variant="h3"
               weight="bold"
               size="2xl"
-              className="mb-2 text-white"
+              className="text-white"
             >
               {project.title}
             </Heading>
           </div>
         </div>
 
-        <div className="p-8 lg:p-10">
+        <div className="p-6 md:p-8 lg:p-10">
           <div className="hidden lg:block">
             <Badge variant="outline" className="mb-4">
               {project.category}
@@ -70,16 +70,16 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
             variant="p"
             weight="regular"
             size="md"
-            className="mb-8 text-muted-foreground"
+            className="mb-6 md:mb-8 text-muted-foreground"
           >
             {project.detailed}
           </Paragraph>
 
-          <div className="mb-8 grid grid-cols-3 gap-4 sm:gap-6">
+          <div className="mb-6 md:mb-8 grid grid-cols-3 gap-3 md:gap-4 lg:gap-6">
             {project.stats.map((stat, index) => (
               <div
                 key={index}
-                className="rounded-lg bg-background p-4 text-center"
+                className="rounded-lg bg-background p-3 md:p-4 text-center"
               >
                 <Paragraph
                   variant="p"
@@ -101,7 +101,7 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
             ))}
           </div>
 
-          <div className="mb-8 flex flex-wrap gap-3">
+          <div className="mb-6 md:mb-8 flex flex-wrap gap-2 md:gap-3">
             {project.tags.map((tag) => (
               <Badge key={tag} variant="secondary" className="px-3 py-1">
                 {tag}
@@ -109,9 +109,9 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
             ))}
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-col gap-3 md:gap-4 sm:flex-row">
             <Link href={`/projects/${project.id}`} className="flex-1">
-              <Button className="group w-full py-6">
+              <Button className="group w-full py-5 md:py-6">
                 <Paragraph
                   variant="span"
                   weight="medium"
@@ -123,7 +123,7 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
                 <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <div className="flex gap-4">
+            <div className="flex gap-3 md:gap-4">
               {project.githubUrl && (
                 <Link
                   href={project.githubUrl}
