@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ProjectsHero } from './components/Hero';
 import { ProjectsLayout } from './components/ProjectsLayout';
+
 export const metadata: Metadata = {
   title: {
     absolute: 'Portfolio | Projects',
