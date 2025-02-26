@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@libs/util';
 import { Badge, Button, Heading, Icons, Paragraph } from '@libs/ui';
 
-type ProjectsGridProps = {
+type ProjectProps = {
   id: string;
   title: string;
   description: string;
@@ -19,11 +19,12 @@ type ProjectsGridProps = {
   demoUrl?: string;
 };
 
-export const ProjectsGrid = ({
-  projects,
-}: {
-  projects: ProjectsGridProps[];
-}) => {
+type ProjectGridProps = {
+  projects: ProjectProps[];
+  className?: string;
+};
+
+export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
   const [filter, setFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
@@ -38,7 +39,7 @@ export const ProjectsGrid = ({
       : projects.filter((project) => project.category === filter);
 
   return (
-    <div className="w-full py-40">
+    <div className={cn('w-full py-40', className)}>
       <div className="flex flex-col items-center justify-center mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Heading
           as="h2"

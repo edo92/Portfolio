@@ -69,7 +69,7 @@ export const ProjectsLayout = () => {
             animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <ProjectsGrid projects={projects} />
+            <ProjectsGrid projects={projects} className='py-12'/>
           </motion.div>
         </div>
       </section>
