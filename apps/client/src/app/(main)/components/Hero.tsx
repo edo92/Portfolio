@@ -26,19 +26,19 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden py-16 md:py-24 lg:py-32">
       {/* Background Earth Component */}
       <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <EarthComponent />
       </div>
 
       {/* Content Container */}
-      <div className="relative mx-auto max-w-7xl px-4 md:px-6 py-24 md:py-32 lg:py-40">
-        <div className="flex flex-col items-center md:items-center lg:flex-row lg:items-start gap-12 lg:gap-16">
+      <div className="container relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="flex flex-col items-start lg:flex-row lg:items-center gap-12 lg:gap-16">
           {/* Text Content */}
-          <div className="lg:w-1/2 max-w-2xl text-start md:text-left">
+          <div className="lg:w-1/2 max-w-2xl">
             <motion.div
-              className="space-y-6"
+              className="space-y-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -60,7 +60,7 @@ export const Hero = () => {
               </motion.span>
 
               <motion.h1
-                className="mt-4 text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+                className="text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -68,27 +68,29 @@ export const Hero = () => {
                 Eduard Jacobs
               </motion.h1>
 
-              <motion.p
+              <motion.div
                 className={cn(
                   paragraphVariants({ variant: 'p', weight: 'regular' }),
-                  'mt-6 text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-200 md:backdrop-blur-sm md:bg-background/80 md:rounded-lg md:py-4'
+                  'text-base md:text-lg leading-relaxed md:backdrop-blur-sm md:bg-background/80 md:rounded-lg'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Software Engineer with over 5 years of expertise in backend and
-                full-stack development, specializing in cloud-native
-                architectures and microservices. Demonstrated success in
-                designing scalable systems using Python, TypeScript, and AWS
-                technologies. Proven track record in implementing DevOps
-                practices and maintaining high-performance production
-                environments.
-              </motion.p>
+                <Paragraph variant="p" weight="regular" size="lg" className='text-body/80'>
+                  Software Engineer with over 5 years of expertise in backend
+                  and full-stack development, specializing in cloud-native
+                  architectures and microservices. Demonstrated success in
+                  designing scalable systems using Python, TypeScript, and AWS
+                  technologies. Proven track record in implementing DevOps
+                  practices and maintaining high-performance production
+                  environments.
+                </Paragraph>
+              </motion.div>
 
               {/* Social Links */}
               <motion.div
-                className="mt-8 flex items-center justify-center md:justify-start gap-4"
+                className="flex items-center gap-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -97,7 +99,7 @@ export const Hero = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="flex items-center gap-2 rounded-md p-2 text-gray-700 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-200 md:backdrop-blur-sm md:bg-background/80"
+                    className="flex items-center gap-3 rounded-md p-3 text-gray-700 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-200 md:backdrop-blur-sm md:bg-background/80"
                     aria-label={`Visit ${link.name}`}
                     target="_blank"
                     rel="noopener noreferrer"

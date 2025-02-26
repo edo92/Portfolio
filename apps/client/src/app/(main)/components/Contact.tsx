@@ -58,10 +58,10 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-background-secondary px-4 py-24 sm:px-6 lg:px-8">
-      <div className="container relative mx-auto max-w-lg">
+    <section className="relative overflow-hidden bg-background-secondary px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <div className="container relative mx-auto max-w-xl">
         <motion.div
-          className="mb-12 flex flex-col items-center justify-center text-center"
+          className="mb-16 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -69,7 +69,7 @@ const ContactForm = () => {
           <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
             Contact Me
           </Heading>
-          <Paragraph variant="p" weight="regular" size="md" className="mt-4">
+          <Paragraph variant="p" weight="regular" size="md" className="mt-6">
             I&apos;m always looking for new opportunities to collaborate.
           </Paragraph>
         </motion.div>
@@ -80,17 +80,17 @@ const ContactForm = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40">
+          <div className="rounded-2xl border border-border/70 bg-card/40 p-8 sm:p-10 dark:bg-card/40">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
+                className="space-y-8"
               >
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
                           size="xs"
@@ -112,7 +112,7 @@ const ContactForm = () => {
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
                           size="xs"
@@ -138,7 +138,7 @@ const ContactForm = () => {
                   control={form.control}
                   name="message"
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
                           size="xs"
@@ -152,7 +152,7 @@ const ContactForm = () => {
                       <FormControl>
                         <Textarea
                           placeholder="Tell us about your project..."
-                          className="min-h-[120px]"
+                          className="min-h-[150px] resize-none"
                           {...field}
                         />
                       </FormControl>
@@ -162,7 +162,7 @@ const ContactForm = () => {
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-primary"
+                  className="w-full bg-primary py-6"
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >
