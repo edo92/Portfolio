@@ -10,7 +10,7 @@ export const Header = () => (
       </Paragraph>
     </Link>
     <div className="flex items-center gap-6">
-      <Link href="/projects">
+      <Link href="/project">
         <Paragraph
           variant="span"
           weight="medium"

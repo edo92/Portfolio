@@ -31,9 +31,7 @@ export default function RootLayout({
           fonts.interLight.variable
         )}
       >
-        <Providers>
-          <main className="flex min-h-screen w-full">{children}</main>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
