@@ -45,7 +45,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative">
         <div className="relative h-[40vh] min-h-[300px] w-full overflow-hidden lg:h-[50vh]">
@@ -389,6 +389,6 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
           </motion.div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };

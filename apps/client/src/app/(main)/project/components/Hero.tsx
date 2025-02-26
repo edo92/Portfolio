@@ -18,9 +18,9 @@ export const ProjectsHero = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden px-12 py-24 sm:px-12 lg:py-32 w-full">
+    <section className="relative overflow-hidden px-12 py-24 sm:px-12 lg:py-32 w-full bg-gradient-to-t from-background-secondary via-transparent to-transparent">
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-10">
+      <div className="absolute inset-0 z-0 opacity-10 ">
         <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/25 blur-3xl" />
         <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
       </div>
