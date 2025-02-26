@@ -18,16 +18,16 @@ export const ProjectsHero = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden px-12 py-24 sm:px-12 lg:py-32 w-full bg-gradient-to-t from-background-secondary via-transparent to-transparent">
+    <section className="relative overflow-hidden w-full bg-gradient-to-t from-background-secondary via-transparent to-transparent py-24 md:py-28 lg:py-32">
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-10 ">
+      <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/25 blur-3xl" />
         <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
       </div>
 
       {/* Content Container */}
-      <div className="container relative z-10 mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           {/* Text Content */}
           <motion.div
             className="flex flex-col justify-center"
@@ -40,7 +40,7 @@ export const ProjectsHero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <Badge variant="secondary" className="mb-4">
+              <Badge variant="secondary" className="mb-6">
                 Portfolio
               </Badge>
             </motion.div>
@@ -48,7 +48,7 @@ export const ProjectsHero = () => {
             <Heading
               as="h2"
               weight="bold"
-              className="mb-6 text-3xl sm:text-4xl lg:text-[2.7rem]"
+              className="mb-8 text-3xl sm:text-4xl lg:text-[2.7rem]"
             >
               Projects
             </Heading>
@@ -57,7 +57,7 @@ export const ProjectsHero = () => {
               variant="p"
               weight="regular"
               size="md"
-              className="mb-8 text-muted-foreground md:text-[1.125rem] md:leading-[1.75rem]"
+              className="mb-10 text-muted-foreground md:text-[1.125rem] md:leading-[1.75rem]"
             >
               Explore my portfolio of software engineering projects, showcasing
               cloud-native architectures, microservices, and full-stack
@@ -66,7 +66,7 @@ export const ProjectsHero = () => {
 
             {/* Skills Tags */}
             <motion.div
-              className="flex flex-wrap gap-2"
+              className="flex flex-wrap gap-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -75,7 +75,7 @@ export const ProjectsHero = () => {
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="bg-background/50"
+                  className="bg-background/50 px-4 py-1.5"
                 >
                   {skill}
                 </Badge>
@@ -85,7 +85,7 @@ export const ProjectsHero = () => {
 
           {/* Visual Element */}
           <motion.div
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center lg:justify-end"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -93,12 +93,12 @@ export const ProjectsHero = () => {
             <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96">
               {/* Code Block Visual */}
               <div className="absolute inset-0 rounded-lg border border-border/50 bg-card/40 p-6 shadow-lg backdrop-blur-sm">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-3">
                   <div className="h-3 w-3 rounded-full bg-destructive/70"></div>
                   <div className="h-3 w-3 rounded-full bg-secondary/70"></div>
                   <div className="h-3 w-3 rounded-full bg-success/70"></div>
                 </div>
-                <div className="mt-4 space-y-2">
+                <div className="mt-6 space-y-3">
                   <div className="h-4 w-3/4 rounded bg-foreground/10"></div>
                   <div className="h-4 w-1/2 rounded bg-foreground/10"></div>
                   <div className="h-4 w-5/6 rounded bg-foreground/10"></div>
@@ -110,7 +110,7 @@ export const ProjectsHero = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -right-4 -top-4 rounded-lg border border-border/50 bg-card/40 p-4 shadow-lg backdrop-blur-sm"
+                className="absolute -right-6 -top-6 rounded-lg border border-border/50 bg-card/40 p-4 shadow-lg backdrop-blur-sm"
                 animate={{
                   y: [0, -10, 0],
                   rotate: [0, 2, 0],
@@ -125,7 +125,7 @@ export const ProjectsHero = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 left-12 rounded-lg border border-border/50 bg-card/40 p-4 shadow-lg backdrop-blur-sm"
+                className="absolute -bottom-8 left-12 rounded-lg border border-border/50 bg-card/40 p-4 shadow-lg backdrop-blur-sm"
                 animate={{
                   y: [0, 10, 0],
                   rotate: [0, -2, 0],
@@ -141,7 +141,7 @@ export const ProjectsHero = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -left-8 top-1/3 rounded-lg border border-border/50 bg-card/40 p-3 shadow-lg backdrop-blur-sm"
+                className="absolute -left-10 top-1/3 rounded-lg border border-border/50 bg-card/40 p-3 shadow-lg backdrop-blur-sm"
                 animate={{
                   x: [0, -5, 0],
                   rotate: [0, -1, 0],

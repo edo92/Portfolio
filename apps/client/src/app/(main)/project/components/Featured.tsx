@@ -29,7 +29,7 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
       transition={{ duration: 0.8 }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="relative h-64 overflow-hidden lg:h-auto">
+        <div className="relative h-72 overflow-hidden sm:h-80 lg:h-auto">
           <Image
             fill
             alt={project.title}
@@ -38,10 +38,10 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
-          <div className="absolute bottom-0 left-0 p-6 text-white lg:hidden">
+          <div className="absolute bottom-0 left-0 p-8 text-white lg:hidden">
             <Badge
               variant="outline"
-              className="mb-2 border-white/20 bg-black/40 text-white"
+              className="mb-3 border-white/20 bg-black/40 text-white"
             >
               {project.category}
             </Badge>
@@ -56,12 +56,12 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
           </div>
         </div>
 
-        <div className="p-6 lg:p-8">
+        <div className="p-8 lg:p-10">
           <div className="hidden lg:block">
-            <Badge variant="outline" className="mb-2">
+            <Badge variant="outline" className="mb-4">
               {project.category}
             </Badge>
-            <Heading variant="h3" weight="bold" size="2xl" className="mb-4">
+            <Heading variant="h3" weight="bold" size="2xl" className="mb-6">
               {project.title}
             </Heading>
           </div>
@@ -70,16 +70,16 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
             variant="p"
             weight="regular"
             size="md"
-            className="mb-6 text-muted-foreground lg:mb-8"
+            className="mb-8 text-muted-foreground"
           >
             {project.detailed}
           </Paragraph>
 
-          <div className="mb-6 grid grid-cols-3 gap-4">
+          <div className="mb-8 grid grid-cols-3 gap-4 sm:gap-6">
             {project.stats.map((stat, index) => (
               <div
                 key={index}
-                className="rounded-lg bg-background p-3 text-center"
+                className="rounded-lg bg-background p-4 text-center"
               >
                 <Paragraph
                   variant="p"
@@ -101,17 +101,17 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
             ))}
           </div>
 
-          <div className="mb-6 flex flex-wrap gap-2">
+          <div className="mb-8 flex flex-wrap gap-3">
             {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
+              <Badge key={tag} variant="secondary" className="px-3 py-1">
                 {tag}
               </Badge>
             ))}
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Link href={`/projects/${project.id}`} className="flex-1">
-              <Button className="group w-full">
+              <Button className="group w-full py-6">
                 <Paragraph
                   variant="span"
                   weight="medium"
@@ -123,7 +123,7 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
                 <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {project.githubUrl && (
                 <Link
                   href={project.githubUrl}
@@ -131,7 +131,7 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
                   rel="noopener noreferrer"
                   aria-label="View GitHub repository"
                 >
-                  <Button variant="outline" size="icon">
+                  <Button variant="outline" size="icon" className="h-12 w-12">
                     <Icons.GitHub className="size-5" />
                   </Button>
                 </Link>
@@ -143,7 +143,7 @@ export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
                   rel="noopener noreferrer"
                   aria-label="View live demo"
                 >
-                  <Button variant="outline" size="icon">
+                  <Button variant="outline" size="icon" className="h-12 w-12">
                     <Icons.ExternalLink className="size-5" />
                   </Button>
                 </Link>
