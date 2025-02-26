@@ -17,7 +17,7 @@ export const ProjectsLayout = () => {
   return (
     <div className="flex flex-col w-full bg-background">
       {/* Introduction Section */}
-      <section className="relative overflow-hidden bg-background-secondary py-20 md:py-24">
+      <section className="relative overflow-hidden bg-background-secondary py-16 md:py-20">
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <motion.div
             className="mx-auto max-w-3xl text-center"
@@ -47,7 +47,7 @@ export const ProjectsLayout = () => {
       </section>
 
       {/* Featured Project */}
-      <section className="bg-background-secondary py-12 md:py-16">
+      <section className="bg-background-secondary py-16 md:py-20">
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0 }}
