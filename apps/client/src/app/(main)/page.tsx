@@ -6,11 +6,11 @@ import { projects } from './project/contents';
 
 export default function HomePage() {
   return (
-    <>
+    <div className="space-y-0">
       <Hero />
       <Timeline />
       <ProjectsGrid projects={projects} />
       <Contact />
-    </>
+    </div>
   );
 }

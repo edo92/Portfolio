@@ -58,10 +58,10 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-background-secondary px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+    <section className="relative overflow-hidden bg-background-secondary px-6 py-16 sm:px-8 md:py-24 lg:px-12 lg:py-32">
       <div className="container relative mx-auto max-w-xl">
         <motion.div
-          className="mb-16 flex flex-col items-center justify-center text-center"
+          className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -80,11 +80,11 @@ const ContactForm = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="rounded-2xl border border-border/70 bg-card/40 p-8 sm:p-10 dark:bg-card/40">
+          <div className="rounded-2xl border border-border/70 bg-card/40 p-6 sm:p-8 md:p-10 dark:bg-card/40">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8"
+                className="space-y-6 md:space-y-8"
               >
                 <FormField
                   control={form.control}
@@ -162,7 +162,7 @@ const ContactForm = () => {
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-primary py-6"
+                  className="w-full bg-primary py-5 md:py-6"
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >

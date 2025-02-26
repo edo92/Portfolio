@@ -34,11 +34,11 @@ export const Hero = () => {
 
       {/* Content Container */}
       <div className="container relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div className="flex flex-col items-start lg:flex-row lg:items-center gap-12 lg:gap-16">
+        <div className="flex flex-col items-start lg:flex-row lg:items-center gap-8 md:gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="lg:w-1/2 max-w-2xl">
             <motion.div
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -77,7 +77,12 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Paragraph variant="p" weight="regular" size="lg" className='text-body/80'>
+                <Paragraph
+                  variant="p"
+                  weight="regular"
+                  size="lg"
+                  className="text-body/80"
+                >
                   Software Engineer with over 5 years of expertise in backend
                   and full-stack development, specializing in cloud-native
                   architectures and microservices. Demonstrated success in
@@ -90,7 +95,7 @@ export const Hero = () => {
 
               {/* Social Links */}
               <motion.div
-                className="flex items-center gap-6"
+                className="flex flex-wrap items-center gap-4 md:gap-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -99,7 +104,7 @@ export const Hero = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="flex items-center gap-3 rounded-md p-3 text-gray-700 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-200 md:backdrop-blur-sm md:bg-background/80"
+                    className="flex items-center gap-2 md:gap-3 rounded-md p-2 md:p-3 text-gray-700 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-200 md:backdrop-blur-sm md:bg-background/80"
                     aria-label={`Visit ${link.name}`}
                     target="_blank"
                     rel="noopener noreferrer"

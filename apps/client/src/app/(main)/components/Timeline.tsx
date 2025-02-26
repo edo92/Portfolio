@@ -71,11 +71,11 @@ export const Timeline = () => {
   return (
     <section
       ref={containerRef}
-      className="relative bg-background-secondary py-24 md:py-32 lg:py-40"
+      className="relative bg-background-secondary pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32"
     >
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
-          className="mb-16 flex flex-col items-center justify-center text-center"
+          className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -135,7 +135,7 @@ function TimelineEvent({
   return (
     <motion.div
       ref={ref}
-      className={`mb-16 flex w-full items-center justify-between ${
+      className={`mb-12 md:mb-16 flex w-full items-center justify-between ${
         index % 2 === 0 ? 'flex-row-reverse' : ''
       }`}
       initial={{ opacity: 0, y: 50 }}
