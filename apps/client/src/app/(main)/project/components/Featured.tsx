@@ -41,10 +41,10 @@ export const FeaturedProject = ({
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative h-64 overflow-hidden lg:h-auto">
           <Image
-            src={imageUrl || '/placeholder.svg'}
-            alt={title}
             fill
+            alt={title}
             className="object-cover"
+            src={imageUrl || '/placeholder.svg'}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
