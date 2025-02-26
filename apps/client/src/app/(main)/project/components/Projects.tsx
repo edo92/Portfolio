@@ -161,7 +161,7 @@ export const ProjectsGrid = ({
                   {project.description}
                 </Paragraph>
 
-                <Link href={`/projects/${project.id}`}>
+                <Link href={`/project/${project.id}`}>
                   <Button variant="outline" className="group w-full">
                     <Paragraph variant="span" weight="medium" size="sm">
                       View Details

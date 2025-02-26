@@ -36,7 +36,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
     // Redirect to projects page if project not found
     if (!project) {
-      router.push('/projects');
+      router.push('/project');
     }
   }, [project, router]);
 
@@ -47,7 +47,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-background-secondary">
+      <section className="relative">
         <div className="relative h-[40vh] min-h-[300px] w-full overflow-hidden lg:h-[50vh]">
           <Image
             src={project.imageUrl || '/placeholder.svg'}
