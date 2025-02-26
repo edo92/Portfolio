@@ -39,14 +39,10 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
       : projects.filter((project) => project.category === filter);
 
   return (
-    <section className={cn('w-full py-24 md:py-32 lg:py-40', className)}>
+    <section className={cn('w-full', className)}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center justify-center mb-12">
-          <Heading
-            as="h2"
-            weight="semibold"
-            className="text-2xl sm:text-3xl mb-8"
-          >
+          <Heading as="h2" weight="semibold" size="2xl" className="mb-8">
             All Projects
           </Heading>
 
@@ -111,7 +107,9 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                           variant="outline"
                           className="bg-black/40 text-white border-white/20"
                         >
-                          {tag}
+                          <Paragraph size="sm" variant="span" weight="medium">
+                            {tag}
+                          </Paragraph>
                         </Badge>
                       ))}
                     </div>
@@ -121,7 +119,9 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                 <div className="p-6 sm:p-8">
                   <div className="mb-4 flex items-center justify-between">
                     <Badge variant="secondary" className="text-xs">
-                      {project.category}
+                      <Paragraph size="sm" variant="span" weight="medium">
+                        {project.category}
+                      </Paragraph>
                     </Badge>
                     <div className="flex gap-3">
                       <a
@@ -159,7 +159,7 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                   <Paragraph
                     variant="p"
                     weight="regular"
-                    size="sm"
+                    size="lg"
                     className="mb-6 line-clamp-2 text-muted-foreground"
                   >
                     {project.description}
