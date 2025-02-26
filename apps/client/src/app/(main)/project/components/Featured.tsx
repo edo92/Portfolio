@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Badge, Button, Heading, Icons, Paragraph } from '@libs/ui';
 
-type FeaturedProjectProps = {
+type ProjectProps = {
   id: string;
   title: string;
   category: string;
@@ -20,17 +20,7 @@ type FeaturedProjectProps = {
   githubUrl?: string;
 };
 
-export const FeaturedProject = ({
-  id,
-  title,
-  stats,
-  tags,
-  category,
-  detailed,
-  imageUrl,
-  demoUrl,
-  githubUrl,
-}: FeaturedProjectProps) => {
+export const FeaturedProject = ({ project }: { project: ProjectProps }) => {
   return (
     <motion.div
       className="overflow-hidden rounded-xl border border-border/50 bg-card/40 shadow-lg"
@@ -42,9 +32,9 @@ export const FeaturedProject = ({
         <div className="relative h-64 overflow-hidden lg:h-auto">
           <Image
             fill
-            alt={title}
+            alt={project.title}
             className="object-cover"
-            src={imageUrl || '/placeholder.svg'}
+            src={project.imageUrl || '/placeholder.svg'}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
@@ -53,7 +43,7 @@ export const FeaturedProject = ({
               variant="outline"
               className="mb-2 border-white/20 bg-black/40 text-white"
             >
-              {category}
+              {project.category}
             </Badge>
             <Heading
               variant="h3"
@@ -61,7 +51,7 @@ export const FeaturedProject = ({
               size="2xl"
               className="mb-2 text-white"
             >
-              {title}
+              {project.title}
             </Heading>
           </div>
         </div>
@@ -69,10 +59,10 @@ export const FeaturedProject = ({
         <div className="p-6 lg:p-8">
           <div className="hidden lg:block">
             <Badge variant="outline" className="mb-2">
-              {category}
+              {project.category}
             </Badge>
             <Heading variant="h3" weight="bold" size="2xl" className="mb-4">
-              {title}
+              {project.title}
             </Heading>
           </div>
 
@@ -82,11 +72,11 @@ export const FeaturedProject = ({
             size="md"
             className="mb-6 text-muted-foreground lg:mb-8"
           >
-            {detailed}
+            {project.detailed}
           </Paragraph>
 
           <div className="mb-6 grid grid-cols-3 gap-4">
-            {stats.map((stat, index) => (
+            {project.stats.map((stat, index) => (
               <div
                 key={index}
                 className="rounded-lg bg-background p-3 text-center"
@@ -112,7 +102,7 @@ export const FeaturedProject = ({
           </div>
 
           <div className="mb-6 flex flex-wrap gap-2">
-            {tags.map((tag) => (
+            {project.tags.map((tag) => (
               <Badge key={tag} variant="secondary">
                 {tag}
               </Badge>
@@ -120,7 +110,7 @@ export const FeaturedProject = ({
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href={`/projects/${id}`} className="flex-1">
+            <Link href={`/projects/${project.id}`} className="flex-1">
               <Button className="group w-full">
                 <Paragraph
                   variant="span"
@@ -134,9 +124,9 @@ export const FeaturedProject = ({
               </Button>
             </Link>
             <div className="flex gap-3">
-              {githubUrl && (
+              {project.githubUrl && (
                 <Link
-                  href={githubUrl}
+                  href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View GitHub repository"
@@ -146,9 +136,9 @@ export const FeaturedProject = ({
                   </Button>
                 </Link>
               )}
-              {demoUrl && (
+              {project.demoUrl && (
                 <Link
-                  href={demoUrl}
+                  href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View live demo"
