@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import { ProjectDetail } from '../components/Details';
+
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Portfolio | Project',
+  },
+  description: 'Project showcase',
+};
 
 const projects = [
   {
