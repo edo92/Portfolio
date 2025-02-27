@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { ProjectsHero } from './components/Hero';
+import { projects, featuredProject } from './contents';
 import { FeaturedProject } from './components/Featured';
 import { ProjectsGrid } from '../components/Projects';
-import { projects, featuredProject } from './contents';
 
 export const metadata: Metadata = {
   title: {

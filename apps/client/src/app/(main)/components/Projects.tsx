@@ -22,10 +22,9 @@ type ProjectProps = {
 
 type ProjectGridProps = {
   projects: ProjectProps[];
-  className?: string;
 };
 
-export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
+export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
   const [filter, setFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
@@ -59,7 +58,7 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                 variant="ghost"
                 onClick={() => setFilter(category)}
                 className={cn(
-                  'rounded-full px-4 py-2 md:px-5 md:py-2.5 font-medium text-sm transition-colors',
+                  'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
                   filter === category
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
