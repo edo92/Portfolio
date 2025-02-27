@@ -1,49 +1,49 @@
 import localFont from 'next/font/local';
 
-export const walsheimBlack = localFont({
-   weight: '900',
-   style: 'normal',
-   display: 'swap',
-   src: '/fonts/GT-Walsheim-Pro-Black.ttf',
-   variable: '--font-walsheim-black',
+export const interBlack = localFont({
+  weight: '900',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Black.ttf',
+  variable: '--font-inter-black',
 });
 
-export const walsheimBold = localFont({
-   weight: '700',
-   style: 'normal',
-   display: 'swap',
-   src: '/fonts/GT-Walsheim-Pro-Bold.ttf',
-   variable: '--font-walsheim-bold',
+export const interBold = localFont({
+  weight: '700',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Bold.ttf',
+  variable: '--font-inter-bold',
 });
 
-export const walsheimMedium = localFont({
-   weight: '500',
-   style: 'normal',
-   display: 'swap',
-   src: '/fonts/GT-Walsheim-Pro-Medium.ttf',
-   variable: '--font-walsheim-medium',
+export const interSemibold = localFont({
+  weight: '600',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-SemiBold.ttf',
+  variable: '--font-inter-semibold',
 });
 
-export const walsheimRegular = localFont({
-   weight: '400',
-   style: 'normal',
-   display: 'swap',
-   src: '/fonts/GT-Walsheim-Pro-Regular.ttf',
-   variable: '--font-walsheim-regular',
+export const interMedium = localFont({
+  weight: '500',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Medium.ttf',
+  variable: '--font-inter-medium',
 });
 
-export const walsheimLight = localFont({
-   weight: '300',
-   style: 'normal',
-   display: 'swap',
-   src: '/fonts/GT-Walsheim-Pro-Light.ttf',
-   variable: '--font-walsheim-light',
+export const interRegular = localFont({
+  weight: '400',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Regular.ttf',
+  variable: '--font-inter-regular',
 });
 
-export const walsheimUltraLight = localFont({
-   weight: '200',
-   style: 'normal',
-   display: 'swap',
-   src: '/fonts/GT-Walsheim-Pro-Ultra-Light.ttf',
-   variable: '--font-walsheim-ultraLight',
+export const interLight = localFont({
+  weight: '300',
+  style: 'normal',
+  display: 'swap',
+  src: '/fonts/Inter-Light.ttf',
+  variable: '--font-inter-light',
 });

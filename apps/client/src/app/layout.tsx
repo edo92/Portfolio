@@ -1,37 +1,70 @@
 import './styles/global.css';
 
-import { cn } from '@client/lib/cn';
-import * as fonts from '@client/app/fonts';
+import type { Metadata } from 'next';
+import { cn } from '@libs/util';
+import * as fonts from './fonts';
 import { Providers } from './providers';
-import { Header } from './components/Header';
 
-export const metadata = {
-   title: {
-      default: 'Portfolio',
-      template: '%s | Eduard Jacobs',
-   },
-   description: "Eduard Jacobs' personal portfolio",
+export const metadata: Metadata = {
+  title: {
+    default: "Eduard Jacobs' Portfolio",
+    template: '%s | Eduard Jacobs',
+  },
+  description:
+    "Explore Eduard Jacobs' projects, skills, and experience in software development.",
+  keywords: [
+    'Eduard Jacobs',
+    'Portfolio',
+    'Web Development',
+    'Software Engineer',
+    'Projects',
+  ],
+  robots: 'index, follow',
+  authors: [{ name: 'Eduard Jacobs' }],
+  openGraph: {
+    title: "Eduard Jacobs' Portfolio",
+    description: "Showcasing Eduard Jacobs' work in software engineering.",
+    url: 'https://ejresume.com.com',
+    siteName: 'Eduard Jacobs Portfolio',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Eduard Jacobs Portfolio',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Eduard Jacobs' Portfolio",
+    description:
+      'Showcasing projects, skills, and expertise in software development.',
+    images: ['/images/og-image.png'],
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-   return (
-      <html lang="en" suppressHydrationWarning>
-         <body
-            className={cn(
-               'relative block h-screen w-full',
-               fonts.walsheimBlack.variable,
-               fonts.walsheimBold.variable,
-               fonts.walsheimMedium.variable,
-               fonts.walsheimRegular.variable,
-               fonts.walsheimLight.variable,
-               fonts.walsheimUltraLight.variable
-            )}
-         >
-            <Providers>
-               <Header />
-               <main className="flex min-h-screen">{children}</main>
-            </Providers>
-         </body>
-      </html>
-   );
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          'relative h-screen w-full',
+          fonts.interBlack.variable,
+          fonts.interBold.variable,
+          fonts.interSemibold.variable,
+          fonts.interMedium.variable,
+          fonts.interRegular.variable,
+          fonts.interLight.variable
+        )}
+      >
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
 }
