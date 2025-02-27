@@ -16,6 +16,7 @@ import {
   FormMessage,
   FormControl,
 } from '@libs/ui';
+import { Section } from '../../components/Section';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -58,8 +59,8 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-background-secondary px-6 py-16 sm:px-8 md:py-24 lg:px-12 lg:py-32">
-      <div className="container relative mx-auto max-w-xl">
+    <Section secondary>
+      <div className="relative mx-auto max-w-xl">
         <motion.div
           className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -181,7 +182,7 @@ const ContactForm = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 };
 

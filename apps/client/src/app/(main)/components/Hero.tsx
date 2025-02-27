@@ -1,32 +1,38 @@
 'use client';
 
+import { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+
 import { cn } from '@libs/util';
 import { Icons, Paragraph, paragraphVariants } from '@libs/ui';
 import EarthComponent from './3dPlanet';
+import { Section } from '../../components/Section';
 
 export const Hero = () => {
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      href: 'https://github.com',
-      icon: <Icons.GitHub className="size-5" />,
-    },
-    {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com',
-      icon: <Icons.LinkedIn className="size-5" />,
-    },
-    {
-      name: 'Medium',
-      href: 'https://medium.com',
-      icon: <Icons.Medium className="size-5" />,
-    },
-  ];
+  const socialLinks = useMemo(
+    () => [
+      {
+        name: 'GitHub',
+        href: 'https://github.com',
+        icon: <Icons.GitHub className="size-5" />,
+      },
+      {
+        name: 'LinkedIn',
+        href: 'https://linkedin.com',
+        icon: <Icons.LinkedIn className="size-5" />,
+      },
+      {
+        name: 'Medium',
+        href: 'https://medium.com',
+        icon: <Icons.Medium className="size-5" />,
+      },
+    ],
+    []
+  );
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden py-16 md:py-24 lg:py-32">
+    <Section className="relative min-h-screen w-full overflow-hidden !pt-32 !pb-0">
       {/* Background Earth Component */}
       <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <EarthComponent />
@@ -120,6 +126,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

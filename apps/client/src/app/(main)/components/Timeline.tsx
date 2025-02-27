@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import { Heading, Paragraph } from '@libs/ui';
 import { cn } from '@libs/util';
+import { Section } from '../../components/Section';
 
 const timelineEvents = [
   {
@@ -69,11 +70,8 @@ export const Timeline = () => {
   });
 
   return (
-    <section
-      ref={containerRef}
-      className="relative bg-background-secondary pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32"
-    >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <Section ref={containerRef} secondary>
+      <div className="mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -114,7 +112,7 @@ export const Timeline = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

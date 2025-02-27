@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
 import { Badge, Button, Heading, Icons, Paragraph } from '@libs/ui';
+import { Section } from '../../components/Section';
 
 type ProjectProps = {
   id: string;
@@ -39,13 +40,8 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
       : projects.filter((project) => project.category === filter);
 
   return (
-    <section
-      className={cn(
-        'w-full pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32',
-        className
-      )}
-    >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <Section>
+      <div className="mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center justify-center mb-10 md:mb-12">
           <Heading
             as="h2"
@@ -189,6 +185,6 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
           </AnimatePresence>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 };
