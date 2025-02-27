@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Heading, Paragraph, Badge } from '@libs/ui';
+import { Section } from '../../../components/Section';
 
 export const ProjectsHero = () => {
   const skills = [
@@ -18,7 +19,7 @@ export const ProjectsHero = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden w-full bg-gradient-to-t from-background-secondary via-transparent to-transparent py-16 md:py-24 lg:py-32">
+    <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent px-0 !pt-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/25 blur-3xl" />
@@ -159,6 +160,6 @@ export const ProjectsHero = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
