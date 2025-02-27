@@ -2,8 +2,9 @@
 
 import { useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
-import { Heading, Paragraph } from '@libs/ui';
+
 import { cn } from '@libs/util';
+import { Heading, Paragraph } from '@libs/ui';
 import { Section } from '../../components/Section';
 
 const timelineEvents = [
@@ -86,7 +87,7 @@ export const Timeline = () => {
           </Paragraph>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative space-y-12">
           <motion.div
             className={cn(
               'absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-secondary-foreground/40 dark:bg-secondary/80'
@@ -133,9 +134,10 @@ function TimelineEvent({
   return (
     <motion.div
       ref={ref}
-      className={`mb-12 md:mb-16 flex w-full items-center justify-between ${
+      className={cn(
+        'flex w-full items-center justify-between',
         index % 2 === 0 ? 'flex-row-reverse' : ''
-      }`}
+      )}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
