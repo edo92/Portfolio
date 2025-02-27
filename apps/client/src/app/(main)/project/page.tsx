@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ProjectsHero } from './components/Hero';
-import { ProjectsLayout } from './components/ProjectsLayout';
+import { FeaturedProject } from './components/Featured';
+import { ProjectsGrid } from '../components/Projects';
+import { projects, featuredProject } from './contents';
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +36,8 @@ export default function ProjectPage() {
   return (
     <main className="min-h-screen size-full">
       <ProjectsHero />
-      <ProjectsLayout />
+      <FeaturedProject project={featuredProject} />
+      <ProjectsGrid projects={projects} />
     </main>
   );
 }
