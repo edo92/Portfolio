@@ -49,7 +49,7 @@ export const ProjectsHero = () => {
             <Heading
               as="h2"
               weight="bold"
-              className="mb-6 md:mb-8 text-3xl sm:text-4xl lg:text-[2.7rem]"
+              className="mb-6 md:mb-8 text-3xl sm:text-4xl"
             >
               Projects
             </Heading>

@@ -50,11 +50,8 @@ export const Hero = () => {
             >
               <motion.span
                 className={cn(
-                  paragraphVariants({
-                    size: 'sm',
-                    weight: 'medium',
-                  }),
-                  'inline-block text-gray-600 dark:text-gray-300'
+                  paragraphVariants({ size: 'sm', weight: 'normal' }),
+                  'inline-block text-foreground/60'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -108,10 +105,10 @@ export const Hero = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="flex items-center gap-2 md:gap-3 rounded-md p-2 md:p-3 text-gray-700 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-200 md:backdrop-blur-sm md:bg-background/80"
-                    aria-label={`Visit ${link.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit ${link.name}`}
+                    className="flex items-center gap-2 md:gap-3 rounded-md p-2 md:p-3 text-body/80"
                   >
                     {link.icon}
                     <Paragraph as="span" size="sm" weight="medium">
