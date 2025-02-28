@@ -8,39 +8,38 @@ import { cn } from '@libs/util';
 import { Icons, Paragraph, paragraphVariants } from '@libs/ui';
 import { Section } from '../../components/Section';
 
+const SOCIAL_LINKS = [
+  {
+    name: 'GitHub',
+    href: 'https://github.com',
+    icon: <Icons.GitHub className="w-5 h-5" />,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com',
+    icon: <Icons.LinkedIn className="w-5 h-5" />,
+  },
+  {
+    name: 'Medium',
+    href: 'https://medium.com',
+    icon: <Icons.Medium className="w-5 h-5" />,
+  },
+];
+
 export const Hero = () => {
-  const socialLinks = useMemo(
-    () => [
-      {
-        name: 'GitHub',
-        href: 'https://github.com',
-        icon: <Icons.GitHub className="size-5" />,
-      },
-      {
-        name: 'LinkedIn',
-        href: 'https://linkedin.com',
-        icon: <Icons.LinkedIn className="size-5" />,
-      },
-      {
-        name: 'Medium',
-        href: 'https://medium.com',
-        icon: <Icons.Medium className="size-5" />,
-      },
-    ],
-    []
-  );
+  const socialLinks = useMemo(() => SOCIAL_LINKS, []);
 
   return (
-    <Section className="relative min-h-screen w-full overflow-hidden !pt-32 !pb-0">
-      {/* Background Earth Component */}
-      {/* <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
+    <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-32 !pb-0">
+      {/* Uncomment the following block when the Earth component is ready */}
+      {/*
+      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <EarthComponent />
-      </div> */}
+      </div>
+      */}
 
-      {/* Content Container */}
       <div className="container relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-start lg:flex-row lg:items-center gap-8 md:gap-12 lg:gap-16">
-          {/* Text Content */}
           <div className="lg:w-1/2 max-w-2xl">
             <motion.div
               className="space-y-6 md:space-y-8"
@@ -94,7 +93,6 @@ export const Hero = () => {
                 </Paragraph>
               </motion.div>
 
-              {/* Social Links */}
               <motion.div
                 className="flex flex-wrap items-center gap-4 md:gap-6"
                 initial={{ opacity: 0, y: 20 }}
