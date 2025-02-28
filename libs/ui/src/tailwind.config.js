@@ -1,5 +1,4 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
-const { workspaceRoot } = require('@nx/devkit');
 const { join } = require('path');
 
 /** @type {import('tailwindcss').Config} */
@@ -15,13 +14,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  presets: [
-    require(join(
-      workspaceRoot,
-      'libs',
-      'ui',
-      'src',
-      'tailwind.base.config.js'
-    )),
-  ],
+  presets: [require('./tailwind.base.config.js')],
 };
