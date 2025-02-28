@@ -38,13 +38,9 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
           initial={{ opacity: 0 }}
           animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-6 md:space-y-8"
+          className="flex flex-col gap-6 md:gap-8"
         >
-          <Heading
-            as="h2"
-            weight="semibold"
-            className="mb-6 md:mb-8 text-2xl sm:text-3xl"
-          >
+          <Heading as="h2" weight="semibold" className="text-2xl sm:text-3xl">
             Featured Project
           </Heading>
 
@@ -77,12 +73,12 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 lg:p-10">
+              <div className="flex flex-col gap-6 p-6 md:p-8 lg:p-10">
                 <div className="hidden lg:block">
                   <Badge variant="outline" className="mb-4">
                     {project.category}
                   </Badge>
-                  <Heading as="h3" size="2xl" weight="bold" className="mb-6">
+                  <Heading as="h3" size="2xl" weight="bold" className="mt-4">
                     {project.title}
                   </Heading>
                 </div>
@@ -91,12 +87,12 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   as="p"
                   size="md"
                   weight="normal"
-                  className="mb-6 md:mb-8 text-muted-foreground"
+                  className="text-muted-foreground"
                 >
                   {project.detailed}
                 </Paragraph>
 
-                <div className="mb-6 md:mb-8 grid grid-cols-3 gap-3 md:gap-4 lg:gap-6">
+                <div className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6">
                   {project.stats.map((stat, index) => (
                     <div
                       key={index}
@@ -122,7 +118,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   ))}
                 </div>
 
-                <div className="mb-6 md:mb-8 flex flex-wrap gap-2 md:gap-3">
+                <div className="flex flex-wrap gap-2 md:gap-3">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="px-3 py-1">
                       {tag}
@@ -130,9 +126,9 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   ))}
                 </div>
 
-                <div className="flex flex-col gap-3 md:gap-4 sm:flex-row">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-auto">
                   <Link href={`/projects/${project.id}`} className="flex-1">
-                    <Button className="group w-full py-5 md:py-6">
+                    <Button className="group w-full h-12">
                       <Paragraph
                         as="span"
                         size="sm"
@@ -155,7 +151,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                         <Button
                           variant="outline"
                           size="icon"
-                          className="h-12 w-12"
+                          className="size-12"
                         >
                           <Icons.GitHub className="size-5" />
                         </Button>
@@ -171,7 +167,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                         <Button
                           variant="outline"
                           size="icon"
-                          className="h-12 w-12"
+                          className="size-12"
                         >
                           <Icons.ExternalLink className="size-5" />
                         </Button>
