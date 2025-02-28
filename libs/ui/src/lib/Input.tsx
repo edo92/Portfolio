@@ -9,7 +9,7 @@ const input = tv({
     base: 'relative flex items-center gap-2',
     input: [
       'flex w-full rounded-sm',
-      'text-sm font-regular',
+      'text-sm font-normal',
       'transition-colors duration-200',
       'file:border-0 file:bg-transparent file:text-sm file:font-medium',
       'placeholder:text-muted-foreground/50 placeholder:text-sm',
