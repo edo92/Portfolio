@@ -1,14 +1,20 @@
 'use client';
 
 import * as z from 'zod';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Input, Button, Heading, Paragraph } from '@libs/ui';
-import { Icons, Textarea, ToastProvider, useToast } from '@libs/ui';
 import {
+  Input,
+  Button,
+  Heading,
+  Paragraph,
+  Icons,
+  Textarea,
+  ToastProvider,
+  useToast,
   Form,
   FormField,
   FormItem,
@@ -19,15 +25,11 @@ import {
 import { Section } from '../../components/Section';
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.',
-  }),
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
-  }),
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  message: z
+    .string()
+    .min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
 const ContactForm = () => {
@@ -43,26 +45,31 @@ const ContactForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
-      toast({
-        type: 'success',
-        title: 'Message sent',
-        message: "We'll get back to you as soon as possible.",
-      });
-      form.reset();
-    }, 2000);
-  }
+  const onSubmit = useCallback(
+    async (values: z.infer<typeof formSchema>) => {
+      setIsSubmitting(true);
+      try {
+        // Simulate API call with a delay
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        console.log(values);
+        toast({
+          type: 'success',
+          title: 'Message sent',
+          message: "We'll get back to you as soon as possible.",
+        });
+        form.reset();
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [form, toast]
+  );
 
   return (
     <Section secondary>
       <div className="relative mx-auto max-w-xl">
         <motion.div
-          className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
+          className="flex flex-col items-center justify-center text-center gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -70,13 +77,13 @@ const ContactForm = () => {
           <Heading as="h2" variant="title">
             Contact Me
           </Heading>
-          <Paragraph as="p" variant="subtle" className="mt-6">
+          <Paragraph as="p" variant="subtle">
             I&apos;m always looking for new opportunities to collaborate.
           </Paragraph>
         </motion.div>
 
         <motion.div
-          className="overflow-hidden rounded-lg shadow-lg"
+          className="mt-10 md:mt-12 overflow-hidden rounded-lg shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -152,7 +159,7 @@ const ContactForm = () => {
                       </FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us about your project..."
+                          placeholder="Tell me about your project..."
                           className="min-h-[150px] resize-none"
                           {...field}
                         />
@@ -163,17 +170,17 @@ const ContactForm = () => {
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-primary py-5 md:py-6"
+                  className="w-full bg-primary px-2 py-3"
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >
                   <Paragraph
                     as="span"
-                    size="base"
+                    size="sm"
                     weight="medium"
                     className="text-primary-foreground"
                   >
-                    Send
+                    Send Message
                   </Paragraph>
                   <Icons.Send className="ml-2 size-4" />
                 </Button>
