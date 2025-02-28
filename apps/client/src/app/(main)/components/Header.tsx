@@ -13,8 +13,8 @@ export const Header = () => (
       <Link href="/project">
         <Paragraph
           as="span"
-          weight="medium"
           size="sm"
+          weight="medium"
           className="hover:text-accent-foreground/80"
         >
           Projects
@@ -23,8 +23,8 @@ export const Header = () => (
       <Link href="/contact">
         <Paragraph
           as="span"
-          weight="medium"
           size="sm"
+          weight="medium"
           className="hover:text-accent-foreground/80"
         >
           Contact
