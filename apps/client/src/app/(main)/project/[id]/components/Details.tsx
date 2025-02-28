@@ -359,9 +359,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       </Badge>
 
                       <Heading
-                        variant="h3"
-                        weight="semibold"
+                        as="h3"
                         size="lg"
+                        weight="semibold"
                         className="mb-2 line-clamp-1"
                       >
                         {relatedProject.title}

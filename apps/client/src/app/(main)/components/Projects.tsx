@@ -42,13 +42,8 @@ export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
     <Section>
       <div className="mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center justify-center mb-10 md:mb-12">
-          <Heading
-            as="h2"
-            weight="semibold"
-            size="2xl"
-            className="mb-6 md:mb-8"
-          >
-            All Projects
+          <Heading as="h2" variant="title" className="mb-6 md:mb-8">
+            Projects
           </Heading>
 
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12">
@@ -153,9 +148,9 @@ export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
                   </div>
 
                   <Heading
-                    variant="h3"
-                    weight="semibold"
+                    as="h3"
                     size="xl"
+                    weight="semibold"
                     className="mb-2 md:mb-3 line-clamp-1"
                   >
                     {project.title}

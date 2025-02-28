@@ -67,10 +67,10 @@ const ContactForm = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
+          <Heading as="h2" variant="title">
             Contact Me
           </Heading>
-          <Paragraph as="p" weight="normal" size="md" className="mt-6">
+          <Paragraph as="p" variant="subtle" className="mt-6">
             I&apos;m always looking for new opportunities to collaborate.
           </Paragraph>
         </motion.div>

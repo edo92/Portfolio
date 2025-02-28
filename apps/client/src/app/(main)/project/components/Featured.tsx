@@ -71,7 +71,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   >
                     {project.category}
                   </Badge>
-                  <Heading variant="h3" weight="bold" size="2xl">
+                  <Heading as="h3" size="2xl" weight="bold">
                     {project.title}
                   </Heading>
                 </div>
@@ -82,12 +82,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   <Badge variant="outline" className="mb-4">
                     {project.category}
                   </Badge>
-                  <Heading
-                    variant="h3"
-                    weight="bold"
-                    size="2xl"
-                    className="mb-6"
-                  >
+                  <Heading as="h3" size="2xl" weight="bold" className="mb-6">
                     {project.title}
                   </Heading>
                 </div>

@@ -79,10 +79,10 @@ export const Timeline = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
+          <Heading as="h2" variant="title">
             Our Journey
           </Heading>
-          <Paragraph as="p" weight="normal" size="md" className="mt-6">
+          <Paragraph as="p" variant="subtle" className="mt-6">
             The evolution of Flowers & Saints through the years
           </Paragraph>
         </motion.div>
@@ -161,7 +161,7 @@ function TimelineEvent({
               {event.year}
             </Paragraph>
 
-            <Heading variant="h3" weight="semibold" size="xl" className="mb-3">
+            <Heading as="h3" weight="semibold" size="xl" className="mb-3">
               {event.title}
             </Heading>
 
