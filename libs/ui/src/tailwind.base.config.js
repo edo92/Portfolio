@@ -16,7 +16,10 @@ module.exports = {
           secondary: 'hsl(var(--secondary-background) / <alpha-value>)',
         },
         foreground: 'hsl(var(--foreground) / <alpha-value>)',
-        body: 'hsl(var(--body) / <alpha-value>)',
+        body: {
+          DEFAULT: 'hsl(var(--body) / <alpha-value>)',
+          secondary: 'hsl(var(--body-secondary) / <alpha-value>)',
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
           foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
