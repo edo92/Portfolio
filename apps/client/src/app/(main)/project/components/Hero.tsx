@@ -28,10 +28,10 @@ export const ProjectsHero = () => {
 
       {/* Content Container */}
       <div className="container relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+        <div className="grid gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Text Content */}
           <motion.div
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center gap-6 md:gap-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -41,24 +41,18 @@ export const ProjectsHero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <Badge variant="secondary" className="mb-4 md:mb-6">
-                Portfolio
-              </Badge>
+              <Badge variant="secondary">Portfolio</Badge>
             </motion.div>
 
-            <Heading
-              as="h2"
-              weight="bold"
-              className="mb-6 md:mb-8 text-3xl sm:text-4xl"
-            >
+            <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
               Projects
             </Heading>
 
             <Paragraph
               as="p"
-              size="md"
+              size="lg"
               weight="normal"
-              className="mb-8 md:mb-10 text-muted-foreground md:text-[1.125rem] md:leading-[1.75rem]"
+              className="text-muted-foreground"
             >
               Explore my portfolio of software engineering projects, showcasing
               cloud-native architectures, microservices, and full-stack
