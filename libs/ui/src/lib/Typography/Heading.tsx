@@ -15,6 +15,17 @@ const headingVariants = tv({
       semibold: 'font-semibold',
       bold: 'font-bold',
     },
+    size: {
+      xs: 'text-xs',
+      sm: 'text-sm',
+      md: 'text-md',
+      base: 'text-base',
+      lg: 'text-lg',
+      xl: 'text-xl',
+      '2xl': 'text-2xl',
+      '3xl': 'text-3xl',
+      '4xl': 'text-4xl',
+    },
     as: {
       h1: '',
       h2: '',
@@ -38,7 +49,7 @@ export interface HeadingProps
 }
 
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ className, variant, weight, as, children, ...props }, ref) => {
+  ({ className, variant, weight, size, as, children, ...props }, ref) => {
     const Component = as || 'h2';
 
     return (
@@ -48,6 +59,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
           headingVariants({
             variant,
             weight,
+            size,
             className,
           })
         )}
