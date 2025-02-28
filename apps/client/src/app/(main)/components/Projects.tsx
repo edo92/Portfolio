@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
 import { Badge, Button, Heading, Icons, Paragraph } from '@libs/ui';
+import { Section } from '../../components/Section';
 
 type ProjectProps = {
   id: string;
@@ -21,10 +22,9 @@ type ProjectProps = {
 
 type ProjectGridProps = {
   projects: ProjectProps[];
-  className?: string;
 };
 
-export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
+export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
   const [filter, setFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
@@ -39,21 +39,11 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
       : projects.filter((project) => project.category === filter);
 
   return (
-    <section
-      className={cn(
-        'w-full pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32',
-        className
-      )}
-    >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <Section>
+      <div className="mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center justify-center mb-10 md:mb-12">
-          <Heading
-            as="h2"
-            weight="semibold"
-            size="2xl"
-            className="mb-6 md:mb-8"
-          >
-            All Projects
+          <Heading as="h2" variant="title" className="mb-6 md:mb-8">
+            Projects
           </Heading>
 
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12">
@@ -63,7 +53,7 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                 variant="ghost"
                 onClick={() => setFilter(category)}
                 className={cn(
-                  'rounded-full px-4 py-2 md:px-5 md:py-2.5 font-medium text-sm transition-colors',
+                  'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
                   filter === category
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
@@ -117,7 +107,7 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                           variant="outline"
                           className="bg-black/40 text-white border-white/20"
                         >
-                          <Paragraph size="sm" variant="span" weight="medium">
+                          <Paragraph as="span" size="sm" weight="medium">
                             {tag}
                           </Paragraph>
                         </Badge>
@@ -129,7 +119,7 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                 <div className="p-5 sm:p-6 md:p-8">
                   <div className="mb-3 md:mb-4 flex items-center justify-between">
                     <Badge variant="secondary" className="text-xs">
-                      <Paragraph size="sm" variant="span" weight="medium">
+                      <Paragraph as="span" size="sm" weight="medium">
                         {project.category}
                       </Paragraph>
                     </Badge>
@@ -158,17 +148,17 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
                   </div>
 
                   <Heading
-                    variant="h3"
-                    weight="semibold"
+                    as="h3"
                     size="xl"
+                    weight="semibold"
                     className="mb-2 md:mb-3 line-clamp-1"
                   >
                     {project.title}
                   </Heading>
 
                   <Paragraph
-                    variant="p"
-                    weight="regular"
+                    as="p"
+                    weight="normal"
                     size="lg"
                     className="mb-4 md:mb-6 line-clamp-2 text-muted-foreground"
                   >
@@ -177,7 +167,7 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
 
                   <Link href={`/project/${project.id}`}>
                     <Button variant="outline" className="group w-full">
-                      <Paragraph variant="span" weight="medium" size="sm">
+                      <Paragraph as="span" weight="medium" size="sm">
                         View Details
                       </Paragraph>
                       <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
@@ -189,6 +179,6 @@ export const ProjectsGrid = ({ projects, className }: ProjectGridProps) => {
           </AnimatePresence>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 };

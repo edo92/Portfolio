@@ -16,10 +16,10 @@ const button = tv({
       link: 'underline-offset-4 hover:underline text-primary',
     },
     size: {
-      default: 'h-10 py-2 px-4',
-      sm: 'h-9 px-3 rounded-md',
-      lg: 'h-11 px-8 rounded-md',
-      icon: 'h-10 w-10',
+      default: 'py-2 px-4',
+      sm: 'px-3 rounded-md',
+      lg: 'px-8 rounded-md',
+      icon: 'size-10',
     },
     isLoading: {
       true: 'opacity-50 pointer-events-none',
@@ -46,7 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isLoading}
         {...props}
       >
-        {isLoading && <Icons.Loader className="mr-2 h-4 w-4 animate-spin" />}
+        {isLoading && <Icons.Loader className="mr-2 size-4 animate-spin" />}
         {children}
       </button>
     );

@@ -16,6 +16,7 @@ import {
   FormMessage,
   FormControl,
 } from '@libs/ui';
+import { Section } from '../../components/Section';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -58,18 +59,18 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-background-secondary px-6 py-16 sm:px-8 md:py-24 lg:px-12 lg:py-32">
-      <div className="container relative mx-auto max-w-xl">
+    <Section secondary>
+      <div className="relative mx-auto max-w-xl">
         <motion.div
           className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
+          <Heading as="h2" variant="title">
             Contact Me
           </Heading>
-          <Paragraph variant="p" weight="regular" size="md" className="mt-6">
+          <Paragraph as="p" variant="subtle" className="mt-6">
             I&apos;m always looking for new opportunities to collaborate.
           </Paragraph>
         </motion.div>
@@ -93,8 +94,8 @@ const ContactForm = () => {
                     <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
+                          as="span"
                           size="xs"
-                          variant="span"
                           weight="medium"
                           className="text-muted-foreground"
                         >
@@ -115,8 +116,8 @@ const ContactForm = () => {
                     <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
+                          as="span"
                           size="xs"
-                          variant="span"
                           weight="medium"
                           className="text-muted-foreground"
                         >
@@ -141,8 +142,8 @@ const ContactForm = () => {
                     <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
+                          as="span"
                           size="xs"
-                          variant="span"
                           weight="medium"
                           className="text-muted-foreground"
                         >
@@ -167,8 +168,8 @@ const ContactForm = () => {
                   isLoading={isSubmitting}
                 >
                   <Paragraph
+                    as="span"
                     size="base"
-                    variant="span"
                     weight="medium"
                     className="text-primary-foreground"
                   >
@@ -181,7 +182,7 @@ const ContactForm = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 };
 

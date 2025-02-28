@@ -80,9 +80,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                   {project.title}
                 </Heading>
                 <Paragraph
-                  variant="p"
-                  weight="medium"
+                  as="p"
                   size="lg"
+                  weight="medium"
                   className="max-w-3xl text-white/90"
                 >
                   {project.description}
@@ -111,9 +111,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                 Overview
               </Heading>
               <Paragraph
-                variant="p"
-                weight="regular"
+                as="p"
                 size="md"
+                weight="normal"
                 className="mb-8 text-muted-foreground"
               >
                 {project.longDescription}
@@ -129,9 +129,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       <li key={index} className="flex items-start">
                         <Icons.CheckCircle className="mr-2 mt-1 size-5 text-primary" />
                         <Paragraph
-                          variant="p"
-                          weight="regular"
+                          as="p"
                           size="md"
+                          weight="normal"
                           className="text-muted-foreground"
                         >
                           {challenge}
@@ -150,9 +150,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       <li key={index} className="flex items-start">
                         <Icons.CheckCircle className="mr-2 mt-1 size-5 text-primary" />
                         <Paragraph
-                          variant="p"
-                          weight="regular"
+                          as="p"
                           size="md"
+                          weight="normal"
                           className="text-muted-foreground"
                         >
                           {solution}
@@ -171,9 +171,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       <li key={index} className="flex items-start">
                         <Icons.CheckCircle className="mr-2 mt-1 size-5 text-primary" />
                         <Paragraph
-                          variant="p"
-                          weight="regular"
+                          as="p"
                           size="md"
+                          weight="normal"
                           className="text-muted-foreground"
                         >
                           {result}
@@ -198,23 +198,23 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                 <div className="mb-6 space-y-4">
                   <div>
                     <Paragraph
-                      variant="p"
-                      weight="medium"
+                      as="p"
                       size="sm"
+                      weight="medium"
                       className="text-muted-foreground"
                     >
                       Category
                     </Paragraph>
-                    <Paragraph variant="p" weight="semibold" size="md">
+                    <Paragraph as="p" size="md" weight="semibold">
                       {project.category}
                     </Paragraph>
                   </div>
 
                   <div>
                     <Paragraph
-                      variant="p"
-                      weight="medium"
+                      as="p"
                       size="sm"
+                      weight="medium"
                       className="text-muted-foreground"
                     >
                       Technologies
@@ -230,9 +230,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
                   <div className="pt-2">
                     <Paragraph
-                      variant="p"
-                      weight="medium"
+                      as="p"
                       size="sm"
+                      weight="medium"
                       className="text-muted-foreground"
                     >
                       Key Metrics
@@ -244,17 +244,17 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                           className="rounded-lg bg-background p-3 text-center"
                         >
                           <Paragraph
-                            variant="p"
-                            weight="bold"
+                            as="p"
                             size="lg"
+                            weight="bold"
                             className="text-primary"
                           >
                             {stat.value}
                           </Paragraph>
                           <Paragraph
-                            variant="p"
-                            weight="medium"
+                            as="p"
                             size="xs"
+                            weight="medium"
                             className="text-muted-foreground"
                           >
                             {stat.label}
@@ -276,9 +276,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       <Button className="group w-full">
                         <Icons.ExternalLink className="mr-2 size-4" />
                         <Paragraph
-                          variant="span"
-                          weight="medium"
+                          as="span"
                           size="sm"
+                          weight="medium"
                           className="text-primary-foreground"
                         >
                           View Live Demo
@@ -295,7 +295,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                   >
                     <Button variant="outline" className="w-full">
                       <Icons.GitHub className="mr-2 size-4" />
-                      <Paragraph variant="span" weight="medium" size="sm">
+                      <Paragraph as="span" size="sm" weight="medium">
                         View Source Code
                       </Paragraph>
                     </Button>
@@ -304,7 +304,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                   <Link href="/projects" className="block w-full">
                     <Button variant="ghost" className="w-full">
                       <Icons.ArrowRight className="mr-2 size-4" />
-                      <Paragraph variant="span" weight="medium" size="sm">
+                      <Paragraph as="span" size="sm" weight="medium">
                         Back to Projects
                       </Paragraph>
                     </Button>
@@ -359,25 +359,25 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       </Badge>
 
                       <Heading
-                        variant="h3"
-                        weight="semibold"
+                        as="h3"
                         size="lg"
+                        weight="semibold"
                         className="mb-2 line-clamp-1"
                       >
                         {relatedProject.title}
                       </Heading>
 
                       <Paragraph
-                        variant="p"
-                        weight="regular"
+                        as="p"
                         size="sm"
+                        weight="normal"
                         className="mb-4 line-clamp-2 text-muted-foreground"
                       >
                         {relatedProject.description}
                       </Paragraph>
 
                       <div className="flex items-center text-primary">
-                        <Paragraph variant="span" weight="medium" size="sm">
+                        <Paragraph as="span" size="sm" weight="medium">
                           View Project
                         </Paragraph>
                         <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />

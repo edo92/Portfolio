@@ -57,9 +57,9 @@ export default function Footer() {
               <span className="ml-2 text-xl font-bold">Eduard Jacobs</span>
             </Link>
             <Paragraph
-              variant="p"
-              weight="regular"
+              as="p"
               size="sm"
+              weight="normal"
               className="mb-6 text-muted-foreground"
             >
               Software Engineer specializing in cloud-native architectures and
@@ -85,9 +85,9 @@ export default function Footer() {
           {/* Links Column */}
           <div>
             <Paragraph
-              variant="p"
-              weight="semibold"
+              as="p"
               size="sm"
+              weight="semibold"
               className="mb-4 uppercase tracking-wider text-muted-foreground"
             >
               Navigation
@@ -109,9 +109,9 @@ export default function Footer() {
           {/* Resources Column */}
           <div>
             <Paragraph
-              variant="p"
-              weight="semibold"
+              as="p"
               size="sm"
+              weight="semibold"
               className="mb-4 uppercase tracking-wider text-muted-foreground"
             >
               Resources
@@ -133,17 +133,17 @@ export default function Footer() {
           {/* Newsletter Column */}
           <div>
             <Paragraph
-              variant="p"
-              weight="semibold"
+              as="p"
               size="sm"
+              weight="semibold"
               className="mb-4 uppercase tracking-wider text-muted-foreground"
             >
               Stay Updated
             </Paragraph>
             <Paragraph
-              variant="p"
-              weight="regular"
+              as="p"
               size="sm"
+              weight="normal"
               className="mb-4 text-muted-foreground"
             >
               Subscribe to my newsletter for the latest articles and updates.
@@ -160,9 +160,9 @@ export default function Footer() {
                 </Button>
               </div>
               <Paragraph
-                variant="p"
-                weight="regular"
+                as="p"
                 size="xs"
+                weight="normal"
                 className="text-muted-foreground"
               >
                 I respect your privacy. Unsubscribe at any time.
@@ -176,9 +176,9 @@ export default function Footer() {
       <div className="border-t border-border/50 bg-background/50">
         <div className="container mx-auto flex flex-col items-center justify-between px-4 py-6 sm:flex-row md:px-6">
           <Paragraph
-            variant="p"
-            weight="regular"
+            as="p"
             size="xs"
+            weight="normal"
             className="mb-4 text-muted-foreground sm:mb-0"
           >
             © {currentYear} Eduard Jacobs. All rights reserved.
