@@ -1,13 +1,20 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, FC } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 
 import { cn } from '@libs/util';
 import { Heading, Paragraph } from '@libs/ui';
 import { Section } from '../../components/Section';
 
-const timelineEvents = [
+interface TimelineEventData {
+  year: number;
+  title: string;
+  description: string;
+  details: string;
+}
+
+const timelineEvents: TimelineEventData[] = [
   {
     year: 2018,
     title: 'Flowers & Saints Founded',
@@ -56,9 +63,101 @@ const timelineEvents = [
   },
 ];
 
-export const Timeline = () => {
+interface TimelineEventProps {
+  event: TimelineEventData;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+const TimelineEvent: FC<TimelineEventProps> = ({
+  event,
+  index,
+  isExpanded,
+  onToggle,
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className={cn(
+        'flex w-full items-center justify-between',
+        index % 2 === 0 && 'flex-row-reverse'
+      )}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+    >
+      <div className="w-5/12">
+        <div
+          tabIndex={0}
+          role="button"
+          onClick={onToggle}
+          className="transform-gpu cursor-pointer"
+        >
+          <motion.div
+            className="rounded-lg border p-6 sm:p-8 shadow-lg transition-all duration-300 ease-in-out"
+            whileHover={{ scale: 1.02, zIndex: 20 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Paragraph
+              as="span"
+              size="xs"
+              weight="medium"
+              className="mb-2 inline-block"
+            >
+              {event.year}
+            </Paragraph>
+            <Heading as="h3" weight="semibold" size="xl" className="mb-3">
+              {event.title}
+            </Heading>
+            <Paragraph as="p" weight="medium" size="base">
+              {event.description}
+            </Paragraph>
+            <motion.div
+              initial={false}
+              animate={{
+                height: isExpanded ? 'auto' : 0,
+                opacity: isExpanded ? 1 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <Paragraph
+                as="p"
+                size="sm"
+                weight="medium"
+                className="mt-4 text-body/80"
+              >
+                {event.details}
+              </Paragraph>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="z-10 flex items-center justify-center">
+        <motion.div
+          className="flex size-4 items-center justify-center rounded-full bg-card-foreground/80 p-3"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <div className="size-2 rounded-full bg-background p-[5px]" />
+        </motion.div>
+      </div>
+
+      <div className="w-5/12" />
+    </motion.div>
+  );
+};
+
+export const Timeline: FC = () => {
   const [expandedEvent, setExpandedEvent] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'end start'],
@@ -92,12 +191,7 @@ export const Timeline = () => {
             className={cn(
               'absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-secondary-foreground/40 dark:bg-secondary/80'
             )}
-            style={{
-              scaleY,
-              originY: 0,
-              height: '105%',
-              top: '0%',
-            }}
+            style={{ scaleY, originY: 0, height: '105%', top: '0%' }}
           />
 
           {timelineEvents.map((event, index) => (
@@ -116,91 +210,3 @@ export const Timeline = () => {
     </Section>
   );
 };
-
-function TimelineEvent({
-  event,
-  index,
-  isExpanded,
-  onToggle,
-}: {
-  event: (typeof timelineEvents)[0];
-  index: number;
-  isExpanded: boolean;
-  onToggle: () => void;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
-
-  return (
-    <motion.div
-      ref={ref}
-      className={cn(
-        'flex w-full items-center justify-between',
-        index % 2 === 0 ? 'flex-row-reverse' : ''
-      )}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
-    >
-      <div className="w-5/12">
-        <div className="transform-gpu" onClick={onToggle}>
-          <motion.div
-            className="rounded-lg border p-6 sm:p-8 shadow-lg transition-all duration-300 ease-in-out cursor-pointer"
-            whileHover={{
-              scale: 1.02,
-              zIndex: 20,
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Paragraph
-              as="span"
-              size="xs"
-              weight="medium"
-              className="mb-2 inline-block"
-            >
-              {event.year}
-            </Paragraph>
-
-            <Heading as="h3" weight="semibold" size="xl" className="mb-3">
-              {event.title}
-            </Heading>
-
-            <Paragraph as="p" weight="medium" size="base">
-              {event.description}
-            </Paragraph>
-
-            <motion.div
-              initial={false}
-              animate={{
-                height: isExpanded ? 'auto' : 0,
-                opacity: isExpanded ? 1 : 0,
-              }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden"
-            >
-              <Paragraph
-                as="p"
-                size="sm"
-                weight="medium"
-                className="mt-4 text-body/80"
-              >
-                {event.details}
-              </Paragraph>
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-      <div className="z-10 flex items-center justify-center">
-        <motion.div
-          className="flex size-4 items-center justify-center rounded-full bg-card-foreground/80 p-3"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
-          <div className="size-2 rounded-full bg-background p-[5px]" />
-        </motion.div>
-      </div>
-      <div className="w-5/12" />
-    </motion.div>
-  );
-}
