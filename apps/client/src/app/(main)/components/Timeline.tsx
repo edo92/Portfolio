@@ -14,7 +14,7 @@ interface TimelineEventData {
   details: string;
 }
 
-const timelineEvents: TimelineEventData[] = [
+const TIMELINE_EVENTS: TimelineEventData[] = [
   {
     year: 2018,
     title: 'Flowers & Saints Founded',
@@ -79,6 +79,12 @@ const TimelineEvent: FC<TimelineEventProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      onToggle();
+    }
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -92,27 +98,30 @@ const TimelineEvent: FC<TimelineEventProps> = ({
     >
       <div className="w-5/12">
         <div
-          tabIndex={0}
           role="button"
+          tabIndex={0}
           onClick={onToggle}
+          onKeyDown={handleKeyDown}
           className="transform-gpu cursor-pointer"
         >
           <motion.div
-            className="rounded-lg border p-6 sm:p-8 shadow-lg transition-all duration-300 ease-in-out"
+            className="flex flex-col gap-3 rounded-lg border p-6 sm:p-8 shadow-lg transition-all duration-300 ease-in-out"
             whileHover={{ scale: 1.02, zIndex: 20 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Paragraph
-              as="span"
-              size="xs"
-              weight="medium"
-              className="mb-2 inline-block"
-            >
-              {event.year}
-            </Paragraph>
-            <Heading as="h3" weight="semibold" size="xl" className="mb-3">
-              {event.title}
-            </Heading>
+            <div className="flex flex-col gap-2">
+              <Paragraph
+                as="span"
+                size="xs"
+                weight="medium"
+                className="inline-block"
+              >
+                {event.year}
+              </Paragraph>
+              <Heading as="h3" weight="semibold" size="xl">
+                {event.title}
+              </Heading>
+            </div>
             <Paragraph as="p" weight="medium" size="base">
               {event.description}
             </Paragraph>
@@ -128,8 +137,8 @@ const TimelineEvent: FC<TimelineEventProps> = ({
               <Paragraph
                 as="p"
                 size="sm"
-                weight="medium"
-                className="mt-4 text-body/80"
+                weight="normal"
+                className="text-body/90"
               >
                 {event.details}
               </Paragraph>
@@ -171,9 +180,9 @@ export const Timeline: FC = () => {
 
   return (
     <Section ref={containerRef} secondary>
-      <div className="mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="flex flex-col mx-auto gap-12 md:gap-16">
         <motion.div
-          className="mb-12 md:mb-16 flex flex-col items-center justify-center text-center"
+          className="flex flex-col gap-5 items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -181,7 +190,7 @@ export const Timeline: FC = () => {
           <Heading as="h2" variant="title">
             Our Journey
           </Heading>
-          <Paragraph as="p" variant="subtle" className="mt-6">
+          <Paragraph as="p" variant="subtle">
             The evolution of Flowers & Saints through the years
           </Paragraph>
         </motion.div>
@@ -194,7 +203,7 @@ export const Timeline: FC = () => {
             style={{ scaleY, originY: 0, height: '105%', top: '0%' }}
           />
 
-          {timelineEvents.map((event, index) => (
+          {TIMELINE_EVENTS.map((event, index) => (
             <TimelineEvent
               key={event.year}
               event={event}
