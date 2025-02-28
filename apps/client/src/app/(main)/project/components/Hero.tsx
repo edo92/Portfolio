@@ -55,9 +55,9 @@ export const ProjectsHero = () => {
             </Heading>
 
             <Paragraph
-              variant="p"
-              weight="regular"
+              as="p"
               size="md"
+              weight="normal"
               className="mb-8 md:mb-10 text-muted-foreground md:text-[1.125rem] md:leading-[1.75rem]"
             >
               Explore my portfolio of software engineering projects, showcasing

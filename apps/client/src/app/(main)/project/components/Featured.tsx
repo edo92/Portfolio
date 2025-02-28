@@ -93,9 +93,9 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 </div>
 
                 <Paragraph
-                  variant="p"
-                  weight="regular"
+                  as="p"
                   size="md"
+                  weight="normal"
                   className="mb-6 md:mb-8 text-muted-foreground"
                 >
                   {project.detailed}
@@ -108,15 +108,15 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                       className="rounded-lg bg-background p-3 md:p-4 text-center"
                     >
                       <Paragraph
-                        variant="p"
-                        weight="bold"
+                        as="p"
                         size="lg"
+                        weight="bold"
                         className="text-primary"
                       >
                         {stat.value}
                       </Paragraph>
                       <Paragraph
-                        variant="p"
+                        as="p"
                         weight="medium"
                         size="xs"
                         className="text-muted-foreground"
@@ -139,9 +139,9 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   <Link href={`/projects/${project.id}`} className="flex-1">
                     <Button className="group w-full py-5 md:py-6">
                       <Paragraph
-                        variant="span"
-                        weight="medium"
+                        as="span"
                         size="sm"
+                        weight="medium"
                         className="text-primary-foreground"
                       >
                         View Case Study
