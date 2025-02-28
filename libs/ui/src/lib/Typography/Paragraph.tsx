@@ -5,7 +5,6 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
 
 const paragraphVariants = tv({
-  base: '',
   variants: {
     variant: {
       default: '',
@@ -33,7 +32,7 @@ const paragraphVariants = tv({
       sm: 'text-sm',
       md: 'text-md',
       base: 'text-base',
-      lg: 'text-base',
+      lg: 'text-lg',
       xl: 'text-xl',
     },
     transition: {
