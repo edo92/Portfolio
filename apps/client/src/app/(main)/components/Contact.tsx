@@ -70,7 +70,7 @@ const ContactForm = () => {
           <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
             Contact Me
           </Heading>
-          <Paragraph variant="p" weight="regular" size="md" className="mt-6">
+          <Paragraph as="p" weight="normal" size="md" className="mt-6">
             I&apos;m always looking for new opportunities to collaborate.
           </Paragraph>
         </motion.div>
@@ -94,8 +94,8 @@ const ContactForm = () => {
                     <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
+                          as="span"
                           size="xs"
-                          variant="span"
                           weight="medium"
                           className="text-muted-foreground"
                         >
@@ -116,8 +116,8 @@ const ContactForm = () => {
                     <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
+                          as="span"
                           size="xs"
-                          variant="span"
                           weight="medium"
                           className="text-muted-foreground"
                         >
@@ -142,8 +142,8 @@ const ContactForm = () => {
                     <FormItem className="space-y-3">
                       <FormLabel>
                         <Paragraph
+                          as="span"
                           size="xs"
-                          variant="span"
                           weight="medium"
                           className="text-muted-foreground"
                         >
@@ -168,8 +168,8 @@ const ContactForm = () => {
                   isLoading={isSubmitting}
                 >
                   <Paragraph
+                    as="span"
                     size="base"
-                    variant="span"
                     weight="medium"
                     className="text-primary-foreground"
                   >

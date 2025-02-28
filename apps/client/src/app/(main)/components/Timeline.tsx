@@ -82,7 +82,7 @@ export const Timeline = () => {
           <Heading as="h2" weight="bold" className="text-3xl sm:text-4xl">
             Our Journey
           </Heading>
-          <Paragraph variant="p" weight="regular" size="md" className="mt-6">
+          <Paragraph as="p" weight="normal" size="md" className="mt-6">
             The evolution of Flowers & Saints through the years
           </Paragraph>
         </motion.div>
@@ -153,7 +153,7 @@ function TimelineEvent({
             whileTap={{ scale: 0.98 }}
           >
             <Paragraph
-              variant="span"
+              as="span"
               size="xs"
               weight="medium"
               className="mb-2 inline-block"
@@ -165,7 +165,7 @@ function TimelineEvent({
               {event.title}
             </Heading>
 
-            <Paragraph variant="p" weight="medium" size="base">
+            <Paragraph as="p" weight="medium" size="base">
               {event.description}
             </Paragraph>
 
@@ -179,9 +179,9 @@ function TimelineEvent({
               className="overflow-hidden"
             >
               <Paragraph
-                variant="p"
-                weight="medium"
+                as="p"
                 size="sm"
+                weight="medium"
                 className="mt-4 text-body/80"
               >
                 {event.details}

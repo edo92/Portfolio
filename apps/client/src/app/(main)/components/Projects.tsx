@@ -112,7 +112,7 @@ export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
                           variant="outline"
                           className="bg-black/40 text-white border-white/20"
                         >
-                          <Paragraph size="sm" variant="span" weight="medium">
+                          <Paragraph as="span" size="sm" weight="medium">
                             {tag}
                           </Paragraph>
                         </Badge>
@@ -124,7 +124,7 @@ export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
                 <div className="p-5 sm:p-6 md:p-8">
                   <div className="mb-3 md:mb-4 flex items-center justify-between">
                     <Badge variant="secondary" className="text-xs">
-                      <Paragraph size="sm" variant="span" weight="medium">
+                      <Paragraph as="span" size="sm" weight="medium">
                         {project.category}
                       </Paragraph>
                     </Badge>
@@ -162,8 +162,8 @@ export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
                   </Heading>
 
                   <Paragraph
-                    variant="p"
-                    weight="regular"
+                    as="p"
+                    weight="normal"
                     size="lg"
                     className="mb-4 md:mb-6 line-clamp-2 text-muted-foreground"
                   >
@@ -172,7 +172,7 @@ export const ProjectsGrid = ({ projects }: ProjectGridProps) => {
 
                   <Link href={`/project/${project.id}`}>
                     <Button variant="outline" className="group w-full">
-                      <Paragraph variant="span" weight="medium" size="sm">
+                      <Paragraph as="span" weight="medium" size="sm">
                         View Details
                       </Paragraph>
                       <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
