@@ -8,11 +8,11 @@ const paragraphVariants = tv({
   variants: {
     variant: {
       default: '',
-      lead: 'text-xl text-muted-foreground',
+      lead: 'text-xl text-body',
       large: 'text-lg font-semibold',
       small: 'text-sm font-medium leading-none',
-      muted: 'text-sm text-muted-foreground',
-      subtle: 'text-lg font-normal text-muted-foreground/80',
+      muted: 'text-sm text-body',
+      subtle: 'text-lg font-normal text-body/80',
     },
     weight: {
       light: 'font-light',
