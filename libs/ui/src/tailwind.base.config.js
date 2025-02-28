@@ -48,7 +48,7 @@ module.exports = {
         bold: ['var(--font-inter-bold)'],
         semibold: ['var(--font-inter-semibold)'],
         medium: ['var(--font-inter-medium)'],
-        regular: ['var(--font-inter-regular)'],
+        normal: ['var(--font-inter-regular)'],
         light: ['var(--font-inter-light)'],
         sans: ['var(--font-inter)'],
       },
