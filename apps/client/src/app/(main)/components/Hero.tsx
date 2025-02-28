@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
 import { Icons, Paragraph, paragraphVariants } from '@libs/ui';
-import EarthComponent from './3dPlanet';
 import { Section } from '../../components/Section';
 
 export const Hero = () => {
@@ -34,9 +33,9 @@ export const Hero = () => {
   return (
     <Section className="relative min-h-screen w-full overflow-hidden !pt-32 !pb-0">
       {/* Background Earth Component */}
-      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
+      {/* <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <EarthComponent />
-      </div>
+      </div> */}
 
       {/* Content Container */}
       <div className="container relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
@@ -52,7 +51,6 @@ export const Hero = () => {
               <motion.span
                 className={cn(
                   paragraphVariants({
-                    variant: 'span',
                     size: 'sm',
                     weight: 'medium',
                   }),
@@ -76,7 +74,7 @@ export const Hero = () => {
 
               <motion.div
                 className={cn(
-                  paragraphVariants({ variant: 'p', weight: 'regular' }),
+                  paragraphVariants({ weight: 'normal' }),
                   'text-base md:text-lg leading-relaxed md:backdrop-blur-sm md:bg-background/80 md:rounded-lg'
                 )}
                 initial={{ opacity: 0, y: 20 }}
@@ -84,9 +82,9 @@ export const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Paragraph
-                  variant="p"
-                  weight="regular"
+                  as="p"
                   size="lg"
+                  weight="normal"
                   className="text-body/80"
                 >
                   Software Engineer with over 5 years of expertise in backend
@@ -116,7 +114,7 @@ export const Hero = () => {
                     rel="noopener noreferrer"
                   >
                     {link.icon}
-                    <Paragraph variant="span" size="sm" weight="medium">
+                    <Paragraph as="span" size="sm" weight="medium">
                       {link.name}
                     </Paragraph>
                   </Link>
