@@ -32,7 +32,7 @@ const formSchema = z.object({
     .min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -66,6 +66,140 @@ const ContactForm = () => {
   );
 
   return (
+    <motion.div
+      className="mt-10 md:mt-12 overflow-hidden rounded-lg shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      <Paragraph
+                        as="span"
+                        size="xs"
+                        weight="medium"
+                        className="text-muted-foreground"
+                      >
+                        Name
+                      </Paragraph>
+                    </FormLabel>
+                    <FormControl>
+                      <Input size="lg" placeholder="John Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      <Paragraph
+                        as="span"
+                        size="xs"
+                        weight="medium"
+                        className="text-muted-foreground"
+                      >
+                        Email
+                      </Paragraph>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        size="lg"
+                        placeholder="john@example.com"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    <Paragraph
+                      as="span"
+                      size="xs"
+                      weight="medium"
+                      className="text-muted-foreground"
+                    >
+                      Subject
+                    </Paragraph>
+                  </FormLabel>
+                  <FormControl>
+                    <Input size="lg" placeholder="Project Inquiry" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    <Paragraph
+                      as="span"
+                      size="xs"
+                      weight="medium"
+                      className="text-muted-foreground"
+                    >
+                      Message
+                    </Paragraph>
+                  </FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Tell me about your project or inquiry..."
+                      className="min-h-[150px] resize-none"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <div className="pt-2">
+              <Button
+                type="submit"
+                className="group w-full bg-primary"
+                disabled={isSubmitting}
+                isLoading={isSubmitting}
+              >
+                <Paragraph
+                  as="span"
+                  size="base"
+                  weight="medium"
+                  className="text-primary-foreground"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </Paragraph>
+                <Icons.Send className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
+    </motion.div>
+  );
+};
+
+export const Contact = () => (
+  <ToastProvider>
     <Section secondary>
       <div className="relative mx-auto max-w-xl">
         <motion.div
@@ -82,149 +216,8 @@ const ContactForm = () => {
           </Paragraph>
         </motion.div>
 
-        <motion.div
-          className="mt-10 md:mt-12 overflow-hidden rounded-lg shadow-lg"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-5"
-              >
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>
-                          <Paragraph
-                            as="span"
-                            size="xs"
-                            weight="medium"
-                            className="text-muted-foreground"
-                          >
-                            Name
-                          </Paragraph>
-                        </FormLabel>
-                        <FormControl>
-                          <Input size="lg" placeholder="John Doe" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>
-                          <Paragraph
-                            as="span"
-                            size="xs"
-                            weight="medium"
-                            className="text-muted-foreground"
-                          >
-                            Email
-                          </Paragraph>
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            size="lg"
-                            placeholder="john@example.com"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        <Paragraph
-                          as="span"
-                          size="xs"
-                          weight="medium"
-                          className="text-muted-foreground"
-                        >
-                          Subject
-                        </Paragraph>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          size="lg"
-                          placeholder="Project Inquiry"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        <Paragraph
-                          as="span"
-                          size="xs"
-                          weight="medium"
-                          className="text-muted-foreground"
-                        >
-                          Message
-                        </Paragraph>
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell me about your project or inquiry..."
-                          className="min-h-[150px] resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <div className="pt-2">
-                  <Button
-                    type="submit"
-                    className="group w-full bg-primary"
-                    disabled={isSubmitting}
-                    isLoading={isSubmitting}
-                  >
-                    <Paragraph
-                      as="span"
-                      size="base"
-                      weight="medium"
-                      className="text-primary-foreground"
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </Paragraph>
-                    <Icons.Send className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </div>
-              </form>
-            </Form>
-          </div>
-        </motion.div>
+        <ContactForm />
       </div>
     </Section>
-  );
-};
-
-export const Contact = () => (
-  <ToastProvider>
-    <ContactForm />
   </ToastProvider>
 );
