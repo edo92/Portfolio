@@ -45,6 +45,7 @@ const paragraphVariants = tv({
   },
   defaultVariants: {
     variant: 'default',
+    weight: 'normal',
   },
 });
 
