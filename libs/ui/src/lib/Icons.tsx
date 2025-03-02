@@ -1,5 +1,13 @@
 import type { SVGAttributes } from 'react';
-import { Loader2, Send, CheckCircle, ArrowLeft } from 'lucide-react';
+import {
+  Loader2,
+  Send,
+  CheckCircle,
+  ArrowLeft,
+  Mail,
+  Phone,
+  MapPin,
+} from 'lucide-react';
 
 export type IconProps = SVGAttributes<SVGElement>;
 
@@ -7,6 +15,9 @@ export const Icons = {
   Loader: Loader2,
   CheckCircle,
   ArrowLeft,
+  Mail,
+  Phone,
+  MapPin,
   Send,
 
   LightBulb: (props?: IconProps) => (
