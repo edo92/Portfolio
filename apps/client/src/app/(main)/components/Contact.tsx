@@ -88,7 +88,7 @@ const ContactForm = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="rounded-2xl border border-border/70 bg-card/40 p-6 sm:p-8 md:p-10 dark:bg-card/40">
+          <div className="rounded-2xl border border-border/70 bg-card/40 p-7 dark:bg-card/40">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
