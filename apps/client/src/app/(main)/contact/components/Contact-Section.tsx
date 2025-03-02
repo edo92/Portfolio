@@ -68,7 +68,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <Section>
+    <Section className="mx-auto px-12 sm:px-16 md:px-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-24 lg:grid-cols-2">
           {/* Contact Information */}
