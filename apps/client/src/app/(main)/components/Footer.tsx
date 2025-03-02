@@ -1,44 +1,50 @@
 'use client';
 
-import type React from 'react';
+import type { ReactNode } from 'react';
 import { Paragraph, Icons, Link } from '@libs/ui';
 
-export default function Footer() {
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+interface SocialLink extends NavLink {
+  icon: ReactNode;
+}
+
+const mainLinks: NavLink[] = [
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const socialLinks: SocialLink[] = [
+  {
+    name: 'GitHub',
+    href: 'https://github.com',
+    icon: <Icons.GitHub className="size-5" />,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com',
+    icon: <Icons.LinkedIn className="size-5" />,
+  },
+  {
+    name: 'Medium',
+    href: 'https://medium.com',
+    icon: <Icons.Medium className="size-5" />,
+  },
+];
+
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const mainLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      href: 'https://github.com',
-      icon: <Icons.GitHub className="size-5" />,
-    },
-    {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com',
-      icon: <Icons.LinkedIn className="size-5" />,
-    },
-    {
-      name: 'Medium',
-      href: 'https://medium.com',
-      icon: <Icons.Medium className="size-5" />,
-    },
-  ];
 
   return (
     <footer className="relative border-t bg-gradient-to-b from-background to-background-secondary">
-      {/* Top gradient accent */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-      {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-          {/* Brand Column */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
@@ -48,7 +54,6 @@ export default function Footer() {
                 Eduard Jacobs
               </span>
             </Link>
-
             <Paragraph
               as="p"
               size="sm"
@@ -61,8 +66,8 @@ export default function Footer() {
             </Paragraph>
           </div>
 
-          {/* Links Column */}
-          <div className="flex flex-col items-start md:items-center">
+          {/* Navigation Column */}
+          <nav className="flex flex-col items-start md:items-center">
             <div className="flex flex-col space-y-4">
               <Paragraph
                 as="p"
@@ -89,7 +94,7 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-          </div>
+          </nav>
 
           {/* Social Column */}
           <div className="flex flex-col space-y-4">
@@ -133,11 +138,11 @@ export default function Footer() {
           as="span"
           size="xs"
           weight="normal"
-          className="text-muted-foreground"
+          className="text-muted-foreground/80"
         >
           © {currentYear} Eduard Jacobs. All rights reserved.
         </Paragraph>
       </div>
     </footer>
   );
-}
+};
