@@ -3,47 +3,49 @@
 import { motion } from 'framer-motion';
 import { Heading, Paragraph, Icons } from '@libs/ui';
 import { ContactForm } from '../../components/Contact';
+import { Section } from '../../../components/Section';
+
+// TODO: Move content to single source
+const contactInfo = [
+  {
+    icon: <Icons.Mail className="size-5" />,
+    label: 'Email',
+    value: 'eduard.jacobs@example.com',
+    link: 'mailto:eduard.jacobs@example.com',
+  },
+  {
+    icon: <Icons.Phone className="size-5" />,
+    label: 'Phone',
+    value: '+1 (555) 123-4567',
+    link: 'tel:+15551234567',
+  },
+  {
+    icon: <Icons.MapPin className="size-5" />,
+    label: 'Location',
+    value: 'San Francisco, CA',
+    link: 'https://maps.google.com/?q=San+Francisco,+CA',
+  },
+];
+// TODO: Move content to single source
+const socialLinks = [
+  {
+    name: 'GitHub',
+    href: 'https://github.com',
+    icon: <Icons.GitHub className="size-5" />,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com',
+    icon: <Icons.LinkedIn className="size-5" />,
+  },
+  {
+    name: 'Medium',
+    href: 'https://medium.com',
+    icon: <Icons.Medium className="size-5" />,
+  },
+];
 
 export const ContactSection = () => {
-  const contactInfo = [
-    {
-      icon: <Icons.Mail className="size-5" />,
-      label: 'Email',
-      value: 'eduard.jacobs@example.com',
-      link: 'mailto:eduard.jacobs@example.com',
-    },
-    {
-      icon: <Icons.Phone className="size-5" />,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
-    },
-    {
-      icon: <Icons.MapPin className="size-5" />,
-      label: 'Location',
-      value: 'San Francisco, CA',
-      link: 'https://maps.google.com/?q=San+Francisco,+CA',
-    },
-  ];
-
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      href: 'https://github.com',
-      icon: <Icons.GitHub className="size-5" />,
-    },
-    {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com',
-      icon: <Icons.LinkedIn className="size-5" />,
-    },
-    {
-      name: 'Medium',
-      href: 'https://medium.com',
-      icon: <Icons.Medium className="size-5" />,
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -66,7 +68,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section className="bg-background px-4 py-24 sm:px-6">
+    <Section>
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-24 lg:grid-cols-2">
           {/* Contact Information */}
@@ -159,6 +161,6 @@ export const ContactSection = () => {
           <ContactForm />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

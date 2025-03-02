@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Heading, Paragraph } from '@libs/ui';
+import { Section } from '../../../components/Section';
 
 export const ContactHero = () => {
   return (
-    <section className="relative overflow-hidden bg-background-secondary px-4 py-24 sm:px-6 lg:py-32">
+    <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent px-0 !pt-32 h-[calc(100vh-25rem)]">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
@@ -39,6 +40,6 @@ export const ContactHero = () => {
           </Paragraph>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 };
