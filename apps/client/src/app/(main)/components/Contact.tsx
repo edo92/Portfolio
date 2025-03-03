@@ -27,6 +27,7 @@ import { Section } from '../../components/Section';
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
+  subject: z.string().optional(),
   message: z
     .string()
     .min(10, { message: 'Message must be at least 10 characters.' }),
@@ -35,12 +36,15 @@ const formSchema = z.object({
 export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const formRef = useRef<HTMLDivElement>(null);
+  const isFormInView = useInView(formRef, { once: true, amount: 0.2 });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       email: '',
+      subject: '',
       message: '',
     },
   });
@@ -67,12 +71,13 @@ export const ContactForm = () => {
 
   return (
     <motion.div
+      ref={formRef}
       className="mt-10 md:mt-12 overflow-hidden rounded-lg shadow-lg"
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40 h-full">
+      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -213,11 +218,10 @@ export const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <Heading as="h2" variant="title">
-              Say Hello
+              Contact Me
             </Heading>
             <Paragraph as="p" variant="subtle">
-              Interested in working together? I&apos;m open to discussing
-              projects, partnerships, and new opportunities.
+              I&apos;m always looking for new opportunities to collaborate.
             </Paragraph>
           </motion.div>
 
