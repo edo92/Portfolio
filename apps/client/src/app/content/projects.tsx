@@ -6,7 +6,9 @@ export const PROJECTS = [
       'A comprehensive cloud-native platform built with a microservices architecture, designed to handle high-volume transactions with fault tolerance and horizontal scalability.',
     longDescription:
       'This enterprise-grade platform leverages cutting-edge technologies to deliver a robust, scalable solution for financial institutions. Built with a microservices architecture using Python and TypeScript, it processes millions of transactions daily while maintaining sub-second response times. The system includes real-time analytics, automated failover mechanisms, and comprehensive monitoring.',
-    imageUrl: '/placeholder.svg?height=600&width=1200',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
+
     category: 'Full Stack',
     tags: [
       'Python',
@@ -47,7 +49,9 @@ export const PROJECTS = [
       'Scalable microservices architecture built with Python, FastAPI, and AWS',
     longDescription:
       'A highly scalable microservices platform designed for cloud-native deployments. This system uses FastAPI for high-performance API endpoints, with AWS services for infrastructure. The architecture follows domain-driven design principles and includes comprehensive testing and monitoring.',
-    imageUrl: '/placeholder.svg?height=600&width=1200',
+    imageUrl:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
+
     category: 'Backend',
     tags: ['Python', 'FastAPI', 'AWS', 'Docker', 'Kubernetes'],
     stats: [

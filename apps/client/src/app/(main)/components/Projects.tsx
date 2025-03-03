@@ -1,15 +1,14 @@
 'use client';
 
-import { useMemo, useState, useCallback } from 'react';
-import Link from 'next/link';
+import { useMemo, useState, useCallback, FC } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
-import { Badge, Button, Heading, Icons, Paragraph } from '@libs/ui';
+import { Badge, Button, Heading, Icons, Paragraph, Link } from '@libs/ui';
 import { Section } from '../../components/Section';
 
-type ProjectProps = {
+export type Project = {
   id: string;
   title: string;
   description: string;
@@ -21,7 +20,7 @@ type ProjectProps = {
 };
 
 type ProjectsGridProps = {
-  projects: ProjectProps[];
+  projects: Project[];
 };
 
 type CategoryFilterProps = {
@@ -30,11 +29,11 @@ type CategoryFilterProps = {
   onSelect: (category: string) => void;
 };
 
-const CategoryFilter = ({
+const CategoryFilter: FC<CategoryFilterProps> = ({
   categories,
   selected,
   onSelect,
-}: CategoryFilterProps) => (
+}) => (
   <div className="flex flex-wrap justify-center gap-3 md:gap-4">
     {categories.map((category) => (
       <Button
@@ -55,18 +54,18 @@ const CategoryFilter = ({
 );
 
 type ProjectCardProps = {
-  project: ProjectProps;
+  project: Project;
   isHovered: boolean;
   onHover: (id: string) => void;
   onLeave: () => void;
 };
 
-const ProjectCard = ({
+const ProjectCard: FC<ProjectCardProps> = ({
   project,
   isHovered,
   onHover,
   onLeave,
-}: ProjectCardProps) => (
+}) => (
   <motion.div
     layout
     initial={{ opacity: 0 }}
@@ -113,7 +112,7 @@ const ProjectCard = ({
       </motion.div>
     </div>
 
-    <div className="flex flex-col gap-3 p-5 sm:p-6 md:p-6">
+    <div className="flex flex-col gap-3 p-5 md:p-6">
       <div className="flex items-center justify-between">
         <Badge variant="secondary" className="text-xs">
           <Paragraph as="span" size="xs" weight="medium">
@@ -121,25 +120,23 @@ const ProjectCard = ({
           </Paragraph>
         </Badge>
         <div className="flex gap-3">
-          <a
+          <Link
+            external
             href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
             aria-label="View GitHub repository"
           >
             <Icons.GitHub className="size-5" />
-          </a>
+          </Link>
           {project.demoUrl && (
-            <a
+            <Link
+              external
               href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="View live demo"
             >
               <Icons.ExternalLink className="size-5" />
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -169,15 +166,19 @@ const ProjectCard = ({
   </motion.div>
 );
 
-export const ProjectsGrid = ({ projects }: ProjectsGridProps) => {
-  const [filter, setFilter] = useState('All');
+export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
+  const [filter, setFilter] = useState<string>('All');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
-  const categories = useMemo(
-    () => ['All', ...new Set(projects.map((project) => project.category))],
-    [projects]
-  );
+  // Extract unique categories and prepend "All" as the default filter option.
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(
+      new Set(projects.map((project) => project.category))
+    );
+    return ['All', ...uniqueCategories];
+  }, [projects]);
 
+  // Filter projects based on the selected category.
   const filteredProjects = useMemo(
     () =>
       filter === 'All'
@@ -186,13 +187,8 @@ export const ProjectsGrid = ({ projects }: ProjectsGridProps) => {
     [filter, projects]
   );
 
-  const handleHover = useCallback((id: string) => {
-    setHoveredProject(id);
-  }, []);
-
-  const handleLeave = useCallback(() => {
-    setHoveredProject(null);
-  }, []);
+  const handleHover = useCallback((id: string) => setHoveredProject(id), []);
+  const handleLeave = useCallback(() => setHoveredProject(null), []);
 
   return (
     <Section>
