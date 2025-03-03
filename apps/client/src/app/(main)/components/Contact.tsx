@@ -72,7 +72,7 @@ export const ContactForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40">
+      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40 h-full">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -213,10 +213,11 @@ export const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <Heading as="h2" variant="title">
-              Contact Me
+              Say Hello
             </Heading>
             <Paragraph as="p" variant="subtle">
-              I&apos;m always looking for new opportunities to collaborate.
+              Interested in working together? I&apos;m open to discussing
+              projects, partnerships, and new opportunities.
             </Paragraph>
           </motion.div>
 

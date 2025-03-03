@@ -49,8 +49,7 @@ export const ContactSection = () => {
               </Heading>
               <Paragraph
                 as="p"
-                weight="normal"
-                size="lg"
+                variant="subtle"
                 className="mb-8 text-muted-foreground"
               >
                 Feel free to reach out through any of these channels. I

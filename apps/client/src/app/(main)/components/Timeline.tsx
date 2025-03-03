@@ -140,10 +140,10 @@ export const Timeline: FC = () => {
           transition={{ duration: 0.8 }}
         >
           <Heading as="h2" variant="title">
-            Our Journey
+            Career Journey
           </Heading>
           <Paragraph as="p" variant="subtle">
-            The evolution of Flowers & Saints through the years
+            Key milestones in my software engineering journey
           </Paragraph>
         </motion.div>
 
