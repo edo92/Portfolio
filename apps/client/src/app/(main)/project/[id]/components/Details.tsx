@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Button, Heading, Icons, Paragraph, Badge } from '@libs/ui';
 
 type ProjectProps = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   longDescription: string;
@@ -28,6 +28,7 @@ interface FadeInProps {
   yOffset?: number;
   className?: string;
 }
+
 const FadeIn = ({
   children,
   delay = 0,
@@ -66,8 +67,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   const { id } = useParams();
   const router = useRouter();
 
-  const projectId = Number(id);
-  const project = projects.find((p) => p.id === projectId);
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     router.push('/projects');
@@ -313,9 +313,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
               </Heading>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {projects
-                  .filter(
-                    (p) => p.id !== projectId && p.category === project.category
-                  )
+                  .filter((p) => p.id !== id && p.category === project.category)
                   .slice(0, 3)
                   .map((relatedProject) => (
                     <Link

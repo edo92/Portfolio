@@ -1,6 +1,6 @@
-export const projects = [
+export const PROJECTS = [
   {
-    id: 0,
+    id: '0',
     title: 'Enterprise Microservices Platform',
     description:
       'A comprehensive cloud-native platform built with a microservices architecture, designed to handle high-volume transactions with fault tolerance and horizontal scalability.',
@@ -41,7 +41,7 @@ export const projects = [
     ],
   },
   {
-    id: 1,
+    id: '1',
     title: 'Cloud-Native Microservices Platform',
     description:
       'Scalable microservices architecture built with Python, FastAPI, and AWS',
@@ -75,3 +75,32 @@ export const projects = [
   },
   // Additional projects would be defined here
 ];
+
+export const FEATURED_PROJECT = {
+  id: '0',
+  title: 'Enterprise Microservices Platform',
+  description:
+    'A comprehensive cloud-native platform built with a microservices architecture, designed to handle high-volume transactions with fault tolerance and horizontal scalability.',
+  detailed:
+    'This enterprise-grade platform leverages cutting-edge technologies to deliver a robust, scalable solution for financial institutions. Built with a microservices architecture using Python and TypeScript, it processes millions of transactions daily while maintaining sub-second response times. The system includes real-time analytics, automated failover mechanisms, and comprehensive monitoring.',
+  imageUrl:
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
+
+  category: 'Full Stack',
+  tags: [
+    'Python',
+    'TypeScript',
+    'AWS',
+    'Kubernetes',
+    'Microservices',
+    'Redis',
+    'PostgreSQL',
+  ],
+  stats: [
+    { label: 'Response Time', value: '<100ms' },
+    { label: 'Uptime', value: '99.99%' },
+    { label: 'Daily Users', value: '50,000+' },
+  ],
+  githubUrl: 'https://github.com',
+  demoUrl: 'https://demo.com',
+};

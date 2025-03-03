@@ -1,39 +1,17 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { Paragraph, Icons, Link } from '@libs/ui';
+import { Paragraph, Link } from '@libs/ui';
+import { SOCIAL_LINKS } from '../../content';
 
 interface NavLink {
   name: string;
   href: string;
 }
 
-interface SocialLink extends NavLink {
-  icon: ReactNode;
-}
-
 const mainLinks: NavLink[] = [
   { name: 'Home', href: '/' },
   { name: 'Projects', href: '/projects' },
   { name: 'Contact', href: '/contact' },
-];
-
-const socialLinks: SocialLink[] = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com',
-    icon: <Icons.GitHub className="size-5" />,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com',
-    icon: <Icons.LinkedIn className="size-5" />,
-  },
-  {
-    name: 'Medium',
-    href: 'https://medium.com',
-    icon: <Icons.Medium className="size-5" />,
-  },
 ];
 
 export const Footer = () => {
@@ -107,7 +85,7 @@ export const Footer = () => {
               Connect
             </Paragraph>
             <div className="flex flex-wrap gap-3">
-              {socialLinks.map((link) => (
+              {SOCIAL_LINKS.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}

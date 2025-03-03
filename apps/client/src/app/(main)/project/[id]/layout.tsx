@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { projects } from './content';
+import { PROJECTS } from '../../../content';
 
 export async function generateMetadata({
   params,
@@ -8,7 +8,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const _params = await params;
 
-  const project = projects.find((p) => p.id === parseInt(_params.id, 10));
+  const project = PROJECTS.find((p) => p.id === _params.id);
 
   if (!project) {
     return {

@@ -2,22 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Heading, Paragraph, Badge } from '@libs/ui';
+
+import { SKILLS } from '../../../content';
 import { Section } from '../../../components/Section';
 
 export const ProjectsHero = () => {
-  const skills = [
-    'Python',
-    'TypeScript',
-    'React',
-    'Next.js',
-    'AWS',
-    'Docker',
-    'Kubernetes',
-    'Node.js',
-    'PostgreSQL',
-    'MongoDB',
-  ];
-
   return (
     <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent px-0 !pt-32">
       {/* Background Pattern */}
@@ -66,7 +55,7 @@ export const ProjectsHero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              {skills.map((skill) => (
+              {SKILLS.map((skill) => (
                 <Badge
                   key={skill}
                   variant="outline"

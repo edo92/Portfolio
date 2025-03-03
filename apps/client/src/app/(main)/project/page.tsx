@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { ProjectsHero } from './components/Hero';
-import { projects, featuredProject } from './contents';
-import { FeaturedProject } from './components/Featured';
+
+import { PROJECTS, FEATURED_PROJECT } from '../../content';
 import { ProjectsGrid } from '../components/Projects';
+import { FeaturedProject } from './components/Featured';
 
 export const metadata: Metadata = {
   title: {
@@ -36,8 +37,8 @@ export default function ProjectPage() {
   return (
     <main className="min-h-screen size-full">
       <ProjectsHero />
-      <FeaturedProject project={featuredProject} />
-      <ProjectsGrid projects={projects} />
+      <FeaturedProject project={FEATURED_PROJECT} />
+      <ProjectsGrid projects={PROJECTS} />
     </main>
   );
 }

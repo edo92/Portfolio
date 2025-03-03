@@ -1,34 +1,14 @@
 'use client';
 
-import { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
-import { Icons, Paragraph, paragraphVariants } from '@libs/ui';
+import { Paragraph, paragraphVariants } from '@libs/ui';
+import { SOCIAL_LINKS } from '../../content';
 import { Section } from '../../components/Section';
 
-const SOCIAL_LINKS = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com',
-    icon: <Icons.GitHub className="w-5 h-5" />,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com',
-    icon: <Icons.LinkedIn className="w-5 h-5" />,
-  },
-  {
-    name: 'Medium',
-    href: 'https://medium.com',
-    icon: <Icons.Medium className="w-5 h-5" />,
-  },
-];
-
 export const Hero = () => {
-  const socialLinks = useMemo(() => SOCIAL_LINKS, []);
-
   return (
     <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-32 !pb-0">
       {/* Uncomment the following block when the Earth component is ready */}
@@ -99,7 +79,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                {socialLinks.map((link) => (
+                {SOCIAL_LINKS.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
