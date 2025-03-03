@@ -13,6 +13,7 @@ module.exports = {
 
         background: {
           DEFAULT: 'hsl(var(--background) / <alpha-value>)',
+          primary: 'hsl(var(--primary-background) / <alpha-value>)',
           secondary: 'hsl(var(--secondary-background) / <alpha-value>)',
         },
         foreground: 'hsl(var(--foreground) / <alpha-value>)',
@@ -21,7 +22,6 @@ module.exports = {
           secondary: 'hsl(var(--body-secondary) / <alpha-value>)',
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
           foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
           100: 'hsl(var(--primary-100) / <alpha-value>)',
           200: 'hsl(var(--primary-200) / <alpha-value>)',
@@ -76,7 +76,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-primary':
-          'linear-gradient(to bottom right, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1))',
+          'linear-gradient(to bottom right, hsl(var(--primary-background) / 0.1), hsl(var(--secondary) / 0.1))',
       },
     },
   },

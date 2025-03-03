@@ -76,9 +76,9 @@ export const ContactSection = () => {
                         : undefined
                     }
                     variants={itemVariants}
-                    className="flex items-center gap-4 rounded-lg border border-border/50 bg-background/50 p-4 transition-colors hover:border-primary/30 hover:bg-primary/5"
+                    className="flex items-center gap-4 rounded-lg border border-border/50 bg-background/50 p-4 transition-colors hover:border-primary/30 hover:bg-background-primary/5"
                   >
-                    <div className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-background-primary/10 text-primary">
                       {item.icon}
                     </div>
                     <div>
@@ -110,7 +110,7 @@ export const ContactSection = () => {
                     <motion.a
                       key={link.name}
                       href={link.href}
-                      className="flex items-center justify-center rounded-full border border-border/50 bg-background/50 p-3 text-foreground transition-colors hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
+                      className="flex items-center justify-center rounded-full border border-border/50 bg-background/50 p-3 text-foreground transition-colors hover:border-primary/30 hover:bg-background-primary/5 hover:text-primary"
                       aria-label={`Visit ${link.name}`}
                       target="_blank"
                       rel="noopener noreferrer"

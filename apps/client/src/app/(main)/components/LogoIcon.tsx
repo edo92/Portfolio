@@ -65,7 +65,7 @@ export const LogoIcon = ({
       className={cn(
         'relative flex items-center justify-center',
         sizes[size],
-        showBackground && 'rounded-lg bg-primary/10',
+        showBackground && 'rounded-lg bg-background-primary/10',
         className
       )}
     >

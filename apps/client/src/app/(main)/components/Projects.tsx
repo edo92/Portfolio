@@ -60,7 +60,7 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
             className={cn(
               'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
               selected === category
-                ? 'bg-primary text-primary-foreground'
+                ? 'bg-background-primary text-primary-foreground'
                 : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
             )}
           >

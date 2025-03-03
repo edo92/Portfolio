@@ -11,7 +11,7 @@ export const ProjectsHero = () => {
     <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent px-0 !pt-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-primary/25 blur-3xl" />
+        <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-background-primary/25 blur-3xl" />
         <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
       </div>
 
@@ -87,7 +87,7 @@ export const ProjectsHero = () => {
                   <div className="h-4 w-3/4 rounded bg-foreground/10"></div>
                   <div className="h-4 w-1/2 rounded bg-foreground/10"></div>
                   <div className="h-4 w-5/6 rounded bg-foreground/10"></div>
-                  <div className="h-4 w-2/3 rounded bg-primary/20"></div>
+                  <div className="h-4 w-2/3 rounded bg-background-primary/20"></div>
                   <div className="h-4 w-3/4 rounded bg-foreground/10"></div>
                   <div className="h-4 w-1/2 rounded bg-secondary/20"></div>
                 </div>
@@ -106,7 +106,7 @@ export const ProjectsHero = () => {
                   ease: 'easeInOut',
                 }}
               >
-                <div className="h-8 w-8 rounded-full bg-primary/30"></div>
+                <div className="h-8 w-8 rounded-full bg-background-primary/30"></div>
               </motion.div>
 
               <motion.div

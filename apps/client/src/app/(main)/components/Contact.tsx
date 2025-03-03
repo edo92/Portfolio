@@ -181,7 +181,7 @@ export const ContactForm = () => {
             <div className="pt-2">
               <Button
                 type="submit"
-                className="group w-full bg-primary"
+                className="group w-full"
                 disabled={isSubmitting}
                 isLoading={isSubmitting}
               >

@@ -25,7 +25,7 @@ export const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-background-primary/10 transition-colors group-hover:bg-background-primary/20">
                 <span className="text-xl font-bold text-primary">EJ</span>
               </div>
               <span className="ml-2 text-xl font-bold transition-colors group-hover:text-primary">
