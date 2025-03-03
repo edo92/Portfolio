@@ -6,16 +6,16 @@ import { cn } from '@libs/util';
 import { Paragraph, Link, paragraphVariants } from '@libs/ui';
 import { SOCIAL_LINKS } from '../../content';
 import { Section } from '../../components/Section';
+import { HeroIllustration } from './Illustration';
 
 export const Hero = () => {
   return (
     <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-32 !pb-0">
       {/* Uncomment the following block when the Earth component is ready */}
-      {/*
+
       <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
-        <EarthComponent />
+        <HeroIllustration />
       </div>
-      */}
 
       <div className="container relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-start lg:flex-row lg:items-center gap-8 md:gap-12 lg:gap-16">
