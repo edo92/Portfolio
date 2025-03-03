@@ -43,9 +43,10 @@ export const ProjectsHero = () => {
               weight="normal"
               className="text-muted-foreground"
             >
-              Explore my portfolio of software engineering projects, showcasing
-              cloud-native architectures, microservices, and full-stack
-              applications built with modern technologies.
+              Discover my portfolio software projects showcasing full stack,
+              backend, and cloud-native applications. Each project demonstrates
+              technical excellence and innovative problem-solving in real-world
+              scenarios.
             </Paragraph>
 
             {/* Skills Tags */}
