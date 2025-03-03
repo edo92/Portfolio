@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Heading, Paragraph, Icons } from '@libs/ui';
 
 import { CONTACT_INFO, SOCIAL_LINKS } from '../../../content';
@@ -8,6 +9,9 @@ import { ContactForm } from '../../components/Contact';
 import { Section } from '../../../components/Section';
 
 export const ContactSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,14 +34,14 @@ export const ContactSection = () => {
   };
 
   return (
-    <Section className="mx-auto px-12 sm:px-16 md:px-24">
+    <Section className="mx-auto px-12 sm:px-16 md:px-24" ref={sectionRef}>
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-24 lg:grid-cols-2">
           {/* Contact Information */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            animate={isInView ? 'visible' : 'hidden'}
           >
             <motion.div variants={itemVariants}>
               <Heading
@@ -49,7 +53,8 @@ export const ContactSection = () => {
               </Heading>
               <Paragraph
                 as="p"
-                variant="subtle"
+                weight="normal"
+                size="lg"
                 className="mb-8 text-muted-foreground"
               >
                 Feel free to reach out through any of these channels. I
