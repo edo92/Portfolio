@@ -59,7 +59,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
-                <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white lg:hidden">
+                <div className="absolute bottom-0 left-0 p-6 md:p-8 lg:hidden">
                   <Badge
                     variant="outline"
                     className="mb-4 border-white/20 bg-black/40 text-white"
@@ -126,7 +126,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-auto">
-                  <Link href={`/projects/${project.id}`} className="flex-1">
+                  <Link href={`/project/${project.id}`} className="flex-1">
                     <Button className="group w-full h-12">
                       <Paragraph
                         as="span"
