@@ -1,8 +1,8 @@
 'use client';
 
 import * as z from 'zod';
-import { useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useCallback, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -198,26 +198,31 @@ export const ContactForm = () => {
   );
 };
 
-export const Contact = () => (
-  <ToastProvider>
-    <Section secondary>
-      <div className="relative mx-auto max-w-xl">
-        <motion.div
-          className="flex flex-col items-center justify-center text-center gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <Heading as="h2" variant="title">
-            Contact Me
-          </Heading>
-          <Paragraph as="p" variant="subtle">
-            I&apos;m always looking for new opportunities to collaborate.
-          </Paragraph>
-        </motion.div>
+export const Contact = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
-        <ContactForm />
-      </div>
-    </Section>
-  </ToastProvider>
-);
+  return (
+    <ToastProvider>
+      <Section secondary ref={containerRef}>
+        <div className="relative mx-auto max-w-xl">
+          <motion.div
+            className="flex flex-col items-center justify-center text-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Heading as="h2" variant="title">
+              Contact Me
+            </Heading>
+            <Paragraph as="p" variant="subtle">
+              I&apos;m always looking for new opportunities to collaborate.
+            </Paragraph>
+          </motion.div>
+
+          <ContactForm />
+        </div>
+      </Section>
+    </ToastProvider>
+  );
+};

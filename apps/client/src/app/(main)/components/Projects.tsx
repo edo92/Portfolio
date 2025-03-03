@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo, useState, useCallback, FC, useRef } from 'react';
 import Image from 'next/image';
+import { useMemo, useState, useCallback, FC, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 import { cn } from '@libs/util';
