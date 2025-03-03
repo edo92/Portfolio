@@ -33,25 +33,44 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
   categories,
   selected,
   onSelect,
-}) => (
-  <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-    {categories.map((category) => (
-      <Button
-        key={category}
-        variant="ghost"
-        onClick={() => onSelect(category)}
-        className={cn(
-          'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
-          selected === category
-            ? 'bg-primary text-primary-foreground'
-            : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-        )}
-      >
-        {category}
-      </Button>
-    ))}
-  </div>
-);
+}) => {
+  const filterRef = useRef<HTMLDivElement>(null);
+  const isFilterInView = useInView(filterRef, { once: true, amount: 0.2 });
+
+  return (
+    <motion.div
+      ref={filterRef}
+      className="flex flex-wrap justify-center gap-3 md:gap-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isFilterInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
+    >
+      {categories.map((category, index) => (
+        <motion.div
+          key={category}
+          initial={{ opacity: 0, y: 20 }}
+          animate={
+            isFilterInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+          }
+          transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+        >
+          <Button
+            variant="ghost"
+            onClick={() => onSelect(category)}
+            className={cn(
+              'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
+              selected === category
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+            )}
+          >
+            {category}
+          </Button>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
 
 type ProjectCardProps = {
   project: Project;
@@ -59,6 +78,7 @@ type ProjectCardProps = {
   isHovered: boolean;
   onHover: (id: string) => void;
   onLeave: () => void;
+  isInView: boolean;
 };
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -67,13 +87,14 @@ const ProjectCard: FC<ProjectCardProps> = ({
   isHovered,
   onHover,
   onLeave,
+  isInView,
 }) => (
   <motion.div
     layout
     initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
     exit={{ opacity: 0, y: 50 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
+    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
     className="group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:border-primary/20 hover:shadow-lg"
     onMouseEnter={() => onHover(project.id)}
     onMouseLeave={onLeave}
@@ -172,7 +193,9 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
   const [filter, setFilter] = useState<string>('All');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+  const gridRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+  const isGridInView = useInView(gridRef, { once: true, amount: 0.1 });
 
   const categories = useMemo(() => {
     const uniqueCategories = Array.from(
@@ -196,14 +219,20 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
     <Section ref={containerRef}>
       <motion.div
         className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.6 }}
       >
         <div className="flex flex-col items-center justify-center gap-6 md:gap-8 mb-8 md:mb-12">
-          <Heading as="h2" variant="title">
-            Projects
-          </Heading>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Heading as="h2" variant="title">
+              Projects
+            </Heading>
+          </motion.div>
           <CategoryFilter
             categories={categories}
             selected={filter}
@@ -212,6 +241,7 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
         </div>
 
         <motion.div
+          ref={gridRef}
           layout
           className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
         >
@@ -224,6 +254,7 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
                 isHovered={hoveredProject === project.id}
                 onHover={handleHover}
                 onLeave={handleLeave}
+                isInView={isGridInView}
               />
             ))}
           </AnimatePresence>
