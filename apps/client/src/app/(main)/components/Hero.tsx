@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
-import { Paragraph, Link, paragraphVariants } from '@libs/ui';
+import { Paragraph, Link, Heading } from '@libs/ui';
 import { SOCIAL_LINKS } from '../../content';
 import { Section } from '../../components/Section';
 import { HeroIllustration } from './Illustration';
@@ -27,30 +27,37 @@ export const Hero = () => {
               transition={{ duration: 0.5 }}
             >
               <motion.span
-                className={cn(
-                  paragraphVariants({ size: 'sm', weight: 'normal' }),
-                  'inline-block text-foreground/60'
-                )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Hey, I&apos;m
+                <Paragraph
+                  as="span"
+                  weight="normal"
+                  className="text-foreground/60 text-[17px]"
+                >
+                  Hey, I&apos;m
+                </Paragraph>
               </motion.span>
 
-              <motion.h1
-                className="text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+              <motion.div
+                className=""
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Eduard Jacobs
-              </motion.h1>
+                <Heading
+                  as="h1"
+                  weight="bold"
+                  className="text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+                >
+                  Eduard Jacobs
+                </Heading>
+              </motion.div>
 
               <motion.div
                 className={cn(
-                  paragraphVariants({ weight: 'normal' }),
-                  'text-base md:text-lg leading-relaxed md:backdrop-blur-sm md:bg-background/80 md:rounded-lg'
+                  'text-sm md:text-lg leading-relaxed md:backdrop-blur-sm md:bg-background/80 md:rounded-lg'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -58,7 +65,7 @@ export const Hero = () => {
               >
                 <Paragraph
                   as="p"
-                  size="lg"
+                  size="md"
                   weight="normal"
                   className="text-body/80"
                 >
