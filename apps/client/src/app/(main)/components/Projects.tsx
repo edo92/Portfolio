@@ -1,8 +1,8 @@
 'use client';
 
-import { useMemo, useState, useCallback, FC } from 'react';
+import { useMemo, useState, useCallback, FC, useRef } from 'react';
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 import { cn } from '@libs/util';
 import { Badge, Button, Heading, Icons, Paragraph, Link } from '@libs/ui';
@@ -55,6 +55,7 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
 
 type ProjectCardProps = {
   project: Project;
+  index: number;
   isHovered: boolean;
   onHover: (id: string) => void;
   onLeave: () => void;
@@ -62,16 +63,17 @@ type ProjectCardProps = {
 
 const ProjectCard: FC<ProjectCardProps> = ({
   project,
+  index,
   isHovered,
   onHover,
   onLeave,
 }) => (
   <motion.div
     layout
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.5 }}
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 50 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
     className="group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:border-primary/20 hover:shadow-lg"
     onMouseEnter={() => onHover(project.id)}
     onMouseLeave={onLeave}
@@ -169,8 +171,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
 export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
   const [filter, setFilter] = useState<string>('All');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
-  // Extract unique categories and prepend "All" as the default filter option.
   const categories = useMemo(() => {
     const uniqueCategories = Array.from(
       new Set(projects.map((project) => project.category))
@@ -178,7 +181,6 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
     return ['All', ...uniqueCategories];
   }, [projects]);
 
-  // Filter projects based on the selected category.
   const filteredProjects = useMemo(
     () =>
       filter === 'All'
@@ -191,8 +193,13 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
   const handleLeave = useCallback(() => setHoveredProject(null), []);
 
   return (
-    <Section>
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <Section ref={containerRef}>
+      <motion.div
+        className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="flex flex-col items-center justify-center gap-6 md:gap-8 mb-8 md:mb-12">
           <Heading as="h2" variant="title">
             Projects
@@ -209,10 +216,11 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
           className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
         >
           <AnimatePresence>
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
                 project={project}
+                index={index}
                 isHovered={hoveredProject === project.id}
                 onHover={handleHover}
                 onLeave={handleLeave}
@@ -220,7 +228,7 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
             ))}
           </AnimatePresence>
         </motion.div>
-      </div>
+      </motion.div>
     </Section>
   );
 };
