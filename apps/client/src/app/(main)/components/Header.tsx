@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { Paragraph } from '@libs/ui';
+import { Paragraph, Link } from '@libs/ui';
 import { ThemeSwitch } from '../../components/ThemeSwitch';
 
 export const Header = () => (

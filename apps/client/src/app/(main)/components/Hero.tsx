@@ -1,10 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { cn } from '@libs/util';
-import { Paragraph, paragraphVariants } from '@libs/ui';
+import { Paragraph, Link, paragraphVariants } from '@libs/ui';
 import { SOCIAL_LINKS } from '../../content';
 import { Section } from '../../components/Section';
 
@@ -81,10 +80,9 @@ export const Hero = () => {
               >
                 {SOCIAL_LINKS.map((link) => (
                   <Link
+                    external
                     key={link.name}
                     href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     aria-label={`Visit ${link.name}`}
                     className="flex items-center gap-2 md:gap-3 rounded-md p-2 md:p-3 text-body/80"
                   >

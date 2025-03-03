@@ -1,8 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Button, Heading, Paragraph } from '@libs/ui';
+import { Button, Heading, Link, Paragraph } from '@libs/ui';
 
 export default function NotFound() {
   return (

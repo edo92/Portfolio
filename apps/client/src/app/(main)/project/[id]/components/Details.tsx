@@ -1,9 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Button, Heading, Icons, Paragraph, Badge } from '@libs/ui';
+import { Button, Heading, Icons, Paragraph, Badge, Link } from '@libs/ui';
 
 type ProjectProps = {
   id: string;
@@ -260,10 +259,9 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                   {/* Action Buttons */}
                   <div className="mt-6 flex flex-col gap-3">
                     {project.demoUrl && (
-                      <a
+                      <Link
+                        external
                         href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="block w-full"
                       >
                         <Button className="group w-full">
@@ -277,13 +275,12 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                             View Live Demo
                           </Paragraph>
                         </Button>
-                      </a>
+                      </Link>
                     )}
 
-                    <a
+                    <Link
+                      external
                       href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="block w-full"
                     >
                       <Button variant="outline" className="w-full">
@@ -292,7 +289,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                           View Source Code
                         </Paragraph>
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </FadeIn>

@@ -1,10 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Badge, Button, Heading, Icons, Paragraph } from '@libs/ui';
+import { Badge, Button, Heading, Icons, Paragraph, Link } from '@libs/ui';
 import { Section } from '../../../components/Section';
 
 type ProjectProps = {
@@ -143,9 +142,8 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   <div className="flex gap-3 md:gap-4">
                     {project.githubUrl && (
                       <Link
+                        external
                         href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         aria-label="View GitHub repository"
                       >
                         <Button
@@ -159,9 +157,8 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                     )}
                     {project.demoUrl && (
                       <Link
+                        external
                         href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         aria-label="View live demo"
                       >
                         <Button
