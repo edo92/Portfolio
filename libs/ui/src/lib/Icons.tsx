@@ -7,6 +7,7 @@ import {
   Mail,
   Phone,
   MapPin,
+  Box,
 } from 'lucide-react';
 
 export type IconProps = SVGAttributes<SVGElement>;
@@ -19,6 +20,7 @@ export const Icons = {
   Phone,
   MapPin,
   Send,
+  Box,
 
   LightBulb: (props?: IconProps) => (
     <svg
