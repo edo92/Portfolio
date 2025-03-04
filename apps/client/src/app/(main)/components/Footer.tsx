@@ -32,16 +32,6 @@ export const Footer = () => {
                 Eduard Jacobs
               </span>
             </Link>
-            <Paragraph
-              as="p"
-              size="sm"
-              weight="normal"
-              className="text-muted-foreground max-w-sm md:max-w-md"
-            >
-              Software Engineer specializing in cloud-native architectures and
-              microservices. Building scalable systems with Python, TypeScript,
-              and AWS.
-            </Paragraph>
           </div>
 
           {/* Navigation Column */}
