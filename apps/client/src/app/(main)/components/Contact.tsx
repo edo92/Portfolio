@@ -72,15 +72,15 @@ export const ContactForm = () => {
   return (
     <motion.div
       ref={formRef}
-      className="mt-10 md:mt-12 overflow-hidden rounded-lg"
+      className="mt-8 overflow-hidden rounded-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 dark:bg-card/40 shadow-lg">
+      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 shadow-lg dark:bg-card/40">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <FormField
                 control={form.control}
                 name="name"
