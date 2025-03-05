@@ -8,6 +8,8 @@ import {
   Phone,
   MapPin,
   Box,
+  Sun,
+  Moon,
 } from 'lucide-react';
 
 export type IconProps = SVGAttributes<SVGElement>;
@@ -21,6 +23,8 @@ export const Icons = {
   MapPin,
   Send,
   Box,
+  Sun,
+  Moon,
 
   LightBulb: (props?: IconProps) => (
     <svg

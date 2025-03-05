@@ -1,28 +1,52 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { Button, Icons } from '@libs/ui';
-import { cn } from '@libs/util';
+import { Icons } from '@libs/ui';
 
-interface ThemeSwitchProps {
-  className?: string;
-}
+export const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ className }) => {
-  const { resolvedTheme, setTheme } = useTheme();
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="size-8 rounded-lg bg-transparent">
+        <div className="size-full animate-pulse rounded-lg bg-muted/10" />
+      </div>
+    );
+  }
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
-    <Button
-      variant="ghost"
-      className={cn(
-        'group flex flex-col items-center p-0 text-body',
-        className
-      )}
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={toggleTheme}
+      className="relative flex size-8 items-center justify-center rounded-lg border border-border/40 bg-background/80 text-foreground shadow-sm backdrop-blur-sm"
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >
-      <Icons.LightBulb
-        className="mt-0.5 aspect-square size-6 shrink-0 self-start transition-colors duration-200 group-hover:text-accent-foreground/80"
-        onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
-      />
-    </Button>
+      <motion.div
+        initial={false}
+        animate={{
+          rotate: theme === 'dark' ? 0 : 180,
+        }}
+        transition={{ duration: 0.4 }}
+        className="relative size-5 overflow-hidden flex items-center justify-center"
+      >
+        {theme === 'dark' ? (
+          <Icons.Moon className="size-5 text-primary" />
+        ) : (
+          <Icons.Sun className="size-5 text-primary" />
+        )}
+      </motion.div>
+    </motion.button>
   );
 };
