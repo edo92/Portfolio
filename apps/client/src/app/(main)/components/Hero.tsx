@@ -10,14 +10,13 @@ import { HeroIllustration } from './Illustration';
 
 export const Hero = () => {
   return (
-    <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-32 !pb-0">
-      {/* Uncomment the following block when the Earth component is ready */}
-
+    <Section className="relative min-h-[92vh] w-full overflow-hidden pt-32 pb-0">
+      {/* Illustration on the right side */}
       <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <HeroIllustration />
       </div>
 
-      <div className="container relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="container relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <div className="flex flex-col items-start lg:flex-row lg:items-center gap-8 md:gap-12 lg:gap-16">
           <div className="lg:w-1/2 max-w-2xl">
             <motion.div
@@ -34,14 +33,13 @@ export const Hero = () => {
                 <Paragraph
                   as="span"
                   weight="normal"
-                  className="text-foreground/60 text-[17px]"
+                  className="text-foreground/60 text-base md:text-lg"
                 >
                   Hey, I&apos;m
                 </Paragraph>
               </motion.span>
 
               <motion.div
-                className=""
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -49,7 +47,7 @@ export const Hero = () => {
                 <Heading
                   as="h1"
                   weight="bold"
-                  className="text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+                  className="text-4xl md:text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
                 >
                   Eduard Jacobs
                 </Heading>
