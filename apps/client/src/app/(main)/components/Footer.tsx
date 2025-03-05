@@ -10,7 +10,7 @@ interface NavLink {
 
 const mainLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'Projects', href: '/project' },
+  { name: 'Projects', href: '/projects' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -21,7 +21,7 @@ export const Footer = () => {
     <footer className="relative border-t bg-gradient-to-b from-background to-background-secondary">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
+      <div className="container mx-auto px-6 py-12 md:px-8 lg:px-12 lg:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
