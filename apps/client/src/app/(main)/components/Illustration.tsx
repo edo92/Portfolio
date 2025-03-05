@@ -132,7 +132,7 @@ const ConnectingLines = ({ isDark }: { isDark: boolean }) => {
 export const HeroIllustration = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isDark, setIsDark] = useState(false); // Initialize isDark
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -183,7 +183,7 @@ export const HeroIllustration = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative h-[400px] w-full sm:h-[500px] md:h-[600px]">
+    <div className="relative h-[600px] w-full">
       {/* Background Glow Effects - Using CSS transform for better performance */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="absolute h-64 w-64 animate-glow-1 rounded-full bg-background-primary/10 blur-3xl" />
