@@ -34,9 +34,9 @@ export const ContactSection = () => {
   };
 
   return (
-    <Section className="mx-auto px-12 sm:px-16 md:px-24" ref={sectionRef}>
+    <Section className="mx-auto px-6 md:px-8 lg:px-12" ref={sectionRef}>
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-24 lg:grid-cols-2">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
           {/* Contact Information */}
           <motion.div
             variants={containerVariants}
