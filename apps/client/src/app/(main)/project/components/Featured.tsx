@@ -32,12 +32,12 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
 
   return (
     <Section className="pt-12" secondary>
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col gap-6 md:gap-8"
+          className="flex flex-col gap-6"
         >
           <Heading as="h2" weight="semibold" className="text-2xl sm:text-3xl">
             Featured Project
@@ -59,7 +59,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
-                <div className="absolute bottom-0 left-0 p-6 md:p-8 lg:hidden">
+                <div className="absolute bottom-0 left-0 p-6 lg:hidden">
                   <Badge
                     variant="outline"
                     className="mb-4 border-white/20 bg-black/40 text-white"
@@ -72,7 +72,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 </div>
               </div>
 
-              <div className="flex flex-col gap-6 p-6 md:p-8 lg:p-10">
+              <div className="flex flex-col gap-6 p-6 lg:p-8">
                 <div className="hidden lg:block">
                   <Badge variant="outline" className="mb-4">
                     {project.category}
@@ -91,11 +91,11 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   {project.detailed}
                 </Paragraph>
 
-                <div className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6">
+                <div className="grid grid-cols-3 gap-4">
                   {project.stats.map((stat, index) => (
                     <div
                       key={index}
-                      className="rounded-lg bg-background p-3 md:p-4 text-center"
+                      className="rounded-lg bg-background p-4 text-center"
                     >
                       <Paragraph
                         as="p"
@@ -117,7 +117,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-2 md:gap-3">
+                <div className="flex flex-wrap gap-3">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="px-3 py-1">
                       {tag}
@@ -125,7 +125,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-auto">
+                <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                   <Link href={`/project/${project.id}`} className="flex-1">
                     <Button className="group w-full h-12">
                       <Paragraph
@@ -139,7 +139,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                       <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </Link>
-                  <div className="flex gap-3 md:gap-4">
+                  <div className="flex gap-4">
                     {project.githubUrl && (
                       <Link
                         external
