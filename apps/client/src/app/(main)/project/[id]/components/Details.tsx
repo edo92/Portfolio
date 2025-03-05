@@ -76,7 +76,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   return (
     <>
       {/* Navigation Header */}
-      <div className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm px-4 py-3">
+      <div className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm px-6 py-4">
         <div className="container mx-auto max-w-7xl">
           <Link href="/project" className="inline-flex pt-12">
             <Button variant="ghost" size="sm" className="gap-2">
@@ -117,7 +117,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         </section>
 
         {/* Project Overview Section */}
-        <section className="bg-background-secondary px-4 py-16 sm:px-6 lg:px-8">
+        <section className="bg-background-secondary px-6 py-16">
           <div className="container mx-auto max-w-7xl">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
               <FadeIn delay={0.2} yOffset={0} className="lg:col-span-2">
@@ -209,7 +209,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       >
                         Technologies
                       </Paragraph>
-                      <div className="mt-2 flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <Badge key={tag} variant="secondary">
                             {tag}
@@ -228,7 +228,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       >
                         Key Metrics
                       </Paragraph>
-                      <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
                         {project.stats.map((stat, index) => (
                           <div
                             key={index}
@@ -298,7 +298,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         </section>
 
         {/* Related Projects Section */}
-        <section className="bg-background px-4 py-16 sm:px-6 lg:px-8">
+        <section className="bg-background px-6 py-16">
           <div className="container mx-auto max-w-7xl">
             <FadeIn delay={0.6} yOffset={0} className="flex flex-col gap-8">
               <Heading
