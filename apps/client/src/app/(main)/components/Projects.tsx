@@ -40,7 +40,7 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
   return (
     <motion.div
       ref={filterRef}
-      className="flex flex-wrap justify-center gap-3 md:gap-4"
+      className="flex flex-wrap justify-center gap-4"
       initial={{ opacity: 0, y: 20 }}
       animate={isFilterInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
@@ -91,9 +91,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
 }) => (
   <motion.div
     layout
-    initial={{ opacity: 0, y: 50 }}
-    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-    exit={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
     className="group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:border-primary/20 hover:shadow-lg"
     onMouseEnter={() => onHover(project.id)}
@@ -109,7 +109,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <motion.div
-        className="absolute bottom-0 left-0 right-0 p-4 md:p-6"
+        className="absolute bottom-0 left-0 right-0 p-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
         transition={{ duration: 0.3 }}
@@ -135,7 +135,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
       </motion.div>
     </div>
 
-    <div className="flex flex-col gap-3 p-5 md:p-6">
+    <div className="flex flex-col gap-4 p-6">
       <div className="flex items-center justify-between">
         <Badge variant="secondary" className="text-xs">
           <Paragraph as="span" size="xs" weight="medium">
@@ -218,12 +218,12 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
   return (
     <Section ref={containerRef}>
       <motion.div
-        className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12"
+        className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex flex-col items-center justify-center gap-6 md:gap-8 mb-8 md:mb-12">
+        <div className="flex flex-col items-center justify-center gap-8 mb-8 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -243,7 +243,7 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
         <motion.div
           ref={gridRef}
           layout
-          className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
