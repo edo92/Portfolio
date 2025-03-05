@@ -22,7 +22,10 @@ export const ContactHero: FC = () => {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl flex flex-col justify-center">
-        <motion.div className="flex flex-col gap-6 mx-auto max-w-3xl text-center" {...fadeInUp}>
+        <motion.div
+          className="flex flex-col gap-6 mx-auto max-w-3xl text-center"
+          {...fadeInUp}
+        >
           <Heading
             as="h1"
             weight="bold"
