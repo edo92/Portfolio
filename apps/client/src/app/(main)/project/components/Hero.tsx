@@ -8,7 +8,7 @@ import { Section } from '../../../components/Section';
 
 export const ProjectsHero = () => {
   return (
-    <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent px-0 !pt-32">
+    <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent pt-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-background-primary/25 blur-3xl" />
@@ -16,11 +16,11 @@ export const ProjectsHero = () => {
       </div>
 
       {/* Content Container */}
-      <div className="container relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <div className="grid gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Text Content */}
           <motion.div
-            className="flex flex-col justify-center gap-6 md:gap-8"
+            className="flex flex-col justify-center gap-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -51,7 +51,7 @@ export const ProjectsHero = () => {
 
             {/* Skills Tags */}
             <motion.div
-              className="flex flex-wrap gap-2 md:gap-3"
+              className="flex flex-wrap gap-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -77,13 +77,13 @@ export const ProjectsHero = () => {
           >
             <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96">
               {/* Code Block Visual */}
-              <div className="absolute inset-0 rounded-lg border border-border/50 bg-card/40 p-4 md:p-6 shadow-lg backdrop-blur-sm">
+              <div className="absolute inset-0 rounded-lg border border-border/50 bg-card/40 p-6 shadow-lg backdrop-blur-sm">
                 <div className="flex items-center space-x-3">
                   <div className="h-3 w-3 rounded-full bg-destructive/70"></div>
                   <div className="h-3 w-3 rounded-full bg-secondary/70"></div>
                   <div className="h-3 w-3 rounded-full bg-success/70"></div>
                 </div>
-                <div className="mt-4 md:mt-6 space-y-3">
+                <div className="mt-6 space-y-3">
                   <div className="h-4 w-3/4 rounded bg-foreground/10"></div>
                   <div className="h-4 w-1/2 rounded bg-foreground/10"></div>
                   <div className="h-4 w-5/6 rounded bg-foreground/10"></div>
