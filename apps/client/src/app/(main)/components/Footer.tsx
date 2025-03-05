@@ -10,7 +10,7 @@ interface NavLink {
 
 const mainLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'Projects', href: '/projects' },
+  { name: 'Projects', href: '/project' },
   { name: 'Contact', href: '/contact' },
 ];
 
