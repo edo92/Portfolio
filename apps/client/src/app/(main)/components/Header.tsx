@@ -2,7 +2,7 @@ import { Paragraph, Link } from '@libs/ui';
 import { ThemeSwitch } from '../../components/ThemeSwitch';
 
 export const Header = () => (
-  <nav className="z-10 flex w-full items-center justify-between px-8 py-5">
+  <nav className="z-10 flex w-full items-center justify-between px-6 py-4 md:px-8 lg:px-12 lg:py-5">
     <Link href="/">
       <Paragraph as="span" size="xl" weight="bold">
         EJ
