@@ -44,8 +44,8 @@ const TimelineEvent: FC<TimelineEventProps> = ({
         'flex w-full items-center justify-between',
         index % 2 === 0 && 'flex-row-reverse'
       )}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
     >
       <div className="w-5/12">
@@ -57,7 +57,7 @@ const TimelineEvent: FC<TimelineEventProps> = ({
           className="transform-gpu cursor-pointer"
         >
           <motion.div
-            className="flex flex-col gap-3 rounded-lg border p-6 sm:p-8 shadow-lg transition-all duration-300 ease-in-out"
+            className="flex flex-col gap-4 rounded-lg border p-6 shadow-lg transition-all duration-300 ease-in-out"
             whileHover={{ scale: 1.02, zIndex: 20 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -132,9 +132,9 @@ export const Timeline: FC = () => {
 
   return (
     <Section ref={containerRef} secondary>
-      <div className="flex flex-col mx-auto gap-12 md:gap-16">
+      <div className="flex flex-col mx-auto gap-12">
         <motion.div
-          className="flex flex-col gap-5 items-center justify-center text-center"
+          className="flex flex-col gap-6 items-center justify-center text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
