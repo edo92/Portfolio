@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { Heading, Paragraph, Badge } from '@libs/ui';
 
-import { SKILLS } from '../../../content';
 import { Section } from '../../../components/Section';
+import { PROJECTS_INTRODUCTION, SKILLS } from '../../../content';
 
 export const ProjectsHero = () => {
   return (
@@ -43,10 +43,7 @@ export const ProjectsHero = () => {
               weight="normal"
               className="text-muted-foreground"
             >
-              Discover my portfolio software projects showcasing full stack,
-              backend, and cloud-native applications. Each project demonstrates
-              technical excellence and innovative problem-solving in real-world
-              scenarios.
+              {PROJECTS_INTRODUCTION}
             </Paragraph>
 
             {/* Skills Tags */}
