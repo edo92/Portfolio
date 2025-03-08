@@ -5,7 +5,7 @@ import { Button, Heading, Link, Paragraph } from '@libs/ui';
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-20">
+    <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 py-20">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ export default function NotFound() {
         transition={{ duration: 0.8 }}
       >
         <motion.h1
-          className="text-9xl font-bold text-primary mb-4"
+          className="text-primary mb-4 font-bold text-9xl"
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{
@@ -39,7 +39,7 @@ export default function NotFound() {
             as="p"
             weight="normal"
             size="sm"
-            className="text-muted-foreground mb-8 max-w-md mx-auto"
+            className="mx-auto mb-8 max-w-md text-muted-foreground"
           >
             {`The page you're looking for doesn't exist or has been moved. Let's
             get you back on track.`}
@@ -53,7 +53,7 @@ export default function NotFound() {
       </motion.div>
 
       <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border-2 border-primary/20 -z-10"
+        className="border-primary/20 absolute left-1/2 top-1/2 -z-10 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full border-2"
         initial={{ scale: 0, opacity: 0 }}
         animate={{
           scale: [0, 1.2, 1],
@@ -63,7 +63,7 @@ export default function NotFound() {
       />
 
       <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border-2 border-primary/10 -z-10"
+        className="border-primary/10 absolute left-1/2 top-1/2 -z-10 size-96 -translate-x-1/2 -translate-y-1/2 rounded-full border-2"
         initial={{ scale: 0, opacity: 0 }}
         animate={{
           scale: [0, 1.2, 1],
