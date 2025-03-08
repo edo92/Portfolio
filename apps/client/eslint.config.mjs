@@ -1,11 +1,9 @@
+import { FlatCompat } from '@eslint/eslintrc';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import js from '@eslint/js';
-import nx from '@nx/eslint-plugin';
-import { FlatCompat } from '@eslint/eslintrc';
 import { fixupConfigRules } from '@eslint/compat';
-import css from '@eslint/css';
-import { tailwindSyntax } from '@eslint/css/syntax';
+import nx from '@nx/eslint-plugin';
 import baseConfig from '../../eslint.config.mjs';
 
 const compat = new FlatCompat({
@@ -15,8 +13,9 @@ const compat = new FlatCompat({
 
 const config = [
   ...fixupConfigRules(compat.extends('next')),
-  ...fixupConfigRules(compat.extends('prettier')),
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
+  ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
+  ...fixupConfigRules(compat.extends('prettier')),
 
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],
@@ -24,16 +23,15 @@ const config = [
     ignores: ['.next/**/*'],
   },
   {
-    files: ['**/*.css'],
-    plugins: {
-      css,
-    },
-    language: 'css/css',
-    languageOptions: {
-      customSyntax: tailwindSyntax,
+    settings: {
+      tailwindcss: {
+        callees: ['classnames', 'clsx', 'cva', 'cn', 'className'],
+        config: './tailwind.config.js',
+      },
     },
     rules: {
-      'css/no-empty-blocks': 'error',
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
     },
   },
 ];
