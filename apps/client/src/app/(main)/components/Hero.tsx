@@ -1,10 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
 import { cn } from '@libs/util';
 import { Paragraph, Link, Heading } from '@libs/ui';
-import { SOCIAL_LINKS } from '../../content';
+import { DESCRIPTION, SOCIAL_LINKS } from '../../content';
 import { Section } from '../../components/Section';
 import { HeroIllustration } from './Illustration';
 
@@ -66,13 +65,7 @@ export const Hero = () => {
                   weight="normal"
                   className="text-body/80"
                 >
-                  Software Engineer with over 5 years of expertise in backend
-                  and full-stack development, specializing in cloud-native
-                  architectures and microservices. Demonstrated success in
-                  designing scalable systems using Python, TypeScript, and AWS
-                  technologies. Proven track record in implementing DevOps
-                  practices and maintaining high-performance production
-                  environments.
+                  {DESCRIPTION}
                 </Paragraph>
               </motion.div>
 
