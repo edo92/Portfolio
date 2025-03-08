@@ -26,7 +26,7 @@ export const Toast: React.FC<ToastProps> = memo(
   ({ className, handleClose, toasts }) => (
     <div
       className={cn(
-        'fixed right-0 top-0 w-full max-w-sm p-4 z-[9999]',
+        'fixed right-0 top-0 z-[9999] w-full max-w-sm p-4',
         className
       )}
     >
@@ -36,7 +36,7 @@ export const Toast: React.FC<ToastProps> = memo(
             key={toast.id}
             role="alert"
             aria-labelledby={`toast-title-${toast.id}`}
-            className="max-w-xs rounded-xl border bg-background-secondary shadow-lg"
+            className="bg-background-secondary max-w-xs rounded-xl border shadow-lg"
           >
             <div className="flex gap-4 p-4">
               <div className="shrink-0">
@@ -45,7 +45,7 @@ export const Toast: React.FC<ToastProps> = memo(
 
               <div className="w-full">
                 <Paragraph
-                  variant="p"
+                  as="p"
                   size="sm"
                   weight="semibold"
                   id={`toast-title-${toast.id}`}
@@ -53,9 +53,9 @@ export const Toast: React.FC<ToastProps> = memo(
                   {toast.title}
                 </Paragraph>
                 <Paragraph
-                  variant="p"
+                  as="p"
                   size="sm"
-                  weight="regular"
+                  weight="normal"
                   aria-label="toast-message"
                   className="mt-1"
                 >
@@ -70,7 +70,7 @@ export const Toast: React.FC<ToastProps> = memo(
                 onClick={() => handleClose(toast.id)}
                 className="group inline-flex h-fit items-start p-0 py-1"
               >
-                <Icons.CloseX className="size-3.5 stroke-1.5 text-body transition duration-200 group-hover:text-body/85" />
+                <Icons.CloseX className="stroke-1.5 text-body group-hover:text-body/85 size-3.5 transition duration-200" />
               </Button>
             </div>
           </div>

@@ -3,18 +3,18 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
 
 const badge = tv({
-  base: 'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  base: 'focus:ring-ring inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2',
   variants: {
     variant: {
       default:
-        'border-transparent bg-background-primary text-primary-foreground hover:bg-background-primary/80',
+        'bg-background-primary text-primary-foreground hover:bg-background-primary/80 border-transparent',
       secondary:
-        'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        'bg-secondary text-secondary-foreground hover:bg-secondary/80 border-transparent',
       destructive:
-        'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
+        'bg-destructive text-destructive-foreground hover:bg-destructive/80 border-transparent',
       outline: 'text-foreground',
       success:
-        'border-transparent bg-success text-success-foreground hover:bg-success/80',
+        'bg-success text-success-foreground hover:bg-success/80 border-transparent',
     },
     size: {
       default: 'px-2.5 py-0.5 text-xs',
@@ -54,7 +54,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         {removable && onRemove && (
           <button
             type="button"
-            className="ml-1 rounded-full p-0.5 hover:bg-background/20"
+            className="hover:bg-background/20 ml-1 rounded-full p-0.5"
             onClick={(e) => {
               e.stopPropagation();
               onRemove();

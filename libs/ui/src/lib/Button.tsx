@@ -3,26 +3,27 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { Icons } from './Icons';
 
 const button = tv({
-  base: 'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
+  base: 'focus-visible:ring-ring ring-offset-background inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   variants: {
     variant: {
-      default: 'bg-background-primary text-primary-foreground hover:bg-background-primary/90',
+      default:
+        'bg-background-primary text-primary-foreground hover:bg-background-primary/90',
       destructive:
         'bg-destructive text-destructive-foreground hover:bg-destructive/90',
       outline:
-        'border border-input hover:bg-accent hover:text-accent-foreground',
+        'border-input hover:bg-accent hover:text-accent-foreground border',
       secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-      ghost: 'bg-transparent ring-0 hover:ring-0 ring-offset-0',
-      link: 'underline-offset-4 hover:underline text-primary',
+      ghost: 'bg-transparent ring-0 ring-offset-0 hover:ring-0',
+      link: 'text-primary underline-offset-4 hover:underline',
     },
     size: {
-      default: 'py-2 px-4',
-      sm: 'px-3 rounded-md',
-      lg: 'px-8 rounded-md',
+      default: 'px-4 py-2',
+      sm: 'rounded-md px-3',
+      lg: 'rounded-md px-8',
       icon: 'size-10',
     },
     isLoading: {
-      true: 'opacity-50 pointer-events-none',
+      true: 'pointer-events-none opacity-50',
     },
   },
   defaultVariants: {

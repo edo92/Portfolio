@@ -13,43 +13,43 @@ const input = tv({
       'transition-colors duration-200',
       'file:border-0 file:bg-transparent file:text-sm file:font-medium',
       'placeholder:text-muted-foreground/50 placeholder:text-sm',
-      'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+      'focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'transition-colors duration-100 ease-in-out',
     ],
-    startContent: 'flex items-center justify-center text-muted-foreground',
-    endContent: 'flex items-center justify-center text-muted-foreground',
+    startContent: 'text-muted-foreground flex items-center justify-center',
+    endContent: 'text-muted-foreground flex items-center justify-center',
   },
   variants: {
     variant: {
       default: {
-        input: ['border border-input bg-background'],
+        input: ['border-input bg-background border'],
       },
       ghost: {
         input: ['border-none bg-transparent'],
       },
       outline: {
-        input: ['border border-input bg-transparent'],
+        input: ['border-input border bg-transparent'],
       },
     },
     size: {
       sm: {
         base: 'gap-1.5',
         input: 'h-8 px-3 py-1 text-xs',
-        startContent: 'h-3 w-3 ml-3',
-        endContent: 'h-3 w-3 mr-3',
+        startContent: 'ml-3 size-3',
+        endContent: 'mr-3 size-3',
       },
       md: {
         base: 'gap-2',
         input: 'h-10 px-4 py-2',
-        startContent: 'h-4 w-4 ml-4',
-        endContent: 'h-4 w-4 mr-4',
+        startContent: 'ml-4 size-4',
+        endContent: 'mr-4 size-4',
       },
       lg: {
         base: 'gap-2.5',
         input: 'h-12 px-6 py-3 text-base',
-        startContent: 'h-5 w-5 ml-6',
-        endContent: 'h-5 w-5 mr-6',
+        startContent: 'ml-6 size-5',
+        endContent: 'mr-6 size-5',
       },
     },
     state: {

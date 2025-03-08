@@ -108,7 +108,7 @@ export function FormMessage({
   return (
     <Paragraph
       size="xs"
-      variant="span"
+      as="span"
       weight="medium"
       className="text-red-600"
       {...props}

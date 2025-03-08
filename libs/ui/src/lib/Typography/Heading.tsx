@@ -6,7 +6,7 @@ const headingVariants = tv({
   base: '',
   variants: {
     variant: {
-      title: 'text-3xl font-bold text-foreground sm:text-4xl',
+      title: 'text-foreground text-3xl font-bold sm:text-4xl',
     },
     weight: {
       light: 'font-light',

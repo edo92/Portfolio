@@ -11,25 +11,25 @@ const textarea = tv({
       'flex min-h-[80px] w-full rounded-sm',
       'text-sm font-normal',
       'placeholder:text-muted-foreground/50 placeholder:text-sm',
-      'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+      'focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'transition-colors duration-100 ease-in',
     ],
     topContent:
-      'flex items-center justify-end text-muted-foreground text-xs gap-1',
+      'text-muted-foreground flex items-center justify-end gap-1 text-xs',
     bottomContent:
-      'flex items-center justify-end text-muted-foreground text-xs gap-1',
+      'text-muted-foreground flex items-center justify-end gap-1 text-xs',
   },
   variants: {
     variant: {
       default: {
-        textarea: ['border border-input bg-background'],
+        textarea: ['border-input bg-background border'],
       },
       ghost: {
         textarea: ['border-none bg-transparent'],
       },
       outline: {
-        textarea: ['border border-input bg-transparent'],
+        textarea: ['border-input border bg-transparent'],
       },
     },
     size: {
