@@ -2,21 +2,21 @@ import { Icons } from '@libs/ui';
 
 export const CONTACT_INFO = [
   {
-    icon: <Icons.Mail className="size-5" />,
     label: 'Email',
-    value: 'eduard.jacobs@example.com',
-    link: 'mailto:eduard.jacobs@example.com',
+    value: 'jacobs.eduard@proton.me',
+    icon: <Icons.Mail className="size-5" />,
+    link: 'mailto:jacobs.eduard@proton.me',
   },
   {
-    icon: <Icons.Phone className="size-5" />,
-    label: 'Phone',
-    value: '+1 (555) 123-4567',
-    link: 'tel:+15551234567',
+    label: 'LinkedIn',
+    value: 'the-ej',
+    icon: <Icons.LinkedIn className="size-5" />,
+    link: 'https://linkedin.com/in/the-ej',
   },
   {
-    icon: <Icons.MapPin className="size-5" />,
     label: 'Location',
-    value: 'San Francisco, CA',
-    link: 'https://maps.google.com/?q=San+Francisco,+CA',
+    value: 'Los Angeles, CA',
+    icon: <Icons.MapPin className="size-5" />,
+    link: 'https://maps.google.com/?q=Los+Angeles,CA',
   },
 ];
