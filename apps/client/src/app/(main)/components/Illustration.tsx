@@ -183,7 +183,7 @@ export const HeroIllustration = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative h-[600px] w-full">
+    <div className="relative mt-3 h-[600px] w-full">
       {/* Background Glow Effects - Using CSS transform for better performance */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="animate-glow-1 absolute size-64 rounded-full bg-background-primary/10 blur-3xl" />
