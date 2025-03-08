@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function ProjectPage() {
   return (
-    <main className="min-h-screen size-full">
+    <main className="size-full min-h-screen">
       <ProjectsHero />
       <FeaturedProject project={FEATURED_PROJECT} />
       <ProjectsGrid projects={PROJECTS} />

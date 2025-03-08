@@ -71,7 +71,7 @@ export const LogoIcon = ({
     >
       <motion.svg
         viewBox="0 0 100 100"
-        className="h-full w-full p-2"
+        className="size-full p-2"
         initial={animated ? 'hidden' : 'visible'}
         animate="visible"
       >

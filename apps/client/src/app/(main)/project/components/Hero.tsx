@@ -11,8 +11,8 @@ export const ProjectsHero = () => {
     <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent pt-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute left-1/3 top-1/4 h-64 w-64 rounded-full bg-background-primary/25 blur-3xl" />
-        <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
+        <div className="absolute left-1/3 top-1/4 size-64 rounded-full bg-background-primary/25 blur-3xl" />
+        <div className="absolute right-1/4 top-1/2 size-48 rounded-full bg-secondary/25 blur-3xl" />
       </div>
 
       {/* Content Container */}
@@ -75,13 +75,13 @@ export const ProjectsHero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96">
+            <div className="relative size-64 sm:size-80 md:size-96">
               {/* Code Block Visual */}
               <div className="absolute inset-0 rounded-lg border border-border/50 bg-card/40 p-6 shadow-lg backdrop-blur-sm">
                 <div className="flex items-center space-x-3">
-                  <div className="h-3 w-3 rounded-full bg-destructive/70"></div>
-                  <div className="h-3 w-3 rounded-full bg-secondary/70"></div>
-                  <div className="h-3 w-3 rounded-full bg-success/70"></div>
+                  <div className="size-3 rounded-full bg-destructive/70"></div>
+                  <div className="size-3 rounded-full bg-secondary/70"></div>
+                  <div className="size-3 rounded-full bg-success/70"></div>
                 </div>
                 <div className="mt-6 space-y-3">
                   <div className="h-4 w-3/4 rounded bg-foreground/10"></div>
@@ -106,7 +106,7 @@ export const ProjectsHero = () => {
                   ease: 'easeInOut',
                 }}
               >
-                <div className="h-8 w-8 rounded-full bg-background-primary/30"></div>
+                <div className="size-8 rounded-full bg-background-primary/30"></div>
               </motion.div>
 
               <motion.div

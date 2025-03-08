@@ -11,7 +11,7 @@ export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
     <section
       ref={ref}
       className={cn(
-        'relative flex flex-col w-full px-6 py-20 md:py-24',
+        'relative flex w-full flex-col px-6 py-20 md:py-24',
         secondary ? 'bg-background-secondary' : 'bg-background',
         className
       )}

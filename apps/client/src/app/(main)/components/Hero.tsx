@@ -11,13 +11,13 @@ import { HeroIllustration } from './Illustration';
 export const Hero = () => {
   return (
     <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-36 pb-0">
-      <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
+      <div className="pointer-events-none absolute right-0 top-0 z-[999] hidden h-screen w-full lg:block lg:w-1/2">
         <HeroIllustration />
       </div>
 
       <div className="container relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
-        <div className="flex flex-col items-start lg:flex-row lg:items-center gap-8 md:gap-12 lg:gap-16">
-          <div className="lg:w-1/2 max-w-2xl">
+        <div className="flex flex-col items-start gap-8 md:gap-12 lg:flex-row lg:items-center lg:gap-16">
+          <div className="max-w-2xl lg:w-1/2">
             <motion.div
               className="space-y-6 md:space-y-8"
               initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ export const Hero = () => {
                 <Paragraph
                   as="span"
                   weight="normal"
-                  className="text-foreground/60 text-sm"
+                  className="text-sm text-foreground/60"
                 >
                   Hey, I&apos;m
                 </Paragraph>
@@ -46,7 +46,7 @@ export const Hero = () => {
                 <Heading
                   as="h1"
                   weight="bold"
-                  className="text-4xl md:text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-4xl tracking-tight text-transparent md:text-5xl lg:text-6xl"
                 >
                   Eduard Jacobs
                 </Heading>
@@ -54,7 +54,7 @@ export const Hero = () => {
 
               <motion.div
                 className={cn(
-                  'text-sm md:text-lg leading-relaxed md:backdrop-blur-sm md:bg-background/80 md:rounded-lg'
+                  'text-sm leading-relaxed md:rounded-lg md:bg-background/80 md:text-lg md:backdrop-blur-sm'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export const Hero = () => {
                     key={link.name}
                     href={link.href}
                     aria-label={`Visit ${link.name}`}
-                    className="flex items-center gap-2 md:gap-3 rounded-md p-2 md:p-3 text-body/80"
+                    className="flex items-center gap-2 rounded-md p-2 text-body/80 md:gap-3 md:p-3"
                   >
                     {link.icon}
                     <Paragraph as="span" size="sm" weight="medium">

@@ -19,16 +19,16 @@ export const Footer = () => {
 
   return (
     <footer className="relative border-t bg-gradient-to-b from-background to-background-secondary">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="via-primary/20 absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent" />
 
       <div className="container mx-auto px-6 py-12 md:px-8 lg:px-12 lg:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-background-primary/10 transition-colors group-hover:bg-background-primary/20">
-                <span className="text-xl font-bold text-primary">EJ</span>
+              <div className="flex size-10 items-center justify-center rounded-lg bg-background-primary/10 transition-colors group-hover:bg-background-primary/20">
+                <span className="text-primary font-bold text-xl">EJ</span>
               </div>
-              <span className="ml-2 text-xl font-bold transition-colors group-hover:text-primary">
+              <span className="group-hover:text-primary ml-2 font-bold text-xl transition-colors">
                 Eduard Jacobs
               </span>
             </Link>
@@ -53,7 +53,7 @@ export const Footer = () => {
                         as="span"
                         size="xs"
                         weight="normal"
-                        className="text-muted-foreground transition-colors hover:text-primary"
+                        className="hover:text-primary text-muted-foreground transition-colors"
                       >
                         {link.name}
                       </Paragraph>
@@ -79,7 +79,7 @@ export const Footer = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="group flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/30 text-foreground transition-all hover:border-primary/30 hover:bg-primary/10 hover:text-primary hover:shadow-sm hover:shadow-primary/5"
+                  className="hover:border-primary/30 hover:bg-primary/10 hover:text-primary hover:shadow-primary/5 group flex size-10 items-center justify-center rounded-lg border border-border/50 bg-card/30 text-foreground transition-all hover:shadow-sm"
                   aria-label={`Visit ${link.name}`}
                   external
                 >

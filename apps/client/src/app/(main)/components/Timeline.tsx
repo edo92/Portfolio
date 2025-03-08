@@ -132,9 +132,9 @@ export const Timeline: FC = () => {
 
   return (
     <Section ref={containerRef} secondary>
-      <div className="flex flex-col mx-auto gap-12">
+      <div className="mx-auto flex flex-col gap-12">
         <motion.div
-          className="flex flex-col gap-6 items-center justify-center text-center"
+          className="flex flex-col items-center justify-center gap-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -150,7 +150,7 @@ export const Timeline: FC = () => {
         <div className="relative space-y-12">
           <motion.div
             className={cn(
-              'absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-secondary-foreground/40 dark:bg-secondary/80'
+              'absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-secondary-foreground/40 dark:bg-secondary/80'
             )}
             style={{ scaleY, originY: 0, height: '105%', top: '0%' }}
           />

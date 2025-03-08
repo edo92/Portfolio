@@ -39,12 +39,12 @@ export const ThemeSwitch = () => {
           rotate: theme === 'dark' ? 0 : 180,
         }}
         transition={{ duration: 0.4 }}
-        className="relative size-5 overflow-hidden flex items-center justify-center"
+        className="relative flex size-5 items-center justify-center overflow-hidden"
       >
         {theme === 'dark' ? (
-          <Icons.Moon className="size-5 text-primary" />
+          <Icons.Moon className="text-primary size-5" />
         ) : (
-          <Icons.Sun className="size-5 text-primary" />
+          <Icons.Sun className="text-primary size-5" />
         )}
       </motion.div>
     </motion.button>

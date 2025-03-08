@@ -50,7 +50,7 @@ interface IconListItemProps {
 }
 const IconListItem = ({ text }: IconListItemProps) => (
   <li className="flex items-start">
-    <Icons.CheckCircle className="mr-2 mt-1 size-5 text-primary" />
+    <Icons.CheckCircle className="text-primary mr-2 mt-1 size-5" />
     <Paragraph
       as="p"
       size="base"
@@ -76,7 +76,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   return (
     <>
       {/* Navigation Header */}
-      <div className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm px-6 py-4">
+      <div className="sticky top-0 z-50 w-full bg-background/80 px-6 py-4 backdrop-blur-sm">
         <div className="container mx-auto max-w-7xl">
           <Link href="/project" className="inline-flex pt-12">
             <Button variant="ghost" size="sm" className="gap-2">
@@ -316,7 +316,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                     <Link
                       key={relatedProject.id}
                       href={`/projects/${relatedProject.id}`}
-                      className="group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:border-primary/20 hover:shadow-lg"
+                      className="hover:border-primary/20 group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
                     >
                       <div className="relative h-48 overflow-hidden">
                         {/* Image component can be added here */}
@@ -341,7 +341,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                         >
                           {relatedProject.description}
                         </Paragraph>
-                        <div className="flex items-center text-primary mt-auto">
+                        <div className="text-primary mt-auto flex items-center">
                           <Paragraph as="span" size="sm" weight="medium">
                             View Project
                           </Paragraph>

@@ -95,11 +95,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-    className="group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:border-primary/20 hover:shadow-lg"
+    className="hover:border-primary/20 group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
     onMouseEnter={() => onHover(project.id)}
     onMouseLeave={onLeave}
   >
-    <div className="relative h-56 md:h-64 overflow-hidden">
+    <div className="relative h-56 overflow-hidden md:h-64">
       <Image
         src={project.imageUrl || '/placeholder.svg'}
         alt={project.title}
@@ -109,7 +109,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <motion.div
-        className="absolute bottom-0 left-0 right-0 p-6"
+        className="absolute inset-x-0 bottom-0 p-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
         transition={{ duration: 0.3 }}
@@ -119,7 +119,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
             <Badge
               key={tag}
               variant="outline"
-              className="bg-black/40 border-white/20"
+              className="border-white/20 bg-black/40"
             >
               <Paragraph
                 as="span"
@@ -146,7 +146,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <Link
             external
             href={project.githubUrl}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-muted-foreground transition-colors hover:text-foreground"
             aria-label="View GitHub repository"
           >
             <Icons.GitHub className="size-5" />
@@ -155,7 +155,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
             <Link
               external
               href={project.demoUrl}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground transition-colors hover:text-foreground"
               aria-label="View live demo"
             >
               <Icons.ExternalLink className="size-5" />
@@ -177,7 +177,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         {project.description}
       </Paragraph>
 
-      <Link href={`/project/${project.id}`} className="block mt-auto">
+      <Link href={`/project/${project.id}`} className="mt-auto block">
         <Button variant="outline" className="group w-full">
           <Paragraph as="span" weight="medium" size="sm">
             View Details
@@ -223,7 +223,7 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex flex-col items-center justify-center gap-8 mb-8 md:mb-12">
+        <div className="mb-8 flex flex-col items-center justify-center gap-8 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

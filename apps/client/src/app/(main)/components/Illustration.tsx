@@ -186,14 +186,14 @@ export const HeroIllustration = () => {
     <div className="relative h-[600px] w-full">
       {/* Background Glow Effects - Using CSS transform for better performance */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="absolute h-64 w-64 animate-glow-1 rounded-full bg-background-primary/10 blur-3xl" />
-        <div className="absolute h-48 w-48 animate-glow-2 rounded-full bg-secondary/20 blur-3xl" />
+        <div className="animate-glow-1 absolute size-64 rounded-full bg-background-primary/10 blur-3xl" />
+        <div className="animate-glow-2 absolute size-48 rounded-full bg-secondary/20 blur-3xl" />
       </div>
 
       {/* Main Illustration */}
       <motion.svg
         viewBox="0 0 800 600"
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 size-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
