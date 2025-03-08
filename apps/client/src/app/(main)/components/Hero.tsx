@@ -81,10 +81,15 @@ export const Hero = () => {
                     key={link.name}
                     href={link.href}
                     aria-label={`Visit ${link.name}`}
-                    className="flex items-center gap-2 rounded-md p-2 text-body/80 md:gap-3 md:p-3"
+                    className="group flex items-center gap-2 rounded-md p-2 text-body/80 md:gap-3 md:p-3"
                   >
                     {link.icon}
-                    <Paragraph as="span" size="sm" weight="medium">
+                    <Paragraph
+                      as="span"
+                      size="sm"
+                      weight="medium"
+                      className="transition-all duration-200 group-hover:text-body/65"
+                    >
                       {link.name}
                     </Paragraph>
                   </Link>
