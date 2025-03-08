@@ -63,7 +63,6 @@ export const PROJECTS = [
       { label: 'Database', value: 'Prisma ORM' },
     ],
     githubUrl: 'https://github.com/StellarScript/Full-Stack-Monorepo-v2',
-    demoUrl: 'https://appify.demo.com',
     challenges: [
       'Building a secure, type-safe application across frontend and backend',
       'Creating a scalable architecture that supports multiple environments',
