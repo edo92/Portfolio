@@ -1,27 +1,39 @@
+import { FlatCompat } from '@eslint/eslintrc';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import js from '@eslint/js';
+import { fixupConfigRules } from '@eslint/compat';
 import nx from '@nx/eslint-plugin';
-import css from '@eslint/css';
-import { tailwindSyntax } from '@eslint/css/syntax';
 import baseConfig from '../../eslint.config.mjs';
 
-export default [
+const compat = new FlatCompat({
+  baseDirectory: dirname(fileURLToPath(import.meta.url)),
+  recommendedConfig: js.configs.recommended,
+});
+
+const config = [
+  ...fixupConfigRules(compat.extends('next')),
+  ...fixupConfigRules(compat.extends('next/core-web-vitals')),
+  ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
+  ...fixupConfigRules(compat.extends('prettier')),
+
   ...baseConfig,
-  ...nx.configs['flat/react'],
+  ...nx.configs['flat/react-typescript'],
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    rules: {},
+    ignores: ['.next/**/*'],
   },
   {
-    files: ['**/*.css'],
-    plugins: {
-      css,
-    },
-    language: 'css/css',
-    languageOptions: {
-      customSyntax: tailwindSyntax,
+    settings: {
+      tailwindcss: {
+        callees: ['classnames', 'clsx', 'cva', 'cn', 'className', 'tv'],
+        config: './tailwind.config.js',
+      },
     },
     rules: {
-      'css/no-empty-blocks': 'error',
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
     },
   },
 ];
+
+export default config;
