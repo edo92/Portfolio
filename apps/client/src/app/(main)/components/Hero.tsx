@@ -10,7 +10,7 @@ import { HeroIllustration } from './Illustration';
 
 export const Hero = () => {
   return (
-    <Section className="relative min-h-[92vh] w-full overflow-hidden pt-32 pb-0">
+    <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-36 pb-0">
       <div className="absolute right-0 top-0 w-full lg:w-1/2 h-screen pointer-events-none hidden lg:block z-[999]">
         <HeroIllustration />
       </div>
