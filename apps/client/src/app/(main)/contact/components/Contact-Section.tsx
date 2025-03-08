@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Heading, Paragraph, Icons } from '@libs/ui';
+import { Heading, Paragraph, Icons, Link } from '@libs/ui';
 
 import { CONTACT_INFO, SOCIAL_LINKS } from '../../../content';
 import { ContactForm } from '../../components/Contact';
@@ -37,7 +37,6 @@ export const ContactSection = () => {
     <Section className="mx-auto px-6 md:px-8 lg:px-12" ref={sectionRef}>
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
-          {/* Contact Information */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -107,17 +106,20 @@ export const ContactSection = () => {
                 </Heading>
                 <div className="flex gap-4">
                   {SOCIAL_LINKS.map((link) => (
-                    <motion.a
+                    <motion.div
                       key={link.name}
-                      href={link.href}
-                      className="hover:border-primary/30 hover:text-primary flex items-center justify-center rounded-full border border-border/50 bg-background/50 p-3 text-foreground transition-colors hover:bg-background-primary/5"
-                      aria-label={`Visit ${link.name}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       variants={itemVariants}
+                      className="flex items-center justify-center"
                     >
-                      {link.icon}
-                    </motion.a>
+                      <Link
+                        external
+                        href={link.href}
+                        aria-label={`Visit ${link.name}`}
+                        className="hover:border-primary/30 hover:text-primary rounded-full border border-border/50 bg-background/50 p-3 text-foreground transition-colors hover:bg-background-primary/5"
+                      >
+                        {link.icon}
+                      </Link>
+                    </motion.div>
                   ))}
                 </div>
               </div>
