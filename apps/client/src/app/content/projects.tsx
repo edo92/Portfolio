@@ -59,7 +59,7 @@ export const PROJECTS = [
     stats: [
       { label: 'Frontend', value: 'Next.js' },
       { label: 'Backend', value: 'NestJS' },
-      { label: 'Infrastructure', value: 'AWS CDK' },
+      { label: 'Infrastructure', value: 'AWS IaC' },
       { label: 'Database', value: 'Prisma ORM' },
     ],
     githubUrl: 'https://github.com/StellarScript/Full-Stack-Monorepo-v2',
