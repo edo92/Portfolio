@@ -99,12 +99,12 @@ const ProjectCard: FC<ProjectCardProps> = ({
     onMouseEnter={() => onHover(project.id)}
     onMouseLeave={onLeave}
   >
-    <div className="relative h-56 overflow-hidden md:h-64">
+    <div className="relative h-56 overflow-hidden">
       <Image
-        src={project.imageUrl || '/placeholder.svg'}
-        alt={project.title}
         fill
-        className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+        alt={project.title}
+        src={project.imageUrl || '/static/projects/placeholder.svg'}
+        className="object-fit transition-transform duration-500 ease-in-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
