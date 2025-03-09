@@ -134,7 +134,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                         weight="medium"
                         className="text-primary-foreground"
                       >
-                        View Case Study
+                        View Project
                       </Paragraph>
                       <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                     </Button>
