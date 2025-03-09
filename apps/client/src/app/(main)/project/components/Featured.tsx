@@ -21,10 +21,35 @@ type ProjectProps = {
   githubUrl?: string;
 };
 
-export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
+type FeaturedProjectProps = {
+  project: ProjectProps;
+};
+
+const parentVariant = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
   project,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const {
+    id,
+    title,
+    category,
+    description,
+    tags,
+    stats,
+    imageUrl,
+    demoUrl,
+    githubUrl,
+  } = project;
 
   useEffect(() => {
     setIsLoaded(true);
@@ -34,8 +59,9 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
     <Section className="pt-12" secondary>
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
+          initial="hidden"
+          animate={isLoaded ? 'visible' : 'hidden'}
+          variants={parentVariant}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col gap-6"
         >
@@ -45,17 +71,18 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
 
           <motion.div
             className="overflow-hidden rounded-xl border border-border/50 bg-card/40 shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            animate="visible"
+            variants={cardVariant}
             transition={{ duration: 0.8 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative h-72 overflow-hidden sm:h-80 lg:h-auto">
+              <div className="relative overflow-hidden">
                 <Image
                   fill
-                  alt={project.title}
+                  alt={title}
                   className="object-cover"
-                  src={project.imageUrl || '/placeholder.svg'}
+                  src={imageUrl || '/static/projects/placeholder.svg'}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent lg:bg-gradient-to-t" />
 
@@ -64,10 +91,10 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                     variant="outline"
                     className="mb-4 border-white/20 bg-black/40 text-white"
                   >
-                    {project.category}
+                    {category}
                   </Badge>
                   <Heading as="h3" size="2xl" weight="bold">
-                    {project.title}
+                    {title}
                   </Heading>
                 </div>
               </div>
@@ -75,10 +102,10 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
               <div className="flex flex-col gap-6 p-6 lg:p-8">
                 <div className="hidden lg:block">
                   <Badge variant="outline" className="mb-4">
-                    {project.category}
+                    {category}
                   </Badge>
                   <Heading as="h3" size="2xl" weight="bold" className="mt-4">
-                    {project.title}
+                    {title}
                   </Heading>
                 </div>
 
@@ -88,11 +115,11 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   weight="normal"
                   className="text-muted-foreground"
                 >
-                  {project.description}
+                  {description}
                 </Paragraph>
 
                 <div className="grid grid-cols-3 gap-4">
-                  {project.stats.map((stat, index) => (
+                  {stats.map((stat, index) => (
                     <div
                       key={index}
                       className="rounded-lg bg-background p-4 text-center"
@@ -118,7 +145,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 </div>
 
                 <div className="flex flex-wrap gap-3">
-                  {project.tags.map((tag) => (
+                  {tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="px-3 py-1">
                       {tag}
                     </Badge>
@@ -126,7 +153,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                 </div>
 
                 <div className="mt-auto flex flex-col gap-4 sm:flex-row">
-                  <Link href={`/project/${project.id}`} className="flex-1">
+                  <Link href={`/project/${id}`} className="flex-1">
                     <Button className="group h-12 w-full">
                       <Paragraph
                         as="span"
@@ -140,10 +167,10 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                     </Button>
                   </Link>
                   <div className="flex gap-4">
-                    {project.githubUrl && (
+                    {githubUrl && (
                       <Link
                         external
-                        href={project.githubUrl}
+                        href={githubUrl}
                         aria-label="View GitHub repository"
                       >
                         <Button
@@ -155,12 +182,8 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                         </Button>
                       </Link>
                     )}
-                    {project.demoUrl && (
-                      <Link
-                        external
-                        href={project.demoUrl}
-                        aria-label="View live demo"
-                      >
+                    {demoUrl && (
+                      <Link external href={demoUrl} aria-label="View live demo">
                         <Button
                           variant="outline"
                           size="icon"
