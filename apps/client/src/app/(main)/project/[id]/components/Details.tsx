@@ -78,10 +78,20 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
       {/* Navigation Header */}
       <div className="sticky top-0 z-50 w-full bg-background/80 px-6 py-4 backdrop-blur-sm">
         <div className="container mx-auto max-w-7xl">
-          <Link href="/project" className="inline-flex pt-12">
-            <Button variant="ghost" size="sm" className="gap-2">
-              <Icons.ArrowLeft className="size-4" />
-              <Paragraph as="span" size="sm" weight="medium">
+          <Link href="/project" className="group inline-flex pt-12">
+            <Button
+              size="sm"
+              variant="ghost"
+              className="gap-2 transition-colors duration-200 group-hover:text-body/75"
+              onClick={() => router.back()}
+            >
+              <Icons.ArrowLeft className="size-4 transition-transform duration-200 group-hover:-translate-x-1" />
+              <Paragraph
+                as="span"
+                size="sm"
+                weight="medium"
+                className="text-inherit"
+              >
                 Back to Projects
               </Paragraph>
             </Button>
@@ -89,10 +99,10 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-6">
         {/* Project Header Section */}
         <section className="relative">
-          <div className="relative h-[35vh] min-h-[300px] w-full overflow-hidden">
+          <div className="relative mt-8 h-[35vh] min-h-[300px] w-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-background-secondary via-transparent to-transparent" />
 
             <div className="absolute bottom-0 left-0 w-full p-6 lg:p-12">
@@ -117,7 +127,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         </section>
 
         {/* Project Overview Section */}
-        <section className="bg-background-secondary px-6 py-16">
+        <section className="bg-background-secondary p-6">
           <div className="container mx-auto max-w-7xl">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
               <FadeIn delay={0.2} yOffset={0} className="lg:col-span-2">
