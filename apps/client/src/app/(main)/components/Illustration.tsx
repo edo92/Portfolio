@@ -260,8 +260,8 @@ export const HeroIllustration = () => {
               key={icon.id}
               x={icon.x}
               y={icon.y}
-              width="40"
-              height="40"
+              width="37"
+              height="37"
               href={icon.img}
               style={{ willChange: 'transform' }}
               animate={{
