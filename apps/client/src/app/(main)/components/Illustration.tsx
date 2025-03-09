@@ -168,14 +168,14 @@ export const HeroIllustration = () => {
     () => [
       { id: 'ts', img: '/static/logos/typescript.svg', x: 180, y: 300 },
       { id: 'py', img: '/static/logos/python.svg', x: 150, y: 400 },
-      { id: 'go', img: '/static/logos/go.svg', x: 500, y: 150 },
-      { id: 'node', img: '/static/logos/nodejs.svg', x: 530, y: 400 },
-      { id: 'aws', img: '/static/logos/aws.svg', x: 700, y: 250 },
-      { id: 'docker', img: '/static/logos/docker.svg', x: 120, y: 200 },
-      { id: 'postgres', img: '/static/logos/postgres.svg', x: 650, y: 350 },
+      { id: 'go', img: '/static/logos/go.svg', x: 120, y: 200 },
+      { id: 'node', img: '/static/logos/nodejs.svg', x: 220, y: 100 },
+      { id: 'postgres', img: '/static/logos/postgres.svg', x: 600, y: 120 },
       { id: 'redis', img: '/static/logos/redis.svg', x: 400, y: 100 },
-      { id: 'k8s', img: '/static/logos/kubernetes.svg', x: 700, y: 150 },
+      { id: 'k8s', img: '/static/logos/kubernetes.svg', x: 660, y: 200 },
+      { id: 'docker', img: '/static/logos/docker.svg', x: 640, y: 310 },
       { id: 'az', img: '/static/logos/azure.svg', x: 350, y: 400 },
+      { id: 'aws', img: '/static/logos/aws.svg', x: 530, y: 420 },
     ],
     []
   );
