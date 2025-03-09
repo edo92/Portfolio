@@ -53,7 +53,7 @@ export const Footer = () => {
                         as="span"
                         size="xs"
                         weight="normal"
-                        className="hover:text-primary text-muted-foreground transition-colors"
+                        className="text-muted-foreground transition-colors duration-200 hover:text-muted-foreground/70"
                       >
                         {link.name}
                       </Paragraph>
@@ -77,11 +77,11 @@ export const Footer = () => {
             <div className="flex flex-wrap gap-3">
               {SOCIAL_LINKS.map((link) => (
                 <Link
+                  external
                   key={link.name}
                   href={link.href}
                   className="hover:border-primary/30 hover:bg-primary/10 hover:text-primary hover:shadow-primary/5 group flex size-10 items-center justify-center rounded-lg border border-border/50 bg-card/30 text-foreground transition-all hover:shadow-sm"
                   aria-label={`Visit ${link.name}`}
-                  external
                 >
                   {link.icon}
                   <span className="sr-only">{link.name}</span>
