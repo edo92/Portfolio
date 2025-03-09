@@ -20,7 +20,6 @@ type ProjectProps = {
   results: string[];
 };
 
-// Reusable FadeIn component for animation
 interface FadeInProps {
   children: React.ReactNode;
   delay?: number;
@@ -44,10 +43,10 @@ const FadeIn = ({
   </motion.div>
 );
 
-// Reusable list item with an icon
 interface IconListItemProps {
   text: string;
 }
+
 const IconListItem = ({ text }: IconListItemProps) => (
   <li className="flex items-start">
     <Icons.CheckCircle className="text-primary mr-2 mt-1 size-5" />
