@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { ProjectsHero } from './components/Hero';
 
-import { PROJECTS, FEATURED_PROJECT } from '../../content';
+import { PROJECTS } from '../../content';
 import { ProjectsGrid } from '../components/Projects';
 import { FeaturedProject } from './components/Featured';
 
@@ -37,7 +37,7 @@ export default function ProjectPage() {
   return (
     <main className="size-full min-h-screen">
       <ProjectsHero />
-      <FeaturedProject project={FEATURED_PROJECT} />
+      <FeaturedProject project={PROJECTS[0]} />
       <ProjectsGrid projects={PROJECTS} />
     </main>
   );

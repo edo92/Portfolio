@@ -11,7 +11,7 @@ import { Section } from '../../components/Section';
 export type Project = {
   id: string;
   title: string;
-  description: string;
+  summary: string;
   imageUrl: string;
   category: string;
   tags: string[];
@@ -174,7 +174,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         size="base"
         className="line-clamp-2 text-muted-foreground"
       >
-        {project.description}
+        {project.summary}
       </Paragraph>
 
       <Link href={`/project/${project.id}`} className="mt-auto block">

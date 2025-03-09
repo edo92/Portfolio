@@ -4,9 +4,9 @@ export const PROJECTS = [
   {
     id: '0',
     title: 'Cymatics - Chladni Pattern Visualization - 3D & 2D',
-    description:
+    summary:
       'Interactive visualization of Chladni patterns in both 3D using Three.js and 2D using P5.js. This app simulates particle movement on vibrating surfaces, creating mesmerizing patterns controlled by adjustable parameters.',
-    longDescription:
+    description:
       'A Next.js-based application that visualizes Chladni cymatics patterns in both 2D and 3D environments. The 2D version uses P5.js to simulate particles that form patterns according to the Chladni equation, while the 3D version leverages Three.js and React Three Fiber for immersive visualization. The app features interactive controls allowing users to adjust frequency, amplitude, vibration strength, and particle count parameters to explore various cymatics patterns in real-time.',
     imageUrl: '/static/projects/cymatic-dark.png',
     category: 'Frontend',
@@ -40,9 +40,9 @@ export const PROJECTS = [
   {
     id: '1',
     title: 'Full-Stack Monorepo with Next.js, NestJS, and AWS CDK',
-    description:
+    summary:
       'Modern full-stack application with secure authentication and scalable architecture',
-    longDescription:
+    description:
       'Full-stack monorepo designed for building scalable web applications. It features a Next.js frontend with Tailwind CSS, a NestJS backend with Prisma ORM, and AWS CDK for infrastructure deployment. The application follows a modular architecture with proper separation of concerns, robust authentication, and type safety across the entire stack. Infrastructure is defined as code using AWS CDK, enabling consistent and repeatable deployments across multiple environments.',
     imageUrl: '/static/projects/ecs_diagram.png',
     category: 'Full-Stack',
@@ -84,32 +84,3 @@ export const PROJECTS = [
   },
   // Additional projects would be defined here
 ];
-
-export const FEATURED_PROJECT = {
-  id: '0',
-  title: 'Enterprise Microservices Platform',
-  description:
-    'A comprehensive cloud-native platform built with a microservices architecture, designed to handle high-volume transactions with fault tolerance and horizontal scalability.',
-  detailed:
-    'This enterprise-grade platform leverages cutting-edge technologies to deliver a robust, scalable solution for financial institutions. Built with a microservices architecture using Python and TypeScript, it processes millions of transactions daily while maintaining sub-second response times. The system includes real-time analytics, automated failover mechanisms, and comprehensive monitoring.',
-  imageUrl:
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-16%20at%209.59.15%E2%80%AFPM-nqPjCZngmJvkCawEyYZv4TV6S9iz4v.png',
-
-  category: 'Full Stack',
-  tags: [
-    'Python',
-    'TypeScript',
-    'AWS',
-    'Kubernetes',
-    'Microservices',
-    'Redis',
-    'PostgreSQL',
-  ],
-  stats: [
-    { label: 'Response Time', value: '<100ms' },
-    { label: 'Uptime', value: '99.99%' },
-    { label: 'Daily Users', value: '50,000+' },
-  ],
-  githubUrl: 'https://github.com',
-  demoUrl: 'https://demo.com',
-};

@@ -10,7 +10,7 @@ type ProjectProps = {
   id: string;
   title: string;
   category: string;
-  detailed: string;
+  description: string;
   tags: string[];
   stats: {
     label: string;
@@ -88,7 +88,7 @@ export const FeaturedProject: React.FC<{ project: ProjectProps }> = ({
                   weight="normal"
                   className="text-muted-foreground"
                 >
-                  {project.detailed}
+                  {project.description}
                 </Paragraph>
 
                 <div className="grid grid-cols-3 gap-4">
