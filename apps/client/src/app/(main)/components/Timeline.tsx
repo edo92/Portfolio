@@ -9,10 +9,9 @@ import { TIMELINE_EVENTS } from '../../content';
 import { Section } from '../../components/Section';
 
 interface TimelineEventData {
-  year: number;
+  year: string;
   title: string;
   description: string;
-  details: string;
 }
 
 interface TimelineEventProps {
@@ -143,7 +142,11 @@ export const Timeline: FC = () => {
             style={{ scaleY, originY: 0, height: '105%', top: '0%' }}
           />
           {TIMELINE_EVENTS.map((event, index) => (
-            <TimelineEvent key={event.year} event={event} index={index} />
+            <TimelineEvent
+              key={event.year + index}
+              event={event}
+              index={index}
+            />
           ))}
         </div>
       </div>
