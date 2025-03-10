@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function HeaderWithAnimatedLogo() {
+export const LogoIcon = () => {
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
@@ -43,9 +43,9 @@ export default function HeaderWithAnimatedLogo() {
 
           {/* Dot */}
           <motion.circle
-            cx="29"
+            cx="30"
             cy="24"
-            r="1.5"
+            r="1.6"
             fill="black"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1.2, opacity: 1 }}
@@ -57,7 +57,7 @@ export default function HeaderWithAnimatedLogo() {
 
           {/* J letter */}
           <motion.path
-            d="M38 10 L38 32 C38 36 35 38 32 38 L29 38"
+            d="M40 10 L40 32 C40 36 37 38 34 38 L31 38"
             stroke="black"
             strokeWidth="3"
             strokeLinecap="round"
@@ -74,4 +74,4 @@ export default function HeaderWithAnimatedLogo() {
       )}
     </>
   );
-}
+};
