@@ -118,7 +118,7 @@ export const Timeline: FC = () => {
 
   return (
     <Section ref={containerRef} secondary>
-      <div className="container mx-auto flex max-w-screen-xl flex-col gap-12">
+      <div className="container mx-auto flex max-w-screen-lg flex-col gap-12">
         {/* Section Header */}
         <motion.div
           className="flex flex-col items-center justify-center gap-6 text-center"
