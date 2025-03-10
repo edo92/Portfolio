@@ -33,7 +33,7 @@ export const LogoIcon = () => {
             strokeLinejoin="round"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
-            className="stroke-body"
+            className="stroke-body/90"
             transition={{
               duration: 1.5,
               ease: 'easeInOut',
@@ -48,7 +48,7 @@ export const LogoIcon = () => {
             r="1.6"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1.8, opacity: 1 }}
-            className='fill-body'
+            className='fill-body/90'
             transition={{
               duration: 0.3,
               delay: 1.2,
@@ -63,7 +63,7 @@ export const LogoIcon = () => {
             strokeLinejoin="round"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
-            className="stroke-body"
+            className="stroke-body/90"
             transition={{
               duration: 0.8,
               ease: 'easeInOut',
