@@ -186,8 +186,8 @@ export const HeroIllustration = () => {
     <div className="relative mt-3 h-[600px] w-full">
       {/* Background Glow Effects - Using CSS transform for better performance */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="animate-glow-1 absolute size-64 rounded-full bg-background-primary/10 blur-3xl" />
-        <div className="animate-glow-2 absolute size-48 rounded-full bg-secondary/20 blur-3xl" />
+        <div className="animate-glow-1 bg-background-primary/10 absolute size-64 rounded-full blur-3xl" />
+        <div className="animate-glow-2 bg-secondary/20 absolute size-48 rounded-full blur-3xl" />
       </div>
 
       {/* Main Illustration */}
