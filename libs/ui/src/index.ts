@@ -7,3 +7,4 @@ export * from './lib/Textarea';
 export * from './lib/Toast';
 export * from './lib/Badge';
 export * from './lib/Link';
+export * from './lib/Image';
