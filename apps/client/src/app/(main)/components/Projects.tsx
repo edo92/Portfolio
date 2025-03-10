@@ -1,11 +1,18 @@
 'use client';
 
-import Image from 'next/image';
 import { useMemo, useState, useCallback, FC, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 import { cn } from '@libs/util';
-import { Badge, Button, Heading, Icons, Paragraph, Link } from '@libs/ui';
+import {
+  Badge,
+  Button,
+  Heading,
+  Icons,
+  Paragraph,
+  Link,
+  Image,
+} from '@libs/ui';
 import { Section } from '../../components/Section';
 
 export type Project = {
@@ -101,10 +108,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
   >
     <div className="relative h-56 overflow-hidden">
       <Image
-        fill
+        width={1000}
+        height={1000}
         alt={project.title}
-        src={project.imageUrl || '/static/projects/placeholder.svg'}
-        className="object-fit transition-transform duration-500 ease-in-out group-hover:scale-105"
+        src={project.imageUrl}
+        className="object-fit size-full transition-transform duration-500 ease-in-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -218,7 +226,7 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
   return (
     <Section ref={containerRef}>
       <motion.div
-        className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12"
+        className="container mx-auto max-w-xl px-6 md:max-w-7xl md:px-8 lg:px-12"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6 }}
