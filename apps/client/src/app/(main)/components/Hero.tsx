@@ -46,7 +46,7 @@ export const Hero = () => {
 
               <motion.div
                 className={cn(
-                  'md:rounded-lg md:bg-background/80 md:backdrop-blur-sm'
+                  'md:bg-background/80 md:rounded-lg md:backdrop-blur-sm'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export const Hero = () => {
               >
                 <Paragraph
                   as="p"
-                  size="lg"
+                  size="lg" // Increased from base to lg for hero
                   weight="normal"
                   variant="body"
                   leading="relaxed"
