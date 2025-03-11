@@ -1,5 +1,3 @@
-'use client';
-
 import React, { forwardRef } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
@@ -13,9 +11,9 @@ const paragraphVariants = tv({
       xl: 'text-base sm:text-lg md:text-xl lg:text-2xl',
       lg: 'text-sm sm:text-base md:text-lg lg:text-xl',
       md: 'text-xs sm:text-sm md:text-base lg:text-lg',
-      base: 'text-xs sm:text-sm md:text-base',
-      sm: 'text-xs md:text-sm',
-      xs: 'xs:text-xs text-[10px]',
+      base: 'text-sm sm:text-base md:text-base',
+      sm: 'text-xs sm:text-sm md:text-sm',
+      xs: 'xs:text-xs text-[10px] md:text-xs',
     },
     weight: {
       bold: 'font-bold',
@@ -36,7 +34,6 @@ const paragraphVariants = tv({
       body: 'text-foreground/90 leading-relaxed',
       gradient:
         'bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent',
-
       caption: 'text-muted-foreground/80 text-xs',
       success: 'text-green-600 dark:text-green-400',
       warning: 'text-amber-600 dark:text-amber-400',

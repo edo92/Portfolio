@@ -6,14 +6,14 @@ const headingVariants = tv({
   base: 'text-foreground tracking-tight',
   variants: {
     size: {
-      '4xl': 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl',
-      '3xl': 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl',
-      '2xl': 'text-xl sm:text-2xl md:text-3xl lg:text-4xl',
-      xl: 'text-lg sm:text-xl md:text-2xl lg:text-3xl',
-      lg: 'text-base sm:text-lg md:text-xl lg:text-2xl',
-      md: 'text-sm sm:text-base md:text-lg lg:text-xl',
-      sm: 'text-xs sm:text-sm md:text-base lg:text-lg',
-      xs: 'text-xs md:text-sm',
+      '4xl': 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl', // Hero, main title
+      '3xl': 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl', // Section titles
+      '2xl': 'text-xl sm:text-2xl md:text-3xl lg:text-4xl', // Major section headings
+      xl: 'text-lg sm:text-xl md:text-2xl lg:text-3xl', // Sub-section headings
+      lg: 'text-base sm:text-lg md:text-xl lg:text-2xl', // Content headings
+      md: 'text-sm sm:text-base md:text-lg lg:text-xl', // Card headings
+      sm: 'text-xs sm:text-sm md:text-base lg:text-lg', // Minor headings
+      xs: 'text-xs md:text-sm', // Small labels/headings
     },
     weight: {
       bold: 'font-bold',
