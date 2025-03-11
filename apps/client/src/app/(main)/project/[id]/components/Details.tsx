@@ -50,12 +50,7 @@ interface IconListItemProps {
 const IconListItem = ({ text }: IconListItemProps) => (
   <li className="flex items-start">
     <Icons.CheckCircle className="text-primary mr-2 mt-1 size-5" />
-    <Paragraph
-      as="p"
-      size="base"
-      weight="normal"
-      className="text-muted-foreground"
-    >
+    <Paragraph as="p" size="base" variant="muted">
       {text}
     </Paragraph>
   </li>
@@ -75,13 +70,13 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   return (
     <>
       {/* Navigation Header */}
-      <div className="sticky top-0 z-50 w-full bg-background/80 px-6 py-4 backdrop-blur-sm">
+      <div className="bg-background/80 sticky top-0 z-50 w-full px-6 py-4 backdrop-blur-sm">
         <div className="container mx-auto max-w-7xl">
           <Link href="/project" className="group inline-flex pt-12">
             <Button
               size="sm"
               variant="ghost"
-              className="gap-2 transition-colors duration-200 group-hover:text-body/75"
+              className="group-hover:text-body/75 gap-2 transition-colors duration-200"
               onClick={() => router.back()}
             >
               <Icons.ArrowLeft className="size-4 transition-transform duration-200 group-hover:-translate-x-1" />
@@ -98,11 +93,11 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-background pt-6">
+      <div className="bg-background min-h-screen pt-6">
         {/* Project Header Section */}
         <section className="relative">
           <div className="relative mt-8 h-[35vh] min-h-[300px] w-full overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-t from-background-secondary via-transparent to-transparent" />
+            <div className="from-background-secondary absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
 
             <div className="absolute bottom-0 left-0 w-full p-6 lg:p-12">
               <div className="container mx-auto max-w-7xl">
@@ -113,10 +108,15 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                   >
                     {project.category}
                   </Badge>
-                  <Heading as="h1" variant="title">
+                  <Heading as="h1" size="2xl" weight="bold">
                     {project.title}
                   </Heading>
-                  <Paragraph as="p" variant="subtle" className="max-w-3xl">
+                  <Paragraph
+                    as="p"
+                    size="lg"
+                    variant="subtle"
+                    className="max-w-3xl"
+                  >
                     {project.description}
                   </Paragraph>
                 </FadeIn>
@@ -130,26 +130,17 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
           <div className="container mx-auto max-w-7xl">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
               <FadeIn delay={0.2} yOffset={0} className="lg:col-span-2">
-                <Heading
-                  as="h2"
-                  weight="semibold"
-                  className="mb-6 text-2xl sm:text-3xl"
-                >
+                <Heading as="h2" size="xl" weight="semibold" className="mb-6">
                   Overview
                 </Heading>
-                <Paragraph
-                  as="p"
-                  size="base"
-                  weight="normal"
-                  className="mb-8 text-muted-foreground"
-                >
+                <Paragraph as="p" size="base" variant="body" className="mb-8">
                   {project.longDescription}
                 </Paragraph>
 
                 <div className="space-y-8">
                   {/* Challenges */}
                   <div className="flex flex-col gap-4">
-                    <Heading as="h3" weight="semibold" className="text-xl">
+                    <Heading as="h3" size="md" weight="semibold">
                       Challenges
                     </Heading>
                     <ul className="space-y-2">
@@ -161,7 +152,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
                   {/* Solutions */}
                   <div className="flex flex-col gap-4">
-                    <Heading as="h3" weight="semibold" className="text-xl">
+                    <Heading as="h3" size="md" weight="semibold">
                       Solutions
                     </Heading>
                     <ul className="space-y-2">
@@ -173,7 +164,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
                   {/* Results */}
                   <div className="flex flex-col gap-4">
-                    <Heading as="h3" weight="semibold" className="text-xl">
+                    <Heading as="h3" size="md" weight="semibold">
                       Results
                     </Heading>
                     <ul className="space-y-2">
@@ -187,20 +178,15 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
               {/* Project Details Sidebar */}
               <FadeIn delay={0.4} yOffset={0}>
-                <div className="rounded-xl border border-border/50 bg-card/40 p-6 shadow-md">
-                  <Heading as="h3" weight="semibold" className="mb-6 text-xl">
+                <div className="border-border/50 bg-card/40 rounded-xl border p-6 shadow-md">
+                  <Heading as="h3" size="md" weight="semibold" className="mb-6">
                     Project Details
                   </Heading>
 
                   <div className="flex flex-col gap-6">
                     {/* Category */}
                     <div className="flex flex-col gap-2">
-                      <Paragraph
-                        as="p"
-                        size="sm"
-                        weight="medium"
-                        className="text-muted-foreground"
-                      >
+                      <Paragraph as="p" size="sm" variant="muted">
                         Category
                       </Paragraph>
                       <Paragraph as="p" size="base" weight="semibold">
@@ -210,12 +196,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
                     {/* Technologies */}
                     <div className="flex flex-col gap-2">
-                      <Paragraph
-                        as="p"
-                        size="sm"
-                        weight="medium"
-                        className="text-muted-foreground"
-                      >
+                      <Paragraph as="p" size="sm" variant="muted">
                         Technologies
                       </Paragraph>
                       <div className="flex flex-wrap gap-2">
@@ -229,19 +210,14 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
                     {/* Key Metrics */}
                     <div className="flex flex-col gap-2">
-                      <Paragraph
-                        as="p"
-                        size="sm"
-                        weight="medium"
-                        className="text-muted-foreground"
-                      >
+                      <Paragraph as="p" size="sm" variant="muted">
                         Key Metrics
                       </Paragraph>
                       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
                         {project.stats.map((stat, index) => (
                           <div
                             key={index}
-                            className="rounded-lg bg-background p-3 text-center"
+                            className="bg-background rounded-lg p-3 text-center"
                           >
                             <Paragraph
                               as="p"
@@ -251,12 +227,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                             >
                               {stat.value}
                             </Paragraph>
-                            <Paragraph
-                              as="p"
-                              size="xs"
-                              weight="medium"
-                              className="text-muted-foreground"
-                            >
+                            <Paragraph as="p" size="xs" variant="muted">
                               {stat.label}
                             </Paragraph>
                           </div>
@@ -310,11 +281,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         <section className="bg-background px-6 py-16">
           <div className="container mx-auto max-w-7xl">
             <FadeIn delay={0.6} yOffset={0} className="flex flex-col gap-8">
-              <Heading
-                as="h2"
-                weight="semibold"
-                className="text-2xl sm:text-3xl"
-              >
+              <Heading as="h2" size="xl" weight="semibold">
                 Related Projects
               </Heading>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -325,7 +292,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                     <Link
                       key={relatedProject.id}
                       href={`/projects/${relatedProject.id}`}
-                      className="hover:border-primary/20 group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
+                      className="hover:border-primary/20 border-border/50 bg-card/40 group overflow-hidden rounded-lg border shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
                     >
                       <div className="relative h-48 overflow-hidden">
                         {/* Image component can be added here */}
@@ -336,7 +303,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                         </Badge>
                         <Heading
                           as="h3"
-                          size="lg"
+                          size="md"
                           weight="semibold"
                           className="line-clamp-1"
                         >
@@ -345,8 +312,8 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                         <Paragraph
                           as="p"
                           size="sm"
-                          weight="normal"
-                          className="line-clamp-2 text-muted-foreground"
+                          variant="muted"
+                          className="line-clamp-2"
                         >
                           {relatedProject.description}
                         </Paragraph>

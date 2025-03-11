@@ -65,7 +65,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col gap-6"
         >
-          <Heading as="h2" weight="semibold" className="text-2xl sm:text-3xl">
+          <Heading as="h2" size="xl" weight="semibold" className="mb-2">
             Featured Project
           </Heading>
 
@@ -93,7 +93,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                   >
                     {category}
                   </Badge>
-                  <Heading as="h3" size="2xl" weight="bold">
+                  <Heading as="h3" size="xl" weight="bold">
                     {title}
                   </Heading>
                 </div>
@@ -104,17 +104,12 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                   <Badge variant="outline" className="mb-4">
                     {category}
                   </Badge>
-                  <Heading as="h3" size="2xl" weight="bold" className="mt-4">
+                  <Heading as="h3" size="xl" weight="bold" className="mt-4">
                     {title}
                   </Heading>
                 </div>
 
-                <Paragraph
-                  as="p"
-                  size="md"
-                  weight="normal"
-                  className="text-muted-foreground"
-                >
+                <Paragraph as="p" size="lg" variant="body">
                   {description}
                 </Paragraph>
 
@@ -132,12 +127,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                       >
                         {stat.value}
                       </Paragraph>
-                      <Paragraph
-                        as="p"
-                        weight="medium"
-                        size="xs"
-                        className="text-muted-foreground"
-                      >
+                      <Paragraph as="p" size="xs" variant="muted">
                         {stat.label}
                       </Paragraph>
                     </div>

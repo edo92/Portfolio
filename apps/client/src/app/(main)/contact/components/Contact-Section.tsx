@@ -43,19 +43,10 @@ export const ContactSection = () => {
             animate={isInView ? 'visible' : 'hidden'}
           >
             <motion.div variants={itemVariants}>
-              <Heading
-                as="h2"
-                weight="semibold"
-                className="mb-6 text-2xl sm:text-3xl"
-              >
+              <Heading as="h2" size="xl" weight="semibold" className="mb-6">
                 Contact Information
               </Heading>
-              <Paragraph
-                as="p"
-                weight="normal"
-                size="lg"
-                className="mb-8 text-muted-foreground"
-              >
+              <Paragraph as="p" size="lg" variant="muted" className="mb-8">
                 Feel free to reach out through any of these channels. I
                 typically respond within 24-48 hours.
               </Paragraph>
@@ -75,33 +66,28 @@ export const ContactSection = () => {
                         : undefined
                     }
                     variants={itemVariants}
-                    className="hover:border-primary/30 flex items-center gap-4 rounded-lg border border-border/50 bg-background/50 p-4 transition-colors hover:bg-background-primary/5"
+                    className="hover:border-primary/30 border-border/50 bg-background/50 hover:bg-background-primary/5 flex items-center gap-4 rounded-lg border p-4 transition-colors"
                   >
-                    <div className="text-primary flex size-10 items-center justify-center rounded-full bg-background-primary/10">
+                    <div className="text-primary bg-background-primary/10 flex size-10 items-center justify-center rounded-full">
                       {item.icon}
                     </div>
                     <div>
-                      <Paragraph
-                        as="span"
-                        size="xs"
-                        weight="medium"
-                        className="text-muted-foreground"
-                      >
+                      <Paragraph as="span" size="sm" variant="muted">
                         {item.label}
                       </Paragraph>
-                      <Paragraph as="p" weight="medium" size="sm">
+                      <Paragraph as="p" weight="medium" size="base">
                         {item.value}
                       </Paragraph>
                     </div>
                     {item.link.startsWith('http') && (
-                      <Icons.ExternalLink className="ml-auto size-4 text-muted-foreground" />
+                      <Icons.ExternalLink className="text-muted-foreground ml-auto size-4" />
                     )}
                   </motion.a>
                 ))}
               </motion.div>
 
               <div>
-                <Heading as="h3" weight="medium" className="mb-4 text-lg">
+                <Heading as="h3" size="md" weight="medium" className="mb-4">
                   Connect With Me
                 </Heading>
                 <div className="flex gap-4">
@@ -115,7 +101,7 @@ export const ContactSection = () => {
                         external
                         href={link.href}
                         aria-label={`Visit ${link.name}`}
-                        className="hover:border-primary/30 hover:text-primary rounded-full border border-border/50 bg-background/50 p-3 text-foreground transition-colors hover:bg-background-primary/5"
+                        className="hover:border-primary/30 hover:text-primary border-border/50 bg-background/50 text-foreground hover:bg-background-primary/5 rounded-full border p-3 transition-colors"
                       >
                         {link.icon}
                       </Link>

@@ -62,19 +62,14 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index }) => {
           >
             <div className="flex w-full flex-col">
               <div className="mb-3 flex flex-col gap-2">
-                <Paragraph
-                  as="span"
-                  size="xs"
-                  weight="medium"
-                  className="inline-block"
-                >
+                <Paragraph as="span" size="sm" weight="medium" variant="muted">
                   {year}
                 </Paragraph>
-                <Heading as="h3" weight="semibold" size="xl">
+                <Heading as="h3" size="lg" weight="semibold">
                   {title}
                 </Heading>
               </div>
-              <Paragraph as="p" weight="medium" size="base">
+              <Paragraph as="p" size="base" weight="medium">
                 {description}
               </Paragraph>
             </div>
@@ -85,13 +80,13 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index }) => {
       {/* Timeline bullet */}
       <div className="z-10 flex items-center justify-center">
         <motion.div
-          className="flex size-4 items-center justify-center rounded-full bg-card-foreground/80 p-3"
+          className="bg-card-foreground/80 flex size-4 items-center justify-center rounded-full p-3"
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={bulletAnimation}
           custom={index}
         >
-          <div className="size-2 rounded-full bg-background p-[5px]" />
+          <div className="bg-background size-2 rounded-full p-[5px]" />
         </motion.div>
       </div>
 
@@ -128,7 +123,7 @@ export const Timeline: FC = () => {
           <Heading as="h2" variant="title">
             Career Journey
           </Heading>
-          <Paragraph as="p" variant="subtle">
+          <Paragraph as="p" size="lg" variant="subtle">
             Key milestones in my software engineering journey
           </Paragraph>
         </motion.div>
@@ -137,7 +132,7 @@ export const Timeline: FC = () => {
         <div className="relative space-y-12">
           <motion.div
             className={cn(
-              'absolute inset-y-0 left-[49.95%] w-0.5 -translate-x-1/2 bg-secondary-foreground/40 dark:bg-secondary/80'
+              'bg-secondary-foreground/40 dark:bg-secondary/80 absolute inset-y-0 left-[49.95%] w-0.5 -translate-x-1/2'
             )}
             style={{ scaleY, originY: 0, height: '105%', top: '0%' }}
           />

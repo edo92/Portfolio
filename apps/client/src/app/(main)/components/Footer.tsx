@@ -51,9 +51,9 @@ export const Footer = () => {
                     <Link href={link.href}>
                       <Paragraph
                         as="span"
-                        size="xs"
-                        weight="normal"
-                        className="text-muted-foreground transition-colors duration-200 hover:text-muted-foreground/70"
+                        size="sm"
+                        variant="muted"
+                        className="transition-colors duration-200 hover:text-muted-foreground/70"
                       >
                         {link.name}
                       </Paragraph>
@@ -88,12 +88,7 @@ export const Footer = () => {
                 </Link>
               ))}
             </div>
-            <Paragraph
-              as="span"
-              size="xs"
-              weight="normal"
-              className="text-muted-foreground"
-            >
+            <Paragraph as="span" size="sm" variant="muted">
               Follow me on social media for the latest updates and insights.
             </Paragraph>
           </div>
@@ -102,12 +97,7 @@ export const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-border/20 bg-background-secondary/80 p-4">
-        <Paragraph
-          as="span"
-          size="xs"
-          weight="normal"
-          className="text-muted-foreground/80"
-        >
+        <Paragraph as="span" size="xs" variant="muted">
           © {currentYear} Eduard Jacobs. All rights reserved.
         </Paragraph>
       </div>

@@ -65,7 +65,7 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
             variant="ghost"
             onClick={() => onSelect(category)}
             className={cn(
-              'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
+              'rounded-full px-5 py-1.5 text-sm font-medium transition-colors',
               selected === category
                 ? 'bg-background-primary text-primary-foreground'
                 : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
@@ -102,7 +102,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-    className="hover:border-primary/20 group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
+    className="hover:border-primary/20 border-border/50 bg-card/40 group overflow-hidden rounded-lg border shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
     onMouseEnter={() => onHover(project.id)}
     onMouseLeave={onLeave}
   >
@@ -154,7 +154,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <Link
             external
             href={project.githubUrl}
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground hover:text-foreground transition-colors"
             aria-label="View GitHub repository"
           >
             <Icons.GitHub className="size-5" />
@@ -163,7 +163,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
             <Link
               external
               href={project.demoUrl}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="View live demo"
             >
               <Icons.ExternalLink className="size-5" />
@@ -172,16 +172,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
         </div>
       </div>
 
-      <Heading as="h3" size="lg" weight="semibold" className="line-clamp-1">
+      <Heading as="h3" size="md" weight="semibold" className="line-clamp-1">
         {project.title}
       </Heading>
 
-      <Paragraph
-        as="p"
-        weight="normal"
-        size="base"
-        className="line-clamp-2 text-muted-foreground"
-      >
+      <Paragraph as="p" size="base" variant="muted" className="line-clamp-2">
         {project.summary}
       </Paragraph>
 

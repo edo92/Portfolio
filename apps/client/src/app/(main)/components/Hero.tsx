@@ -28,11 +28,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <Paragraph
-                  as="span"
-                  weight="normal"
-                  className="text-sm text-foreground/60"
-                >
+                <Paragraph as="span" size="sm" weight="normal" variant="muted">
                   Hey, I&apos;m
                 </Paragraph>
               </motion.span>
@@ -42,29 +38,20 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <Heading
-                  as="h1"
-                  weight="bold"
-                  className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-4xl tracking-tight text-transparent md:text-5xl lg:text-6xl"
-                >
+                <Heading as="h1" size="3xl" weight="bold" variant="gradient">
                   Eduard Jacobs
                 </Heading>
               </motion.div>
 
               <motion.div
                 className={cn(
-                  'text-sm leading-relaxed md:rounded-lg md:bg-background/80 md:text-lg md:backdrop-blur-sm'
+                  'md:rounded-lg md:bg-background/80 md:backdrop-blur-sm'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Paragraph
-                  as="p"
-                  size="md"
-                  weight="normal"
-                  className="text-body/80"
-                >
+                <Paragraph as="p" size="lg" weight="normal" variant="body">
                   {DESCRIPTION}
                 </Paragraph>
               </motion.div>

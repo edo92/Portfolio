@@ -89,9 +89,9 @@ export const ContactForm = () => {
                     <FormLabel>
                       <Paragraph
                         as="span"
-                        size="xs"
+                        size="sm"
                         weight="medium"
-                        className="text-muted-foreground"
+                        variant="muted"
                       >
                         Name
                       </Paragraph>
@@ -111,9 +111,9 @@ export const ContactForm = () => {
                     <FormLabel>
                       <Paragraph
                         as="span"
-                        size="xs"
+                        size="sm"
                         weight="medium"
-                        className="text-muted-foreground"
+                        variant="muted"
                       >
                         Email
                       </Paragraph>
@@ -138,9 +138,9 @@ export const ContactForm = () => {
                   <FormLabel>
                     <Paragraph
                       as="span"
-                      size="xs"
+                      size="sm"
                       weight="medium"
-                      className="text-muted-foreground"
+                      variant="muted"
                     >
                       Subject
                     </Paragraph>
@@ -160,9 +160,9 @@ export const ContactForm = () => {
                   <FormLabel>
                     <Paragraph
                       as="span"
-                      size="xs"
+                      size="sm"
                       weight="medium"
-                      className="text-muted-foreground"
+                      variant="muted"
                     >
                       Message
                     </Paragraph>
@@ -220,7 +220,7 @@ export const Contact = () => {
             <Heading as="h2" variant="title">
               Contact Me
             </Heading>
-            <Paragraph as="p" variant="subtle">
+            <Paragraph as="p" size="lg" variant="subtle">
               I&apos;m always looking for new opportunities to collaborate.
             </Paragraph>
           </motion.div>
