@@ -13,11 +13,11 @@ const fadeInUp = {
 
 export const ContactHero: FC = () => {
   return (
-    <Section className="from-background-secondary min-h-[calc(100vh-4rem)] flex-row items-center overflow-hidden bg-gradient-to-t via-transparent to-transparent">
+    <Section className="min-h-[calc(100vh-4rem)] flex-row items-center overflow-hidden bg-gradient-to-t from-background-secondary via-transparent to-transparent">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-5">
-        <div className="bg-background-primary/30 absolute left-1/3 top-1/4 size-64 rounded-full blur-3xl" />
-        <div className="bg-secondary/30 absolute right-1/4 top-1/2 size-48 rounded-full blur-3xl" />
+        <div className="absolute left-1/3 top-1/4 size-64 rounded-full bg-background-primary/30 blur-3xl" />
+        <div className="absolute right-1/4 top-1/2 size-48 rounded-full bg-secondary/30 blur-3xl" />
       </div>
 
       {/* Content */}

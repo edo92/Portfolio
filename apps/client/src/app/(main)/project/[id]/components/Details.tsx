@@ -70,13 +70,13 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   return (
     <>
       {/* Navigation Header */}
-      <div className="bg-background/80 sticky top-0 z-50 w-full px-6 py-4 backdrop-blur-sm">
+      <div className="sticky top-0 z-50 w-full bg-background/80 px-6 py-4 backdrop-blur-sm">
         <div className="container mx-auto max-w-7xl">
           <Link href="/project" className="group inline-flex pt-12">
             <Button
               size="sm"
               variant="ghost"
-              className="group-hover:text-body/75 gap-2 transition-colors duration-200"
+              className="gap-2 transition-colors duration-200 group-hover:text-body/75"
               onClick={() => router.back()}
             >
               <Icons.ArrowLeft className="size-4 transition-transform duration-200 group-hover:-translate-x-1" />
@@ -93,11 +93,11 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
         </div>
       </div>
 
-      <div className="bg-background min-h-screen pt-6">
+      <div className="min-h-screen bg-background pt-6">
         {/* Project Header Section */}
         <section className="relative">
           <div className="relative mt-8 h-[35vh] min-h-[300px] w-full overflow-hidden">
-            <div className="from-background-secondary absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background-secondary via-transparent to-transparent" />
 
             <div className="absolute bottom-0 left-0 w-full p-6 lg:p-12">
               <div className="container mx-auto max-w-7xl">
@@ -178,7 +178,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
               {/* Project Details Sidebar */}
               <FadeIn delay={0.4} yOffset={0}>
-                <div className="border-border/50 bg-card/40 rounded-xl border p-6 shadow-md">
+                <div className="rounded-xl border border-border/50 bg-card/40 p-6 shadow-md">
                   <Heading as="h3" size="md" weight="semibold" className="mb-6">
                     Project Details
                   </Heading>
@@ -217,7 +217,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                         {project.stats.map((stat, index) => (
                           <div
                             key={index}
-                            className="bg-background rounded-lg p-3 text-center"
+                            className="rounded-lg bg-background p-3 text-center"
                           >
                             <Paragraph
                               as="p"
@@ -292,7 +292,7 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                     <Link
                       key={relatedProject.id}
                       href={`/projects/${relatedProject.id}`}
-                      className="hover:border-primary/20 border-border/50 bg-card/40 group overflow-hidden rounded-lg border shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
+                      className="hover:border-primary/20 group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
                     >
                       <div className="relative h-48 overflow-hidden">
                         {/* Image component can be added here */}

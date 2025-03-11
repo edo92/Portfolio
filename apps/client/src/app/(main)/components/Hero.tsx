@@ -46,7 +46,7 @@ export const Hero = () => {
 
               <motion.div
                 className={cn(
-                  'md:bg-background/80 md:rounded-lg md:backdrop-blur-sm'
+                  'md:rounded-lg md:bg-background/80 md:backdrop-blur-sm'
                 )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

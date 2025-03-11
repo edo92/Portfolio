@@ -30,7 +30,7 @@ export const Footer = () => {
                   EJ
                 </span>
               </div>
-              <span className="group-hover:text-primary ml-2 font-bold text-lg sm:text-xl transition-colors">
+              <span className="group-hover:text-primary ml-2 font-bold text-lg transition-colors sm:text-xl">
                 Eduard Jacobs
               </span>
             </Link>
@@ -56,7 +56,7 @@ export const Footer = () => {
                         size="sm"
                         variant="muted"
                         transition={true}
-                        className="hover:text-foreground transition-colors"
+                        className="transition-colors hover:text-foreground"
                       >
                         {link.name}
                       </Paragraph>

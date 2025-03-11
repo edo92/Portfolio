@@ -72,9 +72,9 @@ export const ContactSection = () => {
                         : undefined
                     }
                     variants={itemVariants}
-                    className="hover:border-primary/30 border-border/50 bg-background/50 hover:bg-background-primary/5 flex items-center gap-4 rounded-lg border p-4 transition-colors"
+                    className="hover:border-primary/30 flex items-center gap-4 rounded-lg border border-border/50 bg-background/50 p-4 transition-colors hover:bg-background-primary/5"
                   >
-                    <div className="text-primary bg-background-primary/10 flex size-10 items-center justify-center rounded-full">
+                    <div className="text-primary flex size-10 items-center justify-center rounded-full bg-background-primary/10">
                       {item.icon}
                     </div>
                     <div>
@@ -86,7 +86,7 @@ export const ContactSection = () => {
                       </Paragraph>
                     </div>
                     {item.link.startsWith('http') && (
-                      <Icons.ExternalLink className="text-muted-foreground ml-auto size-4" />
+                      <Icons.ExternalLink className="ml-auto size-4 text-muted-foreground" />
                     )}
                   </motion.a>
                 ))}
@@ -107,7 +107,7 @@ export const ContactSection = () => {
                         external
                         href={link.href}
                         aria-label={`Visit ${link.name}`}
-                        className="hover:border-primary/30 hover:text-primary border-border/50 bg-background/50 text-foreground hover:bg-background-primary/5 rounded-full border p-3 transition-colors"
+                        className="hover:border-primary/30 hover:text-primary rounded-full border border-border/50 bg-background/50 p-3 text-foreground transition-colors hover:bg-background-primary/5"
                       >
                         {link.icon}
                       </Link>
