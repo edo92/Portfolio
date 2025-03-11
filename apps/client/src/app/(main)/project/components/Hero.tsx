@@ -33,11 +33,11 @@ export const ProjectsHero = () => {
               <Badge variant="secondary">Portfolio</Badge>
             </motion.div>
 
-            <Heading as="h2" size="2xl" weight="bold">
+            <Heading as="h1" size="3xl" weight="bold">
               Projects
             </Heading>
 
-            <Paragraph as="p" size="lg" variant="muted">
+            <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">
               {PROJECTS_INTRODUCTION}
             </Paragraph>
 

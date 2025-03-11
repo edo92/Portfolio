@@ -220,7 +220,7 @@ export const Contact = () => {
             <Heading as="h2" variant="title">
               Contact Me
             </Heading>
-            <Paragraph as="p" size="lg" variant="subtle">
+            <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">
               I&apos;m always looking for new opportunities to collaborate.
             </Paragraph>
           </motion.div>

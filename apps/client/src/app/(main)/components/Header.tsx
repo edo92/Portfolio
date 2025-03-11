@@ -13,6 +13,8 @@ export const Header = () => (
           as="span"
           size="sm"
           weight="medium"
+          variant="muted"
+          transition={true}
           className="hover:text-accent-foreground/80"
         >
           Projects
@@ -23,6 +25,8 @@ export const Header = () => (
           as="span"
           size="sm"
           weight="medium"
+          variant="muted"
+          transition={true}
           className="hover:text-accent-foreground/80"
         >
           Contact

@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { cn } from '@libs/util';
-import { Paragraph, Link, Heading } from '@libs/ui';
+import { Paragraph, Heading } from '@libs/ui';
 import { DESCRIPTION, SOCIAL_LINKS } from '../../content';
 import { Section } from '../../components/Section';
 import { HeroIllustration } from './Illustration';
+import { Link } from '@libs/ui';
 
 export const Hero = () => {
   return (
@@ -38,7 +39,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <Heading as="h1" size="3xl" weight="bold" variant="gradient">
+                <Heading as="h1" size="4xl" weight="bold" variant="gradient">
                   Eduard Jacobs
                 </Heading>
               </motion.div>
@@ -51,7 +52,13 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Paragraph as="p" size="lg" weight="normal" variant="body">
+                <Paragraph
+                  as="p"
+                  size="lg"
+                  weight="normal"
+                  variant="body"
+                  leading="relaxed"
+                >
                   {DESCRIPTION}
                 </Paragraph>
               </motion.div>

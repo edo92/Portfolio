@@ -26,10 +26,16 @@ export const ContactHero: FC = () => {
           className="mx-auto flex max-w-3xl flex-col gap-6 text-center"
           {...fadeInUp}
         >
-          <Heading as="h1" size="2xl" weight="bold">
+          <Heading as="h1" size="3xl" weight="bold">
             {"Let's Work Together"}
           </Heading>
-          <Paragraph as="p" size="lg" variant="muted" className="mb-8">
+          <Paragraph
+            as="p"
+            size="lg"
+            variant="subtle"
+            leading="relaxed"
+            className="mb-8"
+          >
             {`Have a project in mind or want to discuss potential opportunities?
             I'm always open to new ideas and collaborations. Let's create
             something amazing together.`}

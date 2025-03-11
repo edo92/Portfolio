@@ -88,7 +88,7 @@ type ProjectCardProps = {
   isInView: boolean;
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({
+export const ProjectCard: FC<ProjectCardProps> = ({
   project,
   index,
   isHovered,
@@ -176,7 +176,13 @@ const ProjectCard: FC<ProjectCardProps> = ({
         {project.title}
       </Heading>
 
-      <Paragraph as="p" size="base" variant="muted" className="line-clamp-2">
+      <Paragraph
+        as="p"
+        size="base"
+        variant="body"
+        leading="relaxed"
+        className="line-clamp-2"
+      >
         {project.summary}
       </Paragraph>
 

@@ -107,10 +107,10 @@ export function FormMessage({
   if (!error) return null;
   return (
     <Paragraph
+      as="p"
       size="xs"
-      as="span"
       weight="medium"
-      className="text-red-600"
+      className="text-destructive"
       {...props}
     >
       {error.message}

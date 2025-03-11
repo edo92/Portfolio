@@ -41,7 +41,7 @@ export const Footer = () => {
                 as="p"
                 size="sm"
                 weight="semibold"
-                className="font-bold uppercase tracking-wider text-foreground/80"
+                className="uppercase tracking-wider text-foreground/80"
               >
                 Navigation
               </Paragraph>
@@ -53,7 +53,8 @@ export const Footer = () => {
                         as="span"
                         size="sm"
                         variant="muted"
-                        className="transition-colors duration-200 hover:text-muted-foreground/70"
+                        transition={true}
+                        className="hover:text-muted-foreground/70"
                       >
                         {link.name}
                       </Paragraph>
@@ -70,7 +71,7 @@ export const Footer = () => {
               as="p"
               size="sm"
               weight="semibold"
-              className="font-bold uppercase tracking-wider text-foreground/80"
+              className="uppercase tracking-wider text-foreground/80"
             >
               Connect
             </Paragraph>

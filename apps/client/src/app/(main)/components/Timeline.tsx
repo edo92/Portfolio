@@ -69,7 +69,13 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index }) => {
                   {title}
                 </Heading>
               </div>
-              <Paragraph as="p" size="base" weight="medium">
+              <Paragraph
+                as="p"
+                size="base"
+                weight="normal"
+                variant="body"
+                leading="relaxed"
+              >
                 {description}
               </Paragraph>
             </div>
@@ -123,7 +129,7 @@ export const Timeline: FC = () => {
           <Heading as="h2" variant="title">
             Career Journey
           </Heading>
-          <Paragraph as="p" size="lg" variant="subtle">
+          <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">
             Key milestones in my software engineering journey
           </Paragraph>
         </motion.div>

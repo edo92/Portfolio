@@ -46,7 +46,13 @@ export const ContactSection = () => {
               <Heading as="h2" size="xl" weight="semibold" className="mb-6">
                 Contact Information
               </Heading>
-              <Paragraph as="p" size="lg" variant="muted" className="mb-8">
+              <Paragraph
+                as="p"
+                size="lg"
+                variant="subtle"
+                leading="relaxed"
+                className="mb-8"
+              >
                 Feel free to reach out through any of these channels. I
                 typically respond within 24-48 hours.
               </Paragraph>
