@@ -5,47 +5,42 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
 
 const paragraphVariants = tv({
-  base: 'text-body',
+  base: 'text-foreground',
   variants: {
-    variant: {
-      default: '',
-      lead: 'text-body text-xl',
-      large: 'text-lg font-semibold',
-      small: 'text-sm font-medium leading-none',
-      muted: 'text-body text-sm',
-      subtle: 'text-body/80 text-lg font-normal',
+    size: {
+      xl: 'text-lg md:text-xl',
+      lg: 'text-base md:text-lg',
+      md: 'text-sm md:text-base',
+      base: 'text-sm md:text-base',
+      sm: 'text-xs md:text-sm',
+      xs: 'text-xs',
     },
     weight: {
-      light: 'font-light',
-      normal: 'font-normal',
-      medium: 'font-medium',
-      semibold: 'font-semibold',
       bold: 'font-bold',
+      semibold: 'font-semibold',
+      medium: 'font-medium',
+      normal: 'font-normal',
     },
-    spacing: {
+    leading: {
+      tight: 'leading-tight',
+      snug: 'leading-snug',
       normal: 'leading-normal',
       relaxed: 'leading-relaxed',
       loose: 'leading-loose',
-      tight: 'leading-tight',
     },
-    size: {
-      xs: 'text-xs',
-      sm: 'text-sm',
-      md: 'text-md',
-      base: 'text-base',
-      lg: 'text-lg',
-      xl: 'text-xl',
-      '2xl': 'text-2xl',
-      '3xl': 'text-3xl',
-      '4xl': 'text-4xl',
+    variant: {
+      subtle: 'text-muted-foreground/80',
+      muted: 'text-muted-foreground',
+      body: 'text-foreground/90 leading-relaxed',
     },
     transition: {
       true: 'transition-all duration-200 ease-in-out',
     },
   },
   defaultVariants: {
-    variant: 'default',
+    size: 'base',
     weight: 'normal',
+    leading: 'normal',
   },
 });
 
@@ -61,9 +56,9 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
       className,
       as: Component = 'p',
       size,
-      variant,
       weight,
-      spacing,
+      variant,
+      leading,
       transition,
       ...props
     },
@@ -74,12 +69,12 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
         ref={ref}
         className={cn(
           paragraphVariants({
-            variant,
-            weight,
-            spacing,
-            className,
-            transition,
             size,
+            weight,
+            variant,
+            leading,
+            transition,
+            className,
           })
         )}
         {...props}

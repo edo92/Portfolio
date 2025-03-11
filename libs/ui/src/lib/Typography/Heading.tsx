@@ -5,26 +5,27 @@ import { cn } from '@libs/util';
 const headingVariants = tv({
   base: '',
   variants: {
-    variant: {
-      title: 'text-foreground text-3xl font-bold sm:text-4xl',
+    size: {
+      '3xl': 'text-3xl md:text-4xl lg:text-5xl',
+      '2xl': 'text-2xl md:text-3xl lg:text-4xl',
+      xl: 'text-xl md:text-2xl lg:text-3xl',
+      lg: 'text-lg md:text-xl lg:text-2xl',
+      md: 'text-base md:text-lg lg:text-xl',
+      sm: 'text-sm md:text-base lg:text-lg',
+      xs: 'text-xs md:text-sm',
     },
     weight: {
-      light: 'font-light',
-      normal: 'font-normal',
-      medium: 'font-medium',
-      semibold: 'font-semibold',
       bold: 'font-bold',
+      semibold: 'font-semibold',
+      medium: 'font-medium',
+      normal: 'font-normal',
     },
-    size: {
-      xs: 'text-xs',
-      sm: 'text-sm',
-      md: 'text-md',
-      base: 'text-base',
-      lg: 'text-lg',
-      xl: 'text-xl',
-      '2xl': 'text-2xl',
-      '3xl': 'text-3xl',
-      '4xl': 'text-4xl',
+    variant: {
+      title: 'pb-2 text-2xl font-bold md:text-3xl lg:text-4xl',
+      gradient:
+        'bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent',
+      section: 'text-xl font-semibold md:text-2xl lg:text-3xl',
+      subtle: 'text-muted-foreground',
     },
     as: {
       h1: '',
@@ -57,10 +58,10 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         ref={ref}
         className={cn(
           headingVariants({
-            variant,
-            weight,
             size,
+            weight,
             className,
+            variant,
           })
         )}
         {...props}
