@@ -1,6 +1,6 @@
 'use client';
 
-import { Paragraph, Link } from '@libs/ui';
+import { Paragraph, Link, Heading } from '@libs/ui';
 import { SOCIAL_LINKS } from '../../content';
 
 interface NavLink {
@@ -21,14 +21,16 @@ export const Footer = () => {
     <footer className="relative border-t bg-gradient-to-b from-background to-background-secondary">
       <div className="via-primary/20 absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent" />
 
-      <div className="container mx-auto px-6 py-12 md:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+      <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-12 lg:py-16">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
               <div className="flex size-10 items-center justify-center rounded-lg bg-background-primary/10 transition-colors group-hover:bg-background-primary/20">
-                <span className="text-primary font-bold text-xl">EJ</span>
+                <span className="text-primary font-bold text-lg sm:text-xl">
+                  EJ
+                </span>
               </div>
-              <span className="group-hover:text-primary ml-2 font-bold text-xl transition-colors">
+              <span className="group-hover:text-primary ml-2 font-bold text-lg sm:text-xl transition-colors">
                 Eduard Jacobs
               </span>
             </Link>
@@ -54,7 +56,7 @@ export const Footer = () => {
                         size="sm"
                         variant="muted"
                         transition={true}
-                        className="hover:text-muted-foreground/70"
+                        className="hover:text-foreground transition-colors"
                       >
                         {link.name}
                       </Paragraph>
@@ -89,7 +91,7 @@ export const Footer = () => {
                 </Link>
               ))}
             </div>
-            <Paragraph as="span" size="sm" variant="muted">
+            <Paragraph as="span" size="sm" variant="subtle" leading="relaxed">
               Follow me on social media for the latest updates and insights.
             </Paragraph>
           </div>
