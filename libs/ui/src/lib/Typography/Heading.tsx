@@ -3,9 +3,10 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
 
 const headingVariants = tv({
-  base: '',
+  base: 'text-foreground tracking-tight',
   variants: {
     size: {
+      '4xl': 'text-4xl md:text-5xl lg:text-6xl',
       '3xl': 'text-3xl md:text-4xl lg:text-5xl',
       '2xl': 'text-2xl md:text-3xl lg:text-4xl',
       xl: 'text-xl md:text-2xl lg:text-3xl',
@@ -35,9 +36,22 @@ const headingVariants = tv({
       h5: '',
       h6: '',
     },
+    leading: {
+      tight: 'leading-tight',
+      snug: 'leading-snug',
+      normal: 'leading-normal',
+      relaxed: 'leading-relaxed',
+      loose: 'leading-loose',
+    },
+    transition: {
+      true: 'transition-all duration-200 ease-in-out',
+    },
   },
   defaultVariants: {
     as: 'h2',
+    size: '2xl',
+    weight: 'semibold',
+    leading: 'tight',
   },
 });
 
@@ -50,7 +64,20 @@ export interface HeadingProps
 }
 
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ className, variant, weight, size, as, children, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      weight,
+      size,
+      as,
+      leading,
+      transition,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const Component = as || 'h2';
 
     return (
@@ -60,6 +87,8 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
           headingVariants({
             size,
             weight,
+            leading,
+            transition,
             className,
             variant,
           })
