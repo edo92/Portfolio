@@ -8,14 +8,14 @@ const paragraphVariants = tv({
   base: 'text-foreground',
   variants: {
     size: {
-      '3xl': 'text-2xl md:text-3xl lg:text-4xl',
-      '2xl': 'text-xl md:text-2xl lg:text-3xl',
-      xl: 'text-lg md:text-xl lg:text-2xl',
-      lg: 'text-base md:text-lg lg:text-xl',
-      md: 'text-sm md:text-base lg:text-lg',
-      base: 'text-sm md:text-base',
+      '3xl': 'text-xl sm:text-2xl md:text-3xl lg:text-4xl',
+      '2xl': 'text-lg sm:text-xl md:text-2xl lg:text-3xl',
+      xl: 'text-base sm:text-lg md:text-xl lg:text-2xl',
+      lg: 'text-sm sm:text-base md:text-lg lg:text-xl',
+      md: 'text-xs sm:text-sm md:text-base lg:text-lg',
+      base: 'text-xs sm:text-sm md:text-base',
       sm: 'text-xs md:text-sm',
-      xs: 'text-xs',
+      xs: 'xs:text-xs text-[10px]',
     },
     weight: {
       bold: 'font-bold',
@@ -31,11 +31,16 @@ const paragraphVariants = tv({
       loose: 'leading-loose',
     },
     variant: {
-      subtle: 'text-muted-foreground/80',
+      subtle: 'text-muted-foreground/90',
       muted: 'text-muted-foreground',
       body: 'text-foreground/90 leading-relaxed',
       gradient:
         'bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent',
+
+      caption: 'text-muted-foreground/80 text-xs',
+      success: 'text-green-600 dark:text-green-400',
+      warning: 'text-amber-600 dark:text-amber-400',
+      error: 'text-red-600 dark:text-red-400',
     },
     transition: {
       true: 'transition-all duration-200 ease-in-out',
@@ -44,7 +49,7 @@ const paragraphVariants = tv({
   defaultVariants: {
     size: 'base',
     weight: 'normal',
-    leading: 'normal',
+    leading: 'relaxed',
   },
 });
 
