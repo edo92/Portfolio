@@ -102,7 +102,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-    className="hover:border-primary/20 group overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
+    className="hover:border-primary/20 border-border/50 bg-card/40 group overflow-hidden rounded-lg border shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
     onMouseEnter={() => onHover(project.id)}
     onMouseLeave={onLeave}
   >
@@ -129,12 +129,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
               variant="outline"
               className="border-white/20 bg-black/40"
             >
-              <Paragraph
-                as="span"
-                size="xs"
-                weight="medium"
-                className="text-white"
-              >
+              <Paragraph as="span" variant="small">
                 {tag}
               </Paragraph>
             </Badge>
@@ -145,8 +140,8 @@ export const ProjectCard: FC<ProjectCardProps> = ({
 
     <div className="flex flex-col gap-4 p-6">
       <div className="flex items-center justify-between">
-        <Badge variant="secondary" className="text-xs">
-          <Paragraph as="span" size="xs" weight="medium">
+        <Badge variant="secondary">
+          <Paragraph as="span" variant="tag">
             {project.category}
           </Paragraph>
         </Badge>
@@ -154,7 +149,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
           <Link
             external
             href={project.githubUrl}
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground hover:text-foreground transition-colors"
             aria-label="View GitHub repository"
           >
             <Icons.GitHub className="size-5" />
@@ -163,7 +158,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             <Link
               external
               href={project.demoUrl}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="View live demo"
             >
               <Icons.ExternalLink className="size-5" />
@@ -172,23 +167,17 @@ export const ProjectCard: FC<ProjectCardProps> = ({
         </div>
       </div>
 
-      <Heading as="h3" size="md" weight="semibold" className="line-clamp-1">
+      <Heading as="h3" variant="card">
         {project.title}
       </Heading>
 
-      <Paragraph
-        as="p"
-        size="base"
-        variant="body"
-        leading="relaxed"
-        className="line-clamp-2"
-      >
+      <Paragraph as="p" variant="body">
         {project.summary}
       </Paragraph>
 
       <Link href={`/project/${project.id}`} className="mt-auto block">
         <Button variant="outline" className="group w-full">
-          <Paragraph as="span" weight="medium" size="sm">
+          <Paragraph as="span" variant="small">
             View Details
           </Paragraph>
           <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />

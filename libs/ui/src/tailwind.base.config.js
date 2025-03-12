@@ -160,7 +160,7 @@ module.exports = {
         ],
 
         md: [
-          '0.825rem',
+          '0.875rem',
           {
             lineHeight: '1.5rem',
           },

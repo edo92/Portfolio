@@ -8,33 +8,13 @@ export const Header = () => (
       <LogoIcon />
     </Link>
     <div className="flex items-center gap-4 sm:gap-6">
-      <Link
-        href="/project"
-        className="hover:text-primary py-1 transition-colors duration-200"
-      >
-        <Paragraph
-          as="span"
-          size="sm"
-          weight="medium"
-          variant="muted"
-          transition={true}
-          className="hover:text-primary"
-        >
+      <Link href="/project">
+        <Paragraph as="span" variant="navlink" className="hover:text-primary">
           Projects
         </Paragraph>
       </Link>
-      <Link
-        href="/contact"
-        className="hover:text-primary py-1 transition-colors duration-200"
-      >
-        <Paragraph
-          as="span"
-          size="sm"
-          weight="medium"
-          variant="muted"
-          transition={true}
-          className="hover:text-primary"
-        >
+      <Link href="/contact">
+        <Paragraph as="span" variant="navlink" className="hover:text-primary">
           Contact
         </Paragraph>
       </Link>

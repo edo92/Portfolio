@@ -29,7 +29,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <Paragraph as="span" variant="small" className='font-medium'>
+                <Paragraph as="span" variant="small">
                   Hey, I&apos;m
                 </Paragraph>
               </motion.span>

@@ -62,20 +62,14 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index }) => {
           >
             <div className="flex w-full flex-col">
               <div className="mb-3 flex flex-col gap-2">
-                <Paragraph as="span" size="sm" weight="medium" variant="muted">
+                <Paragraph as="span" variant="small" className="font-light">
                   {year}
                 </Paragraph>
-                <Heading as="h3" size="lg" weight="semibold">
+                <Heading as="h3" variant="card">
                   {title}
                 </Heading>
               </div>
-              <Paragraph
-                as="p"
-                size="base"
-                weight="normal"
-                variant="body"
-                leading="relaxed"
-              >
+              <Paragraph as="p" variant="body">
                 {description}
               </Paragraph>
             </div>
@@ -83,20 +77,18 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index }) => {
         </div>
       </div>
 
-      {/* Timeline bullet */}
       <div className="z-10 flex items-center justify-center">
         <motion.div
-          className="flex size-4 items-center justify-center rounded-full bg-card-foreground/80 p-3"
+          className="bg-card-foreground/80 flex size-4 items-center justify-center rounded-full p-3"
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={bulletAnimation}
           custom={index}
         >
-          <div className="size-2 rounded-full bg-background p-[5px]" />
+          <div className="bg-background size-2 rounded-full p-[5px]" />
         </motion.div>
       </div>
 
-      {/* Spacer for layout */}
       <div className="w-5/12" />
     </motion.div>
   );
@@ -119,9 +111,8 @@ export const Timeline: FC = () => {
   return (
     <Section ref={containerRef} secondary>
       <div className="container mx-auto flex max-w-screen-lg flex-col gap-12">
-        {/* Section Header */}
         <motion.div
-          className="flex flex-col items-center justify-center gap-6 text-center"
+          className="flex flex-col items-center justify-center gap-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -129,7 +120,7 @@ export const Timeline: FC = () => {
           <Heading as="h2" variant="section">
             Career Journey
           </Heading>
-          <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">
+          <Paragraph as="p" variant="lead">
             Key milestones in my software engineering journey
           </Paragraph>
         </motion.div>

@@ -77,7 +77,7 @@ export const ContactForm = () => {
       animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <div className="rounded-2xl border border-border/70 bg-card/40 p-8 shadow-lg dark:bg-card/40">
+      <div className="border-border/70 bg-card/40 dark:bg-card/40 rounded-2xl border p-8 shadow-lg">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -87,12 +87,7 @@ export const ContactForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      <Paragraph
-                        as="span"
-                        size="sm"
-                        weight="medium"
-                        variant="muted"
-                      >
+                      <Paragraph as="span" variant="small">
                         Name
                       </Paragraph>
                     </FormLabel>
@@ -109,12 +104,7 @@ export const ContactForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      <Paragraph
-                        as="span"
-                        size="sm"
-                        weight="medium"
-                        variant="muted"
-                      >
+                      <Paragraph as="span" variant="small">
                         Email
                       </Paragraph>
                     </FormLabel>
@@ -136,12 +126,7 @@ export const ContactForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    <Paragraph
-                      as="span"
-                      size="sm"
-                      weight="medium"
-                      variant="muted"
-                    >
+                    <Paragraph as="span" variant="small">
                       Subject
                     </Paragraph>
                   </FormLabel>
@@ -158,12 +143,7 @@ export const ContactForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    <Paragraph
-                      as="span"
-                      size="sm"
-                      weight="medium"
-                      variant="muted"
-                    >
+                    <Paragraph as="span" variant="small">
                       Message
                     </Paragraph>
                   </FormLabel>
@@ -187,8 +167,7 @@ export const ContactForm = () => {
               >
                 <Paragraph
                   as="span"
-                  size="base"
-                  weight="medium"
+                  variant="body"
                   className="text-primary-foreground"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -212,7 +191,7 @@ export const Contact = () => {
       <Section secondary ref={containerRef}>
         <div className="relative mx-auto max-w-xl">
           <motion.div
-            className="flex flex-col items-center justify-center gap-6 text-center"
+            className="flex flex-col items-center justify-center gap-4 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8 }}
@@ -220,7 +199,7 @@ export const Contact = () => {
             <Heading as="h2" variant="section">
               Contact Me
             </Heading>
-            <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">
+            <Paragraph as="p" variant="lead">
               I&apos;m always looking for new opportunities to collaborate.
             </Paragraph>
           </motion.div>

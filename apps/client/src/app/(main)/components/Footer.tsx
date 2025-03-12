@@ -18,14 +18,14 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t bg-gradient-to-b from-background to-background-secondary">
+    <footer className="from-background to-background-secondary relative border-t bg-gradient-to-b">
       <div className="via-primary/20 absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent" />
 
       <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-12 lg:py-16">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
-              <div className="flex size-10 items-center justify-center rounded-lg bg-background-primary/10 transition-colors group-hover:bg-background-primary/20">
+              <div className="bg-background-primary/10 group-hover:bg-background-primary/20 flex size-10 items-center justify-center rounded-lg transition-colors">
                 <span className="text-primary text-lg font-bold sm:text-xl">
                   EJ
                 </span>
@@ -41,9 +41,8 @@ export const Footer = () => {
             <div className="flex flex-col space-y-4">
               <Paragraph
                 as="p"
-                size="sm"
-                weight="semibold"
-                className="uppercase tracking-wider text-foreground/80"
+                variant="caption"
+                className="text-foreground/80 font-semibold uppercase tracking-wider"
               >
                 Navigation
               </Paragraph>
@@ -53,10 +52,8 @@ export const Footer = () => {
                     <Link href={link.href}>
                       <Paragraph
                         as="span"
-                        size="sm"
-                        variant="muted"
-                        transition={true}
-                        className="transition-colors hover:text-foreground"
+                        variant="navlink"
+                        className="hover:text-foreground transition-colors"
                       >
                         {link.name}
                       </Paragraph>
@@ -71,9 +68,8 @@ export const Footer = () => {
           <div className="flex flex-col space-y-4">
             <Paragraph
               as="p"
-              size="sm"
-              weight="semibold"
-              className="uppercase tracking-wider text-foreground/80"
+              variant="caption"
+              className="text-foreground/80 font-semibold uppercase tracking-wider"
             >
               Connect
             </Paragraph>
@@ -83,7 +79,7 @@ export const Footer = () => {
                   external
                   key={link.name}
                   href={link.href}
-                  className="hover:border-primary/30 hover:bg-primary/10 hover:text-primary hover:shadow-primary/5 group flex size-10 items-center justify-center rounded-lg border border-border/50 bg-card/30 text-foreground transition-all hover:shadow-sm"
+                  className="hover:border-primary/30 hover:bg-primary/10 hover:text-primary hover:shadow-primary/5 border-border/50 bg-card/30 text-foreground group flex size-10 items-center justify-center rounded-lg border transition-all hover:shadow-sm"
                   aria-label={`Visit ${link.name}`}
                 >
                   {link.icon}
@@ -91,7 +87,7 @@ export const Footer = () => {
                 </Link>
               ))}
             </div>
-            <Paragraph as="span" size="sm" variant="subtle" leading="relaxed">
+            <Paragraph as="span" variant="small">
               Follow me on social media for the latest updates and insights.
             </Paragraph>
           </div>
@@ -99,8 +95,8 @@ export const Footer = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-border/20 bg-background-secondary/80 p-4">
-        <Paragraph as="span" size="xs" variant="muted">
+      <div className="border-border/20 bg-background-secondary/80 border-t p-4">
+        <Paragraph as="span" variant="tag">
           © {currentYear} Eduard Jacobs. All rights reserved.
         </Paragraph>
       </div>
