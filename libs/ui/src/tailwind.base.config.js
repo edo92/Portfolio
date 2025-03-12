@@ -1,6 +1,194 @@
 module.exports = {
   theme: {
     extend: {
+      fontSize: {
+        '2xl': [
+          '1.5rem',
+          {
+            lineHeight: '2rem',
+          },
+        ],
+        '2xs': [
+          '0.6875rem',
+          {
+            lineHeight: '1.25rem',
+          },
+        ],
+        '2xs/4': [
+          '0.6875rem',
+          {
+            lineHeight: '1rem',
+          },
+        ],
+        '2xs/6': [
+          '0.6875rem',
+          {
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        '3xl': [
+          '2rem',
+          {
+            lineHeight: '2.5rem',
+          },
+        ],
+
+        '3xl/9': [
+          '2rem',
+          {
+            lineHeight: '2.25rem',
+          },
+        ],
+
+        '4.5xl': [
+          '2.5rem',
+          {
+            lineHeight: '3rem',
+            letterSpacing: '-0.035em',
+            fontWeight: 700,
+          },
+        ],
+
+        '5xl': [
+          '3rem',
+          {
+            lineHeight: '3.5rem',
+            letterSpacing: '-0.025em',
+            fontWeight: 600,
+          },
+        ],
+
+        '5.5xl': [
+          '3.5rem',
+          {
+            lineHeight: '4rem',
+            letterSpacing: '-0.035em',
+            fontWeight: 700,
+          },
+        ],
+
+        '6xl': [
+          '4rem',
+          {
+            lineHeight: '4.5rem',
+            letterSpacing: '-0.035em',
+            fontWeight: 700,
+          },
+        ],
+
+        base: [
+          '0.9375rem',
+          {
+            fontSize: '0.9375rem',
+            lineHeight: '1.75rem',
+          },
+        ],
+
+        'base/5': [
+          '0.9375rem',
+          {
+            fontSize: '0.9375rem',
+            lineHeight: '1.25rem',
+          },
+        ],
+
+        'base/6': [
+          '0.9375rem',
+          {
+            fontSize: '0.9375rem',
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        lg: [
+          '1.125rem',
+          {
+            fontSize: '1.125rem',
+            lineHeight: '1.75rem',
+          },
+        ],
+
+        'lg/6': [
+          '1.125rem',
+          {
+            fontSize: '1.125rem',
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        sm: [
+          '0.8125rem',
+          {
+            fontSize: '0.8125rem',
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        'sm/4': [
+          '0.8125rem',
+          {
+            fontSize: '0.8125rem',
+            lineHeight: '1rem',
+          },
+        ],
+
+        'sm/5': [
+          '0.8125rem',
+          {
+            fontSize: '0.8125rem',
+            lineHeight: ' 1.25rem',
+          },
+        ],
+
+        'sm/6': [
+          '0.8125rem',
+          {
+            fontSize: '0.8125rem',
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        xl: [
+          '1.25rem',
+          {
+            fontSize: '1.25rem',
+            lineHeight: '1.75rem',
+          },
+        ],
+
+        xs: [
+          '0.75rem',
+          {
+            fontSize: '0.75rem',
+            lineHeight: '1.25rem',
+          },
+        ],
+
+        'xs/4': [
+          '0.75rem',
+          {
+            fontSize: '0.75rem',
+            lineHeight: '1rem',
+          },
+        ],
+
+        'xs/5': [
+          '0.75rem',
+          {
+            fontSize: '0.75rem',
+            lineHeight: '1.25rem',
+          },
+        ],
+
+        'xs/6': [
+          '0.75rem',
+          {
+            fontSize: '0.75rem',
+            lineHeight: '1.5rem',
+          },
+        ],
+      },
       colors: {
         destructive: {
           DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
