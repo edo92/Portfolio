@@ -126,7 +126,7 @@ export const Timeline: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Heading as="h2" variant="title">
+          <Heading as="h2" variant="section">
             Career Journey
           </Heading>
           <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">
@@ -134,11 +134,10 @@ export const Timeline: FC = () => {
           </Paragraph>
         </motion.div>
 
-        {/* Timeline events and vertical progress line */}
         <div className="relative space-y-12">
           <motion.div
             className={cn(
-              'absolute inset-y-0 left-[49.95%] w-0.5 -translate-x-1/2 bg-secondary-foreground/40 dark:bg-secondary/80'
+              'bg-secondary-foreground/40 dark:bg-secondary/80 absolute inset-y-0 left-[49.95%] w-0.5 -translate-x-1/2'
             )}
             style={{ scaleY, originY: 0, height: '105%', top: '0%' }}
           />

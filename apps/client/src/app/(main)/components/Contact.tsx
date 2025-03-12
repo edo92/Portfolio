@@ -217,7 +217,7 @@ export const Contact = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8 }}
           >
-            <Heading as="h2" variant="title">
+            <Heading as="h2" variant="section">
               Contact Me
             </Heading>
             <Paragraph as="p" size="lg" variant="subtle" leading="relaxed">

@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { cn } from '@libs/util';
 import { Paragraph, Heading } from '@libs/ui';
-import { DESCRIPTION, SOCIAL_LINKS } from '../../content';
-import { Section } from '../../components/Section';
-import { HeroIllustration } from './Illustration';
 import { Link } from '@libs/ui';
+
+import { HeroIllustration } from './Illustration';
+import { Section } from '../../components/Section';
+import { DESCRIPTION, SOCIAL_LINKS } from '../../content';
 
 export const Hero = () => {
   return (
@@ -29,7 +29,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <Paragraph as="span" size="sm" weight="normal" variant="muted">
+                <Paragraph as="span" variant="small" className='font-medium'>
                   Hey, I&apos;m
                 </Paragraph>
               </motion.span>
@@ -39,25 +39,23 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <Heading as="h1" size="4xl" weight="bold" variant="gradient">
+                <Heading
+                  as="h1"
+                  variant="display"
+                  className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent"
+                >
                   Eduard Jacobs
                 </Heading>
               </motion.div>
 
               <motion.div
-                className={cn(
-                  'md:rounded-lg md:bg-background/80 md:backdrop-blur-sm'
-                )}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Paragraph
                   as="p"
-                  size="lg" // Increased from base to lg for hero
-                  weight="normal"
-                  variant="body"
-                  leading="relaxed"
+                  variant='lead'
                 >
                   {DESCRIPTION}
                 </Paragraph>
@@ -75,14 +73,13 @@ export const Hero = () => {
                     key={link.name}
                     href={link.href}
                     aria-label={`Visit ${link.name}`}
-                    className="group flex items-center gap-2 rounded-md p-2 text-body/80 md:gap-3 md:p-3"
+                    className="text-body/80 group flex items-center gap-2 rounded-md p-2 md:gap-3 md:p-3"
                   >
                     {link.icon}
                     <Paragraph
                       as="span"
-                      size="sm"
-                      weight="medium"
-                      className="transition-all duration-200 group-hover:text-body/65"
+                      variant="link"
+                      className="group-hover:text-body/65 transition-all duration-200"
                     >
                       {link.name}
                     </Paragraph>
