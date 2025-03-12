@@ -52,17 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          'relative h-screen w-full',
-          fonts.interBlack.variable,
-          fonts.interBold.variable,
-          fonts.interSemibold.variable,
-          fonts.interMedium.variable,
-          fonts.interRegular.variable,
-          fonts.interLight.variable
-        )}
-      >
+      <body className={cn('relative h-screen w-full', fonts.inter.variable)}>
         <Providers>{children}</Providers>
       </body>
     </html>

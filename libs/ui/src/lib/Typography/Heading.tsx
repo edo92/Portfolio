@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
 
 const headingVariants = tv({
-  base: 'text-foreground tracking-tight',
+  base: 'text-foreground tracking-tight font-inter',
   variants: {
     size: {
       '4xl': 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl', // Hero, main title

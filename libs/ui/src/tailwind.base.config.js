@@ -1,6 +1,54 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   theme: {
     extend: {
+      colors: {
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+          foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--success) / <alpha-value>)',
+          foreground: 'hsl(var(--success-foreground) / <alpha-value>)',
+        },
+
+        background: {
+          DEFAULT: 'hsl(var(--background) / <alpha-value>)',
+          primary: 'hsl(var(--primary-background) / <alpha-value>)',
+          secondary: 'hsl(var(--secondary-background) / <alpha-value>)',
+        },
+        foreground: 'hsl(var(--foreground) / <alpha-value>)',
+        body: {
+          DEFAULT: 'hsl(var(--body) / <alpha-value>)',
+          secondary: 'hsl(var(--body-secondary) / <alpha-value>)',
+        },
+        primary: {
+          foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
+          100: 'hsl(var(--primary-100) / <alpha-value>)',
+          200: 'hsl(var(--primary-200) / <alpha-value>)',
+          300: 'hsl(var(--primary-300) / <alpha-value>)',
+          400: 'hsl(var(--primary-400) / <alpha-value>)',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+          foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+          foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+          foreground: 'hsl(var(--accent-foreground) / <alpha-value>)',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+          foreground: 'hsl(var(--card-foreground) / <alpha-value>)',
+        },
+        border: 'hsl(var(--border) / <alpha-value>)',
+      },
+
       fontSize: {
         '2xl': [
           '1.5rem',
@@ -77,34 +125,9 @@ module.exports = {
           },
         ],
 
-        base: [
-          '0.9375rem',
-          {
-            fontSize: '0.9375rem',
-            lineHeight: '1.75rem',
-          },
-        ],
-
-        'base/5': [
-          '0.9375rem',
-          {
-            fontSize: '0.9375rem',
-            lineHeight: '1.25rem',
-          },
-        ],
-
-        'base/6': [
-          '0.9375rem',
-          {
-            fontSize: '0.9375rem',
-            lineHeight: '1.5rem',
-          },
-        ],
-
         lg: [
           '1.125rem',
           {
-            fontSize: '1.125rem',
             lineHeight: '1.75rem',
           },
         ],
@@ -112,7 +135,34 @@ module.exports = {
         'lg/6': [
           '1.125rem',
           {
-            fontSize: '1.125rem',
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        base: [
+          '0.9375rem',
+          {
+            lineHeight: '1.75rem',
+          },
+        ],
+
+        'base/5': [
+          '0.9375rem',
+          {
+            lineHeight: '1.25rem',
+          },
+        ],
+
+        'base/6': [
+          '0.9375rem',
+          {
+            lineHeight: '1.5rem',
+          },
+        ],
+
+        md: [
+          '0.825rem',
+          {
             lineHeight: '1.5rem',
           },
         ],
@@ -120,7 +170,6 @@ module.exports = {
         sm: [
           '0.8125rem',
           {
-            fontSize: '0.8125rem',
             lineHeight: '1.5rem',
           },
         ],
@@ -128,7 +177,6 @@ module.exports = {
         'sm/4': [
           '0.8125rem',
           {
-            fontSize: '0.8125rem',
             lineHeight: '1rem',
           },
         ],
@@ -136,7 +184,6 @@ module.exports = {
         'sm/5': [
           '0.8125rem',
           {
-            fontSize: '0.8125rem',
             lineHeight: ' 1.25rem',
           },
         ],
@@ -144,7 +191,6 @@ module.exports = {
         'sm/6': [
           '0.8125rem',
           {
-            fontSize: '0.8125rem',
             lineHeight: '1.5rem',
           },
         ],
@@ -152,7 +198,6 @@ module.exports = {
         xl: [
           '1.25rem',
           {
-            fontSize: '1.25rem',
             lineHeight: '1.75rem',
           },
         ],
@@ -160,7 +205,6 @@ module.exports = {
         xs: [
           '0.75rem',
           {
-            fontSize: '0.75rem',
             lineHeight: '1.25rem',
           },
         ],
@@ -168,7 +212,6 @@ module.exports = {
         'xs/4': [
           '0.75rem',
           {
-            fontSize: '0.75rem',
             lineHeight: '1rem',
           },
         ],
@@ -176,7 +219,6 @@ module.exports = {
         'xs/5': [
           '0.75rem',
           {
-            fontSize: '0.75rem',
             lineHeight: '1.25rem',
           },
         ],
@@ -184,65 +226,15 @@ module.exports = {
         'xs/6': [
           '0.75rem',
           {
-            fontSize: '0.75rem',
             lineHeight: '1.5rem',
           },
         ],
       },
-      colors: {
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
-          foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
-        },
-        success: {
-          DEFAULT: 'hsl(var(--success) / <alpha-value>)',
-          foreground: 'hsl(var(--success-foreground) / <alpha-value>)',
-        },
 
-        background: {
-          DEFAULT: 'hsl(var(--background) / <alpha-value>)',
-          primary: 'hsl(var(--primary-background) / <alpha-value>)',
-          secondary: 'hsl(var(--secondary-background) / <alpha-value>)',
-        },
-        foreground: 'hsl(var(--foreground) / <alpha-value>)',
-        body: {
-          DEFAULT: 'hsl(var(--body) / <alpha-value>)',
-          secondary: 'hsl(var(--body-secondary) / <alpha-value>)',
-        },
-        primary: {
-          foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
-          100: 'hsl(var(--primary-100) / <alpha-value>)',
-          200: 'hsl(var(--primary-200) / <alpha-value>)',
-          300: 'hsl(var(--primary-300) / <alpha-value>)',
-          400: 'hsl(var(--primary-400) / <alpha-value>)',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
-          foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
-          foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
-          foreground: 'hsl(var(--accent-foreground) / <alpha-value>)',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card) / <alpha-value>)',
-          foreground: 'hsl(var(--card-foreground) / <alpha-value>)',
-        },
-        border: 'hsl(var(--border) / <alpha-value>)',
-      },
       fontFamily: {
-        black: ['var(--font-inter-black)'],
-        bold: ['var(--font-inter-bold)'],
-        semibold: ['var(--font-inter-semibold)'],
-        medium: ['var(--font-inter-medium)'],
-        normal: ['var(--font-inter-regular)'],
-        light: ['var(--font-inter-light)'],
-        sans: ['var(--font-inter)'],
+        inter:'var(--font-inter)',
       },
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

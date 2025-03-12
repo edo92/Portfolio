@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@libs/util';
 
 const paragraphVariants = tv({
-  base: 'text-foreground',
+  base: 'text-foreground font-inter',
   variants: {
     size: {
       '3xl': 'text-xl sm:text-2xl md:text-3xl lg:text-4xl',
