@@ -1,6 +1,6 @@
 'use client';
 
-import { Paragraph, Link, Heading } from '@libs/ui';
+import { Paragraph, Link } from '@libs/ui';
 import { SOCIAL_LINKS } from '../../content';
 
 interface NavLink {
@@ -26,11 +26,11 @@ export const Footer = () => {
           <div className="flex flex-col space-y-4">
             <Link href="/" className="group inline-flex items-center">
               <div className="flex size-10 items-center justify-center rounded-lg bg-background-primary/10 transition-colors group-hover:bg-background-primary/20">
-                <span className="text-primary font-bold text-lg sm:text-xl">
+                <span className="text-primary text-lg font-bold sm:text-xl">
                   EJ
                 </span>
               </div>
-              <span className="group-hover:text-primary ml-2 font-bold text-lg transition-colors sm:text-xl">
+              <span className="group-hover:text-primary ml-2 text-lg font-bold transition-colors sm:text-xl">
                 Eduard Jacobs
               </span>
             </Link>

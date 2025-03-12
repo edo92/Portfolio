@@ -15,7 +15,6 @@ const config = [
   ...fixupConfigRules(compat.extends('next')),
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
   ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
-  ...fixupConfigRules(compat.extends('prettier')),
 
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],

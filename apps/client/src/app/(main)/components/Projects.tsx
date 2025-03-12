@@ -65,7 +65,7 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
             variant="ghost"
             onClick={() => onSelect(category)}
             className={cn(
-              'rounded-full px-5 py-1.5 font-medium text-sm transition-colors',
+              'rounded-full px-5 py-1.5 text-sm font-medium transition-colors',
               selected === category
                 ? 'bg-background-primary text-primary-foreground'
                 : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'

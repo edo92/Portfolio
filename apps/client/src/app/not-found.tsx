@@ -13,7 +13,7 @@ export default function NotFound() {
         transition={{ duration: 0.8 }}
       >
         <motion.h1
-          className="text-primary mb-4 font-bold text-9xl"
+          className="text-primary mb-4 text-9xl font-bold"
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{
