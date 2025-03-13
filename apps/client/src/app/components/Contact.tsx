@@ -101,7 +101,7 @@ export const ContactForm = () => {
   return (
     <motion.div
       ref={formRef}
-      className="mt-8 overflow-hidden rounded-lg"
+      className="mt-8 max-w-lg overflow-hidden rounded-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.8, delay: 0.2 }}
@@ -116,7 +116,11 @@ export const ContactForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      <Paragraph as="span" variant="label-xs">
+                      <Paragraph
+                        as="span"
+                        variant="label-sm"
+                        className="text-body/80"
+                      >
                         Name
                       </Paragraph>
                     </FormLabel>
@@ -133,7 +137,11 @@ export const ContactForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      <Paragraph as="span" variant="label-xs">
+                      <Paragraph
+                        as="span"
+                        variant="label-sm"
+                        className="text-body/80"
+                      >
                         Email
                       </Paragraph>
                     </FormLabel>
@@ -155,7 +163,11 @@ export const ContactForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    <Paragraph as="span" variant="label-xs">
+                    <Paragraph
+                      as="span"
+                      variant="label-sm"
+                      className="text-body/80"
+                    >
                       Subject
                     </Paragraph>
                   </FormLabel>
@@ -172,7 +184,11 @@ export const ContactForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    <Paragraph as="span" variant="label-xs">
+                    <Paragraph
+                      as="span"
+                      variant="label-sm"
+                      className="text-body/80"
+                    >
                       Message
                     </Paragraph>
                   </FormLabel>
@@ -190,7 +206,7 @@ export const ContactForm = () => {
             <div className="pt-2">
               <Button
                 type="submit"
-                className="group w-full"
+                className="group w-full py-3"
                 disabled={isSubmitting}
                 isLoading={isSubmitting}
               >

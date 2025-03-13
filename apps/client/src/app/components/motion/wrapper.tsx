@@ -1,5 +1,5 @@
+import { forwardRef, ReactNode } from 'react';
 import { motion, MotionProps } from 'framer-motion';
-import { ReactNode } from 'react';
 
 interface MotionWrapperProps extends MotionProps {
   children: ReactNode;
@@ -7,12 +7,12 @@ interface MotionWrapperProps extends MotionProps {
   className?: string;
 }
 
-export const MotionWrapper: React.FC<MotionWrapperProps> = ({
-  children,
-  delay = 0,
-  ...props
-}) => (
+export const MotionWrapper: React.FC<MotionWrapperProps> = forwardRef<
+  HTMLDivElement,
+  MotionWrapperProps
+>(({ children, delay = 0, ...props }, ref) => (
   <motion.div
+    ref={ref}
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay }}
@@ -20,4 +20,6 @@ export const MotionWrapper: React.FC<MotionWrapperProps> = ({
   >
     {children}
   </motion.div>
-);
+));
+
+MotionWrapper.displayName = 'MotionWrapper';

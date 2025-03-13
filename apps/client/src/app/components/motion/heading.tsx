@@ -1,6 +1,5 @@
 'use client';
 
-import { cn } from '@/util';
 import { motion } from 'framer-motion';
 
 interface HeadingMotionProps {
@@ -15,15 +14,14 @@ interface HeadingMotionProps {
 
 export const HeadingMotion: React.FC<HeadingMotionProps> = ({
   children,
-  className,
   duration = 0.8,
   type = 'spring',
   stiffness = 200,
   initial = 0.8,
   animate = 1,
+  ...props
 }) => (
   <motion.h1
-    className={cn(className)}
     initial={{ scale: initial }}
     animate={{ scale: animate }}
     transition={{
@@ -31,6 +29,7 @@ export const HeadingMotion: React.FC<HeadingMotionProps> = ({
       type,
       stiffness,
     }}
+    {...props}
   >
     {children}
   </motion.h1>

@@ -6,7 +6,7 @@ import { PROJECTS_INTRODUCTION, SKILLS } from '../../../content';
 import { Illustration } from './Illustration';
 
 export const Hero = () => (
-  <Section className="min-h-[calc(100vh-10rem)] bg-gradient-to-t from-background-secondary via-transparent to-transparent pt-32">
+  <Section className="min-h-[calc(100vh-10rem)] bg-gradient-to-t from-background-secondary via-transparent to-transparent">
     {/* Background Pattern */}
     <div className="absolute inset-0 z-0 opacity-10">
       <div className="absolute left-1/3 top-1/4 size-64 rounded-full bg-background-primary/25 blur-3xl" />
@@ -14,7 +14,7 @@ export const Hero = () => (
     </div>
 
     {/* Content Container */}
-    <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+    <div className="container relative z-10 mx-auto mt-10 max-w-7xl px-6 md:px-8 lg:px-12">
       <div className="grid gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16">
         <motion.div
           className="flex flex-col justify-center gap-6"
