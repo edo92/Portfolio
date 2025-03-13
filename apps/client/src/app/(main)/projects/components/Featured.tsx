@@ -64,7 +64,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col gap-6"
         >
-          <Heading as="h3" variant="h2">
+          <Heading as="h3" variant="h3">
             Featured Project
           </Heading>
 

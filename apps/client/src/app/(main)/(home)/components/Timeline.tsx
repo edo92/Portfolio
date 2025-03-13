@@ -81,7 +81,7 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index, total }) => {
                   {title}
                 </Heading>
               </div>
-              <Paragraph as="p" variant="body" className='text-body/80'>
+              <Paragraph as="p" variant="body" className="text-body/80">
                 {description}
               </Paragraph>
             </div>

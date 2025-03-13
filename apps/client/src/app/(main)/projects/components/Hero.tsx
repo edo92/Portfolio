@@ -35,10 +35,9 @@ export const Hero = () => (
           </Heading>
 
           <Paragraph
-            as="p"
             variant="body-md"
             weight="regular"
-            className="text-body/80"
+            className="text-body/90"
           >
             {PROJECTS_INTRODUCTION}
           </Paragraph>
@@ -51,11 +50,7 @@ export const Hero = () => (
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             {SKILLS.map((skill) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="bg-background/50 "
-              >
+              <Badge key={skill} variant="outline" className="bg-background/50">
                 <Paragraph as="span" variant="label-sm">
                   {skill}
                 </Paragraph>
