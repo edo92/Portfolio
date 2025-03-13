@@ -12,7 +12,7 @@ export const Header = () => (
         <LogoIcon />
       </Link>
       <div className="flex items-center gap-4 sm:gap-6">
-        <ul className="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
+        <ul className="m-0 flex list-none items-center gap-4 p-0 sm:gap-6">
           <li>
             <Link href="/project">
               <Paragraph
