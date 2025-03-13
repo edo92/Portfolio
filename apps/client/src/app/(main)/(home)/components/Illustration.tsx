@@ -198,6 +198,17 @@ export const HeroIllustration = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        {/* Add radial gradient mask */}
+        <defs>
+          <radialGradient id="fade" cx="0.5" cy="0.5" r="0.7">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <mask id="grid-mask">
+            <rect width="100%" height="100%" fill="url(#fade)" />
+          </mask>
+        </defs>
+
         {/* Grid Pattern */}
         <pattern
           id="grid"
@@ -214,7 +225,12 @@ export const HeroIllustration = () => {
             strokeWidth="1"
           />
         </pattern>
-        <rect width="100%" height="100%" fill="url(#grid)" />
+        <rect
+          width="100%"
+          height="100%"
+          fill="url(#grid)"
+          mask="url(#grid-mask)"
+        />
 
         {/* Central Code Window */}
         <motion.g

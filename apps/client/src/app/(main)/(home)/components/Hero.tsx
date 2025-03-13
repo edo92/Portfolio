@@ -10,7 +10,7 @@ import { MotionWrapper } from '../../../components/motion/wrapper';
 
 export const Hero = () => {
   return (
-    <Section className="relative min-h-[92vh] w-full overflow-hidden !pt-36 pb-0">
+    <Section className="relative mt-12 min-h-[92vh] w-full overflow-hidden pb-0">
       <div className="pointer-events-none absolute right-0 top-0 z-[999] hidden h-screen w-full lg:block lg:w-1/2">
         <HeroIllustration />
       </div>
