@@ -49,6 +49,7 @@ module.exports = {
 
       fontSize: {
         // Heading sizes
+        xs: ['0.75rem', { lineHeight: '1.5', fontWeight: '500' }],
         'heading-72': [
           '4.5rem',
           { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' },
