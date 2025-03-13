@@ -1,5 +1,5 @@
 import type { SVGAttributes } from 'react';
-import { Sun, Moon, Mail, MapPin } from 'lucide-react';
+import { Sun, Moon, Mail, MapPin, Loader2 } from 'lucide-react';
 
 export type IconProps = SVGAttributes<SVGElement>;
 
@@ -8,6 +8,7 @@ export const Icons = {
   Moon,
   Mail,
   MapPin,
+  Loader: Loader2,
 
   GitHub: (props?: IconProps) => (
     <svg
