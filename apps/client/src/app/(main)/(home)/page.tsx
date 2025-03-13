@@ -1,14 +1,21 @@
+import dynamic from 'next/dynamic';
 import { Hero } from './components/Hero';
-import { Timeline } from './components/Timeline';
 import { PROJECTS } from '../../content';
-import { ProjectsGrid } from '../../components/Projects';
+
+const Timeline = dynamic(() =>
+  import('./components/Timeline').then((c) => c.Timeline)
+);
+
+const Projects = dynamic(() =>
+  import('../../components/Projects').then((c) => c.ProjectsGrid)
+);
 
 export default function HomePage() {
   return (
     <div className="size-full">
       <Hero />
       <Timeline />
-      <ProjectsGrid projects={PROJECTS} />
+      <Projects projects={PROJECTS} />
     </div>
   );
 }
