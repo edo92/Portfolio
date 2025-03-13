@@ -25,7 +25,7 @@ const config = [
   {
     settings: {
       tailwindcss: {
-        callees: ['classnames', 'clsx', 'cva', 'cn', 'className'],
+        callees: ['classnames', 'clsx', 'ctl', 'cva', 'cn', 'tv'],
         config: './tailwind.config.js',
       },
     },
