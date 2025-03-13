@@ -7,3 +7,4 @@ export * from './lib/Section';
 export * from './lib/Badge';
 export * from './lib/Image';
 export * from './lib/Form';
+export * from './lib/Toast';
