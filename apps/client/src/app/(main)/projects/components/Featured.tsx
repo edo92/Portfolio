@@ -111,21 +111,12 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                       {category}
                     </Paragraph>
                   </Badge>
-                  <Heading
-                    as="h3"
-                    variant="h3"
-                    className="text-2xl md:text-3xl"
-                  >
+                  <Heading as="h3" variant="h3">
                     {title}
                   </Heading>
                 </div>
 
-                <Paragraph
-                  as="p"
-                  variant="body"
-                  weight="regular"
-                  className="text-body/80"
-                >
+                <Paragraph as="p" variant="body" className="text-body/80">
                   {description}
                 </Paragraph>
 
@@ -135,12 +126,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                       key={index}
                       className="rounded-lg bg-background p-4 text-center"
                     >
-                      <Paragraph
-                        as="p"
-                        variant="body-lg"
-                        weight="bold"
-                        className="text-primary"
-                      >
+                      <Paragraph as="p" weight="bold" variant="body-md">
                         {stat.value}
                       </Paragraph>
                       <Paragraph
@@ -158,7 +144,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                 <div className="flex flex-wrap gap-3">
                   {tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="px-3 py-1">
-                      <Paragraph as="span" variant="label-sm">
+                      <Paragraph as="span" variant="label-xs" weight="semibold">
                         {tag}
                       </Paragraph>
                     </Badge>
@@ -170,7 +156,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                     <Button className="group h-12 w-full">
                       <Paragraph
                         as="span"
-                        variant="button-md"
+                        variant="button-lg"
                         className="text-primary-foreground"
                       >
                         View Project
