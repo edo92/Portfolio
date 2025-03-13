@@ -15,11 +15,16 @@ const FeaturedProject = dynamic(() =>
   import('./components/Featured').then((c) => c.FeaturedProject)
 );
 
+const ProjectsGrid = dynamic(() =>
+  import('../../components/Projects').then((c) => c.ProjectsGrid)
+);
+
 export default function ProjectsPage() {
   return (
     <div className="size-full">
       <Hero />
       <FeaturedProject project={PROJECTS[0]} />
+      <ProjectsGrid projects={PROJECTS} />
     </div>
   );
 }
