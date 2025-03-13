@@ -14,7 +14,7 @@ export const Header = () => (
       <div className="flex items-center gap-4 sm:gap-6">
         <ul className="m-0 flex list-none items-center gap-4 p-0 sm:gap-6">
           <li>
-            <Link href="/project">
+            <Link href="/projects">
               <Paragraph
                 as="span"
                 variant="navlink"
