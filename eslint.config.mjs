@@ -1,6 +1,6 @@
 import nx from '@nx/eslint-plugin';
 
-const config = [
+export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
@@ -40,5 +40,3 @@ const config = [
     rules: {},
   },
 ];
-
-export default config;

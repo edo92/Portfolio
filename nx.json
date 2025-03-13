@@ -14,7 +14,7 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "67bb189e912c9e2133ca23da",
+  "nxCloudId": "67d28d3fd85eaf278add61a0",
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
@@ -25,6 +25,12 @@
         "serveStaticTargetName": "serve-static",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
       }
     },
     {
@@ -40,18 +46,6 @@
         "style": "tailwind",
         "linter": "eslint"
       }
-    },
-    "@nx/react": {
-      "library": {
-        "unitTestRunner": "none"
-      }
-    }
-  },
-  "targetDefaults": {
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     }
   }
 }
