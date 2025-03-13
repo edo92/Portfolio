@@ -18,7 +18,7 @@ export const Header = () => (
               <Paragraph
                 as="span"
                 variant="navlink"
-                className="hover:text-primary transition-colors"
+                className="transition-colors hover:text-body/75"
               >
                 Projects
               </Paragraph>
@@ -29,7 +29,7 @@ export const Header = () => (
               <Paragraph
                 as="span"
                 variant="navlink"
-                className="hover:text-primary transition-colors"
+                className="transition-colors hover:text-body/75"
               >
                 Contact
               </Paragraph>

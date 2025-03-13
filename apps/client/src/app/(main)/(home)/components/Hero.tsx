@@ -54,7 +54,7 @@ export const Hero = () => {
                 <Paragraph
                   variant="body-md"
                   weight="regular"
-                  className="text-body/80"
+                  className="text-body/90"
                 >
                   {DESCRIPTION}
                 </Paragraph>

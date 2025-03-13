@@ -67,7 +67,7 @@ export const Footer = () => {
                       <Paragraph
                         as="span"
                         variant="body-sm"
-                        className="transition-colors hover:text-muted-foreground/70"
+                        className="transition-colors hover:text-body/75"
                       >
                         {link.name}
                       </Paragraph>
