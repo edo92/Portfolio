@@ -6,11 +6,11 @@ const paragraph = tv({
   base: 'text-foreground',
   variants: {
     variant: {
-      navItem: 'text-sm font-medium leading-6',
+      navlink: 'text-sm font-medium leading-6',
       breadcrumb: 'text-sm font-medium leading-5',
 
-      'button-lg': 'text-base font-medium leading-5 tracking-wideerPlus',
-      'button-md': 'text-sm font-medium leading-5 tracking-wideerPlus',
+      'button-lg': 'text-base font-medium leading-5 tracking-wideerplus',
+      'button-md': 'text-sm font-medium leading-5 tracking-wideerplus',
       'button-sm': 'text-2xs font-medium leading-5',
 
       'label-lg': 'text-xl font-medium leading-4',

@@ -17,7 +17,7 @@ export const Header = () => (
             <Link href="/project">
               <Paragraph
                 as="span"
-                variant="navItem"
+                variant="navlink"
                 className="hover:text-primary transition-colors"
               >
                 Projects
@@ -28,7 +28,7 @@ export const Header = () => (
             <Link href="/contact">
               <Paragraph
                 as="span"
-                variant="navItem"
+                variant="navlink"
                 className="hover:text-primary transition-colors"
               >
                 Contact
