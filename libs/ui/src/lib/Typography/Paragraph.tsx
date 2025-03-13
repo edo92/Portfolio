@@ -6,7 +6,7 @@ const paragraphVariants = tv({
   base: 'text-foreground',
   variants: {
     variant: {
-      navItem: 'text-heading-14 font-semibold',
+      navItem: 'text-copy-14 font-medium',
       breadcrumb: 'text-label-14 font-medium',
 
       'button-lg': 'text-button-16 font-medium',
