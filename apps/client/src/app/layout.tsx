@@ -1,4 +1,4 @@
-import './global.css';
+import '@/ui/styles';
 
 export const metadata = {
   title: 'Welcome to client',
