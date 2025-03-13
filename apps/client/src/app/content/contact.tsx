@@ -1,4 +1,4 @@
-import { Icons } from '@libs/ui';
+import { Icons } from '@/ui';
 
 export const CONTACT_INFO = [
   {
