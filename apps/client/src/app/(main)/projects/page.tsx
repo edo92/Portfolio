@@ -19,17 +19,12 @@ const ProjectsGrid = dynamic(() =>
   import('../../components/Projects').then((c) => c.ProjectsGrid)
 );
 
-const Contact = dynamic(() =>
-  import('../../components/Contact').then((c) => c.Contact)
-);
-
 export default function ProjectsPage() {
   return (
     <div className="size-full">
       <Hero />
       <FeaturedProject project={PROJECTS[0]} />
       <ProjectsGrid projects={PROJECTS} />
-      <Contact />
     </div>
   );
 }

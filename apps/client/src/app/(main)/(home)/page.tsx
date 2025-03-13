@@ -10,12 +10,17 @@ const Projects = dynamic(() =>
   import('../../components/Projects').then((c) => c.ProjectsGrid)
 );
 
+const Contact = dynamic(() =>
+  import('../../components/Contact').then((c) => c.Contact)
+);
+
 export default function HomePage() {
   return (
     <div className="size-full">
       <Hero />
       <Timeline />
       <Projects projects={PROJECTS} />
+      <Contact />
     </div>
   );
 }
