@@ -6,7 +6,7 @@ import { PROJECTS_INTRODUCTION, SKILLS } from '../../../content';
 import { Illustration } from './Illustration';
 
 export const Hero = () => (
-  <Section className="bg-gradient-to-t from-background-secondary via-transparent to-transparent pt-32">
+  <Section className="min-h-[calc(100vh-10rem)] bg-gradient-to-t from-background-secondary via-transparent to-transparent pt-32">
     {/* Background Pattern */}
     <div className="absolute inset-0 z-0 opacity-10">
       <div className="absolute left-1/3 top-1/4 size-64 rounded-full bg-background-primary/25 blur-3xl" />
