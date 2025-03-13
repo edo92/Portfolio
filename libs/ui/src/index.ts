@@ -8,3 +8,4 @@ export * from './lib/Badge';
 export * from './lib/Image';
 export * from './lib/Form';
 export * from './lib/Toast';
+export * from './lib/Input';
