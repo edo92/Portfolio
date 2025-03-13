@@ -3,7 +3,7 @@ import { cn } from '@/util';
 import { forwardRef } from 'react';
 
 const container = tv({
-  base: 'mx-auto w-full px-4 sm:px-6 lg:px-8',
+  base: 'container mx-auto w-full px-4 sm:px-6 lg:px-8',
   variants: {
     size: {
       sm: 'max-w-screen-sm',
@@ -25,7 +25,7 @@ const container = tv({
     },
   },
   defaultVariants: {
-    size: 'lg',
+    size: 'full',
     padding: 'md',
   },
 });
