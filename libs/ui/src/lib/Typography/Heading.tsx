@@ -6,14 +6,36 @@ export const heading = tv({
   base: 'text-foreground',
   variants: {
     variant: {
-      display: 'text-5xl font-bold sm:text-6xl lg:text-6xl',
-      section: 'text-4xl font-bold',
-      card: 'text-md font-medium leading-normal sm:text-lg lg:text-xl',
-      mini: 'text-base font-medium leading-[1.6] sm:text-lg lg:text-xl',
+      hero: 'text-heading-72 font-bold tracking-tight',
+      display: 'text-heading-64 font-bold tracking-tight',
+      title: 'text-heading-56 font-bold tracking-tight',
+      heading1: 'text-heading-48 font-bold tracking-tight',
+      heading2: 'text-heading-40 font-bold tracking-tight',
+      heading3: 'text-heading-32 font-semibold tracking-tight',
+      heading4: 'text-heading-24 font-semibold',
+      heading5: 'text-heading-20 font-semibold',
+      heading6: 'text-heading-16 font-semibold',
+    },
+    align: {
+      left: 'text-left',
+      center: 'text-center',
+      right: 'text-right',
+    },
+    weight: {
+      regular: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+    },
+    transform: {
+      uppercase: 'uppercase',
+      lowercase: 'lowercase',
+      capitalize: 'capitalize',
+      normal: 'normal-case',
     },
   },
   defaultVariants: {
-    variant: 'section',
+    variant: 'heading2',
   },
 });
 
@@ -24,12 +46,27 @@ export interface HeadingProps
 }
 
 export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ className, variant, children, as: Component = 'h2', ...props }, ref) => (
+  (
+    {
+      className,
+      variant,
+      children,
+      align,
+      weight,
+      transform,
+      as: Component = 'h2',
+      ...props
+    },
+    ref
+  ) => (
     <Component
       ref={ref}
       className={cn(
         heading({
           variant,
+          align,
+          weight,
+          transform,
           className,
         })
       )}
