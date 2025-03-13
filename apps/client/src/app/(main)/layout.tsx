@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Header } from '../components/Header';
 
 export const metadata: Metadata = {
   title: {
@@ -15,6 +16,7 @@ export default function MainLayout({
 }) {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
+      <Header />
       {children}
     </main>
   );
