@@ -6,15 +6,15 @@ export const heading = tv({
   base: 'text-foreground',
   variants: {
     variant: {
-      hero: 'text-heading-72 font-bold tracking-tight',
-      display: 'text-heading-64 font-bold tracking-tight',
-      title: 'text-heading-56 font-bold tracking-tight',
-      heading1: 'text-heading-48 font-bold tracking-tight',
-      heading2: 'text-heading-40 font-bold tracking-tight',
-      heading3: 'text-heading-32 font-semibold tracking-tight',
-      heading4: 'text-heading-24 font-semibold',
-      heading5: 'text-heading-20 font-semibold',
-      heading6: 'text-heading-16 font-semibold',
+      hero: 'text-heading-8xl font-bold leading-1 tracking-tighterplus',
+      display: 'text-heading-7xl font-bold leading-1 tracking-tighterplus',
+      title: 'text-heading-6xl font-bold leading-1 tracking-tighterplus',
+      h1: 'text-heading-5xl font-bold leading-1 tracking-wideplus',
+      h2: 'text-heading-4xl font-bold leading-2 tracking-wideplus',
+      h3: 'text-heading-3xl font-semibold leading-2 tracking-wideerplus',
+      h4: 'text-heading-2xl font-semibold leading-3 tracking-wideerplus',
+      h5: 'text-heading-xl font-semibold leading-4 tracking-wideerplus',
+      h6: 'text-heading-base font-semibold leading-5',
     },
     align: {
       left: 'text-left',
@@ -35,7 +35,7 @@ export const heading = tv({
     },
   },
   defaultVariants: {
-    variant: 'heading2',
+    variant: 'h2',
   },
 });
 

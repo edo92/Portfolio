@@ -2,33 +2,33 @@ import React, { forwardRef } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '@/util';
 
-const paragraphVariants = tv({
+const paragraph = tv({
   base: 'text-foreground',
   variants: {
     variant: {
-      navItem: 'text-copy-14 font-medium',
-      breadcrumb: 'text-label-14 font-medium',
+      navItem: 'text-sm font-medium leading-6',
+      breadcrumb: 'text-sm font-medium leading-5',
 
-      'button-lg': 'text-button-16 font-medium',
-      'button-md': 'text-button-14 font-medium',
-      'button-sm': 'text-button-12 font-medium',
+      'button-lg': 'text-base font-medium leading-5 tracking-wideerPlus',
+      'button-md': 'text-sm font-medium leading-5 tracking-wideerPlus',
+      'button-sm': 'text-2xs font-medium leading-5',
 
-      'label-lg': 'text-label-20 font-medium',
-      'label-md': 'text-label-16 font-medium',
-      'label-sm': 'text-label-14 font-medium',
-      'label-xs': 'text-label-12 font-medium',
+      'label-lg': 'text-xl font-medium leading-4',
+      'label-md': 'text-base font-medium leading-5',
+      'label-sm': 'text-sm font-medium leading-5',
+      'label-xs': 'text-2xs font-medium leading-5',
 
-      'body-xl': 'text-copy-24 font-normal',
-      'body-lg': 'text-copy-20 font-normal',
-      'body-md': 'text-copy-18 font-normal',
-      body: 'text-copy-16 font-normal',
-      'body-sm': 'text-copy-14 font-normal',
-      'body-xs': 'text-copy-13 font-normal',
+      'body-xl': 'text-2xl font-normal leading-5',
+      'body-lg': 'text-xl font-normal leading-6',
+      'body-md': 'text-lg font-normal leading-6',
+      body: 'text-base font-normal leading-6',
+      'body-sm': 'text-sm font-normal leading-6',
+      'body-xs': 'text-xs font-normal leading-6',
 
-      caption: 'text-label-12 font-normal',
-      metadata: 'text-label-12 font-medium',
-      tooltip: 'text-label-13 font-normal',
-      badge: 'text-label-12 font-medium',
+      caption: 'text-2xs font-normal leading-5',
+      metadata: 'text-2xs font-medium leading-5',
+      tooltip: 'text-xs font-normal leading-5',
+      badge: 'text-2xs font-medium leading-5',
     },
     align: {
       left: 'text-left',
@@ -55,7 +55,7 @@ const paragraphVariants = tv({
 
 export interface ParagraphProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof paragraphVariants> {
+    VariantProps<typeof paragraph> {
   as?: 'p' | 'small' | 'span';
 }
 
@@ -75,7 +75,7 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
     <Component
       ref={ref}
       className={cn(
-        paragraphVariants({
+        paragraph({
           align,
           weight,
           transform,
@@ -90,4 +90,4 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
 
 Paragraph.displayName = 'Paragraph';
 
-export { Paragraph, paragraphVariants };
+export { Paragraph, paragraph as paragraphVariants };
