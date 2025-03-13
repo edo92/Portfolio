@@ -4,7 +4,7 @@ import type React from 'react';
 import { forwardRef } from 'react';
 import NextImage, { type ImageProps as NextImageProps } from 'next/image';
 import { tv, type VariantProps } from 'tailwind-variants';
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 
 const PLACEHOLDER_IMAGE = '/static/projects/placeholder.svg';
 
@@ -36,11 +36,11 @@ const imageVariants = tv({
     },
     border: {
       none: 'border-0',
-      default: 'border-border border',
-      thin: 'border-border/50 border',
-      thick: 'border-border border-2',
+      default: 'border border-border',
+      thin: 'border border-border/50',
+      thick: 'border-2 border-border',
       primary: 'border-primary border-2',
-      accent: 'border-accent border-2',
+      accent: 'border-2 border-accent',
     },
     shadow: {
       none: 'shadow-none',

@@ -1,9 +1,10 @@
-import { FlatCompat } from '@eslint/eslintrc';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+
 import js from '@eslint/js';
-import { fixupConfigRules } from '@eslint/compat';
 import nx from '@nx/eslint-plugin';
+import { FlatCompat } from '@eslint/eslintrc';
+import { fixupConfigRules } from '@eslint/compat';
 import baseConfig from '../../eslint.config.mjs';
 
 const compat = new FlatCompat({
@@ -15,7 +16,6 @@ const config = [
   ...fixupConfigRules(compat.extends('next')),
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
   ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
-  ...fixupConfigRules(compat.extends('prettier')),
 
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],
@@ -25,7 +25,7 @@ const config = [
   {
     settings: {
       tailwindcss: {
-        callees: ['classnames', 'clsx', 'cva', 'cn', 'className', 'tv'],
+        callees: ['classnames', 'clsx', 'ctl', 'cva', 'cn', 'tv'],
         config: './tailwind.config.js',
       },
     },

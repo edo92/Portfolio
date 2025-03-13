@@ -108,8 +108,7 @@ export function FormMessage({
   return (
     <Paragraph
       as="p"
-      size="xs"
-      weight="medium"
+      variant="label-xs"
       className="text-destructive"
       {...props}
     >

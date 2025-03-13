@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { Icons } from './Icons';
 
 const button = tv({
-  base: 'focus-visible:ring-ring ring-offset-background inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  base: 'focus-visible:ring-ring inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   variants: {
     variant: {
       default:
@@ -11,7 +11,7 @@ const button = tv({
       destructive:
         'bg-destructive text-destructive-foreground hover:bg-destructive/90',
       outline:
-        'border-input hover:bg-accent hover:text-accent-foreground border',
+        'border-input border hover:bg-accent hover:text-accent-foreground',
       secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
       ghost: 'bg-transparent ring-0 ring-offset-0 hover:ring-0',
       link: 'text-primary underline-offset-4 hover:underline',

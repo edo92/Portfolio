@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 import * as React from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
@@ -10,20 +10,20 @@ const textarea = tv({
     textarea: [
       'flex min-h-[80px] w-full rounded-sm',
       'text-sm font-normal',
-      'placeholder:text-muted-foreground/50 placeholder:text-sm',
+      'placeholder:text-sm placeholder:text-muted-foreground/50',
       'focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'transition-colors duration-100 ease-in',
     ],
     topContent:
-      'text-muted-foreground flex items-center justify-end gap-1 text-xs',
+      'flex items-center justify-end gap-1 text-xs text-muted-foreground',
     bottomContent:
-      'text-muted-foreground flex items-center justify-end gap-1 text-xs',
+      'flex items-center justify-end gap-1 text-xs text-muted-foreground',
   },
   variants: {
     variant: {
       default: {
-        textarea: ['border-input bg-background border'],
+        textarea: ['border-input border bg-background'],
       },
       ghost: {
         textarea: ['border-none bg-transparent'],

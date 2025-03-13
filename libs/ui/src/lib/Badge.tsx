@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 
 const badge = tv({
-  base: 'focus:ring-ring inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2',
+  base: 'focus:ring-ring inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-offset-2',
   variants: {
     variant: {
       default:
-        'bg-background-primary text-primary-foreground hover:bg-background-primary/80 border-transparent',
+        'border-transparent bg-background-primary text-primary-foreground hover:bg-background-primary/80',
       secondary:
-        'bg-secondary text-secondary-foreground hover:bg-secondary/80 border-transparent',
+        'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
       destructive:
-        'bg-destructive text-destructive-foreground hover:bg-destructive/80 border-transparent',
+        'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
       outline: 'text-foreground',
       success:
-        'bg-success text-success-foreground hover:bg-success/80 border-transparent',
+        'border-transparent bg-success text-success-foreground hover:bg-success/80',
     },
     size: {
       default: 'px-2.5 py-0.5 text-xs',
@@ -28,7 +28,6 @@ const badge = tv({
   },
   defaultVariants: {
     variant: 'default',
-    size: 'default',
     removable: false,
   },
 });
@@ -54,7 +53,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         {removable && onRemove && (
           <button
             type="button"
-            className="hover:bg-background/20 ml-1 rounded-full p-0.5"
+            className="ml-1 rounded-full p-0.5 hover:bg-background/20"
             onClick={(e) => {
               e.stopPropagation();
               onRemove();

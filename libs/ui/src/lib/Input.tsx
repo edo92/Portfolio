@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const input = tv({
@@ -12,18 +12,18 @@ const input = tv({
       'text-sm font-normal',
       'transition-colors duration-200',
       'file:border-0 file:bg-transparent file:text-sm file:font-medium',
-      'placeholder:text-muted-foreground/50 placeholder:text-sm',
+      'placeholder:text-sm placeholder:text-muted-foreground/50',
       'focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'transition-colors duration-100 ease-in-out',
     ],
-    startContent: 'text-muted-foreground flex items-center justify-center',
-    endContent: 'text-muted-foreground flex items-center justify-center',
+    startContent: 'flex items-center justify-center text-muted-foreground',
+    endContent: 'flex items-center justify-center text-muted-foreground',
   },
   variants: {
     variant: {
       default: {
-        input: ['border-input bg-background border'],
+        input: ['border-input border bg-background'],
       },
       ghost: {
         input: ['border-none bg-transparent'],

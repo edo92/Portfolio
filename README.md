@@ -8,7 +8,7 @@
 
 ## Finish your remote caching setup
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/VdRk4PPtzQ)
+[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/sLVQWmcP6D)
 
 
 ## Run tasks

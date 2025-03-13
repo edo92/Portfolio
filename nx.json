@@ -14,7 +14,7 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "67bb189e912c9e2133ca23da",
+  "nxCloudId": "67d28d3fd85eaf278add61a0",
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
@@ -28,9 +28,29 @@
       }
     },
     {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
       }
     }
   ],
@@ -43,7 +63,7 @@
     },
     "@nx/react": {
       "library": {
-        "unitTestRunner": "none"
+        "unitTestRunner": "vitest"
       }
     }
   },

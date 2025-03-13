@@ -1,6 +1,6 @@
 import type React from 'react';
 import { memo } from 'react';
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 
 import { Icons } from '../Icons';
 import { Button } from '../Button';
@@ -36,7 +36,7 @@ export const Toast: React.FC<ToastProps> = memo(
             key={toast.id}
             role="alert"
             aria-labelledby={`toast-title-${toast.id}`}
-            className="bg-background-secondary max-w-xs rounded-xl border shadow-lg"
+            className="max-w-xs rounded-xl border bg-background-secondary shadow-lg"
           >
             <div className="flex gap-4 p-4">
               <div className="shrink-0">
@@ -46,16 +46,14 @@ export const Toast: React.FC<ToastProps> = memo(
               <div className="w-full">
                 <Paragraph
                   as="p"
-                  size="sm"
-                  weight="semibold"
+                  variant="label-sm"
                   id={`toast-title-${toast.id}`}
                 >
                   {toast.title}
                 </Paragraph>
                 <Paragraph
                   as="p"
-                  size="sm"
-                  weight="normal"
+                  variant="label-sm"
                   aria-label="toast-message"
                   className="mt-1"
                 >
@@ -70,7 +68,7 @@ export const Toast: React.FC<ToastProps> = memo(
                 onClick={() => handleClose(toast.id)}
                 className="group inline-flex h-fit items-start p-0 py-1"
               >
-                <Icons.CloseX className="stroke-1.5 text-body group-hover:text-body/85 size-3.5 transition duration-200" />
+                <Icons.CloseX className="stroke-1.5 size-3.5 text-body transition duration-200 group-hover:text-body/85" />
               </Button>
             </div>
           </div>

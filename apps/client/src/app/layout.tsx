@@ -1,8 +1,8 @@
-import './styles/global.css';
+import '@/ui/styles';
 
 import type { Metadata } from 'next';
-import { cn } from '@libs/util';
-import * as fonts from './fonts';
+import { cn } from '@/util';
+import { inter } from './fonts';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
@@ -21,28 +21,6 @@ export const metadata: Metadata = {
   ],
   robots: 'index, follow',
   authors: [{ name: 'Eduard Jacobs' }],
-  openGraph: {
-    title: "Eduard Jacobs' Portfolio",
-    description: "Showcasing Eduard Jacobs' work in software engineering.",
-    url: 'https://ejresume.com.com',
-    siteName: 'Eduard Jacobs Portfolio',
-    images: [
-      {
-        url: '/images/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Eduard Jacobs Portfolio',
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: "Eduard Jacobs' Portfolio",
-    description:
-      'Showcasing projects, skills, and expertise in software development.',
-    images: ['/images/og-image.png'],
-  },
 };
 
 export default function RootLayout({
@@ -52,17 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          'relative h-screen w-full',
-          fonts.interBlack.variable,
-          fonts.interBold.variable,
-          fonts.interSemibold.variable,
-          fonts.interMedium.variable,
-          fonts.interRegular.variable,
-          fonts.interLight.variable
-        )}
-      >
+      <body className={cn('relative h-screen w-full', inter.variable)}>
         <Providers>{children}</Providers>
       </body>
     </html>

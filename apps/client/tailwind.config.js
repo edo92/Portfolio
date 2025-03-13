@@ -21,7 +21,6 @@ module.exports = {
       workspaceRoot,
       'libs',
       'ui',
-      'src',
       'tailwind.base.config.js'
     )),
   ],

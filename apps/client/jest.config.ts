@@ -1,4 +1,4 @@
-const config = {
+export default {
   displayName: 'client',
   preset: '../../jest.preset.js',
   transform: {
@@ -8,5 +8,3 @@ const config = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/client',
 };
-
-export default config;

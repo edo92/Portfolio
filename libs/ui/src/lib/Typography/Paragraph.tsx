@@ -1,58 +1,61 @@
 import React, { forwardRef } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 
-const paragraphVariants = tv({
+const paragraph = tv({
   base: 'text-foreground',
   variants: {
-    size: {
-      '3xl': 'text-xl sm:text-2xl md:text-3xl lg:text-4xl',
-      '2xl': 'text-lg sm:text-xl md:text-2xl lg:text-3xl',
-      xl: 'text-base sm:text-lg md:text-xl lg:text-2xl',
-      lg: 'text-sm sm:text-base md:text-lg lg:text-xl',
-      md: 'text-xs sm:text-sm md:text-base lg:text-lg',
-      base: 'text-sm sm:text-base md:text-base',
-      sm: 'text-xs sm:text-sm md:text-sm',
-      xs: 'xs:text-xs text-[10px] md:text-xs',
+    variant: {
+      navlink: 'text-sm font-medium leading-6',
+      breadcrumb: 'text-sm font-medium leading-5',
+
+      'button-lg': 'text-base font-medium leading-5 tracking-wideerplus',
+      'button-md': 'text-sm font-medium leading-5 tracking-wideerplus',
+      'button-sm': 'text-2xs font-medium leading-5',
+
+      'label-lg': 'text-xl font-medium leading-4',
+      'label-md': 'text-base font-medium leading-5',
+      'label-sm': 'text-sm font-medium leading-5',
+      'label-xs': 'text-2xs font-medium leading-5',
+
+      'body-xl': 'text-2xl font-normal leading-5',
+      'body-lg': 'text-xl font-normal leading-6',
+      'body-md': 'text-lg font-normal leading-6',
+      body: 'text-base font-normal leading-6',
+      'body-sm': 'text-sm font-normal leading-6',
+      'body-xs': 'text-xs font-normal leading-6',
+
+      caption: 'text-2xs font-normal leading-5',
+      metadata: 'text-2xs font-medium leading-5',
+      tooltip: 'text-xs font-normal leading-5',
+      badge: 'text-2xs font-medium leading-5',
+    },
+    align: {
+      left: 'text-left',
+      center: 'text-center',
+      right: 'text-right',
     },
     weight: {
-      bold: 'font-bold',
-      semibold: 'font-semibold',
+      regular: 'font-normal',
       medium: 'font-medium',
-      normal: 'font-normal',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
     },
-    leading: {
-      tight: 'leading-tight',
-      snug: 'leading-snug',
-      normal: 'leading-normal',
-      relaxed: 'leading-relaxed',
-      loose: 'leading-loose',
-    },
-    variant: {
-      subtle: 'text-muted-foreground/90',
-      muted: 'text-muted-foreground',
-      body: 'text-foreground/90 leading-relaxed',
-      gradient:
-        'bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent',
-      caption: 'text-muted-foreground/80 text-xs',
-      success: 'text-green-600 dark:text-green-400',
-      warning: 'text-amber-600 dark:text-amber-400',
-      error: 'text-red-600 dark:text-red-400',
-    },
-    transition: {
-      true: 'transition-all duration-200 ease-in-out',
+    transform: {
+      uppercase: 'uppercase',
+      lowercase: 'lowercase',
+      capitalize: 'capitalize',
+      normal: 'normal-case',
     },
   },
   defaultVariants: {
-    size: 'base',
-    weight: 'normal',
-    leading: 'relaxed',
+    variant: 'body',
   },
 });
 
 export interface ParagraphProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof paragraphVariants> {
+    VariantProps<typeof paragraph> {
   as?: 'p' | 'small' | 'span';
 }
 
@@ -61,34 +64,30 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
     {
       className,
       as: Component = 'p',
-      size,
+      align,
       weight,
+      transform,
       variant,
-      leading,
-      transition,
       ...props
     },
     ref
-  ) => {
-    return (
-      <Component
-        ref={ref}
-        className={cn(
-          paragraphVariants({
-            size,
-            weight,
-            variant,
-            leading,
-            transition,
-            className,
-          })
-        )}
-        {...props}
-      />
-    );
-  }
+  ) => (
+    <Component
+      ref={ref}
+      className={cn(
+        paragraph({
+          align,
+          weight,
+          transform,
+          variant,
+          className,
+        })
+      )}
+      {...props}
+    />
+  )
 );
 
 Paragraph.displayName = 'Paragraph';
 
-export { Paragraph, paragraphVariants };
+export { Paragraph, paragraph as paragraphVariants };

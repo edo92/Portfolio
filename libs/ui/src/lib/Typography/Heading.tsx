@@ -1,105 +1,79 @@
 import * as React from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
-import { cn } from '@libs/util';
+import { cn } from '@/util';
 
-const headingVariants = tv({
-  base: 'text-foreground tracking-tight',
+export const heading = tv({
+  base: 'text-foreground',
   variants: {
-    size: {
-      '4xl': 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl', // Hero, main title
-      '3xl': 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl', // Section titles
-      '2xl': 'text-xl sm:text-2xl md:text-3xl lg:text-4xl', // Major section headings
-      xl: 'text-lg sm:text-xl md:text-2xl lg:text-3xl', // Sub-section headings
-      lg: 'text-base sm:text-lg md:text-xl lg:text-2xl', // Content headings
-      md: 'text-sm sm:text-base md:text-lg lg:text-xl', // Card headings
-      sm: 'text-xs sm:text-sm md:text-base lg:text-lg', // Minor headings
-      xs: 'text-xs md:text-sm', // Small labels/headings
+    variant: {
+      hero: 'text-6xl font-bold leading-1 tracking-tighterplus md:text-7xl',
+      display: 'text-6xl font-bold leading-1 tracking-tighterplus md:text-7xl',
+      title: 'text-6xl font-bold leading-1 tracking-tighterplus',
+      h1: 'text-5xl font-bold leading-1 tracking-wideplus',
+      h2: 'text-4xl font-bold leading-2 tracking-wideplus',
+      h3: 'text-3xl font-semibold leading-2 tracking-wideerplus',
+      h4: 'text-2xl font-semibold leading-3 tracking-wideerplus',
+      h5: 'text-xl font-semibold leading-4 tracking-wideerplus',
+      h6: 'text-base font-semibold leading-5',
+    },
+    align: {
+      left: 'text-left',
+      center: 'text-center',
+      right: 'text-right',
     },
     weight: {
-      bold: 'font-bold',
-      semibold: 'font-semibold',
+      regular: 'font-normal',
       medium: 'font-medium',
-      normal: 'font-normal',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
     },
-    variant: {
-      title: 'pb-2 text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl',
-      gradient:
-        'bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent',
-      section: 'text-lg font-semibold sm:text-xl md:text-2xl lg:text-3xl',
-      subtle: 'text-muted-foreground',
-    },
-    as: {
-      h1: '',
-      h2: '',
-      h3: '',
-      h4: '',
-      h5: '',
-      h6: '',
-    },
-    leading: {
-      tight: 'leading-tight',
-      snug: 'leading-snug',
-      normal: 'leading-normal',
-      relaxed: 'leading-relaxed',
-      loose: 'leading-loose',
-    },
-    transition: {
-      true: 'transition-all duration-200 ease-in-out',
+    transform: {
+      uppercase: 'uppercase',
+      lowercase: 'lowercase',
+      capitalize: 'capitalize',
+      normal: 'normal-case',
     },
   },
   defaultVariants: {
-    as: 'h2',
-    size: '2xl',
-    weight: 'semibold',
-    leading: 'tight',
+    variant: 'h2',
   },
 });
 
-type HeadingLevel = VariantProps<typeof headingVariants>['as'];
-
 export interface HeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {
-  as?: HeadingLevel;
+    VariantProps<typeof heading> {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
+export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   (
     {
       className,
       variant,
-      weight,
-      size,
-      as,
-      leading,
-      transition,
       children,
+      align,
+      weight,
+      transform,
+      as: Component = 'h2',
       ...props
     },
     ref
-  ) => {
-    const Component = as || 'h2';
-
-    return (
-      <Component
-        ref={ref}
-        className={cn(
-          headingVariants({
-            size,
-            weight,
-            leading,
-            transition,
-            className,
-            variant,
-          })
-        )}
-        {...props}
-      >
-        {children}
-      </Component>
-    );
-  }
+  ) => (
+    <Component
+      ref={ref}
+      className={cn(
+        heading({
+          variant,
+          align,
+          weight,
+          transform,
+          className,
+        })
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  )
 );
 Heading.displayName = 'Heading';
-
-export { Heading, headingVariants };
