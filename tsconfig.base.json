@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@portfolio/ui": ["libs/ui/src/index.ts"],
+      "@portfolio/ui/server": ["libs/ui/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
