@@ -30,7 +30,7 @@ const section = tv({
   },
   defaultVariants: {
     background: 'primary',
-    padding: 'lg',
+    padding: 'md',
     align: 'start',
     justify: 'start',
   },

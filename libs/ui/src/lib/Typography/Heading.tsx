@@ -7,7 +7,7 @@ export const heading = tv({
   variants: {
     variant: {
       hero: 'text-6xl font-bold leading-1 tracking-tighterplus md:text-7xl',
-      display: 'text-7xl font-bold leading-1 tracking-tighterplus',
+      display: 'text-6xl font-bold leading-1 tracking-tighterplus md:text-7xl',
       title: 'text-6xl font-bold leading-1 tracking-tighterplus',
       h1: 'text-5xl font-bold leading-1 tracking-wideplus',
       h2: 'text-4xl font-bold leading-2 tracking-wideplus',
