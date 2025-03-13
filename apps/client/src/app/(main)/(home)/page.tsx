@@ -1,10 +1,11 @@
-import { Container } from '@/ui';
 import { Hero } from './components/Hero';
+import { Timeline } from './components/Timeline';
 
 export default function HomePage() {
   return (
-    <Container>
+    <div className="size-full">
       <Hero />
-    </Container>
+      <Timeline />
+    </div>
   );
 }
