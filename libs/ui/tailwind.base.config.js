@@ -61,7 +61,7 @@ module.exports = {
       letterSpacing: {
         tighterplus: ' -0.02em',
         wideplus: '-0.015em',
-        wideerPlus: '-0.01em',
+        wideerplus: '-0.01em',
       },
 
       lineHeight: {
