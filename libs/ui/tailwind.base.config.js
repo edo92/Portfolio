@@ -46,15 +46,72 @@ module.exports = {
         },
         border: 'hsl(var(--border) / <alpha-value>)',
       },
-      fontFamily: {
-        black: ['var(--font-inter-black)'],
-        bold: ['var(--font-inter-bold)'],
-        semibold: ['var(--font-inter-semibold)'],
-        medium: ['var(--font-inter-medium)'],
-        normal: ['var(--font-inter-regular)'],
-        light: ['var(--font-inter-light)'],
-        sans: ['var(--font-inter)'],
+
+      fontSize: {
+        // Heading sizes
+        'heading-72': [
+          '4.5rem',
+          { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' },
+        ],
+        'heading-64': [
+          '4rem',
+          { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' },
+        ],
+        'heading-56': [
+          '3.5rem',
+          { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' },
+        ],
+        'heading-48': [
+          '3rem',
+          { lineHeight: '1.1', letterSpacing: '-0.015em', fontWeight: '700' },
+        ],
+        'heading-40': [
+          '2.5rem',
+          { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '700' },
+        ],
+        'heading-32': [
+          '2rem',
+          { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '600' },
+        ],
+        'heading-24': [
+          '1.5rem',
+          { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '600' },
+        ],
+        'heading-20': [
+          '1.25rem',
+          { lineHeight: '1.4', letterSpacing: '-0.01em', fontWeight: '600' },
+        ],
+        'heading-16': ['1rem', { lineHeight: '1.5', fontWeight: '600' }],
+        'heading-14': ['0.875rem', { lineHeight: '1.5', fontWeight: '600' }],
+
+        // Button sizes
+        'button-16': [
+          '1rem',
+          { lineHeight: '1.5', letterSpacing: '-0.01em', fontWeight: '500' },
+        ],
+        'button-14': [
+          '0.875rem',
+          { lineHeight: '1.5', letterSpacing: '-0.01em', fontWeight: '500' },
+        ],
+        'button-12': ['0.75rem', { lineHeight: '1.5', fontWeight: '500' }],
+
+        // Label sizes
+        'label-20': ['1.25rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'label-18': ['1.125rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'label-16': ['1rem', { lineHeight: '1.5', fontWeight: '500' }],
+        'label-14': ['0.875rem', { lineHeight: '1.5', fontWeight: '500' }],
+        'label-13': ['0.8125rem', { lineHeight: '1.5', fontWeight: '500' }],
+        'label-12': ['0.75rem', { lineHeight: '1.5', fontWeight: '500' }],
+
+        // Copy sizes
+        'copy-24': ['1.5rem', { lineHeight: '1.5', fontWeight: '400' }],
+        'copy-20': ['1.25rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'copy-18': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'copy-16': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'copy-14': ['0.875rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'copy-13': ['0.8125rem', { lineHeight: '1.6', fontWeight: '400' }],
       },
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
