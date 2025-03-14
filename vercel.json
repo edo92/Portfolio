@@ -1,7 +1,0 @@
-{
-  "git": {
-    "installCommand": "pnpm install",
-    "buildCommand": "pnpm nx run client:build --prod",
-    "outputDirectory": "dist/apps/client"
-  }
-}
