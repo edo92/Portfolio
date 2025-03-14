@@ -94,27 +94,26 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Container size="7xl" padding="md" className="px-9">
-        <div className="mb-16 mt-3 flex flex-col gap-12">
-          <FadeIn delay={0.1} className="flex flex-col gap-3">
-            <Link href="/project" className="group inline-flex pt-12">
-              <Button
-                size="sm"
-                variant="ghost"
-                className="gap-2 p-0 transition-colors duration-200 group-hover:text-body/75"
-                onClick={() => router.back()}
-              >
-                <Icons.ArrowLeft className="size-5 text-body/80 transition-transform duration-200 group-hover:-translate-x-1" />
-                <Paragraph
-                  as="span"
-                  variant="button-lg"
-                  className="text-body/80"
-                >
-                  Back to Projects
-                </Paragraph>
-              </Button>
-            </Link>
-          </FadeIn>
-        </div>
+        <FadeIn
+          delay={0.1}
+          className="group mb-16 flex w-full flex-col items-start pt-12"
+        >
+          <Button
+            size="sm"
+            variant="ghost"
+            className="gap-2 p-0 transition-colors duration-200"
+            onClick={() => router.back()}
+          >
+            <Icons.ArrowLeft className="size-5 text-body/80 transition-all duration-200 group-hover:-translate-x-1 group-hover:text-body" />
+            <Paragraph
+              as="span"
+              variant="button-lg"
+              className="text-body/80 transition-all duration-200 group-hover:text-body"
+            >
+              Back to Projects
+            </Paragraph>
+          </Button>
+        </FadeIn>
 
         <section className="relative">
           <div className="relative w-full overflow-hidden">
