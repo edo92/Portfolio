@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, FC } from 'react';
+import { useRef, type FC } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 
 import { cn } from '@/util';
@@ -56,9 +56,14 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index, total }) => {
       role="listitem"
       aria-label={`Timeline event ${index + 1} of ${total}: ${year} - ${title}`}
     >
-      <div className="w-5/12">
+      {/* Increased width from 5/12 to 6/12 to make cards bigger */}
+      <div className="w-6/12">
         <div
-          className="transform-gpu"
+          className={cn(
+            'transform-gpu',
+            isEven && 'ml-9 md:ml-12 lg:ml-16',
+            !isEven && 'mr-9 md:mr-12 lg:mr-16'
+          )}
           role="button"
           tabIndex={0}
           aria-expanded="false"
@@ -102,8 +107,8 @@ const TimelineEvent: FC<TimelineEventProps> = ({ event, index, total }) => {
         </motion.div>
       </div>
 
-      {/* Spacer for layout */}
-      <div className="w-5/12" />
+      {/* Spacer for layout - also updated to match the card width */}
+      <div className="w-6/12" />
     </motion.div>
   );
 };
@@ -124,7 +129,7 @@ export const Timeline: FC = () => {
 
   return (
     <Section ref={containerRef} background="secondary">
-      <Container className="flex flex-col gap-12" size="lg">
+      <Container className="flex flex-col gap-12" size="xl">
         {/* Section Header */}
         <motion.div
           className="flex flex-col items-center justify-center gap-4 text-center"

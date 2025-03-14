@@ -1,26 +1,26 @@
 export const TIMELINE_EVENTS = [
   {
-    year: 'Present',
-    title: 'Backend Software Engineer',
+    year: '2022 - Present',
+    title: 'Backend Engineer',
     description:
-      'Working on backend systems to improve data efficiency and develop models that support business goals.',
+      'Focused on backend development, containerization, CI/CD automation, and deployment.',
   },
   {
-    year: '2022',
+    year: '2020 - 2022',
     title: 'Full Stack Engineer',
     description:
-      'Focused on optimizing processes, enhancing data analysis, and implementing solutions to improve user engagement.',
+      'Built scalable data-driven solutions, developed containerized services, and integrated real-time analytics.',
   },
   {
-    year: '2020',
+    year: '2019 - 2020',
     title: 'Full Stack Engineer',
     description:
-      'Worked on developing reporting solutions and improving workflow management for better operational efficiency.',
+      'Developed IoT and backend solutions, enhancing system architecture and overall performance.',
   },
   {
-    year: '2019',
+    year: '2019 - 2019',
     title: 'Software Engineering Intern',
     description:
-      'Gained experience in application development, data integration, and system optimization.',
+      'Gained hands-on experience in application development, services integration, bug fixes, and code reviews.',
   },
 ];
