@@ -4,11 +4,11 @@ import { PROJECTS } from '../../../content';
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params?: Promise<{ id?: string }>;
 }): Promise<Metadata> {
   const _params = await params;
 
-  const project = PROJECTS.find((p) => p.id === _params.id);
+  const project = PROJECTS.find((p) => p.id === _params?.id);
 
   if (!project) {
     return {

@@ -4,6 +4,7 @@
   "sourceRoot": "apps/client",
   "projectType": "application",
   "tags": [],
+  "implicitDependencies": ["ui", "util"],
   "// targets": "to see all targets run: nx show project client --web",
   "targets": {}
 }

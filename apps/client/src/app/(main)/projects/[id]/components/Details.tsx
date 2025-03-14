@@ -27,7 +27,7 @@ type ProjectProps = {
   tags: string[];
   stats: { label: string; value: string }[];
   githubUrl: string;
-  demoUrl: string;
+  demoUrl?: string;
   challenges: string[];
   solutions: string[];
   results: string[];
