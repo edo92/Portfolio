@@ -82,5 +82,4 @@ export const PROJECTS = [
       'Easy-to-maintain infrastructure code that evolves alongside application code',
     ],
   },
-  // Additional projects would be defined here
 ];
