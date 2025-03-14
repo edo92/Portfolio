@@ -9,14 +9,14 @@ const paragraph = tv({
       navlink: 'text-sm font-medium leading-6',
       breadcrumb: 'text-sm font-medium leading-5',
 
-      'button-lg': 'text-lg font-medium leading-5 tracking-wideerplus',
-      'button-md': 'text-base font-medium leading-5 tracking-wideerplus',
+      'button-lg': 'text-base font-medium leading-5 tracking-wideerplus',
+      'button-md': 'text-sm font-medium leading-5 tracking-wideerplus',
       'button-sm': 'text-2xs font-medium leading-5',
 
       'label-lg': 'text-xl font-medium leading-4',
-      'label-md': 'text-lg font-medium leading-5',
-      'label-sm': 'text-base font-medium leading-5',
-      'label-xs': 'text-sm font-medium leading-5',
+      'label-md': 'text-base font-medium leading-5',
+      'label-sm': 'text-sm font-medium leading-5',
+      'label-xs': 'text-2xs font-medium leading-5',
 
       'body-xl': 'text-2xl font-normal leading-5',
       'body-lg': 'text-xl font-normal leading-6',
