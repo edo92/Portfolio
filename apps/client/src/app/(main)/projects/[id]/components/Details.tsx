@@ -1,9 +1,8 @@
 'use client';
 
-import type React from 'react';
-import Image from 'next/image';
+import React, { useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 import {
   Button,
   Card,
@@ -16,6 +15,7 @@ import {
   Link,
   Section,
 } from '@/ui';
+import { ProjectCard } from '../../../../components/Projects';
 
 type ProjectProps = {
   id: string;
@@ -72,6 +72,13 @@ const IconListItem = ({ text }: IconListItemProps) => (
 export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
   const { id } = useParams();
   const router = useRouter();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const isGridInView = useInView(gridRef, {
+    once: true,
+    amount: 0.1,
+  });
 
   const project = projects.find((p) => p.id === id);
 
@@ -88,19 +95,25 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
     <div className="flex min-h-screen flex-col bg-background">
       <Container size="7xl" padding="md" className="px-9">
         <div className="mb-16 mt-3 flex flex-col gap-12">
-          <Link href="/project" className="group inline-flex pt-12">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="gap-2 p-0 transition-colors duration-200 group-hover:text-body/75"
-              onClick={() => router.back()}
-            >
-              <Icons.ArrowLeft className="size-5 text-body/80 transition-transform duration-200 group-hover:-translate-x-1" />
-              <Paragraph as="span" variant="body-md" className="text-body/80">
-                Back to Projects
-              </Paragraph>
-            </Button>
-          </Link>
+          <FadeIn delay={0.1} className="flex flex-col gap-3">
+            <Link href="/project" className="group inline-flex pt-12">
+              <Button
+                size="sm"
+                variant="ghost"
+                className="gap-2 p-0 transition-colors duration-200 group-hover:text-body/75"
+                onClick={() => router.back()}
+              >
+                <Icons.ArrowLeft className="size-5 text-body/80 transition-transform duration-200 group-hover:-translate-x-1" />
+                <Paragraph
+                  as="span"
+                  variant="button-lg"
+                  className="text-body/80"
+                >
+                  Back to Projects
+                </Paragraph>
+              </Button>
+            </Link>
+          </FadeIn>
         </div>
 
         <section className="relative">
@@ -264,54 +277,27 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
 
       {/* Related Projects Section */}
       {!!relatedProjects.length && (
-        <Section className="border-t">
+        <Section ref={containerRef} className="border-t">
           <FadeIn delay={0.6} className="space-y-10">
-            <Heading as="h2" variant="h2">
+            <Heading as="h2" variant="h3">
               Related Projects
             </Heading>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {relatedProjects.map((relatedProject) => (
-                <Card
-                  key={relatedProject.id}
-                  className="group overflow-hidden transition-all duration-300 hover:shadow-md"
-                >
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-r from-slate-800 to-slate-700">
-                    {relatedProject.imageUrl && (
-                      <Image
-                        src={relatedProject.imageUrl || '/placeholder.svg'}
-                        alt={relatedProject.title}
-                        fill
-                        className="object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
-                      />
-                    )}
-                  </div>
-
-                  <CardContent className="flex flex-col gap-3 p-6">
-                    <Badge variant="secondary" className="w-fit text-xs">
-                      {relatedProject.category}
-                    </Badge>
-                    <Heading as="h3" variant="h5" className="line-clamp-1">
-                      {relatedProject.title}
-                    </Heading>
-                    <Paragraph
-                      variant="label-sm"
-                      className="line-clamp-2 text-sm"
-                    >
-                      {relatedProject.description}
-                    </Paragraph>
-                    <Button
-                      onClick={() =>
-                        router.push(`/projects/${relatedProject.id}`)
-                      }
-                      className="text-primary mt-auto flex items-center text-sm font-medium"
-                    >
-                      View Project
-                      <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <motion.div
+              ref={gridRef}
+              layout
+              className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <AnimatePresence>
+                {relatedProjects.map((project, index) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    index={index}
+                    isInView={isGridInView}
+                  />
+                ))}
+              </AnimatePresence>
+            </motion.div>
           </FadeIn>
         </Section>
       )}

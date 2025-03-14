@@ -13,6 +13,7 @@ import {
   Link,
   Image,
   Section,
+  Card,
 } from '@/ui';
 
 export type Project = {
@@ -82,13 +83,13 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
 type ProjectCardProps = {
   project: Project;
   index: number;
-  isHovered: boolean;
-  onHover: (id: string) => void;
-  onLeave: () => void;
+  isHovered?: boolean;
+  onHover?: (id: string) => void;
+  onLeave?: () => void;
   isInView: boolean;
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({
+export const ProjectCard: FC<ProjectCardProps> = ({
   project,
   index,
   isHovered,
@@ -102,106 +103,107 @@ const ProjectCard: FC<ProjectCardProps> = ({
     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6, delay: Math.min(0.2 + index * 0.1, 1.5) }}
-    className="hover:border-primary/20 group relative overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
-    onMouseEnter={() => onHover(project.id)}
-    onMouseLeave={onLeave}
+    className="hover:border-primary/20 group relative overflow-hidden rounded-lg border border-border/50 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
+    onMouseEnter={() => onHover?.(project.id)}
+    onMouseLeave={onLeave && onLeave}
     role="article"
     aria-labelledby={`project-title-${project.id}`}
   >
-    <div className="relative h-56 overflow-hidden">
-      <Image
-        width={1000}
-        height={1000}
-        alt={project.title}
-        src={project.imageUrl}
-        className="object-fit size-full transition-transform duration-500 ease-in-out group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-      <motion.div
-        className="absolute inset-x-0 bottom-0 p-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant="outline"
-              className="border-white/20 bg-black/50"
-            >
-              <Paragraph
-                as="span"
-                variant="label-xs"
-                weight="medium"
-                className="text-white"
-              >
-                {tag}
-              </Paragraph>
-            </Badge>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-
-    <div className="flex flex-col gap-4 p-6">
-      <div className="flex items-center justify-between">
-        <Badge variant="secondary" className="text-xs">
-          <Paragraph as="span" variant="label-xs" weight="medium">
-            {project.category}
-          </Paragraph>
-        </Badge>
-        <div className="flex gap-3">
-          <Link
-            external
-            href={project.githubUrl}
-            className="text-muted-foreground transition-colors hover:text-foreground"
-            aria-label="View GitHub repository"
-          >
-            <Icons.GitHub className="size-5" />
-          </Link>
-          {project.demoUrl && (
-            <Link
-              external
-              href={project.demoUrl}
-              className="text-muted-foreground transition-colors hover:text-foreground"
-              aria-label="View live demo"
-            >
-              <Icons.ExternalLink className="size-5" />
-            </Link>
+    <Card
+      key={project.id}
+      className="group overflow-hidden bg-card/40 p-0 transition-all duration-300 hover:shadow-md"
+    >
+      <div className="relative h-56 overflow-hidden">
+        <div className="p-1">
+          {project.imageUrl && (
+            <Image
+              src={project.imageUrl || '/placeholder.svg'}
+              alt={project.title}
+              fill
+              className="min-h-52 rounded-t-md object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+            />
           )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         </div>
+        <motion.div
+          className="absolute inset-x-0 bottom-0 p-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="outline"
+                className="border-white/20 bg-black/50"
+              >
+                <Paragraph
+                  as="span"
+                  variant="label-xs"
+                  weight="medium"
+                  className="text-white"
+                >
+                  {tag}
+                </Paragraph>
+              </Badge>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
-      <Heading
-        as="h3"
-        variant="h4"
-        weight="semibold"
-        className="line-clamp-1"
-        id={`project-title-${project.id}`}
-      >
-        {project.title}
-      </Heading>
+      <div className="flex flex-col gap-4 p-6">
+        <div className="flex items-center justify-between">
+          <Badge variant="secondary" className="text-xs">
+            <Paragraph as="span" variant="label-xs" weight="medium">
+              {project.category}
+            </Paragraph>
+          </Badge>
+          <div className="flex gap-3">
+            <Link
+              external
+              href={project.githubUrl}
+              className="text-muted-foreground transition-colors hover:text-foreground"
+              aria-label="View GitHub repository"
+            >
+              <Icons.GitHub className="size-5" />
+            </Link>
+            {project.demoUrl && (
+              <Link
+                external
+                href={project.demoUrl}
+                className="text-muted-foreground transition-colors hover:text-foreground"
+                aria-label="View live demo"
+              >
+                <Icons.ExternalLink className="size-5" />
+              </Link>
+            )}
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 py-2">
+          <Heading
+            as="h3"
+            variant="h5"
+            className="line-clamp-1"
+            id={`project-title-${project.id}`}
+          >
+            {project.title}
+          </Heading>
 
-      <Paragraph
-        as="p"
-        variant="body"
-        weight="regular"
-        className="line-clamp-2 text-body/80"
-      >
-        {project.summary}
-      </Paragraph>
-
-      <Link href={`/project/${project.id}`} className="mt-auto block">
-        <Button variant="outline" className="group w-full">
-          <Paragraph as="span" variant="button-md" weight="semibold">
-            View Details
+          <Paragraph variant="label-sm" className="line-clamp-2 text-body/80">
+            {project.summary}
           </Paragraph>
-          <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-        </Button>
-      </Link>
-    </div>
+        </div>
+        <Link href={`/projects/${project.id}`} className="mt-auto block">
+          <Button variant="outline" className="group w-full">
+            <Paragraph as="span" variant="button-md" weight="semibold">
+              View Details
+            </Paragraph>
+            <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </Link>
+      </div>
+    </Card>
   </motion.div>
 );
 
