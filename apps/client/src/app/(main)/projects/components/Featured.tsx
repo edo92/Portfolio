@@ -163,7 +163,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                   </div>
 
                   <div className="mt-auto flex flex-col gap-4 sm:flex-row">
-                    <Link href={`/project/${id}`} className="flex-1">
+                    <Link href={`/projects/${id}`} className="flex-1">
                       <Button className="group h-12 w-full">
                         <Paragraph
                           as="span"

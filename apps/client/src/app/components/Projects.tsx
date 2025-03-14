@@ -194,10 +194,14 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             {project.summary}
           </Paragraph>
         </div>
-        <Link href={`/projects/${project.id}`} className="mt-auto block">
-          <Button variant="outline" className="group w-full">
-            <Paragraph as="span" variant="button-md" weight="semibold">
-              View Details
+        <Link href={`/project/${project.id}`} className="flex-1">
+          <Button className="group w-full py-2.5">
+            <Paragraph
+              as="span"
+              variant="button-lg"
+              className="text-primary-foreground"
+            >
+              View Project
             </Paragraph>
             <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
           </Button>
