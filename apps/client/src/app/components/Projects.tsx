@@ -194,7 +194,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             {project.summary}
           </Paragraph>
         </div>
-        <Link href={`/project/${project.id}`} className="flex-1">
+        <Link href={`/projects/${project.id}`} className="flex-1">
           <Button className="group w-full py-2.5">
             <Paragraph
               as="span"
