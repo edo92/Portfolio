@@ -1,6 +1,8 @@
 import '@/ui/styles';
 
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+
 import { cn } from '@/util';
 import { inter } from './fonts';
 import { Providers } from './providers';
@@ -30,8 +32,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Eduard Jacobs&apos; Portfolio</title>
+      </head>
       <body className={cn('relative h-screen w-full', inter.variable)}>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
