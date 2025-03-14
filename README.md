@@ -1,82 +1,100 @@
-# Portfolio
+# Portfolio Documentation
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+## Overview
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+This is a modern web application built using [Nx](https://nx.dev) workspace, providing a scalable and maintainable development environment. The project uses Next.js for the frontend application.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Getting Started
 
-## Finish your remote caching setup
+### Prerequisites
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/sLVQWmcP6D)
+- Node.js (latest LTS version recommended)
+- npm or yarn package manager
 
+### Installation
 
-## Run tasks
+1. Clone the repository
+2. Install dependencies:
 
-To run the dev server for your app, use:
+```bash
+npm install
+```
 
-```sh
+## Development
+
+### Running the Development Server
+
+To start the development server:
+
+```bash
 npx nx dev client
 ```
 
-To create a production bundle:
+The application will be available at `http://localhost:4200` (default Nx port)
 
-```sh
+### Building for Production
+
+To create a production build:
+
+```bash
 npx nx build client
 ```
 
-To see all available targets to run for a project, run:
+### Project Structure
 
-```sh
+The project follows Nx workspace conventions:
+
+- `apps/` - Contains main applications
+- `libs/` - Contains shared libraries and components
+
+## Project Management
+
+### Available Commands
+
+- View all available project commands:
+
+```bash
 npx nx show project client
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+### Adding New Components
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+#### Creating a New Application
 
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/next:app demo
+```bash
+npx nx g @nx/next:app your-app-name
 ```
 
-To generate a new library, use:
+#### Creating a New Library
 
-```sh
-npx nx g @nx/react:lib mylib
+```bash
+npx nx g @nx/react:lib your-lib-name
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+## Development Tools
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### Nx Console
 
+For better development experience, install the Nx Console extension:
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [VSCode Nx Console](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)
+- [IntelliJ Nx Console](https://plugins.jetbrains.com/plugin/21060-nx-console)
 
-## Install Nx Console
+## Remote Caching
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+This project supports Nx Cloud for remote caching. To complete the setup, visit the [Nx Cloud setup page](https://cloud.nx.app/connect/sLVQWmcP6D).
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Additional Resources
 
-## Useful links
+### Official Documentation
 
-Learn more:
+- [Nx Documentation](https://nx.dev)
+- [Next.js Documentation](https://nextjs.org/docs)
 
-- [Learn more about this workspace setup](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Contributing
 
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Please read our contributing guidelines before submitting pull requests.
+
+## License
+
+MIT license
