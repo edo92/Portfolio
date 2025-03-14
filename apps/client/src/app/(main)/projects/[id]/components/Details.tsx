@@ -247,7 +247,10 @@ export const ProjectDetail = ({ projects }: { projects: ProjectProps[] }) => {
                       >
                         <Button className="w-full gap-2">
                           <Icons.ExternalLink className="size-4" />
-                          <Paragraph variant="button-md">
+                          <Paragraph
+                            variant="button-md"
+                            className="text-primary-foreground"
+                          >
                             View Live Demo
                           </Paragraph>
                         </Button>
