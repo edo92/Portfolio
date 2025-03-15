@@ -119,7 +119,11 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
                     </Heading>
                   </div>
 
-                  <Paragraph as="p" variant="body" className="text-body/80">
+                  <Paragraph
+                    as="p"
+                    variant="body-md"
+                    className="mb-3 text-body/80"
+                  >
                     {description}
                   </Paragraph>
 

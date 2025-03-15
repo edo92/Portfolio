@@ -34,11 +34,7 @@ export const Hero = () => (
             Projects
           </Heading>
 
-          <Paragraph
-            variant="body-md"
-            weight="regular"
-            className="text-body/90"
-          >
+          <Paragraph as="p" variant="body-md" className="text-body/80">
             {PROJECTS_INTRODUCTION}
           </Paragraph>
 
