@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, useCallback, FC, useRef } from 'react';
+import { useMemo, useState, useCallback, type FC, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 import { cn } from '@/util';
@@ -31,6 +31,31 @@ type ProjectsGridProps = {
   projects: Project[];
 };
 
+// Shared animation variants
+const fadeInUpVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: Math.min(0.1 + custom * 0.05, 0.5),
+    },
+  }),
+  exit: { opacity: 0, y: 20, transition: { duration: 0.3 } },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 type CategoryFilterProps = {
   categories: readonly string[];
   selected: string;
@@ -49,19 +74,12 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
     <motion.div
       ref={filterRef}
       className="flex flex-wrap justify-center gap-4"
-      initial={{ opacity: 0, y: 20 }}
-      animate={isFilterInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.5 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isFilterInView ? 'visible' : 'hidden'}
     >
       {categories.map((category, index) => (
-        <motion.div
-          key={category}
-          initial={{ opacity: 0, y: 20 }}
-          animate={
-            isFilterInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-          }
-          transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
-        >
+        <motion.div key={category} custom={index} variants={fadeInUpVariants}>
           <Button
             variant="ghost"
             onClick={() => onSelect(category)}
@@ -78,6 +96,11 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
       ))}
     </motion.div>
   );
+};
+
+const cardHoverVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 type ProjectCardProps = {
@@ -99,15 +122,17 @@ export const ProjectCard: FC<ProjectCardProps> = ({
 }) => (
   <motion.div
     layout
-    initial={{ opacity: 0, y: 20 }}
-    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-    exit={{ opacity: 0, y: 20 }}
-    transition={{ duration: 0.6, delay: Math.min(0.2 + index * 0.1, 1.5) }}
+    variants={fadeInUpVariants}
+    custom={index}
+    initial="hidden"
+    animate={isInView ? 'visible' : 'hidden'}
+    exit="exit"
     className="hover:border-primary/20 group relative overflow-hidden rounded-lg border border-border/50 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
     onMouseEnter={() => onHover?.(project.id)}
-    onMouseLeave={onLeave && onLeave}
+    onMouseLeave={onLeave}
     role="article"
     aria-labelledby={`project-title-${project.id}`}
+    layoutId={`project-card-${project.id}`}
   >
     <Card
       key={project.id}
@@ -127,9 +152,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({
         </div>
         <motion.div
           className="absolute inset-x-0 bottom-0 p-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
-          transition={{ duration: 0.3 }}
+          variants={cardHoverVariants}
+          initial="hidden"
+          animate={isHovered ? 'visible' : 'hidden'}
         >
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
@@ -203,7 +228,12 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             >
               View Project
             </Paragraph>
-            <Icons.ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+            <motion.div
+              whileHover={{ x: 4 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            >
+              <Icons.ArrowRight className="ml-2 size-4" />
+            </motion.div>
           </Button>
         </Link>
       </div>
@@ -249,16 +279,12 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
     <Section ref={containerRef}>
       <motion.div
         className="container mx-auto max-w-xl px-6 md:max-w-7xl md:px-8 lg:px-12"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.6 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
       >
         <div className="mb-8 flex flex-col items-center justify-center gap-8 md:mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div variants={fadeInUpVariants} custom={0}>
             <Heading as="h2" variant="h2">
               Projects
             </Heading>
@@ -275,8 +301,14 @@ export const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
           ref={gridRef}
           layout
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          transition={{
+            type: 'spring',
+            stiffness: 300,
+            damping: 30,
+            duration: 0.5,
+          }}
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
