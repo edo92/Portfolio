@@ -11,5 +11,4 @@ export const SKILLS = [
   'MongoDB',
 ];
 
-export const DESCRIPTION = `Innovative Backend Engineer with 5+ years of experience turning complex challenges into streamlined, automated
-solutions. Passionate about building interesting stuff and helping others.`;
+export const DESCRIPTION = `Innovative Backend Engineer with 5+ years of experience turning complex challenges into elegant solutions, transforming business requirements into into measurable results.`;

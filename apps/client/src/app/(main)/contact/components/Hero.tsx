@@ -37,9 +37,9 @@ export const ContactHero: FC = () => {
             weight="regular"
             className="text-body/90"
           >
-            {`Have a project in mind or want to discuss potential opportunities?
-            I'm always open to new ideas and collaborations. Let's create
-            something amazing together.`}
+            {
+              "Whether you're looking for a technical collaborator, consultant, or discussing potential opportunities, I'd love to connect."
+            }
           </Paragraph>
         </motion.div>
       </div>

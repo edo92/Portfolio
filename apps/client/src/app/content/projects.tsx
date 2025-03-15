@@ -1,4 +1,4 @@
-export const PROJECTS_INTRODUCTION = `Explore my portfolio of software engineering projects showcasing microservices, full-stack applications, and cloud infrastructure.`;
+export const PROJECTS_INTRODUCTION = `Dive into my collection of projects showcasing microservices, full-stack applications, and cloud infrastructure.`;
 
 export const PROJECTS = [
   {
