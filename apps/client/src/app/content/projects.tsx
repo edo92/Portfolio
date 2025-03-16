@@ -37,6 +37,7 @@ export const PROJECTS = [
       'Ensured responsive design that adapts to various screen sizes and devices',
     ],
   },
+
   {
     id: '1',
     title: 'Full-Stack AWS Monorepo with Next.js, NestJS, and CDK',
@@ -130,6 +131,54 @@ export const PROJECTS = [
       'Smooth, engaging user experience with performant animations and transitions',
       'Fully responsive design that works seamlessly across all device sizes',
       'Maintainable codebase with reusable components and consistent styling patterns',
+    ],
+  },
+
+  {
+    id: '3',
+    title: 'Audio Fingerprinting Library',
+    summary:
+      'A robust Go implementation of an audio fingerprinting system that generates distinctive fingerprints from audio files, inspired by the Shazam algorithm.',
+    description:
+      'This project implements a complete audio fingerprinting system in Go. It processes audio files to generate compact, robust fingerprints that can uniquely identify audio even in the presence of noise or distortion. The system works by analyzing the time-frequency domain of audio signals, detecting constellation points of audio peaks, and creating hash pairs that form the fingerprint. The implementation includes complete audio processing, digital signal processing, and the core fingerprinting algorithm.',
+    imageUrl: '/static/projects/audio_fingerprint.png',
+    category: 'Backend',
+    tags: [
+      'Go',
+      'DSP',
+      'Audio Analysis',
+      'Fingerprinting',
+      'FFT',
+      'Spectral Analysis',
+    ],
+    stats: [
+      { label: 'Sample Rate', value: '11025 Hz' },
+      { label: 'Frame Size', value: '1024 samples' },
+      { label: 'Frequency Bands', value: '6' },
+      { label: 'Fingerprint Format', value: '32-bit hashes' },
+    ],
+    githubUrl: 'https://github.com/edo92/Audio-Fingerprint',
+    demoUrl: '',
+    challenges: [
+      'Implementing robust audio preprocessing to handle various input formats and noise conditions',
+      'Creating an efficient peak detection algorithm in the frequency domain',
+      'Developing a hash generation system that produces compact yet distinctive fingerprints',
+      'Ensuring the fingerprinting is resistant to audio transformations like pitch shifts and time stretching',
+      'Optimizing performance for processing large audio files efficiently',
+    ],
+    solutions: [
+      'Applied low-pass filtering and downsampling to normalize and optimize audio input',
+      'Implemented a band-based peak detection algorithm to identify distinctive features in the spectrogram',
+      'Created a pairing algorithm that generates 32-bit hashes containing frequency and time information',
+      'Used parallel processing with goroutines to compute the spectrogram efficiently',
+      'Developed comprehensive test suites to verify algorithm correctness and robustness',
+    ],
+    results: [
+      'Built a fully functional audio fingerprinting system in pure Go',
+      'Created fingerprints that are robust against common audio distortions',
+      'Achieved efficient performance through optimized DSP implementations',
+      'Developed a well-structured codebase with thorough test coverage',
+      'Implemented a Shazam-inspired constellation algorithm with proven effectiveness in audio identification',
     ],
   },
 ];
